@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: "\u6CB3\u6D41"
+    uniqueID: 1293018415
+    locked: 0
+  - name: "\u571F\u5730"
+    uniqueID: 1519349363
+    locked: 0
+  - name: "\u8015\u5730"
+    uniqueID: 4231767653
+    locked: 0
+  - name: "\u6D47\u6C34\u8015\u5730"
+    uniqueID: 891424533
+    locked: 0
+  - name: "\u8349\u5730"
+    uniqueID: 4016426145
+    locked: 0
+  - name: "\u5730\u677F"
+    uniqueID: 3328067817
+    locked: 0
+  - name: "\u6811\u53F6\u9876"
+    uniqueID: 232839861
+    locked: 0
+  - name: "\u5F71\u5B50"
+    uniqueID: 2018288969
+    locked: 0
+  - name: "\u519C\u4F5C\u7269\u53CA\u88C5\u9970"
+    uniqueID: 2020351313
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3529443923
+    locked: 0
+  - name: Mouse
+    uniqueID: 608844969
+    locked: 0
