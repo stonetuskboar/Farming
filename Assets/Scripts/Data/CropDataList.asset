@@ -18,14 +18,14 @@ MonoBehaviour:
     matureTurns: 2
     growthStages:
     - GrowthProgress: 0
-      GrowthSprite: {fileID: 1244605518, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: 586363771, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 1
-      GrowthSprite: {fileID: -1347245586, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: -89756991, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 2
-      GrowthSprite: {fileID: 413365028, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: -1949563081, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     size: {x: 1, y: 1}
     DropedItemId: 0
   trees:
@@ -34,17 +34,17 @@ MonoBehaviour:
     matureTurns: 3
     growthStages:
     - GrowthProgress: 0
-      GrowthSprite: {fileID: 737880254, guid: c145c1257a520444680704ed674fa3da, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: 190695476, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 1
-      GrowthSprite: {fileID: -1606588535, guid: c145c1257a520444680704ed674fa3da, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: -924675841, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 2
-      GrowthSprite: {fileID: 1509607505, guid: c145c1257a520444680704ed674fa3da, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: 781453780, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+      shadow: {fileID: -1859279885, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 3
-      GrowthSprite: {fileID: 370349885, guid: c145c1257a520444680704ed674fa3da, type: 3}
-      shadow: {fileID: 0}
+      GrowthSprite: {fileID: 757725545, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+      shadow: {fileID: -663115259, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     size: {x: 2, y: 2}
     DropedItemId: 8
     stumpId: 8

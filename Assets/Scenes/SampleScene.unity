@@ -23538,24 +23538,6 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 0
-    m_Data:
-      e00: 8.248519e+23
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 1.01e-43
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
   m_TileColorArray:
   - m_RefCount: 688
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -31722,7 +31704,7 @@ RectTransform:
   m_GameObject: {fileID: 474882972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0265, y: 1.0265, z: 1.0265}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1166227000}
@@ -31738,7 +31720,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 128}
+  m_SizeDelta: {x: 1000, y: 128}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &474882974
 MonoBehaviour:
@@ -31760,8 +31742,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: c68c4e34e9b47a641af8bdf0d916f53b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -64334,7 +64316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8161222399584010413, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 894
+      value: 913
       objectReference: {fileID: 0}
     - target: {fileID: 8161222399584010413, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -64350,6 +64332,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8161222399584010413, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8529755266519245351, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -73699,24 +73685,6 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 0
-    m_Data:
-      e00: 8.248519e+23
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 1.01e-43
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
   m_TileColorArray:
   - m_RefCount: 844
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -86161,7 +86129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8161222399584010413, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 8161222399584010413, guid: c1c42dab60e7f4944a18d893c7ee4163, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
