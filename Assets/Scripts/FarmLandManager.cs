@@ -132,6 +132,7 @@ public class FarmLandManager : MonoBehaviour
         {
             FarmTileData data = GetFarmTileData(cell);
             data.cropObject = null;
+            data.soilState = SoilState.Dirt;
             wateredFieldTilemap.ClearDataTile(cell);
             tilledFieldTilemap.ClearDataTile(cell);
             fieldTilemap.ClearDataTile(cell);

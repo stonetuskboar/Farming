@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: CropDataList
   m_EditorClassIdentifier: 
   crops:
-  - Name: "\u767D\u83DC"
+  - Name: "\u841D\u535C"
     id: 0
     matureTurns: 2
     growthStages:
     - GrowthProgress: 0
-      GrowthSprite: {fileID: -716933214, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      GrowthSprite: {fileID: 1244605518, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
+      shadow: {fileID: 0}
     - GrowthProgress: 1
-      GrowthSprite: {fileID: -1143448336, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      GrowthSprite: {fileID: -1347245586, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
+      shadow: {fileID: 0}
     - GrowthProgress: 2
-      GrowthSprite: {fileID: -583088244, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      GrowthSprite: {fileID: 413365028, guid: cbf36bacc6dc7244ba86e36703d6927a, type: 3}
+      shadow: {fileID: 0}
     size: {x: 1, y: 1}
-    DropedItemId: 7
+    DropedItemId: 0
   trees:
   - Name: "\u6811"
     id: 101
@@ -32,12 +35,16 @@ MonoBehaviour:
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 737880254, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      shadow: {fileID: 0}
     - GrowthProgress: 1
       GrowthSprite: {fileID: -1606588535, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      shadow: {fileID: 0}
     - GrowthProgress: 2
       GrowthSprite: {fileID: 1509607505, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      shadow: {fileID: 0}
     - GrowthProgress: 3
       GrowthSprite: {fileID: 370349885, guid: c145c1257a520444680704ed674fa3da, type: 3}
+      shadow: {fileID: 0}
     size: {x: 2, y: 2}
     DropedItemId: 8
     stumpId: 8

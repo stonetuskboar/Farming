@@ -42,7 +42,7 @@ public class BasicCrop : MonoBehaviour
         cropSr.sprite = currentStage.GrowthSprite;
         shadowSr.sprite = currentStage.shadow;
     }
-    public void OnNextTurn()
+    public virtual void OnNextTurn()
     {
         bool IsWatered = true;
         for (int i = 0; i < TilePosition.Count; i++)
@@ -53,7 +53,7 @@ public class BasicCrop : MonoBehaviour
                 break;
             }
         }
-        if (cropData is TreeData ||  IsWatered == true)
+        if (IsWatered == true)
         {
             growthProgress++;
             SetByGrowthProgress();
