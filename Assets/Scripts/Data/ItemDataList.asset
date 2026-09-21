@@ -20,13 +20,13 @@ MonoBehaviour:
     Id: 1
     Icon: {fileID: -1963565487, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
   - Name: "\u9570\u5200"
-    Id: 2
+    Id: 4
     Icon: {fileID: 2132200136, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
   - Name: "\u65A7\u5934"
     Id: 3
     Icon: {fileID: 1326724588, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
   - Name: "\u7A3F\u5B50"
-    Id: 4
+    Id: 2
     Icon: {fileID: -91360255, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
   - Name: "\u5357\u74DC\u5B50"
     Id: 5
