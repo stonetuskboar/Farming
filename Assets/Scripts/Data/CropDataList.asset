@@ -209,10 +209,10 @@ MonoBehaviour:
       GrowthSprite: {fileID: -932288303, guid: 169a60065a6ca15468969d73a2858821, type: 3}
       shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 2
-      GrowthSprite: {fileID: 1222508896, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
+      GrowthSprite: {fileID: 331106439, guid: 169a60065a6ca15468969d73a2858821, type: 3}
       shadow: {fileID: 1222508896, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     - GrowthProgress: 3
-      GrowthSprite: {fileID: -1927286574, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
+      GrowthSprite: {fileID: 1873609452, guid: 169a60065a6ca15468969d73a2858821, type: 3}
       shadow: {fileID: -1927286574, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
     size: {x: 2, y: 2}
     DropedItemId: 28
