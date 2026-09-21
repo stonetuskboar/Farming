@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class BasicTreeSeed : BasicSeed
 {
-    public BasicTreeSeed()
+    public BasicTreeSeed(int Id, int seedId):base(Id,seedId)
     {
-        Id = 3;
-        seedId = 101;
     }
     public override void Init(GameManager manager)
     {

@@ -31,6 +31,9 @@ public class Hoe : UsableItem
         else if(farm.GetFarmTileData(cell).soilState != SoilState.Dirt)
         {
             return false;
+        }else if(farm.GetFarmTileData(cell).cropObject != null)
+        {
+            return false;
         }
         return true;
     }

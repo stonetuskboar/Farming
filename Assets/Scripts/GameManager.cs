@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GridCursorController GridCursorController;
     public FarmLandManager FarmLandManager;
 
-    public ToolController toolController;
+    public HotBarController hotbarController;
     public EnergyBar energyBar;
 
     public CircleTransition circleTransition;

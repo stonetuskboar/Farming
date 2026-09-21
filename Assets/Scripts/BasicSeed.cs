@@ -7,9 +7,10 @@ public class BasicSeed : UsableItem
 {
     public CropData data;
     public int seedId = 0;
-    public BasicSeed()
+    public BasicSeed(int id, int seedId)
     {
-        Id = 2;
+        Id = id;
+        this.seedId = seedId;
     }
     public override void Init(GameManager manager)
     {

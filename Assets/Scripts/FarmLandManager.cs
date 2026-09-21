@@ -80,22 +80,9 @@ public class FarmLandManager : MonoBehaviour
 
     public void Plant(Vector3Int cell, CropData cropData)
     {
-        FarmTileData data = GetFarmTileData(cell);
-        if (data.cropObject != null)
-            return;
-
-        Vector3 worldPos = grid.GetCellCenterWorld(cell);
-
-        GameObject obj = Instantiate(
-            cropPrefab,
-            worldPos,
-            Quaternion.identity,
-            cropParent
-        );
-        BasicCrop crop = obj.GetComponent<BasicCrop>();
-        data.cropObject = crop;
-        crop.Init(this, cropData , cell);
-        crops.Add(crop);
+        List<Vector3Int> cells = new();
+        cells.Add(cell);
+        Plant(cells, cropData);
     }
     public void Plant(List<Vector3Int> cells, CropData cropData)
     {
@@ -128,7 +115,7 @@ public class FarmLandManager : MonoBehaviour
             return;
         // 收获作物
         // 移除作物对象
-        foreach (Vector3Int cell in crop.TilePosition)
+        foreach (Vector3Int cell in crop.TileCells)
         {
             FarmTileData data = GetFarmTileData(cell);
             data.cropObject = null;
@@ -139,7 +126,7 @@ public class FarmLandManager : MonoBehaviour
             grassTilemap.SetDataTile(cell);
         }
         crops.Remove(crop);
-        gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position,crop.cropData.DropedItemId,5);
+        gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position,crop.cropData.DropedItemId,crop.cropData.DropedAmount);
         Destroy(crop.gameObject);
     }
 }

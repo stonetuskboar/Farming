@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ToolButton : ImagePressableButton
 {
     public Image ToolIcon;
-    private ToolController ToolController;
+    private HotBarController ToolController;
     [NonSerialized]
     public int index;
     private Vector2 OgPosition;
@@ -19,10 +20,13 @@ public class ToolButton : ImagePressableButton
         PointerClicked += OnClick;
     }
 
-    public void Init(ToolController controller, int index)
+    public void Init(HotBarController controller)
     {
         ToolController = controller;
-        this.index = index;
+    }
+    public void Set(int i)
+    {
+        index = i;
     }
 
     public void OnClick()
@@ -34,6 +38,11 @@ public class ToolButton : ImagePressableButton
         base.ChangeStateToIdle();
         DoAnchoredPositionTween(OgPosition, normalTime, type: EaseType.M3Spring);
     }
+    public override void ChangeStateToIdleImmediately()
+    {
+        base.ChangeStateToIdleImmediately();
+        SetAnchoredPosition(OgPosition);
+    }
     public override void ChangeStateToHover()
     {
         base.ChangeStateToHover();
@@ -43,6 +52,11 @@ public class ToolButton : ImagePressableButton
     {
         base.ChangeStateToSelected();
         DoAnchoredPositionTween(OgPosition + HoverPositionDelta, hoverTime, type: EaseType.M3Spring);
+    }
+    public override void ChangeStateToSelectedImmediately()
+    {
+        base.ChangeStateToSelectedImmediately();
+        SetAnchoredPosition(OgPosition + HoverPositionDelta);
     }
     public override void ChangeStateToDisable()
     {

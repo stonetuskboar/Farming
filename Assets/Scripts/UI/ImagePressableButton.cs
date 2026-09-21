@@ -10,6 +10,11 @@ public class ImagePressableButton : BasicPressableButton
         base.ChangeStateToIdle();
         image.NormalTween(normalTime);
     }
+    public override void ChangeStateToIdleImmediately()
+    {
+        image.SetToNormal();
+        base.ChangeStateToIdleImmediately();
+    }
     public override void ChangeStateToHover()
     {
         base.ChangeStateToHover();
@@ -19,6 +24,11 @@ public class ImagePressableButton : BasicPressableButton
     {
         base.ChangeStateToSelected();
         image.HoverTween(hoverTime);
+    }
+    public override void ChangeStateToSelectedImmediately()
+    {
+        base.ChangeStateToSelectedImmediately();
+        image.SetToHover();
     }
     public override void ChangeStateToDisable()
     {

@@ -6,7 +6,7 @@ public class Axe : UsableItem
 {
     public Axe()
     {
-        Id = 5;
+        Id = 3;
     }
     public override bool CanUse(List<Vector3Int> cells)
     {
@@ -50,8 +50,18 @@ public class Axe : UsableItem
         }
         foreach (BasicCrop crop in cropsToHarvest)
         {
+            if(crop.cropData is not TreeData)
+            {
+                continue;
+            }
             farm.Harvest(crop);
+            TreeData data = crop.cropData as TreeData;
+            TreeData stumpData = GameDataManager.Instance.cropDataList.GetTreeDataById(data.stumpId);
+            if(stumpData != null)
+            {
+                farm.Plant(crop.TileCells, stumpData);
+            }
         }
-        GameManager.ConsumeEnergy(10);
+        GameManager.ConsumeEnergy(6);
     }
 }

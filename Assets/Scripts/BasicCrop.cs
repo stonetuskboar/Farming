@@ -8,7 +8,7 @@ public class BasicCrop : MonoBehaviour
     public SpriteRenderer cropSr;
     public SpriteRenderer shadowSr;
     //这个作物占据哪几块地
-    public List<Vector3Int> TilePosition = new();
+    public List<Vector3Int> TileCells = new();
     public int growthProgress;
     private FarmLandManager farmLandManager;
     public void Init(FarmLandManager farmLandManager, CropData data, Vector3Int tilePositions)
@@ -19,7 +19,7 @@ public class BasicCrop : MonoBehaviour
     {
         this.farmLandManager = farmLandManager;
         cropData = data;
-        TilePosition = tilePositions;
+        TileCells = tilePositions;
         growthProgress = 0;
         SetByGrowthProgress();
     }
@@ -40,20 +40,28 @@ public class BasicCrop : MonoBehaviour
             }
         }
         cropSr.sprite = currentStage.GrowthSprite;
-        shadowSr.sprite = currentStage.shadow;
+        if(currentStage.shadow != null)
+        {
+            shadowSr.enabled = true;
+            shadowSr.sprite = currentStage.shadow;
+        }
+        else
+        {
+            shadowSr.enabled = false;
+        }
     }
     public virtual void OnNextTurn()
     {
         bool IsWatered = true;
-        for (int i = 0; i < TilePosition.Count; i++)
+        for (int i = 0; i < TileCells.Count; i++)
         {
-            if (farmLandManager.GetFarmTileData(TilePosition[i]).soilState != SoilState.Watered)
+            if (farmLandManager.GetFarmTileData(TileCells[i]).soilState != SoilState.Watered)
             {
                 IsWatered = false;
                 break;
             }
         }
-        if (IsWatered == true)
+        if (IsWatered == true || cropData is TreeData)
         {
             growthProgress++;
             SetByGrowthProgress();

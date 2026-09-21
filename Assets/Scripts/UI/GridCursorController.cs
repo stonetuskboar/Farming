@@ -1,6 +1,9 @@
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -21,8 +24,8 @@ public class GridCursorController : MonoBehaviour
     [SerializeField] private InputActionReference clickAction;
 
     public Image CursorImage;
-    // 鼠标所在的中心格
-
+    // 曾经用过的格子
+    private List<Vector3Int> UsedCells = new();
     // 当前范围内所有格子
     public List<Vector3Int> CurrentCells { get; private set; } = new();
     public bool IsValid { get; private set; }
@@ -40,25 +43,30 @@ public class GridCursorController : MonoBehaviour
     {
         pointAction.action.Enable();
         clickAction.action.Enable();
+        clickAction.action.performed += OnClick;
     }
+
+
 
     private void OnDisable()
     {
-
+        clickAction.action.performed -= OnClick;
         pointAction.action.Disable();
         clickAction.action.Disable();
     }
 
     public UsableItem GetNowTool()
     {
-        return gameManager.toolController.NowTool;
+        return gameManager.hotbarController.NowTool;
     }
     private void Update()
     {
         UpdateCursor();
 
-        if(clickAction.action.IsPressed() && IsValid)
+        if(clickAction.action.IsPressed() && IsValid && false == UsedCells.SequenceEqual(CurrentCells))
         {
+            UsedCells.Clear();
+            UsedCells.AddRange(CurrentCells);
             GetNowTool().Use(CurrentCells);
         }
     }
@@ -81,6 +89,12 @@ public class GridCursorController : MonoBehaviour
         cursorWorldPosition.z = 0f;
         CursorImage.transform.position = cursorWorldPosition;
 
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            IsValid = false;
+            HideCursorBoxes();
+            return;
+        }
         UsableItem tool = GetNowTool();
 
         // 没有工具
@@ -147,7 +161,11 @@ public class GridCursorController : MonoBehaviour
                 result.Add(new Vector3Int(startX + x, startY + y, z));
             }
         }
-
         return result;
+    }
+
+    private void OnClick(InputAction.CallbackContext context)
+    {
+        UsedCells.Clear();
     }
 }

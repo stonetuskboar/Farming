@@ -69,6 +69,14 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
             DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
         }
     }
+    public virtual void ChangeStateToIdleImmediately()
+    {
+        state = State.idle;
+        if (HoverSize != Vector2.one)
+        {
+            SetSize(OgSize);
+        }
+    }
     public virtual void ChangeStateToHover()
     {
         state = State.hover;
@@ -83,6 +91,14 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         if (HoverSize != Vector2.one)
         {
             DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
+        }
+    }
+    public virtual void ChangeStateToSelectedImmediately()
+    {
+        state = State.selected;
+        if (HoverSize != Vector2.one)
+        {
+            SetSize(OgSize);
         }
     }
     public virtual void ChangeStateToDisable()

@@ -21,6 +21,7 @@ public class TreeData:CropData
 {
     //砍树会留下树干
     public int stumpId;
+    public bool IsStump;
     public TreeData()
     {
         size = new Vector2Int(2, 2);
@@ -40,6 +41,7 @@ public class CropData
     public Vector2Int size = new Vector2Int(1,1);
 
     public int DropedItemId;
+    public int DropedAmount;
 }
 
 [System.Serializable]

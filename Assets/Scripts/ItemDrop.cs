@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,7 +6,7 @@ using UnityEngine.InputSystem;
 public class ItemDrop : MonoBehaviour
 {
     [Header("Item")]
-    [SerializeField] private int itemId;
+    [SerializeField] public int itemId;
     [SerializeField] private int amount = 1;
 
     [Header("Spawn")]
@@ -16,7 +17,9 @@ public class ItemDrop : MonoBehaviour
     [SerializeField] private float pickupDistance = 0.8f;
     [SerializeField] private float pickupDuration = 0.25f;
     [SerializeField] private float pickupHeight = 0.5f;
+
     private bool IsPickAble = false;
+
     private SpriteRenderer spriteRenderer;
 
     private Vector3 spawnPosition;
@@ -24,28 +27,71 @@ public class ItemDrop : MonoBehaviour
 
     private bool isPickedUp;
 
+    /// <summary>
+    /// 对象池回收回调
+    /// </summary>
+    private Action<ItemDrop> returnToPool;
+
+    private Coroutine spawnCoroutine;
+    private Coroutine pickupCoroutine;
+
     private void Awake()
     {
         spriteRenderer =
             GetComponent<SpriteRenderer>();
     }
 
+    /// <summary>
+    /// 初始化掉落物
+    /// </summary>
     public void Initialize(
         int itemId,
         int amount,
-        Vector3 targetPosition)
+        Vector3 targetPosition,
+        Action<ItemDrop> returnToPool)
     {
         this.itemId = itemId;
-        spriteRenderer.sprite = GameDataManager.Instance.itemDataList.GetItemDataById(itemId).Icon;
         this.amount = amount;
+        this.targetPosition = targetPosition;
+        this.returnToPool = returnToPool;
 
-        this.spawnPosition =
+        isPickedUp = false;
+        IsPickAble = false;
+
+        // 停止上一次可能还没有结束的协程
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+            spawnCoroutine = null;
+        }
+
+        if (pickupCoroutine != null)
+        {
+            StopCoroutine(pickupCoroutine);
+            pickupCoroutine = null;
+        }
+
+        // 恢复颜色
+        if (spriteRenderer != null)
+        {
+            Color color = spriteRenderer.color;
+            color.a = 1f;
+            spriteRenderer.color = color;
+
+            spriteRenderer.sprite =
+                GameDataManager.Instance
+                    .itemDataList
+                    .GetItemDataById(itemId)
+                    .Icon;
+        }
+
+        spawnPosition =
             transform.position;
 
-        this.targetPosition =
-            targetPosition;
-        IsPickAble = false;
-        StartCoroutine(SpawnAnimation());
+        spawnCoroutine =
+            StartCoroutine(
+                SpawnAnimation()
+            );
     }
 
     private IEnumerator SpawnAnimation()
@@ -74,7 +120,7 @@ public class ItemDrop : MonoBehaviour
                     t
                 );
 
-            // 抛物线高度
+            // 抛物线
             position.y +=
                 Mathf.Sin(t * Mathf.PI)
                 * spawnHeight;
@@ -84,14 +130,17 @@ public class ItemDrop : MonoBehaviour
 
             yield return null;
         }
+
+        transform.position = end;
+
         IsPickAble = true;
-        transform.position =
-            end;
+
+        spawnCoroutine = null;
     }
 
     private void Update()
     {
-        if (isPickedUp || IsPickAble == false)
+        if (isPickedUp || !IsPickAble)
             return;
 
         CheckPickup();
@@ -100,13 +149,18 @@ public class ItemDrop : MonoBehaviour
     private void CheckPickup()
     {
         if (Pointer.current == null)
-        {
             return;
-        }
+
+        if (Camera.main == null)
+            return;
+
         Vector2 screenPosition =
             Pointer.current.position.ReadValue();
+
         Vector3 cursorWorldPosition =
-            Camera.main.ScreenToWorldPoint(screenPosition);
+            Camera.main.ScreenToWorldPoint(
+                screenPosition
+            );
 
         if (
             Vector2.Distance(
@@ -125,10 +179,12 @@ public class ItemDrop : MonoBehaviour
             return;
 
         isPickedUp = true;
+        IsPickAble = false;
 
-        StartCoroutine(
-            PickupAnimation()
-        );
+        pickupCoroutine =
+            StartCoroutine(
+                PickupAnimation()
+            );
     }
 
     private IEnumerator PickupAnimation()
@@ -183,12 +239,30 @@ public class ItemDrop : MonoBehaviour
 
         AddToInventory();
 
-        Destroy(gameObject);
+        pickupCoroutine = null;
+
+        // 不再 Destroy
+        ReturnToPool();
+    }
+
+    private void ReturnToPool()
+    {
+        IsPickAble = false;
+        isPickedUp = false;
+
+        if (returnToPool != null)
+        {
+            returnToPool.Invoke(this);
+        }
+        else
+        {
+            // 防止没有设置对象池时物体一直存在
+            gameObject.SetActive(false);
+        }
     }
 
     private void AddToInventory()
     {
-
         // 你的背包系统：
         // Inventory.AddItem(itemId, amount);
 
