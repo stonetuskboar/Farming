@@ -2,6 +2,7 @@ using skner.DualGrid;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 //管理农田的数据以及相关操作
 public class FarmLandManager : MonoBehaviour
 {
@@ -21,24 +22,29 @@ public class FarmLandManager : MonoBehaviour
     public Transform cropParent;
     public HashSet<BasicCrop> crops = new();
 
-    public Dictionary<Vector3Int, FarmTileData> farmTiles = new();
+    [SerializeField] private Dictionary<Vector3Int, FarmTileData> farmTiles = new();
 
     public void Awake()
     {
         foreach (Transform child in cropParent)
         {
             BasicCrop crop = child.GetComponent<BasicCrop>();
-            if(crop == null)
+            if (crop == null)
             {
                 continue;
             }
+            TreeData data = gameManager.GameDataManager.cropDataList.GetTreeDataById(crop.cropData.id);
+            if (data != null)
+            {
+                crop.cropData = data;
+            }
+            crop.SetFarmLand(this);
             crops.Add(crop);
             for (int i = 0; i < crop.TileCells.Count; i++)
             {
                 GetFarmTileData(crop.TileCells[i]).cropObject = crop;
             }
         }
-
     }
 
     public bool CanFarmHere(Vector3Int cell)
@@ -63,6 +69,29 @@ public class FarmLandManager : MonoBehaviour
                 wateredFieldTilemap.ClearDataTile(position);
                 tilledFieldTilemap.SetDataTile(position);
             }
+            else if(tileData.soilState == SoilState.Dirt && tileData.cropObject == null)
+            {
+                tileData.soilState = SoilState.Grass;
+                fieldTilemap.ClearDataTile(position);
+                grassTilemap.SetDataTile(position);
+            }
+        }
+        foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
+        {
+            if (canFarmTileMap.HasTile(pos))
+            {
+                int rand = Random.Range(0, 8);
+                if(rand == 0)
+                {
+                    FarmTileData data = GetFarmTileData(pos);
+                    if (data.soilState == SoilState.Grass && data.cropObject == null)
+                    {
+                        CropData cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 40));
+                        Plant(pos, cropData);
+                    }
+                }
+            }
+
         }
     }
 
@@ -140,6 +169,7 @@ public class FarmLandManager : MonoBehaviour
             data.soilState = SoilState.Dirt;
             wateredFieldTilemap.ClearDataTile(cell);
             tilledFieldTilemap.ClearDataTile(cell);
+            grassTilemap.ClearDataTile(cell);
             fieldTilemap.SetDataTile(cell);
         }
         crops.Remove(crop);

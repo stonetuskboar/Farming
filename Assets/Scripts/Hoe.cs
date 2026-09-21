@@ -28,10 +28,11 @@ public class Hoe : UsableItem
         {
             return false;
         }
-        else if(farm.GetFarmTileData(cell).soilState != SoilState.Dirt)
+        FarmTileData data = farm.GetFarmTileData(cell);
+        if(data.soilState != SoilState.Grass && data.soilState != SoilState.Dirt)
         {
             return false;
-        }else if(farm.GetFarmTileData(cell).cropObject != null)
+        }else if(data.cropObject != null)
         {
             return false;
         }

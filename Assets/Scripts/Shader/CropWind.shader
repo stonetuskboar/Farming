@@ -55,6 +55,7 @@ Shader "Game/2D/CropWindLit"
             #pragma multi_compile USE_SHAPE_LIGHT_TYPE_3 __
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/LightingUtility.hlsl"
 
             struct Attributes
             {
@@ -107,6 +108,26 @@ Shader "Game/2D/CropWindLit"
             // xy = Atlas UV min
             // zw = Atlas UV size
             float4 _UVRect;
+
+
+            // URP 2D Renderer shape-light textures.
+            // CombinedShapeLightShared.hlsl samples these when the
+            // corresponding USE_SHAPE_LIGHT_TYPE_n variant is enabled.
+            #if USE_SHAPE_LIGHT_TYPE_0
+            SHAPE_LIGHT(0)
+            #endif
+
+            #if USE_SHAPE_LIGHT_TYPE_1
+            SHAPE_LIGHT(1)
+            #endif
+
+            #if USE_SHAPE_LIGHT_TYPE_2
+            SHAPE_LIGHT(2)
+            #endif
+
+            #if USE_SHAPE_LIGHT_TYPE_3
+            SHAPE_LIGHT(3)
+            #endif
 
 
             // -------------------------------------------------

@@ -39,8 +39,13 @@ public static class RuntimeSceneSaver
         {
             if (list == null)
                 return;
-            GameObject parent = GameObject.Find("植物");
             FarmLandManager manager = Object.FindFirstObjectByType<FarmLandManager>();
+            for (int i = manager.cropParent.childCount - 1; i >= 0; i--)
+            {
+                Undo.DestroyObjectImmediate(
+                    manager.cropParent.GetChild(i).gameObject
+                );
+            }
             foreach (SceneCrop crop in list)
             {
                 GameObject prefab = manager.cropPrefab;
@@ -50,19 +55,14 @@ public static class RuntimeSceneSaver
                 cropObj.transform.position = crop.position;
                 cropObj.transform.rotation = crop.rotation;
                 cropObj.transform.localScale = crop.scale;
-                cropObj.TileCells.Clear();
-                cropObj.TileCells.AddRange(crop.TileCells);
+                cropObj.TileCells = crop.TileCells;
                 cropObj.cropData = crop.data;
+                cropObj.growthProgress = crop.growthProgress;
                 cropObj.SetByGrowthProgress();
-                Undo.RegisterCreatedObjectUndo(
-                obj,
-                "Restore Runtime Object"
-            );
-
-                EditorSceneManager.MarkSceneDirty(
-                    obj.scene
-                );
             }
+            EditorSceneManager.MarkSceneDirty(
+            manager.gameObject.scene
+            );
             list.Clear();
         }
     }
@@ -74,7 +74,6 @@ public static class RuntimeSceneSaver
 
 public class SceneCrop
 {
-    public bool IsTree;
     public CropData data;
     public List<Vector3Int> TileCells = new();
     public int growthProgress;
@@ -84,14 +83,6 @@ public class SceneCrop
 
     public SceneCrop(BasicCrop crop)
     {
-        if (crop.cropData is TreeData)
-        {
-            IsTree = true;
-        }
-        else
-        {
-            IsTree = false;
-        }
         data = crop.cropData;
         TileCells.Clear();
         TileCells.AddRange(crop.TileCells);

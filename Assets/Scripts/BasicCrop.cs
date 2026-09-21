@@ -25,6 +25,11 @@ public class BasicCrop : MonoBehaviour
         SetByGrowthProgress();
     }
 
+    public void SetFarmLand(FarmLandManager farmLand)
+    {
+        this.farmLandManager = farmLand;
+    }
+
     public void SetByGrowthProgress()
     {
         GrowthStage currentStage = null;
