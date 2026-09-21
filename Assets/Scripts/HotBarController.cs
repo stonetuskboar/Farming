@@ -25,6 +25,14 @@ public class HotBarController : MonoBehaviour
         {
             ItemList.Add(new BasicTreeSeed(i, i));
         }
+        for (int i = 31; i <= 39; i++)
+        {
+            ItemList.Add(new BasicSeed(i, i));
+        }
+        for (int i = 40; i <= 41; i++)
+        {
+            ItemList.Add(new BasicTreeSeed(i, i));
+        }
         for (int i = 0; i < ItemList.Count; i++)
         {
             ItemList[i].Init(gameManager);

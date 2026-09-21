@@ -45,12 +45,12 @@ public class ItemDrop : MonoBehaviour
     /// 初始化掉落物
     /// </summary>
     public void Initialize(
-        int itemId,
+        ItemData data,
         int amount,
         Vector3 targetPosition,
         Action<ItemDrop> returnToPool)
     {
-        this.itemId = itemId;
+        this.itemId = data.Id;
         this.amount = amount;
         this.targetPosition = targetPosition;
         this.returnToPool = returnToPool;
@@ -78,11 +78,7 @@ public class ItemDrop : MonoBehaviour
             color.a = 1f;
             spriteRenderer.color = color;
 
-            spriteRenderer.sprite =
-                GameDataManager.Instance
-                    .itemDataList
-                    .GetItemDataById(itemId)
-                    .Icon;
+            spriteRenderer.sprite = data.Icon;
         }
 
         spawnPosition =

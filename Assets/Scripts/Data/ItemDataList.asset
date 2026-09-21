@@ -106,3 +106,36 @@ MonoBehaviour:
   - Name: "\u6A61\u6728"
     Id: 30
     Icon: {fileID: 2111246199, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
+  - Name: "\u6742\u83491"
+    Id: 31
+    Icon: {fileID: -1267049777, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u6742\u83492"
+    Id: 32
+    Icon: {fileID: 1055579480, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u6742\u83493"
+    Id: 33
+    Icon: {fileID: 906926347, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u4E34\u65F6\u6742\u83493"
+    Id: 34
+    Icon: {fileID: 170990591, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u4E34\u65F6\u6742\u83496"
+    Id: 35
+    Icon: {fileID: 1783139704, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u704C\u6728"
+    Id: 36
+    Icon: {fileID: 1069891779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u77F3\u5B50"
+    Id: 37
+    Icon: {fileID: 437134983, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u5927\u77F3\u5B50"
+    Id: 38
+    Icon: {fileID: -582229361, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u5C0F\u72EE\u5B50"
+    Id: 39
+    Icon: {fileID: -680844063, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u5C0F\u6811"
+    Id: 40
+    Icon: {fileID: 1708841779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+  - Name: "\u5927\u6811"
+    Id: 41
+    Icon: {fileID: 1873609452, guid: 169a60065a6ca15468969d73a2858821, type: 3}

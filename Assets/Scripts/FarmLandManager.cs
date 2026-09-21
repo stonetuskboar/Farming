@@ -1,9 +1,7 @@
 using skner.DualGrid;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 //管理农田的数据以及相关操作
 public class FarmLandManager : MonoBehaviour
 {
@@ -19,11 +17,29 @@ public class FarmLandManager : MonoBehaviour
 
 
     [Header("Crop")]
-    [SerializeField] private GameObject cropPrefab;
-    [SerializeField] private Transform cropParent;
+    public GameObject cropPrefab;
+    public Transform cropParent;
     public HashSet<BasicCrop> crops = new();
 
     public Dictionary<Vector3Int, FarmTileData> farmTiles = new();
+
+    public void Awake()
+    {
+        foreach (Transform child in cropParent)
+        {
+            BasicCrop crop = child.GetComponent<BasicCrop>();
+            if(crop == null)
+            {
+                continue;
+            }
+            crops.Add(crop);
+            for (int i = 0; i < crop.TileCells.Count; i++)
+            {
+                GetFarmTileData(crop.TileCells[i]).cropObject = crop;
+            }
+        }
+
+    }
 
     public bool CanFarmHere(Vector3Int cell)
     {
@@ -67,6 +83,7 @@ public class FarmLandManager : MonoBehaviour
 
         tilledFieldTilemap.SetDataTile(cell);
         grassTilemap.ClearDataTile(cell);
+        fieldTilemap.ClearDataTile(cell);
     }
 
     public void Water(Vector3Int cell)
@@ -78,13 +95,13 @@ public class FarmLandManager : MonoBehaviour
         tilledFieldTilemap.ClearDataTile(cell);
     }
 
-    public void Plant(Vector3Int cell, CropData cropData)
+    public BasicCrop Plant(Vector3Int cell, CropData cropData)
     {
         List<Vector3Int> cells = new();
         cells.Add(cell);
-        Plant(cells, cropData);
+        return Plant(cells, cropData);
     }
-    public void Plant(List<Vector3Int> cells, CropData cropData)
+    public BasicCrop Plant(List<Vector3Int> cells, CropData cropData)
     {
         Vector3 sum = Vector3.zero;
 
@@ -107,6 +124,7 @@ public class FarmLandManager : MonoBehaviour
             data.cropObject = crop;
         }
         crop.Init(this, cropData, cells);
+        return crop;
     }
 
     public void Harvest(BasicCrop crop)
@@ -122,8 +140,7 @@ public class FarmLandManager : MonoBehaviour
             data.soilState = SoilState.Dirt;
             wateredFieldTilemap.ClearDataTile(cell);
             tilledFieldTilemap.ClearDataTile(cell);
-            fieldTilemap.ClearDataTile(cell);
-            grassTilemap.SetDataTile(cell);
+            fieldTilemap.SetDataTile(cell);
         }
         crops.Remove(crop);
         gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position,crop.cropData.DropedItemId,crop.cropData.DropedAmount);

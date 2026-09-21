@@ -19,7 +19,8 @@ public class BasicCrop : MonoBehaviour
     {
         this.farmLandManager = farmLandManager;
         cropData = data;
-        TileCells = tilePositions;
+        TileCells.Clear();
+        TileCells.AddRange(tilePositions);
         growthProgress = 0;
         SetByGrowthProgress();
     }

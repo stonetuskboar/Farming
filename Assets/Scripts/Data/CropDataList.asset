@@ -197,6 +197,96 @@ MonoBehaviour:
     size: {x: 1, y: 1}
     DropedItemId: 27
     DropedAmount: 4
+  - Name: "\u9EC4\u74DC"
+    id: 31
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: -1267049777, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 32
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1055579480, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 33
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 906926347, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 34
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 170990591, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 35
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1783139704, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 36
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1069891779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 37
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 437134983, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 38
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: -582229361, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
+  - Name: "\u9EC4\u74DC"
+    id: 39
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: -680844063, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
   trees:
   - Name: "\u677E\u6811"
     id: 15
@@ -297,3 +387,27 @@ MonoBehaviour:
     DropedAmount: 3
     stumpId: -1
     IsStump: 1
+  - Name: "\u5C0F\u6811"
+    id: 40
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1708841779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      shadow: {fileID: 0}
+    size: {x: 2, y: 2}
+    DropedItemId: 30
+    DropedAmount: 3
+    stumpId: -1
+    IsStump: 1
+  - Name: "\u5927\u6811"
+    id: 41
+    matureTurns: 0
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1873609452, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+      shadow: {fileID: -1927286574, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
+    size: {x: 2, y: 2}
+    DropedItemId: 28
+    DropedAmount: 5
+    stumpId: 115
+    IsStump: 0

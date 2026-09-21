@@ -138,7 +138,11 @@ public class HarvestEffectManager : MonoBehaviour
     {
         if (itemDropPrefab == null)
             return;
-
+        ItemData data = GameDataManager.Instance.itemDataList.GetItemDataById(itemId);
+        if (data == null)
+        {
+            return;
+        }
         for (int i = 0; i < amount; i++)
         {
             Vector2 randomOffset =
@@ -159,7 +163,7 @@ public class HarvestEffectManager : MonoBehaviour
             drop.transform.position = position;
             drop.transform.rotation = Quaternion.identity;
 
-            drop.Initialize(itemId,1,targetPosition,ReturnItemDrop);
+            drop.Initialize(data, 1,targetPosition,ReturnItemDrop);
         }
     }
 }
