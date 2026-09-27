@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CloudShadow
-  m_Shader: {fileID: 4800000, guid: ec6fbe2b069593c48ac00ceb63684d78, type: 3}
+  m_Shader: {fileID: 4800000, guid: 08b90b4459a5c6b438205280c5eb5ad2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,18 +29,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudMax: 0.65
-    - _CloudMin: 0.35
     - _CloudSoftness: 0.05
     - _MoveX: 0.1
-    - _MoveY: 0.05
+    - _MoveY: -0.05
     - _NoiseContrast: 0.5
-    - _NoiseDetail: 5
-    - _NoiseScale: 0.1
-    - _NoiseThreshold: 0.511
-    - _ShadowStrength: 0.596
+    - _NoiseScale: 0.15
+    - _NoiseThreshold: 0.5
+    - _ShadowStrength: 0.6
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _NoiseSpeed: {r: 0.01, g: 0.005, b: 0, a: 0}
-    - _ShadowColor: {r: 0.34999993, g: 0.39999995, b: 0.42, a: 1}
+    - _ShadowColor: {r: 0.34999993, g: 0.4, b: 0.41999993, a: 1}
   m_BuildTextureStacks: []

@@ -50,4 +50,18 @@ public class GrowthStage
     public int GrowthProgress;
     public Sprite GrowthSprite;
     public Sprite shadow;
+
+    public WindType 风力;
+}
+
+public enum WindType
+{
+    //石头、种子、树桩等不该动的属于静止
+    静止,
+    //很坚硬的物体属于微动，例如树苗等
+    微动,
+    //大部分正常的植物、树木
+    正常,
+    //草这种很柔软的植物属于剧烈
+    剧烈
 }

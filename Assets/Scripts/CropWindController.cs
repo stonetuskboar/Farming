@@ -2,14 +2,20 @@ using UnityEngine;
 
 [ExecuteAlways]
 [RequireComponent(typeof(SpriteRenderer))]
-public class SpriteAtlasUVNormalizer : MonoBehaviour
+public class CropShaderController : MonoBehaviour
 {
     private static readonly int UVRectID =
         Shader.PropertyToID("_UVRect");
 
     private static readonly int BottomLockID =
-        Shader.PropertyToID("_Bottom Lock");
+        Shader.PropertyToID("_Bottom");
 
+    private readonly int PositionID =
+        Shader.PropertyToID("_Position");
+    private readonly int StrengthID =
+    Shader.PropertyToID("_Strength");
+    private readonly int BendPowerID =
+Shader.PropertyToID("_BendPower");
     private SpriteRenderer spriteRenderer;
     private MaterialPropertyBlock propertyBlock;
 
@@ -75,10 +81,6 @@ public class SpriteAtlasUVNormalizer : MonoBehaviour
             uvMax = Vector2.Max(uvMax, uvs[i]);
         }
 
-        Vector2 uvSize = uvMax - uvMin;
-
-        uvSize.x = Mathf.Max(uvSize.x, 0.000001f);
-        uvSize.y = Mathf.Max(uvSize.y, 0.000001f);
 
 
         // -----------------------------
@@ -89,7 +91,6 @@ public class SpriteAtlasUVNormalizer : MonoBehaviour
             sprite.pivot.y / sprite.rect.height;
 
         pivotY01 = Mathf.Clamp01(pivotY01);
-
 
         // -----------------------------
         // 3. 设置 Shader 参数
@@ -102,8 +103,8 @@ public class SpriteAtlasUVNormalizer : MonoBehaviour
             new Vector4(
                 uvMin.x,
                 uvMin.y,
-                uvSize.x,
-                uvSize.y
+                uvMax.x,
+                uvMax.y
             )
         );
 
@@ -111,9 +112,46 @@ public class SpriteAtlasUVNormalizer : MonoBehaviour
             BottomLockID,
             pivotY01
         );
-
+        propertyBlock.SetVector(
+            PositionID,
+            transform.position
+        );
         spriteRenderer.SetPropertyBlock(propertyBlock);
 
         lastSprite = sprite;
+    }
+
+    public void UpdateWindForce(WindType type) 
+    {
+        float strength = 0;
+        float bendPower = 1;
+        if(type == WindType.静止)
+        {
+            strength = 0;
+        }else if(type == WindType.微动)
+        {
+            bendPower = 2.5f;
+            strength = 0.2f;
+        }else if(type == WindType.正常)
+        {
+            strength = 0.5f;
+            bendPower = 2f;
+        }else if(type == WindType.剧烈)
+        {
+            strength = 0.8f;
+            bendPower = 1.5f;
+        }
+
+        spriteRenderer.GetPropertyBlock(propertyBlock);
+        propertyBlock.SetFloat(
+            BendPowerID,
+            bendPower
+        );
+        propertyBlock.SetFloat(
+            StrengthID,
+            strength
+        );
+        spriteRenderer.SetPropertyBlock(propertyBlock);
+
     }
 }

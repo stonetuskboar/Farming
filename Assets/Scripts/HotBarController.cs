@@ -82,7 +82,7 @@ public class HotBarController : MonoBehaviour
         }
         for(int i = 0; i < ButtonList.Count; i++)
         {
-            if (ButtonList[i].index == NowSelectIndex)
+            if (ButtonList[i].index == NowSelectIndex && ButtonList[i].gameObject.activeInHierarchy == true)
             {
                 ButtonList[i].ChangeStateToIdle();
             }

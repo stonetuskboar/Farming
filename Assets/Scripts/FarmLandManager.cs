@@ -39,6 +39,7 @@ public class FarmLandManager : MonoBehaviour
                 crop.cropData = data;
             }
             crop.SetFarmLand(this);
+            crop.SetByGrowthProgress();
             crops.Add(crop);
             for (int i = 0; i < crop.TileCells.Count; i++)
             {

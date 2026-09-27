@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2018288969
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e00e93e42a862243a5f4b22c0be77c4, type: 2}
+  - {fileID: 2100000, guid: 9e7950dbfc41ff040bda4575bff64b8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,9 +158,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2020351313
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -880877478, guid: 169a60065a6ca15468969d73a2858821, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28f799e78e9b5fd498109c0afb432ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,10 +190,12 @@ MonoBehaviour:
     growthStages: []
     size: {x: 1, y: 1}
     DropedItemId: 0
+    DropedAmount: 0
   cropSr: {fileID: 394116460287358324}
   shadowSr: {fileID: 1617207065096840535}
   TileCells: []
   growthProgress: 0
+  shaderController: {fileID: 4756723036224099704}
 --- !u!114 &4756723036224099704
 MonoBehaviour:
   m_ObjectHideFlags: 0
