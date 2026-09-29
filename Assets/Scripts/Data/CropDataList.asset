@@ -297,7 +297,7 @@ MonoBehaviour:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1069891779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
       shadow: {fileID: 0}
-      "\u98CE\u529B": 2
+      "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: -1
     DropedAmount: 0

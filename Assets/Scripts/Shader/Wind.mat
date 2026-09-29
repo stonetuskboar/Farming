@@ -54,11 +54,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BendPower: 1.06
-    - _Bottom: 0
-    - _Strength: 1.03
+    - _BendPower: 2
+    - _Bottom: 0.13
+    - _Strength: 0.5
     m_Colors:
-    - _Bottom: {r: 0.5542288, g: 0.11606509, b: 0, a: 0}
+    - _Bottom: {r: 0.058441095, g: 0.3, b: 0, a: 0}
     - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _Scale: {r: 20, g: 20, b: 0, a: 0}
     - _Speed: {r: 1, g: 0.2, b: 0, a: 0}

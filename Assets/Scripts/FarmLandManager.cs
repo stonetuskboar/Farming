@@ -38,6 +38,10 @@ public class FarmLandManager : MonoBehaviour
             {
                 crop.cropData = data;
             }
+            else
+            {
+                crop.cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(crop.cropData.id);
+            }
             crop.SetFarmLand(this);
             crop.SetByGrowthProgress();
             crops.Add(crop);
