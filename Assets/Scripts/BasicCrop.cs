@@ -11,7 +11,8 @@ public class BasicCrop : MonoBehaviour
     public List<Vector3Int> TileCells = new();
     public int growthProgress;
     private FarmLandManager farmLandManager;
-    public CropShaderController shaderController;
+    public CropShaderController cropShaderController;
+    public CropShaderController shadowShaderController;
     public void Init(FarmLandManager farmLandManager, CropData data, Vector3Int tilePositions)
     {
         Init(farmLandManager, data, new List<Vector3Int> { tilePositions });
@@ -34,7 +35,6 @@ public class BasicCrop : MonoBehaviour
     public void SetByGrowthProgress()
     {
         GrowthStage currentStage = null;
-
         foreach (GrowthStage stage in cropData.growthStages)
         {
             // 找到当前进度下，已经达到的最高阶段
@@ -47,8 +47,9 @@ public class BasicCrop : MonoBehaviour
             }
         }
         cropSr.sprite = currentStage.GrowthSprite;
-        shaderController.UpdateWindForce(currentStage.风力);
-        if(currentStage.shadow != null)
+        cropShaderController.UpdateWindForce(currentStage.风力);
+        shadowShaderController.UpdateWindForce(currentStage.风力);
+        if (currentStage.shadow != null)
         {
             shadowSr.enabled = true;
             shadowSr.sprite = currentStage.shadow;

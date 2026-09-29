@@ -28,8 +28,11 @@ public static class RuntimeSceneSaver
                 list.Clear();
                 foreach(BasicCrop crop in manager.crops)
                 {
-                    SceneCrop cropdata = new(crop);
-                    list.Add(cropdata);
+                    if(crop.cropData.id <= 43 && crop.cropData.id >= 31)
+                    {
+                        SceneCrop cropdata = new(crop);
+                        list.Add(cropdata);
+                    }
                 }
             }
         }

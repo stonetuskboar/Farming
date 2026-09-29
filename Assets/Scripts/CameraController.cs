@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
         if (h != 0f || v != 0f)
         {
             Vector3 dir = new Vector3(h, v, 0f).normalized;
-            transform.position += dir * moveSpeed * Time.unscaledDeltaTime;
+            transform.position += dir * cam.orthographicSize * moveSpeed * Time.unscaledDeltaTime;
         }
 
         float scroll = Input.mouseScrollDelta.y;

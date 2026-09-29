@@ -25,13 +25,13 @@ public class HotBarController : MonoBehaviour
         {
             ItemList.Add(new BasicTreeSeed(i, i));
         }
-        for (int i = 31; i <= 39; i++)
+        for (int i = 31; i <= 41; i++)
         {
-            ItemList.Add(new BasicSeed(i, i));
+            ItemList.Add(new BasicWeedSeed(i, i));
         }
-        for (int i = 40; i <= 41; i++)
+        for (int i = 42; i <= 43; i++)
         {
-            ItemList.Add(new BasicTreeSeed(i, i));
+            ItemList.Add(new BasicWeedTreeSeed(i, i));
         }
         for (int i = 0; i < ItemList.Count; i++)
         {

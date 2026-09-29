@@ -50,6 +50,7 @@ public class BasicColorTweenObject : BasicTweenObject
         SetColor(hoverColor);
     }
 
+
     public virtual void HoverTween(float time = 0.2f)
     {
         DoColorTween(hoverColor, time);
@@ -58,6 +59,7 @@ public class BasicColorTweenObject : BasicTweenObject
     {
         DoColorTween(normalColor, time);
     }
+
     public void SetColor(Color color)
     {
         ColorId++;

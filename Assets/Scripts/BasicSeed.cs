@@ -41,10 +41,10 @@ public class BasicSeed : UsableItem
         {
             return false;
         }
-        //else if (farm.GetFarmTileData(cell).soilState == SoilState.Dirt)
-        //{
-        //    return false;
-        //}
+        else if (farm.GetFarmTileData(cell).soilState != SoilState.Tilled && farm.GetFarmTileData(cell).soilState != SoilState.Watered)
+        {
+            return false;
+        }
         else if (farm.GetFarmTileData(cell).cropObject != null)
         {
             return false;
@@ -55,10 +55,7 @@ public class BasicSeed : UsableItem
     public override void Use(List<Vector3Int> cells)
     {
         FarmLandManager farm = GameManager.FarmLandManager;
-        foreach (Vector3Int cell in cells)
-        {
-            farm.Plant(cell, data);
-        }
+        farm.Plant(cells, data);
     }
 
 }

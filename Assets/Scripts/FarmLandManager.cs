@@ -91,7 +91,8 @@ public class FarmLandManager : MonoBehaviour
                     FarmTileData data = GetFarmTileData(pos);
                     if (data.soilState == SoilState.Grass && data.cropObject == null)
                     {
-                        CropData cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 40));
+                        CropData cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 41));
+
                         Plant(pos, cropData);
                     }
                 }

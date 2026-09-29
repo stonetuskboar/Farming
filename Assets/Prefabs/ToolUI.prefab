@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 96}
+  m_SizeDelta: {x: 76, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4500235731777823705
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2070981264, guid: 7b922d146eb769849a12a5257926e32e, type: 3}
+  m_Sprite: {fileID: -91360255, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 99, y: 99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1607750822285020654
 CanvasRenderer:
@@ -136,14 +136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2901961, g: 0.18431373, b: 0.20784314, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b073f1f9be657c438b65d8cb419c0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalColor: {r: 0.2901961, g: 0.18431373, b: 0.20784314, a: 1}
-  hoverColor: {r: 0.72156864, g: 0.43529412, b: 0.3137255, a: 1}
-  image: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  image: {fileID: 3125654747501517895}
 --- !u!114 &2250893826307632486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,4 +190,5 @@ MonoBehaviour:
   HoverSize: {x: 1.1, y: 1.1}
   image: {fileID: 8585487149871155012}
   ToolIcon: {fileID: 1030552606931234134}
-  HoverPositionDelta: {x: 0, y: 36}
+  DefaultSprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
+  SelectedSprite: {fileID: 240737238, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}

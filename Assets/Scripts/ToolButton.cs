@@ -11,12 +11,11 @@ public class ToolButton : ImagePressableButton
     private HotBarController ToolController;
     [NonSerialized]
     public int index;
-    private Vector2 OgPosition;
-    public Vector2 HoverPositionDelta;
+    public Sprite DefaultSprite;
+    public Sprite SelectedSprite;
     protected override void Awake()
     {
         base.Awake();
-        OgPosition = rectTransform.anchoredPosition;
         PointerClicked += OnClick;
     }
 
@@ -35,38 +34,53 @@ public class ToolButton : ImagePressableButton
     }
     public override void ChangeStateToIdle()
     {
+        image.sprite = DefaultSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToIdle();
-        DoAnchoredPositionTween(OgPosition, normalTime, type: EaseType.M3Spring);
     }
     public override void ChangeStateToIdleImmediately()
     {
+        image.sprite = DefaultSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToIdleImmediately();
-        SetAnchoredPosition(OgPosition);
     }
     public override void ChangeStateToHover()
     {
+        image.sprite = DefaultSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToHover();
-        DoAnchoredPositionTween(OgPosition + HoverPositionDelta /3, hoverTime, type: EaseType.M3Spring);
     }
     public override void ChangeStateToSelected()
     {
+        image.sprite = SelectedSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToSelected();
-        DoAnchoredPositionTween(OgPosition + HoverPositionDelta, hoverTime, type: EaseType.M3Spring);
     }
     public override void ChangeStateToSelectedImmediately()
     {
+        image.sprite = SelectedSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToSelectedImmediately();
-        SetAnchoredPosition(OgPosition + HoverPositionDelta);
     }
+    
     public override void ChangeStateToDisable()
     {
+        image.sprite = DefaultSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToDisable();
-        DoAnchoredPositionTween(OgPosition, normalTime, type: EaseType.M3Spring);
     }
 
     public override void ChangeStateToDisableImmediately()
     {
+        image.sprite = DefaultSprite;
+        image.image.SetNativeSize();
+        ResetOgSize();
         base.ChangeStateToDisableImmediately();
-        SetAnchoredPosition(OgPosition);
     }
 }

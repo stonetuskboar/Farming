@@ -87,11 +87,10 @@ Shader.PropertyToID("_BendPower");
         // 2. Pivot -> 0~1 高度
         // -----------------------------
 
-        Vector2 pivot01 =
-            sprite.pivot / sprite.rect.height;
+        float pivot01 =
+            sprite.pivot.y / sprite.rect.height;
 
-        pivot01.x = Mathf.Clamp01(pivot01.x);
-        pivot01.y = Mathf.Clamp01(pivot01.y);
+        pivot01 = Mathf.Clamp01(pivot01);
         // -----------------------------
         // 3. 设置 Shader 参数
         // -----------------------------
@@ -108,7 +107,7 @@ Shader.PropertyToID("_BendPower");
             )
         );
 
-        propertyBlock.SetVector(
+        propertyBlock.SetFloat(
             BottomLockID,
             pivot01
         );

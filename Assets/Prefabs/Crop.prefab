@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1703537266029208507}
   - component: {fileID: 1617207065096840535}
+  - component: {fileID: 7921401923911052520}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9e7950dbfc41ff040bda4575bff64b8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &7921401923911052520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208283095470246795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596e6885044e05c4294629814597545b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4034049279874623144
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +173,7 @@ SpriteRenderer:
   m_SortingLayerID: 2020351313
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28f799e78e9b5fd498109c0afb432ece, type: 3}
+  m_Sprite: {fileID: -1862381504, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,7 +208,8 @@ MonoBehaviour:
   shadowSr: {fileID: 1617207065096840535}
   TileCells: []
   growthProgress: 0
-  shaderController: {fileID: 4756723036224099704}
+  cropShaderController: {fileID: 4756723036224099704}
+  shadowShaderController: {fileID: 7921401923911052520}
 --- !u!114 &4756723036224099704
 MonoBehaviour:
   m_ObjectHideFlags: 0

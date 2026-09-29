@@ -33,6 +33,10 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         base.Awake();
         OgSize = rectTransform.sizeDelta;
     }
+    public void ResetOgSize()
+    {
+        OgSize = rectTransform.sizeDelta;
+    }
 
     public State GetState()
     {
