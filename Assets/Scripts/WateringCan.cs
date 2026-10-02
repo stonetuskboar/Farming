@@ -43,6 +43,7 @@ public class WateringCan : UsableItem
             farm.Water(cell);
         }
         GameManager.ConsumeEnergy(2);
+        GameManager.PlayWater.Post(Camera.main.gameObject);
     }
 
 }

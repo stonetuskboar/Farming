@@ -23,9 +23,14 @@ public class GameManager : MonoBehaviour
     public Season season = Season.Spring;
     public int Round = 1;
 
+    [Header("Wwise")]
+    public AK.Wwise.Event PlayWater;
+    public AK.Wwise.Event PlaySpringAmb;
+
     public void Start()
     {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
+        PlaySpringAmb.Post(Camera.main.gameObject);
     }
 
     public void ConsumeEnergy(float amount)
