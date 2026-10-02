@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2689642121",
+    "Type": "Event",
+    "GUID": "{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}",
+    "Language": "SFX",
+    "Hash": "{B02C1C4F-31DD-317C-F8EF-B10488114ABE}",
+    "ObjectPath": "Play_Plant",
+    "ShortName": "Play_Plant",
+    "Path": "Event/Play_Plant.bnk",
+    "Events": [
+     {
+      "Id": "2689642121",
+      "Name": "Play_Plant",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Plant",
+      "GUID": "{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{87A89A58-D9D5-01D0-4518-6EEC21EAB85B}"
+ }
+}

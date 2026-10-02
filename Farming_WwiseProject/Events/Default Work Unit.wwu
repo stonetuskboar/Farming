@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{75AA8191-3FC4-4784-9CF5-671469473CFF}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{75AA8191-3FC4-4784-9CF5-671469473CFF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{75AA8191-3FC4-4784-9CF5-671469473CFF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="GamePlay" ID="{5B0CB6EC-374E-4DAD-A301-D3E3164761ED}" ShortID="577252405">
+					<ChildrenList>
+						<Event Name="Play_Till" ID="{99F0B505-7F23-4DEA-8F67-3C9AB117E673}"/>
+						<Event Name="Play_Water" ID="{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}">
+							<ChildrenList>
+								<Action Name="" ID="{075D240B-729C-4676-92CA-20D73EA0B925}" ShortID="254728722">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Water" ID="{3BD7E01C-C6BE-426B-82CE-8E813CB586DA}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Plant" ID="{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}"/>
+						<Event Name="Play_Harvest" ID="{72BB9596-5AB6-437E-9572-5FA05236FBA3}"/>
+						<Event Name="Play_ChopTree" ID="{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}"/>
+						<Event Name="Play_ItemPickup" ID="{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">
+					<ChildrenList>
+						<Event Name="Play_UI_Click" ID="{90AE4641-5DFB-463A-9C74-469C07BF9BFF}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
+					<ChildrenList>
+						<Event Name="Play_NextTurn" ID="{5717E684-92E4-451E-969A-C501FBC15513}"/>
+						<Event Name="Play_Spring_Amb" ID="{A045A6DF-D6DF-4B74-8FDC-A8290772C839}">
+							<ChildrenList>
+								<Action Name="" ID="{0B46A048-1C9B-4CCB-8012-E72A09602F76}" ShortID="286704298">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Spring_Amb" ID="{426487A7-EBF9-4001-BB2D-C34912835740}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

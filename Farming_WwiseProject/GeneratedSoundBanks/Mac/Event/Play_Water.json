@@ -1,0 +1,72 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "441572235",
+    "Type": "Event",
+    "GUID": "{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}",
+    "Language": "SFX",
+    "Hash": "{74662F72-B0AE-06AD-3BA8-118ED3D047D4}",
+    "ObjectPath": "Play_Water",
+    "ShortName": "Play_Water",
+    "Path": "Event/Play_Water.bnk",
+    "Media": [
+     {
+      "Id": "271742606",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Water1.wav",
+      "Path": "Media/271742606.wem",
+      "CachePath": "0E/{0E200650-078C-B707-4F5A-E661939A96A7}.wem"
+     },
+     {
+      "Id": "544534100",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Water3.wav",
+      "Path": "Media/544534100.wem",
+      "CachePath": "0F/{0F2123DE-551A-94D8-52D7-CB3CD9065DCE}.wem"
+     },
+     {
+      "Id": "797671981",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Water2.wav",
+      "Path": "Media/797671981.wem",
+      "CachePath": "94/{94715CF9-7365-E8D7-6B95-FAB18F43B3C5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "441572235",
+      "Name": "Play_Water",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Water",
+      "GUID": "{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6250113",
+      "DurationMax": "0.812517",
+      "MediaRefs": [
+       {
+        "Id": "271742606"
+       },
+       {
+        "Id": "544534100"
+       },
+       {
+        "Id": "797671981"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1BD21F2A-033F-5EE1-8DD2-C2FAD8BAA32F}"
+ }
+}

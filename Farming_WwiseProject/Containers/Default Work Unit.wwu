@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{65462F39-7161-4745-9D02-467407A94D9E}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{65462F39-7161-4745-9D02-467407A94D9E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{65462F39-7161-4745-9D02-467407A94D9E}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Gameplay" ID="{01E397F6-1F6C-4BD0-9F86-F1BC8D334900}" ShortID="704052014">
+					<ChildrenList>
+						<RandomSequenceContainer Name="Water" ID="{3BD7E01C-C6BE-426B-82CE-8E813CB586DA}" ShortID="123740689">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Water1" ID="{1F7AE403-1640-450C-8E05-5B3EDBFDD3F1}" ShortID="752861106">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Water1" ID="{E601B953-3032-4881-8E98-35E7F72D3741}">
+											<Language>SFX</Language>
+											<AudioFile>Water1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="271742606"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Water1" ID="{E601B953-3032-4881-8E98-35E7F72D3741}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Water2" ID="{23132DEE-0137-4E49-9F02-772B4868F306}" ShortID="290686384">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Water2" ID="{5CE0978F-E847-41E5-B528-D7B1C21DFB0F}">
+											<Language>SFX</Language>
+											<AudioFile>Water2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="797671981"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Water2" ID="{5CE0978F-E847-41E5-B528-D7B1C21DFB0F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Water3" ID="{D2247ED7-E2B2-40E3-BAB6-E377EB22BB94}" ShortID="956708863">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Water3" ID="{ED9CC446-DD14-4BA2-BFFE-B459BCFB4FC4}">
+											<Language>SFX</Language>
+											<AudioFile>Water3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="544534100"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Water3" ID="{ED9CC446-DD14-4BA2-BFFE-B459BCFB4FC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{BBB400F9-D0E6-4144-B216-E8C3CF78FBBD}" ShortID="557264735"/>
+				<Folder Name="System" ID="{7032D809-B2CF-4928-BC45-7E5B9C58ABCC}" ShortID="311593912">
+					<ChildrenList>
+						<RandomSequenceContainer Name="Brids" ID="{F5C3499B-859D-43C3-A47C-CC6F2C4AF0C2}" ShortID="1025549781">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+						</RandomSequenceContainer>
+						<Sound Name="Spring_Amb" ID="{426487A7-EBF9-4001-BB2D-C34912835740}" ShortID="600712786">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Spring_Amb" ID="{38EB9021-35FF-449F-86FA-32F1569B76B0}">
+									<Language>SFX</Language>
+									<AudioFile>Spring_Amb.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="947754743"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Spring_Amb" ID="{38EB9021-35FF-449F-86FA-32F1569B76B0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>

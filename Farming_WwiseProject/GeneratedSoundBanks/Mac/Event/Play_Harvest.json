@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "659688389",
+    "Type": "Event",
+    "GUID": "{72BB9596-5AB6-437E-9572-5FA05236FBA3}",
+    "Language": "SFX",
+    "Hash": "{80BACD6D-3A2C-9C71-8E3C-3C7E01321AA1}",
+    "ObjectPath": "Play_Harvest",
+    "ShortName": "Play_Harvest",
+    "Path": "Event/Play_Harvest.bnk",
+    "Events": [
+     {
+      "Id": "659688389",
+      "Name": "Play_Harvest",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Harvest",
+      "GUID": "{72BB9596-5AB6-437E-9572-5FA05236FBA3}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A4B40815-5736-EB6F-3FAF-A4D4C2398CB7}"
+ }
+}

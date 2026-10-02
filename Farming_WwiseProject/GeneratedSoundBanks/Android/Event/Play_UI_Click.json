@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1749424733",
+    "Type": "Event",
+    "GUID": "{90AE4641-5DFB-463A-9C74-469C07BF9BFF}",
+    "Language": "SFX",
+    "Hash": "{2F233612-8CCA-37F6-3219-13941E08A780}",
+    "ObjectPath": "Play_UI_Click",
+    "ShortName": "Play_UI_Click",
+    "Path": "Event/Play_UI_Click.bnk",
+    "Events": [
+     {
+      "Id": "1749424733",
+      "Name": "Play_UI_Click",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_UI_Click",
+      "GUID": "{90AE4641-5DFB-463A-9C74-469C07BF9BFF}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{BCD0C545-2593-4F68-CF70-D58FA1D09035}"
+ }
+}

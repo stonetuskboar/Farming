@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1102211584",
+    "Type": "Event",
+    "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
+    "Language": "SFX",
+    "Hash": "{BF61CC33-EF2D-59E3-8A47-DAB4DDBC61B6}",
+    "ObjectPath": "Play_NextTurn",
+    "ShortName": "Play_NextTurn",
+    "Path": "Event/Play_NextTurn.bnk",
+    "Events": [
+     {
+      "Id": "1102211584",
+      "Name": "Play_NextTurn",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_NextTurn",
+      "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{98A609E9-AE0E-3DD7-39E6-80097E1D0646}"
+ }
+}

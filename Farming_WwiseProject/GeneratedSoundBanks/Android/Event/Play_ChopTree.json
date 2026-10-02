@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3715757634",
+    "Type": "Event",
+    "GUID": "{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}",
+    "Language": "SFX",
+    "Hash": "{2A7D276B-4983-94D1-A010-30016E37BCA8}",
+    "ObjectPath": "Play_ChopTree",
+    "ShortName": "Play_ChopTree",
+    "Path": "Event/Play_ChopTree.bnk",
+    "Events": [
+     {
+      "Id": "3715757634",
+      "Name": "Play_ChopTree",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_ChopTree",
+      "GUID": "{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{3D0DFBA5-98ED-A2EC-D037-474C4772D2B6}"
+ }
+}
