@@ -1,0 +1,43 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "Farming_WwiseProject",
+   "GUID": "{71897F2E-EE6D-413F-90D9-91617DF8E8FB}",
+   "Generator": "2025.1.7.9143"
+  },
+  "CacheRoot": "../.cache",
+  "Platforms": [
+   {
+    "Name": "Android",
+    "GUID": "{CC28AB07-A095-48B4-89C9-06B32A0730E0}",
+    "BasePlatform": "Android",
+    "BasePlatformGUID": "{A2D401DE-B8B6-4FEB-8142-137C34D507CA}",
+    "Path": "Android"
+   },
+   {
+    "Name": "Mac",
+    "GUID": "{A2E63F51-5D83-45AB-B5D9-5AC97E2F6160}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{EC4DDDE4-D5B9-4DF7-8D0C-AB2693A625B1}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{3A7EB87F-D264-44CC-AAFE-332EC04110DB}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{528CFDAB-FBB6-C0F8-DA93-A724DB94D51F}"
+ }
+}

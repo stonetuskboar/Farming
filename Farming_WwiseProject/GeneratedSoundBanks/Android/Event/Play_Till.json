@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3374032463",
+    "Type": "Event",
+    "GUID": "{99F0B505-7F23-4DEA-8F67-3C9AB117E673}",
+    "Language": "SFX",
+    "Hash": "{172903B0-6B7F-9C1A-049B-E9E3A105924B}",
+    "ObjectPath": "Play_Till",
+    "ShortName": "Play_Till",
+    "Path": "Event/Play_Till.bnk",
+    "Events": [
+     {
+      "Id": "3374032463",
+      "Name": "Play_Till",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Till",
+      "GUID": "{99F0B505-7F23-4DEA-8F67-3C9AB117E673}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{41B934E7-E28C-FFFD-A33B-45FFF9B33B9E}"
+ }
+}

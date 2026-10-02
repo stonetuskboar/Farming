@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3715757634	Play_ChopTree			\Default Work Unit\GamePlay\Play_ChopTree	
+

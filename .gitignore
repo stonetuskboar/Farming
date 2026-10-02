@@ -50,3 +50,13 @@ sysinfo.txt
 # Temporary files
 *.tmp
 *.temp
+
+# Wwise generated caches and local integration files
+Farming_WwiseProject/.cache/
+Farming_WwiseProject/.validationcache/
+Farming_WwiseProject/*.validationcache
+Farming_WwiseProject/*.wsettings
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset.meta
+WwiseUnityIntegration_*_Src.zip
+logRunSetup.txt

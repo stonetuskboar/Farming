@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1102211584",
+    "Type": "Event",
+    "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
+    "Language": "SFX",
+    "Hash": "{BF61CC33-EF2D-59E3-8A47-DAB4DDBC61B6}",
+    "ObjectPath": "Play_NextTurn",
+    "ShortName": "Play_NextTurn",
+    "Path": "Event/Play_NextTurn.bnk",
+    "Events": [
+     {
+      "Id": "1102211584",
+      "Name": "Play_NextTurn",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_NextTurn",
+      "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B9E6780A-2B2A-2592-48F5-485F1A9BEF20}"
+ }
+}

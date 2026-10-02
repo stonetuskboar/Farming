@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4241593335",
+    "Type": "Event",
+    "GUID": "{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}",
+    "Language": "SFX",
+    "Hash": "{8CBC4E5C-31FB-8929-8905-5DB67B181256}",
+    "ObjectPath": "Play_ItemPickup",
+    "ShortName": "Play_ItemPickup",
+    "Path": "Event/Play_ItemPickup.bnk",
+    "Events": [
+     {
+      "Id": "4241593335",
+      "Name": "Play_ItemPickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_ItemPickup",
+      "GUID": "{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1286BD5E-DBD3-000E-E991-AEFBC641B9FE}"
+ }
+}

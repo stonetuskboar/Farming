@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "378356484",
+    "Type": "Event",
+    "GUID": "{A045A6DF-D6DF-4B74-8FDC-A8290772C839}",
+    "Language": "SFX",
+    "Hash": "{4F3E6AB5-3BF4-7BA5-05E5-FDCA929FBEFF}",
+    "ObjectPath": "Play_Spring_Amb",
+    "ShortName": "Play_Spring_Amb",
+    "Path": "Event/Play_Spring_Amb.bnk",
+    "Media": [
+     {
+      "Id": "947754743",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Spring_Amb.wav",
+      "Path": "Media/947754743.wem",
+      "CachePath": "4F/{4F9E2662-4882-3F94-0BCD-2858E612F0ED}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "378356484",
+      "Name": "Play_Spring_Amb",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_Spring_Amb",
+      "GUID": "{A045A6DF-D6DF-4B74-8FDC-A8290772C839}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "947754743"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{95B24E42-C0C4-C63E-AB2E-9BF8D8D1307F}"
+ }
+}
