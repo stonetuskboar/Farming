@@ -131,7 +131,7 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         if (state != State.disable)
         {
             OnPointerClicked();
-            AudioManager.instance.playSfxSound(ClickedSoundName);
+            GameDataManager.Instance.UIClick.Post(Camera.main.gameObject);
         }
     }
     public virtual void OnPointerEnter(PointerEventData eventData)

@@ -23,14 +23,11 @@ public class GameManager : MonoBehaviour
     public Season season = Season.Spring;
     public int Round = 1;
 
-    [Header("Wwise")]
-    public AK.Wwise.Event PlayWater;
-    public AK.Wwise.Event PlaySpringAmb;
 
     public void Start()
     {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
-        PlaySpringAmb.Post(Camera.main.gameObject);
+        GameDataManager.PlaySpringAmb.Post(Camera.main.gameObject);
     }
 
     public void ConsumeEnergy(float amount)
@@ -42,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void ReadyForNextTurn()
     {
+        GameDataManager.Instance.NextTurn.Post(Camera.main.gameObject);
         circleTransition.StartClose(1.2f , NextTurn);
     }
     public void NextTurn()
@@ -50,6 +48,11 @@ public class GameManager : MonoBehaviour
         circleTransition.StartOpen(0.8f);
         NowEnergy = MaxEnergy;
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
+    }
+    //这个是临时写的
+    public void UIClick()
+    {
+        GameDataManager.Instance.UIClick.Post(Camera.main.gameObject);
     }
     public void DoDelay(float time, Action callBack = null)
     {

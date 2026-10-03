@@ -52,6 +52,7 @@ public class Sickle : UsableItem
         {
             farm.Harvest(crop);
         }
+        GameDataManager.Instance.PlayHarvest.Post(Camera.main.gameObject);
         GameManager.ConsumeEnergy(4);
     }
 }

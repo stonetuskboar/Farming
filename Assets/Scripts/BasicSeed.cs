@@ -54,6 +54,7 @@ public class BasicSeed : UsableItem
 
     public override void Use(List<Vector3Int> cells)
     {
+        GameDataManager.Instance.Plant.Post(Camera.main.gameObject);
         FarmLandManager farm = GameManager.FarmLandManager;
         farm.Plant(cells, data);
     }

@@ -62,6 +62,7 @@ public class Axe : UsableItem
                 farm.Plant(crop.TileCells, stumpData);
             }
         }
+        GameDataManager.Instance.PlayChopTree.Post(Camera.main.gameObject);
         GameManager.ConsumeEnergy(6);
     }
 }

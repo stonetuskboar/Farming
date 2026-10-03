@@ -14,9 +14,4 @@ public class BasicTreeSeed : BasicSeed
         size = data.size;
     }
 
-    public override void Use(List<Vector3Int> cells)
-    {
-        FarmLandManager farm = GameManager.FarmLandManager;
-        farm.Plant(cells, data);
-    }
 }

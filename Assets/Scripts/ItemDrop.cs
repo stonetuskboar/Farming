@@ -246,6 +246,7 @@ public class ItemDrop : MonoBehaviour
         IsPickAble = false;
         isPickedUp = false;
 
+        GameDataManager.Instance.ItemPickUp.Post(Camera.main.gameObject);
         if (returnToPool != null)
         {
             returnToPool.Invoke(this);

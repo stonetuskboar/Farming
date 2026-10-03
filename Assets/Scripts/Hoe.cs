@@ -46,6 +46,7 @@ public class Hoe : UsableItem
         {
             farm.Till(cell);
         }
+        GameDataManager.Instance.Till.Post(Camera.main.gameObject);
         GameManager.ConsumeEnergy(4);
     }
 
