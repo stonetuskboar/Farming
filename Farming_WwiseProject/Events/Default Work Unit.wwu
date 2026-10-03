@@ -5,7 +5,17 @@
 			<ChildrenList>
 				<Folder Name="GamePlay" ID="{5B0CB6EC-374E-4DAD-A301-D3E3164761ED}" ShortID="577252405">
 					<ChildrenList>
-						<Event Name="Play_Till" ID="{99F0B505-7F23-4DEA-8F67-3C9AB117E673}"/>
+						<Event Name="Play_Till" ID="{99F0B505-7F23-4DEA-8F67-3C9AB117E673}">
+							<ChildrenList>
+								<Action Name="" ID="{D647AAE7-2F81-4ED1-A584-F758E8A67C47}" ShortID="59107224">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Till" ID="{2300CBAE-A64A-4908-B077-2FB291179347}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Play_Water" ID="{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}">
 							<ChildrenList>
 								<Action Name="" ID="{075D240B-729C-4676-92CA-20D73EA0B925}" ShortID="254728722">
@@ -17,10 +27,50 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Plant" ID="{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}"/>
-						<Event Name="Play_Harvest" ID="{72BB9596-5AB6-437E-9572-5FA05236FBA3}"/>
-						<Event Name="Play_ChopTree" ID="{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}"/>
-						<Event Name="Play_ItemPickup" ID="{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}"/>
+						<Event Name="Play_Plant" ID="{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}">
+							<ChildrenList>
+								<Action Name="" ID="{F883160B-8A20-4FCB-8E7C-A2D01F64FA48}" ShortID="1059949921">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Plant" ID="{2DDD87C3-A3BC-4D59-B79F-981EA14FDA5A}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Harvest" ID="{72BB9596-5AB6-437E-9572-5FA05236FBA3}">
+							<ChildrenList>
+								<Action Name="" ID="{F4A27155-4DCC-4A83-A08C-700203D5D9DD}" ShortID="533614371">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Harvest" ID="{25616100-BD91-4590-A74E-734F315D5296}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ChopTree" ID="{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}">
+							<ChildrenList>
+								<Action Name="" ID="{2C27251D-5F1E-41B8-BEBB-EF81926914A3}" ShortID="511292846">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ChopTree" ID="{C02E2741-8524-41EE-905E-4A7DD540DF6B}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ItemPickup" ID="{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}">
+							<ChildrenList>
+								<Action Name="" ID="{1E846554-FC7E-486E-A8C8-3BCC85606A0C}" ShortID="665860927">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ItemPickup" ID="{21A09791-4043-4C75-BD53-FAF5FE661D17}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">

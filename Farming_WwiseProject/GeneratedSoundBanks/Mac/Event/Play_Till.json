@@ -10,24 +10,63 @@
     "Type": "Event",
     "GUID": "{99F0B505-7F23-4DEA-8F67-3C9AB117E673}",
     "Language": "SFX",
-    "Hash": "{172903B0-6B7F-9C1A-049B-E9E3A105924B}",
+    "Hash": "{37F88EB4-DE6F-A022-3602-44FA75399605}",
     "ObjectPath": "Play_Till",
     "ShortName": "Play_Till",
     "Path": "Event/Play_Till.bnk",
+    "Media": [
+     {
+      "Id": "200544924",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Till2.wav",
+      "Path": "Media/200544924.wem",
+      "CachePath": "65/{6552CCCE-C188-7AB8-B5E8-AD0E4DD3CB67}.wem"
+     },
+     {
+      "Id": "762455402",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Till3.wav",
+      "Path": "Media/762455402.wem",
+      "CachePath": "88/{88A9AC3B-2493-AFE2-2D9D-273022B44368}.wem"
+     },
+     {
+      "Id": "1064133968",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Till1.wav",
+      "Path": "Media/1064133968.wem",
+      "CachePath": "BB/{BB7BBBE7-9C56-8487-62D2-4A9A075FAA05}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "3374032463",
       "Name": "Play_Till",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Till",
       "GUID": "{99F0B505-7F23-4DEA-8F67-3C9AB117E673}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.31251702",
+      "DurationMax": "0.39594105",
+      "MediaRefs": [
+       {
+        "Id": "200544924"
+       },
+       {
+        "Id": "762455402"
+       },
+       {
+        "Id": "1064133968"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{C1B31126-CE62-9DDC-15C8-833E71647706}"
+  "FileHash": "{603E3FCC-F2A9-4112-FB0D-85784194607F}"
  }
 }

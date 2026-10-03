@@ -10,24 +10,63 @@
     "Type": "Event",
     "GUID": "{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}",
     "Language": "SFX",
-    "Hash": "{8CBC4E5C-31FB-8929-8905-5DB67B181256}",
+    "Hash": "{F39FEA64-34AE-32BB-6275-B958F0F9AD72}",
     "ObjectPath": "Play_ItemPickup",
     "ShortName": "Play_ItemPickup",
     "Path": "Event/Play_ItemPickup.bnk",
+    "Media": [
+     {
+      "Id": "93525042",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ItemPickup3.wav",
+      "Path": "Media/93525042.wem",
+      "CachePath": "25/{2504C5E3-5E44-0A4C-2D33-C54D39C5C0D5}.wem"
+     },
+     {
+      "Id": "922933471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ItemPickup1.wav",
+      "Path": "Media/922933471.wem",
+      "CachePath": "94/{9474E965-18BD-8788-BC74-F46E856F3DCB}.wem"
+     },
+     {
+      "Id": "1063767011",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ItemPickup2.wav",
+      "Path": "Media/1063767011.wem",
+      "CachePath": "7B/{7BF1EF9F-95A0-C705-F6C4-807200FF22F8}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "4241593335",
       "Name": "Play_ItemPickup",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_ItemPickup",
       "GUID": "{179DF78D-8C10-4BD9-B3C7-367ABF366C9B}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.5967868",
+      "DurationMax": "0.7069354",
+      "MediaRefs": [
+       {
+        "Id": "93525042"
+       },
+       {
+        "Id": "922933471"
+       },
+       {
+        "Id": "1063767011"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{A359F4B5-64D8-D782-5572-B279019DD716}"
+  "FileHash": "{4F8C4640-1589-95C0-3A48-CA34D1F6E98B}"
  }
 }

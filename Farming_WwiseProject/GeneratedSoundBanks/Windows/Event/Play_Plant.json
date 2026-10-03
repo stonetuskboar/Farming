@@ -10,24 +10,75 @@
     "Type": "Event",
     "GUID": "{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}",
     "Language": "SFX",
-    "Hash": "{B02C1C4F-31DD-317C-F8EF-B10488114ABE}",
+    "Hash": "{8FC171E0-7D00-6A31-D9A9-68C1AB8E4A23}",
     "ObjectPath": "Play_Plant",
     "ShortName": "Play_Plant",
     "Path": "Event/Play_Plant.bnk",
+    "Media": [
+     {
+      "Id": "38675015",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Plant2.wav",
+      "Path": "Media/38675015.wem",
+      "CachePath": "7D/{7D59D9AA-1B3B-B40C-0F0C-289425EA1CF5}.wem"
+     },
+     {
+      "Id": "177826064",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Plant1.wav",
+      "Path": "Media/177826064.wem",
+      "CachePath": "B4/{B45D5320-C593-FF1A-9A56-DD4586C580BC}.wem"
+     },
+     {
+      "Id": "491367690",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Plant3.wav",
+      "Path": "Media/491367690.wem",
+      "CachePath": "FE/{FEA3D6B9-A124-EE35-C0DF-D40224F1E03C}.wem"
+     },
+     {
+      "Id": "516470565",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Plant4.wav",
+      "Path": "Media/516470565.wem",
+      "CachePath": "7A/{7AED13CD-B930-2960-D76F-6F0535F5236B}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "2689642121",
       "Name": "Play_Plant",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Plant",
       "GUID": "{F00D3AD3-2EFE-4E14-9F6A-D35E4DAD0C2B}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.18750566",
+      "DurationMax": "0.26564625",
+      "MediaRefs": [
+       {
+        "Id": "38675015"
+       },
+       {
+        "Id": "177826064"
+       },
+       {
+        "Id": "491367690"
+       },
+       {
+        "Id": "516470565"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{B500BF66-6AC2-A4F1-8783-1D5C44F72FA7}"
+  "FileHash": "{C4A5AE0E-4354-103E-2A99-DC74D19C60AB}"
  }
 }

@@ -10,24 +10,99 @@
     "Type": "Event",
     "GUID": "{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}",
     "Language": "SFX",
-    "Hash": "{2A7D276B-4983-94D1-A010-30016E37BCA8}",
+    "Hash": "{0F4794A5-C767-AA1A-6AD0-C17FDD51118D}",
     "ObjectPath": "Play_ChopTree",
     "ShortName": "Play_ChopTree",
     "Path": "Event/Play_ChopTree.bnk",
+    "Media": [
+     {
+      "Id": "194068758",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Till2.wav",
+      "Path": "Media/194068758.wem",
+      "CachePath": "26/{26E96757-7554-06F4-55E7-85E259097204}.wem"
+     },
+     {
+      "Id": "196616814",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Head2.wav",
+      "Path": "Media/196616814.wem",
+      "CachePath": "7B/{7B14EF29-DB89-C9CA-1BD8-ACB708029811}.wem"
+     },
+     {
+      "Id": "323636969",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Till3.wav",
+      "Path": "Media/323636969.wem",
+      "CachePath": "FE/{FEFA5520-9636-04C7-CD13-A9DFDB45BB43}.wem"
+     },
+     {
+      "Id": "395197475",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Till1.wav",
+      "Path": "Media/395197475.wem",
+      "CachePath": "80/{806E0E0F-B3A8-778D-0E17-0049DEE3F994}.wem"
+     },
+     {
+      "Id": "1015269252",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Head1.wav",
+      "Path": "Media/1015269252.wem",
+      "CachePath": "18/{18C8F84B-5776-079D-FD6E-260E9B6B4034}.wem"
+     },
+     {
+      "Id": "1049939906",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "TreeChop_Head3.wav",
+      "Path": "Media/1049939906.wem",
+      "CachePath": "BA/{BA27D485-3490-A693-DE0B-9FA7D22362F5}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "3715757634",
       "Name": "Play_ChopTree",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_ChopTree",
       "GUID": "{ECF8753D-9AB8-4F5F-BC4C-A6DE25E8C6D0}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1",
+      "DurationMax": "1.0039229",
+      "MediaRefs": [
+       {
+        "Id": "194068758"
+       },
+       {
+        "Id": "196616814"
+       },
+       {
+        "Id": "323636969"
+       },
+       {
+        "Id": "395197475"
+       },
+       {
+        "Id": "1015269252"
+       },
+       {
+        "Id": "1049939906"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{50033277-8581-C2FE-8785-C94EAD1D2FA3}"
+  "FileHash": "{FB1CFA52-E6F3-CDA8-5004-95CDE4A16F22}"
  }
 }

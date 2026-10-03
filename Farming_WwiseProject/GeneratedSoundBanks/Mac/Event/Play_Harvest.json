@@ -10,24 +10,63 @@
     "Type": "Event",
     "GUID": "{72BB9596-5AB6-437E-9572-5FA05236FBA3}",
     "Language": "SFX",
-    "Hash": "{80BACD6D-3A2C-9C71-8E3C-3C7E01321AA1}",
+    "Hash": "{450F9C93-3F70-B8C6-04A4-07824359BF7E}",
     "ObjectPath": "Play_Harvest",
     "ShortName": "Play_Harvest",
     "Path": "Event/Play_Harvest.bnk",
+    "Media": [
+     {
+      "Id": "240796469",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Harvest1.wav",
+      "Path": "Media/240796469.wem",
+      "CachePath": "45/{45658E4E-8523-E4E4-1DD6-E10A06C40AA6}.wem"
+     },
+     {
+      "Id": "603863640",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Harvest2.wav",
+      "Path": "Media/603863640.wem",
+      "CachePath": "D7/{D700359C-4857-520C-CC4D-40DFC0E257DE}.wem"
+     },
+     {
+      "Id": "1033953611",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Harvest3.wav",
+      "Path": "Media/1033953611.wem",
+      "CachePath": "E0/{E0935CC9-F475-D06C-2258-3E676D6E9AD9}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "659688389",
       "Name": "Play_Harvest",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Harvest",
       "GUID": "{72BB9596-5AB6-437E-9572-5FA05236FBA3}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.46875283",
+      "DurationMax": "0.6250113",
+      "MediaRefs": [
+       {
+        "Id": "240796469"
+       },
+       {
+        "Id": "603863640"
+       },
+       {
+        "Id": "1033953611"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{A4B40815-5736-EB6F-3FAF-A4D4C2398CB7}"
+  "FileHash": "{287ABF6B-C9C1-17BB-0551-68A1C873CBE4}"
  }
 }
