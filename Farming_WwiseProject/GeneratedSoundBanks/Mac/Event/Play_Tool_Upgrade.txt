@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1463437813	Play_Tool_Upgrade			\Default Work Unit\UI\Play_Tool_Upgrade	
+

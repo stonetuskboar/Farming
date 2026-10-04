@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1463437813",
+    "Type": "Event",
+    "GUID": "{7A6D1DDD-F4D8-4D13-AA52-7ABEB9AF58AD}",
+    "Language": "SFX",
+    "Hash": "{D07CC4E3-78AB-37F2-17F5-E252ED317A39}",
+    "ObjectPath": "Play_Tool_Upgrade",
+    "ShortName": "Play_Tool_Upgrade",
+    "Path": "Event/Play_Tool_Upgrade.bnk",
+    "Media": [
+     {
+      "Id": "238734941",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Tool_Upgrade.wav",
+      "Path": "Media/238734941.wem",
+      "CachePath": "20/{2069940B-47C9-F6B6-8FF2-9ADAC7708552}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1463437813",
+      "Name": "Play_Tool_Upgrade",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Tool_Upgrade",
+      "GUID": "{7A6D1DDD-F4D8-4D13-AA52-7ABEB9AF58AD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.98902494",
+      "DurationMax": "0.98902494",
+      "MediaRefs": [
+       {
+        "Id": "238734941"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{815F3EC6-A054-8029-DF42-4EAFA0748A04}"
+ }
+}

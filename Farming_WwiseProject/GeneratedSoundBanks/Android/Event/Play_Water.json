@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}",
     "Language": "SFX",
-    "Hash": "{74662F72-B0AE-06AD-3BA8-118ED3D047D4}",
+    "Hash": "{3C4E907C-42FC-4875-0200-5D2CBBC13F9F}",
     "ObjectPath": "Play_Water",
     "ShortName": "Play_Water",
     "Path": "Event/Play_Water.bnk",
@@ -22,7 +22,16 @@
       "Location": "Loose",
       "ShortName": "Water1.wav",
       "Path": "Media/271742606.wem",
-      "CachePath": "0E/{0E200650-078C-B707-4F5A-E661939A96A7}.wem"
+      "CachePath": "2A/{2A3DA108-FCB0-17BF-F4DF-88DCE040618C}.wem"
+     },
+     {
+      "Id": "486084864",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Water4.wav",
+      "Path": "Media/486084864.wem",
+      "CachePath": "6F/{6F3BA06D-B386-B242-EDF1-FC359BB5C300}.wem"
      },
      {
       "Id": "544534100",
@@ -31,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Water3.wav",
       "Path": "Media/544534100.wem",
-      "CachePath": "0F/{0F2123DE-551A-94D8-52D7-CB3CD9065DCE}.wem"
+      "CachePath": "A8/{A88EB8A8-27AF-369C-0ED7-49181AD1096C}.wem"
      },
      {
       "Id": "797671981",
@@ -40,7 +49,7 @@
       "Location": "Loose",
       "ShortName": "Water2.wav",
       "Path": "Media/797671981.wem",
-      "CachePath": "94/{94715CF9-7365-E8D7-6B95-FAB18F43B3C5}.wem"
+      "CachePath": "0C/{0CC26BA2-10A8-F243-A62D-E3AAFED788A2}.wem"
      }
     ],
     "Events": [
@@ -50,11 +59,14 @@
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Water",
       "GUID": "{2D0FFE3F-97CA-49E5-B8DF-2A02E49353B0}",
       "DurationType": "OneShot",
-      "DurationMin": "0.6250113",
-      "DurationMax": "0.812517",
+      "DurationMin": "0.5899321",
+      "DurationMax": "0.8608318",
       "MediaRefs": [
        {
         "Id": "271742606"
+       },
+       {
+        "Id": "486084864"
        },
        {
         "Id": "544534100"
@@ -67,6 +79,6 @@
     ]
    }
   ],
-  "FileHash": "{33ADFF8A-8CEC-2DF0-DCB6-524EADE89791}"
+  "FileHash": "{2E5E8D71-9D02-BA92-F55D-89A55BE4DFE9}"
  }
 }

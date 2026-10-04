@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3114247042",
+    "Type": "Event",
+    "GUID": "{02CFF3CE-B6E5-4085-91F2-D5A8FB2F8CBD}",
+    "Language": "SFX",
+    "Hash": "{DABEF0AB-7C18-0CB2-4D45-8299F7E75C12}",
+    "ObjectPath": "Play_Item_Select",
+    "ShortName": "Play_Item_Select",
+    "Path": "Event/Play_Item_Select.bnk",
+    "Media": [
+     {
+      "Id": "978853419",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Item_Select.wav",
+      "Path": "Media/978853419.wem",
+      "CachePath": "38/{388A6CEE-8505-733E-7A35-4E7A942D6E36}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3114247042",
+      "Name": "Play_Item_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Item_Select",
+      "GUID": "{02CFF3CE-B6E5-4085-91F2-D5A8FB2F8CBD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.17022675",
+      "DurationMax": "0.17022675",
+      "MediaRefs": [
+       {
+        "Id": "978853419"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D66D7D30-31E2-08C7-8723-F275BDBA88A5}"
+ }
+}

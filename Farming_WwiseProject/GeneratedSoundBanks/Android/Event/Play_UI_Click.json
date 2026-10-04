@@ -10,24 +10,39 @@
     "Type": "Event",
     "GUID": "{90AE4641-5DFB-463A-9C74-469C07BF9BFF}",
     "Language": "SFX",
-    "Hash": "{2F233612-8CCA-37F6-3219-13941E08A780}",
+    "Hash": "{A6C24221-12AE-F8C4-03BC-812FC280D12D}",
     "ObjectPath": "Play_UI_Click",
     "ShortName": "Play_UI_Click",
     "Path": "Event/Play_UI_Click.bnk",
+    "Media": [
+     {
+      "Id": "643953898",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Click.wav",
+      "Path": "Media/643953898.wem",
+      "CachePath": "61/{61A786EE-11CE-E8AF-6EFF-1210870CF7B8}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "1749424733",
       "Name": "Play_UI_Click",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_UI_Click",
       "GUID": "{90AE4641-5DFB-463A-9C74-469C07BF9BFF}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.27342403",
+      "DurationMax": "0.27342403",
+      "MediaRefs": [
+       {
+        "Id": "643953898"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{BCD0C545-2593-4F68-CF70-D58FA1D09035}"
+  "FileHash": "{4565A456-A41D-4324-6E23-6C65E81067A7}"
  }
 }

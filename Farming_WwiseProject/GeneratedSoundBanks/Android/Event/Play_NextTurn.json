@@ -10,24 +10,39 @@
     "Type": "Event",
     "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
     "Language": "SFX",
-    "Hash": "{BF61CC33-EF2D-59E3-8A47-DAB4DDBC61B6}",
+    "Hash": "{210744DE-3CBC-2E02-872F-88D3120A713F}",
     "ObjectPath": "Play_NextTurn",
     "ShortName": "Play_NextTurn",
     "Path": "Event/Play_NextTurn.bnk",
+    "Media": [
+     {
+      "Id": "756451691",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_NextTurn.wav",
+      "Path": "Media/756451691.wem",
+      "CachePath": "C8/{C8DB9C13-3C7B-B57F-EFD3-23A477672D34}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "1102211584",
       "Name": "Play_NextTurn",
-      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_NextTurn",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_NextTurn",
       "GUID": "{5717E684-92E4-451E-969A-C501FBC15513}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.7599319",
+      "DurationMax": "1.7599319",
+      "MediaRefs": [
+       {
+        "Id": "756451691"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{DF98C4EA-22A4-E94E-3A8F-C02E58E486F9}"
+  "FileHash": "{9AD49CE9-FA2D-F378-F6EB-5A53EBD2F54D}"
  }
 }

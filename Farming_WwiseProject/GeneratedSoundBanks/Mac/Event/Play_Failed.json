@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "916053581",
+    "Type": "Event",
+    "GUID": "{DD9593D1-95A1-4EAE-BF2B-DD810166CBD4}",
+    "Language": "SFX",
+    "Hash": "{BFD6F13C-EC76-4F7F-A245-6C21C76D2A25}",
+    "ObjectPath": "Play_Failed",
+    "ShortName": "Play_Failed",
+    "Path": "Event/Play_Failed.bnk",
+    "Media": [
+     {
+      "Id": "577307737",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Failed.wav",
+      "Path": "Media/577307737.wem",
+      "CachePath": "9E/{9E97ACD2-3119-BA0C-BA0D-000F72023421}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "916053581",
+      "Name": "Play_Failed",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Failed",
+      "GUID": "{DD9593D1-95A1-4EAE-BF2B-DD810166CBD4}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2755102",
+      "DurationMax": "0.2755102",
+      "MediaRefs": [
+       {
+        "Id": "577307737"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{19DB7784-589D-40EB-44DE-226AD6BDBF17}"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2365491143",
+    "Type": "Event",
+    "GUID": "{C9002818-D033-4994-836C-D1912342C216}",
+    "Language": "SFX",
+    "Hash": "{E8C9EA43-BFE6-5341-4236-A967ADCE0549}",
+    "ObjectPath": "Play_Shop_Close",
+    "ShortName": "Play_Shop_Close",
+    "Path": "Event/Play_Shop_Close.bnk",
+    "Media": [
+     {
+      "Id": "963684009",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Shop_Close.wav",
+      "Path": "Media/963684009.wem",
+      "CachePath": "9A/{9A3A66BE-FCD4-E2AF-391A-710250CDC479}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2365491143",
+      "Name": "Play_Shop_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Shop_Close",
+      "GUID": "{C9002818-D033-4994-836C-D1912342C216}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.74630386",
+      "DurationMax": "0.74630386",
+      "MediaRefs": [
+       {
+        "Id": "963684009"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B4A2713D-55DA-2214-D186-58F25FF36F1F}"
+ }
+}

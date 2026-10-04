@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1908185824",
+    "Type": "Event",
+    "GUID": "{0CFA33BA-76F5-4AFA-B62B-2ADFEE61B929}",
+    "Language": "SFX",
+    "Hash": "{27EA035C-E4E1-A79C-804E-338875F969D7}",
+    "ObjectPath": "Play_NextPage",
+    "ShortName": "Play_NextPage",
+    "Path": "Event/Play_NextPage.bnk",
+    "Media": [
+     {
+      "Id": "292476714",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Nextpage.wav",
+      "Path": "Media/292476714.wem",
+      "CachePath": "F9/{F9197C01-E7D9-823C-0155-A07AAF87789C}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1908185824",
+      "Name": "Play_NextPage",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_NextPage",
+      "GUID": "{0CFA33BA-76F5-4AFA-B62B-2ADFEE61B929}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.64585036",
+      "DurationMax": "0.64585036",
+      "MediaRefs": [
+       {
+        "Id": "292476714"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F481FDD3-67BE-3A7E-E553-4A2E15154327}"
+ }
+}

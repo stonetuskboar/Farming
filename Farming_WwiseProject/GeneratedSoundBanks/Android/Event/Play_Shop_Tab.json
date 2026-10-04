@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "143281810",
+    "Type": "Event",
+    "GUID": "{DC6780E3-1C2E-4D55-80CF-A00D0215EB93}",
+    "Language": "SFX",
+    "Hash": "{3AE7BC5C-37BF-47DE-F967-E072F2C52BF1}",
+    "ObjectPath": "Play_Shop_Tab",
+    "ShortName": "Play_Shop_Tab",
+    "Path": "Event/Play_Shop_Tab.bnk",
+    "Media": [
+     {
+      "Id": "347755417",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Shop_Tab.wav",
+      "Path": "Media/347755417.wem",
+      "CachePath": "94/{94976CB9-1823-EFE2-9ECF-E704B217C189}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "143281810",
+      "Name": "Play_Shop_Tab",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Shop_Tab",
+      "GUID": "{DC6780E3-1C2E-4D55-80CF-A00D0215EB93}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.75",
+      "DurationMax": "0.75",
+      "MediaRefs": [
+       {
+        "Id": "347755417"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5B819FC4-9ADC-7FCF-54A9-65FC7C1BDA2A}"
+ }
+}

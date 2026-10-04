@@ -75,12 +75,109 @@
 				</Folder>
 				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">
 					<ChildrenList>
-						<Event Name="Play_UI_Click" ID="{90AE4641-5DFB-463A-9C74-469C07BF9BFF}"/>
+						<Event Name="Play_UI_Click" ID="{90AE4641-5DFB-463A-9C74-469C07BF9BFF}">
+							<ChildrenList>
+								<Action Name="" ID="{D1C2D225-D17E-441B-8DA9-A15FBB118A6B}" ShortID="52660283">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Click" ID="{905702E5-AA23-43E2-B64A-F63CDEA44493}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Buy_Success" ID="{E50F10A7-D1C1-4C10-B3C2-613741BBFBBF}">
+							<ChildrenList>
+								<Action Name="" ID="{006B2337-0B36-4C64-BEFD-EB782E5D7D44}" ShortID="320844707">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Buy_Success" ID="{4E6F0129-ACC2-4716-8DB5-83DF9561FA53}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Failed" ID="{DD9593D1-95A1-4EAE-BF2B-DD810166CBD4}">
+							<ChildrenList>
+								<Action Name="" ID="{B122568C-7D28-470E-A9F4-A6FA26FB312F}" ShortID="387419159">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Failed" ID="{5E8D5A82-C1FE-43D8-9EDE-868BA142416D}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_NextPage" ID="{0CFA33BA-76F5-4AFA-B62B-2ADFEE61B929}">
+							<ChildrenList>
+								<Action Name="" ID="{83369B7D-7750-435B-9AD4-D30EBB1AB263}" ShortID="94980964">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Nextpage" ID="{8738EA01-52A3-4F64-A8E8-A85C69B206F7}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Shop_Tab" ID="{DC6780E3-1C2E-4D55-80CF-A00D0215EB93}">
+							<ChildrenList>
+								<Action Name="" ID="{B872ED3A-5255-40B9-9BC0-C2EC932FC399}" ShortID="140583631">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Shop_Tab" ID="{8145D9E9-2462-4C1D-BB9B-007E46A60B70}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Shop_Close" ID="{C9002818-D033-4994-836C-D1912342C216}">
+							<ChildrenList>
+								<Action Name="" ID="{F8224DCA-3EF2-4746-A35C-1B35DE1EE4DB}" ShortID="292470913">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Shop_Close" ID="{2AB4B05B-66F0-40B2-975C-F07F65C01A30}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Item_Select" ID="{02CFF3CE-B6E5-4085-91F2-D5A8FB2F8CBD}">
+							<ChildrenList>
+								<Action Name="" ID="{43080E0D-C670-475A-95B8-A28D639EE168}" ShortID="530320396">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Item_Select" ID="{5CFF09EB-246B-4240-ADD3-F1C0B7B64CF4}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_NextTurn" ID="{5717E684-92E4-451E-969A-C501FBC15513}">
+							<ChildrenList>
+								<Action Name="" ID="{3DB8C904-3E14-4825-8AE4-1EC4AF8D70CA}" ShortID="1051639173">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_NextTurn" ID="{0BAB69CB-7EA4-49F5-8F66-1E4CBC232854}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Tool_Upgrade" ID="{7A6D1DDD-F4D8-4D13-AA52-7ABEB9AF58AD}">
+							<ChildrenList>
+								<Action Name="" ID="{8D3F8679-9DF3-4FE8-A2CA-2201D5639256}" ShortID="810757616">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Tool_Upgrade" ID="{B607FAC7-C00F-41E4-93C3-B5E0DF8E4C16}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
 					<ChildrenList>
-						<Event Name="Play_NextTurn" ID="{5717E684-92E4-451E-969A-C501FBC15513}"/>
 						<Event Name="Play_Spring_Amb" ID="{A045A6DF-D6DF-4B74-8FDC-A8290772C839}">
 							<ChildrenList>
 								<Action Name="" ID="{0B46A048-1C9B-4CCB-8012-E72A09602F76}" ShortID="286704298">

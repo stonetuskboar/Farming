@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3114247042	Play_Item_Select			\Default Work Unit\UI\Play_Item_Select	
+
