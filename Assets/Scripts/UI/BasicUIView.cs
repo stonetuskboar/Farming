@@ -21,9 +21,9 @@ public class BasicUIView : BasicTweenObject
 
     protected virtual void Awake()
     {
-        if(transform is RectTransform)
+        if(transform is RectTransform rectTransform)
         {
-            rectTransform = (RectTransform)transform;
+            this.rectTransform = rectTransform;
         }
 
         if(canvasGroup == null)
@@ -71,6 +71,10 @@ public class BasicUIView : BasicTweenObject
     public void SetSize(Vector2 Size)
     {
         SizeTweenId++;
+        if (rectTransform == null)
+        {
+            rectTransform = (RectTransform)transform;
+        }
         SetRealSize(Size);
     }
     public Vector2 GetAnchoredPosition()
