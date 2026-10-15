@@ -67,6 +67,7 @@ public class BuySeedPage : MonoBehaviour
 
     public void IncreasePage()
     {
+
         if ((NowPage + 1) * SeedItemUIList.Count < SeedIdList.Count)
         {
             NowPage++;
@@ -184,7 +185,7 @@ public class BuySeedPage : MonoBehaviour
         }
         gameManager.hotbarController.AddItem(SelectedItemId, buyingSeedPanel.currentAmount);
         ItemData data = GameDataManager.Instance.itemDataList.GetItemDataById(SelectedItemId);
-        gameManager.Money -= buyingSeedPanel.GetValue();
+        gameManager.ChangeMoney(-buyingSeedPanel.GetValue());
         buyingSeedPanel.Set(data.Price, gameManager.Money / data.Price);
         buyingSeedPanel.SetAmount(buyingSeedPanel.currentAmount);
         GameDataManager.Instance.PlayAudio("BuySucess");

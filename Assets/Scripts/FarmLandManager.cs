@@ -81,8 +81,8 @@ public class FarmLandManager : MonoBehaviour
                 if (tileData.soilState == SoilState.Tilled)
                 {
                     tileData.soilState = SoilState.Dirt;
-                    fieldTilemap.ClearDataTile(position);
-                    grassTilemap.SetDataTile(position);
+                    tilledFieldTilemap.ClearDataTile(position);
+                    fieldTilemap.SetDataTile(position);
                 }
                 else if (tileData.soilState == SoilState.Dirt)
                 {

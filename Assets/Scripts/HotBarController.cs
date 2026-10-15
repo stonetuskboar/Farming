@@ -10,7 +10,7 @@ public class HotBarController : MonoBehaviour
     public List<UsableItem> ItemList = new List<UsableItem>();
     public List<ToolButton> ButtonList = new();
     public int NowPage = 0;
-
+    public TextTip Tip;
     public void Start()
     {
         AddItem(0, 1);
@@ -168,7 +168,7 @@ public class HotBarController : MonoBehaviour
     }
     public void DownPage()
     {
-        GameDataManager.Instance.PlayAudio("UI_Click");
+        GameDataManager.Instance.PlayAudio("NextPage");
         if ((NowPage + 1) * ButtonList.Count < ItemList.Count)
         {
             NowPage++;
@@ -177,10 +177,9 @@ public class HotBarController : MonoBehaviour
     }
     public void UpPage()
     {
-        GameDataManager.Instance.PlayAudio("UI_Click");
+        GameDataManager.Instance.PlayAudio("NextPage");
         if(NowPage >0)
         {
-            
             NowPage--;
             FreshButton();
         }

@@ -8,7 +8,8 @@ public class ShopPageController : BasicUIView
     public ItemSellPage itemSellPage;
     public BuySeedPage buySeedPage;
     public ShopPageButton nowSelectedButton;
-
+    public GameManager gameManager;
+    [SerializeField] private Sprite ShopCursor;
     protected override void Awake()
     {
         base.Awake();
@@ -45,6 +46,7 @@ public class ShopPageController : BasicUIView
     }
     public void Show() 
     {
+        gameManager.GridCursorController.ChangeCursorSprite(ShopCursor);
         IsShow = true;
         gameObject.SetActive(true);
         SetCanvasGroupAlpha(1f);
@@ -57,6 +59,7 @@ public class ShopPageController : BasicUIView
     }
     public void Hide()
     {
+        gameManager.GridCursorController.BackToNormalSprite();
         IsShow = false;
         DoLocalScaleTween(Vector3.one * 0.6f, 0.2f, type: EaseType.EaseInOutBack);
         SetCanvasGroupUnblock();

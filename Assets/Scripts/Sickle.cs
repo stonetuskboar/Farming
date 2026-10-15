@@ -48,11 +48,25 @@ public class Sickle : ToolItem
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
             cropsToHarvest.Add(crop);
         }
+        bool IsStone = false; //临时写的
         foreach (BasicCrop crop in cropsToHarvest)
         {
             farm.Harvest(crop);
+            //临时写的，硬编码
+            if(crop.cropData.id == 37 || crop.cropData.id == 38 || crop.cropData.id == 40)
+            {
+                IsStone = true;
+            }
         }
-        GameDataManager.Instance.PlayAudio("Harvest");
+        if(IsStone == true)
+        {
+            GameDataManager.Instance.PlayAudio("MineRock");
+        }
+        else
+        {
+            GameDataManager.Instance.PlayAudio("Harvest");
+        }
+
         GameManager.ConsumeEnergy(4);
     }
 }

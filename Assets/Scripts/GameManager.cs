@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static ak.wwise;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,13 +27,17 @@ public class GameManager : MonoBehaviour
     public Season season = Season.春;
     public int Month = 1;
 
+    public TextColorTweenObj MoneyText;
+
     public List<BasicItem> SellItemList = new List<BasicItem>();
 
     public void Start()
     {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         GameDataManager.Instance.PlayAudio("SpringAmb");
+        GameDataManager.Instance.PlayAudio("SpringMusic");
         TransitionText.SetAlpha(0f);
+        UpdateMoneyText();
     }
 
     public void ConsumeEnergy(float amount)
@@ -67,12 +73,26 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         callback?.Invoke();
     }
+    public void ChangeMoney(int value)
+    {
+        Money += value;
+        UpdateMoneyText();
 
+        MoneyText.SetLocalRotation(Quaternion.identity);
+        MoneyText.SetLocalScale(Vector3.one);
+        MoneyText.DoLocalRotationTween(Quaternion.Euler(30, -25, 0), 0.4f, type: EaseType.PunchDefault);
+        MoneyText.DoLocalScaleTween(Vector3.one * 1.3f, 0.6f, type: EaseType.ShakeDefault);
+        MoneyText.SetToHover();
+        MoneyText.NormalTween(0.4f);
+    }
+    public void UpdateMoneyText()
+    {
+        MoneyText.text.text = Money.ToString();
+    }
     public void AddItem(int id, int amount)
     {
-        int index = FindItemIndex(id);
-        BasicItem item;
-        if (index < 0)
+        BasicItem item = FindItem(id);
+        if (item == null)
         {
             item = new BasicItem();
             item.SetId(id);
@@ -82,9 +102,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            item = SellItemList[index];
+            item.Amount += amount;
         }
-        item.Amount += amount;
         if(ShopPageController.itemSellPage.gameObject.activeInHierarchy == true)
         {
             ShopPageController.itemSellPage.FreshButton();
@@ -92,15 +111,13 @@ public class GameManager : MonoBehaviour
     }
     public void DecreaseItem(int id, int amount)
     {
-        int index = FindItemIndex(id);
-        BasicItem item;
-        if (index >= 0)
+        BasicItem item = FindItem(id);
+        if (item != null)
         {
-            item = SellItemList[index];
             item.Amount -= amount;
             if(item.Amount <= 0)
             {
-                SellItemList.RemoveAt(index);
+                SellItemList.Remove(item);
             }
         }
         if (ShopPageController.itemSellPage.gameObject.activeInHierarchy == true)
@@ -108,16 +125,16 @@ public class GameManager : MonoBehaviour
             ShopPageController.itemSellPage.FreshButton();
         }
     }
-    public int FindItemIndex(int id)
+    public BasicItem FindItem(int id)
     {
         for (int i = 0; i < SellItemList.Count; i++)
         {
             if (SellItemList[i].Id == id)
             {
-                return i;
+                return SellItemList[i];
             }
         }
-        return -1;
+        return null;
     }
 
     public void TimePast()

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BasicSeed : UsableItem
 {
-    public CropData data;
+    public CropData cropData;
     public int seedId = 0;
     public BasicSeed(int id, int seedId)
     {
@@ -15,8 +15,8 @@ public class BasicSeed : UsableItem
     public override void Init(GameManager manager)
     {
         base.Init(manager);
-        data = GameManager.GameDataManager.cropDataList.GetCropDataById(seedId);
-        size = data.size;
+        cropData = GameManager.GameDataManager.cropDataList.GetCropDataById(seedId);
+        size = cropData.size;
     }
     public void BaseInit(GameManager manager)
     {
@@ -53,7 +53,7 @@ public class BasicSeed : UsableItem
         {
             return false;
         }
-        else if(data.IsContainSeason(GameManager.season) == false)
+        else if(cropData.IsContainSeason(GameManager.season) == false)
         {
             return false;
         }
@@ -64,7 +64,7 @@ public class BasicSeed : UsableItem
     {
         GameDataManager.Instance.PlayAudio("Plant");
         FarmLandManager farm = GameManager.FarmLandManager;
-        farm.Plant(cells, data);
-        GameManager.hotbarController.DecreaseItem(data.id,1);
+        farm.Plant(cells, cropData);
+        GameManager.hotbarController.DecreaseItem(cropData.id,1);
     }
 }

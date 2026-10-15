@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -78,8 +79,13 @@ public class GridCursorController : MonoBehaviour
     public void ChangeCursorSprite(Sprite sprite)
     {
         CursorImage.sprite = sprite;
-        ImageTween.SetLocalScale(Vector3.one);
-        ImageTween.DoLocalScaleTween(Vector3.one * 1.5f, 0.4f, type: EaseType.ShakeDefault);
+        SetPivot();
+        ImageTween.SetLocalScale(Vector3.one * 1.5f);
+        ImageTween.DoLocalScaleTween(Vector3.one, 0.4f, type:EaseType.EaseOutBack);
+    }
+    public void BackToNormalSprite()
+    {
+        ChangeCursorSprite(GetNowTool().itemData.Icon);
     }
     private void UpdateCursor()
     {
@@ -178,6 +184,20 @@ public class GridCursorController : MonoBehaviour
     private void OnClickUp(InputAction.CallbackContext context)
     {
         ImageTween.DoLocalRotationTween(new Vector3(0, 0, 0), 0.4f, type: EaseType.EaseOutBack);
+    }
+
+    public void SetPivot()
+    {
+        Sprite sprite = CursorImage.sprite;
+        RectTransform rt = CursorImage.rectTransform;
+
+        Vector2 spritePivot = sprite.pivot;
+        Vector2 spriteSize = sprite.rect.size;
+
+        rt.pivot = new Vector2(
+            spritePivot.x / spriteSize.x,
+            spritePivot.y / spriteSize.y
+        );
     }
 
 }

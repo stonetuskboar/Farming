@@ -50,6 +50,29 @@ public class BasicPopWindow : BasicUIView
     {
         return Show(transform.position, ShowTweenTime);
     }
+    public void DoDelayShow(float delayTime, Vector3 worldPosition, float ShowTweenTime = 0.2f)
+    {
+        StartCoroutine(DelayShow(delayTime, worldPosition, ShowTweenTime));
+    }
+    public void DoDelayShow(float delayTime, float ShowTweenTime = 0.2f)
+    {
+        StartCoroutine(DelayShow(delayTime, transform.position,ShowTweenTime));
+    }
+    public IEnumerator DelayShow(float delayTime, Vector3 worldPosition, float ShowTweenTime)
+    {
+        int id = showId;
+        float nowTime = 0;
+        nowTime += GetUnScaledTimeDelta();
+        while (id == showId && nowTime < delayTime)
+        {
+            yield return null;
+            nowTime += GetUnScaledTimeDelta();
+        }
+        if (id == showId)
+        {
+            Show(worldPosition, ShowTweenTime);
+        }
+    }
     public void ShowThenHide(float showTweenTime = 0.3f, float HideTime = 1.2f)
     {
         int id = Show( showTweenTime);
@@ -76,6 +99,7 @@ public class BasicPopWindow : BasicUIView
     public void Hide(float hideTime = 0.15f)
     {
         nowState = State.Hide;
+        showId++;
         SetCanvasGroupUnblock();
         DoLocalScaleTween(Vector3.one * 0.5f, hideTime, type: EaseType.EaseInOutBack);
         DoAlphaTween(0f, hideTime);

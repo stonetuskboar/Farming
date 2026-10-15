@@ -149,16 +149,16 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         if (state == State.idle)
         {
             ChangeStateToHover();
-            OnPointerEntered();
         }
+        OnPointerEntered();
     }
     public virtual void OnPointerExit(PointerEventData eventData)
     {
         if (state == State.hover)
         {
             ChangeStateToIdle();
-            OnPointerExited();
         }
+        OnPointerExited();
     }
 
 

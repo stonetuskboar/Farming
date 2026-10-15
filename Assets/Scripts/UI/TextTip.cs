@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 
 public class TextTip : BasicUIView
@@ -63,9 +64,33 @@ public class TextTip : BasicUIView
         DoLocalScaleTween(Vector3.one, ShowTweenTime, type: EaseType.EaseOutBack);
         return showId;
     }
+
     public int Show( string text = null, float ShowTweenTime = 0.2f)
     {
         return Show(transform.position, text, ShowTweenTime);
+    }
+    public void DoDelayShow(float delayTime, Vector3 worldPosition, string text, float ShowTweenTime = 0.2f)
+    {
+        StartCoroutine(DelayShow(delayTime, worldPosition, text, ShowTweenTime));
+    }
+    public void DoDelayShow(float delayTime, string text = null, float ShowTweenTime = 0.2f)
+    {
+        StartCoroutine(DelayShow(delayTime, transform.position, text, ShowTweenTime));
+    }
+    public IEnumerator DelayShow(float delayTime, Vector3 worldPosition, string text, float ShowTweenTime)
+    {
+        int id = showId;
+        float nowTime = 0;
+        nowTime += GetUnScaledTimeDelta();
+        while (id == showId && nowTime < delayTime)
+        {
+            yield return null;
+            nowTime += GetUnScaledTimeDelta();
+        }
+        if (id == showId)
+        {
+            Show(worldPosition, text, ShowTweenTime);
+        }
     }
     public void ShowThenHide(string text = null, float showTweenTime = 0.3f, float HideTime = 1.2f)
     {
@@ -93,6 +118,7 @@ public class TextTip : BasicUIView
     public void Hide(float hideTime = 0.15f)
     {
         nowState = State.Hide;
+        showId++;
         DoLocalScaleTween(Vector3.one * 0.5f, hideTime, type: EaseType.EaseInOutBack);
         DoAlphaTween(0f, hideTime);
     }

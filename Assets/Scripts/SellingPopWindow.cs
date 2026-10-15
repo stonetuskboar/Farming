@@ -125,8 +125,9 @@ public class SellingPopWindow : MonoBehaviour
 
     public void Sold()
     {
+        Page.gameManager.ChangeMoney(currentValue * Price);
         Page.gameManager.DecreaseItem(itemId, currentValue);
-
+        GameDataManager.Instance.PlayAudio("SellSucess");
         SellableItemUI ui = Page.FindUIById(itemId);
         if(ui != null)
         {

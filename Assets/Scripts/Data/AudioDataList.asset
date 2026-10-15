@@ -28,6 +28,11 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 408646cc1655f7744b40c734f3c67537, type: 2}
+  - Name: MineRock
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c5d670f6cc8f02541bd6a58eb5fabc93, type: 2}
   - Name: Plant
     audioEvent:
       idInternal: 0
@@ -48,6 +53,11 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 04fd25a6fdc1cd84fa67d263922936e7, type: 2}
+  - Name: SpringMusic
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e8c7fccb715f5e24398623e5a0f18da2, type: 2}
   - Name: BuySucess
     audioEvent:
       idInternal: 0
@@ -73,6 +83,16 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 187f414566ae9dc418b912b3ba61988e, type: 2}
+  - Name: SellSucess
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f181ec5c8770e714082d5434965f2dc8, type: 2}
+  - Name: ShopOpen
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: ecbe3ebf317bc484e9564f0790834d2b, type: 2}
   - Name: ShopClose
     audioEvent:
       idInternal: 0
