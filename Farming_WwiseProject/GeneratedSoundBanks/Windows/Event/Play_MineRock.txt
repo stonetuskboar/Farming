@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2885539260	Play_MineRock			\Default Work Unit\GamePlay\Play_MineRock	
+

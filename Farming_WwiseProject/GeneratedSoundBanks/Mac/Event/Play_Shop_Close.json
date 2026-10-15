@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C9002818-D033-4994-836C-D1912342C216}",
     "Language": "SFX",
-    "Hash": "{E8C9EA43-BFE6-5341-4236-A967ADCE0549}",
+    "Hash": "{0F0995F7-43FC-B443-DC7C-2326A765354F}",
     "ObjectPath": "Play_Shop_Close",
     "ShortName": "Play_Shop_Close",
     "Path": "Event/Play_Shop_Close.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "UI_Shop_Close.wav",
       "Path": "Media/963684009.wem",
-      "CachePath": "9A/{9A3A66BE-FCD4-E2AF-391A-710250CDC479}.wem"
+      "CachePath": "36/{366EBEC0-F69A-2ADE-D321-57A11DE3F787}.wem"
      }
     ],
     "Events": [
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Shop_Close",
       "GUID": "{C9002818-D033-4994-836C-D1912342C216}",
       "DurationType": "OneShot",
-      "DurationMin": "0.74630386",
-      "DurationMax": "0.74630386",
+      "DurationMin": "0.37501132",
+      "DurationMax": "0.37501132",
       "MediaRefs": [
        {
         "Id": "963684009"
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{851D67B6-3003-8147-EDD0-B1EF6ECF41E7}"
+  "FileHash": "{C87680F9-EFA5-7D90-6DE8-AF8646ADD35B}"
  }
 }

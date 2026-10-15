@@ -673,6 +673,174 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<BlendContainer Name="MineRock" ID="{0D964390-5287-40A5-A020-2AA040341A69}" ShortID="318396698">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="MineRock_Head" ID="{955136CC-317C-4BF2-B501-FECDD447864A}" ShortID="154576652">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MineRock_Head1" ID="{4573CEB1-B8A3-4D12-B292-64BE4A70D31E}" ShortID="653921708">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Head1" ID="{CDC6A532-08FF-41F8-B505-D272146B289E}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Head1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="836922303"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Head1" ID="{CDC6A532-08FF-41F8-B505-D272146B289E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MineRock_Head2" ID="{F2741504-0AC7-4680-A534-FEAAB2094F8C}" ShortID="317863422">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Head2" ID="{39AF443D-CF42-45FE-8C90-7C021BCFADB7}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Head2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="363359888"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Head2" ID="{39AF443D-CF42-45FE-8C90-7C021BCFADB7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MineRock_Head3" ID="{89905AD8-7C1B-46AD-8F1F-2D14A9DBDB33}" ShortID="597080548">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Head3" ID="{A42E3755-6267-45CF-A800-FAE182AD7A80}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Head3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1000504635"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Head3" ID="{A42E3755-6267-45CF-A800-FAE182AD7A80}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MineRock_Till" ID="{23F64DF7-A003-4E4A-B625-D18C397632A2}" ShortID="554316434">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MineRock_Till1" ID="{1C364F36-B51B-46A3-813A-B61632B2CC59}" ShortID="1034962019">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Till1" ID="{6B080DB0-7F1C-49B5-BB2E-ACC2907F669A}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Till1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="496607197"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Till1" ID="{6B080DB0-7F1C-49B5-BB2E-ACC2907F669A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MineRock_Till2" ID="{F071C8F3-B364-4134-AF9B-D38F49EDF05D}" ShortID="1006739165">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Till2" ID="{E836C80D-B231-4A2E-85C7-5D83A73C00D3}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Till2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1054802725"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Till2" ID="{E836C80D-B231-4A2E-85C7-5D83A73C00D3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MineRock_Till3" ID="{8DBA95B0-5BD9-48C2-B10D-B0AEEEB7D594}" ShortID="225025596">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MineRock_Till3" ID="{141743CB-D8D9-4185-9CF3-F5C40F70E34E}">
+													<Language>SFX</Language>
+													<AudioFile>MineRock_Till3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="989531650"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MineRock_Till3" ID="{141743CB-D8D9-4185-9CF3-F5C40F70E34E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</BlendContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{BBB400F9-D0E6-4144-B216-E8C3CF78FBBD}" ShortID="557264735">
@@ -789,7 +957,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="UI_NextTurn" ID="{4D149CF7-95F5-40DE-9A8A-E0214B3705A4}">
+								<AudioFileSource Name="UI_NextTurn" ID="{B401DD50-6F5D-4D4B-B532-6BB7BD384FFA}">
 									<Language>SFX</Language>
 									<AudioFile>UI_NextTurn.wav</AudioFile>
 									<MediaIDList>
@@ -798,29 +966,7 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_NextTurn" ID="{4D149CF7-95F5-40DE-9A8A-E0214B3705A4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="UI_Buy_Success" ID="{4E6F0129-ACC2-4716-8DB5-83DF9561FA53}" ShortID="591328489">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="UI_Success" ID="{768CD762-BB12-4AE1-9CD5-20B165D1BB64}">
-									<Language>SFX</Language>
-									<AudioFile>UI_Success.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="819670017"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="UI_Success" ID="{768CD762-BB12-4AE1-9CD5-20B165D1BB64}" Platform="Linked"/>
+								<ActiveSource Name="UI_NextTurn" ID="{B401DD50-6F5D-4D4B-B532-6BB7BD384FFA}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Tool_Upgrade" ID="{B607FAC7-C00F-41E4-93C3-B5E0DF8E4C16}" ShortID="694476930">
@@ -837,7 +983,7 @@
 									<PropertyList>
 										<Property Name="VolumeOffset" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -961,9 +1107,16 @@
 										<MediaID ID="963684009"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="UI_Shop_Close" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}">
+									<Language>SFX</Language>
+									<AudioFile>UI_Shop_Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="963684009"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Shop_Close" ID="{02D85579-B8DA-48D2-99BB-502AD11D8791}" Platform="Linked"/>
+								<ActiveSource Name="UI_Shop_Close" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Shop_Tab" ID="{8145D9E9-2462-4C1D-BB9B-007E46A60B70}" ShortID="529955235">
@@ -976,7 +1129,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="UI_Shop_Tab" ID="{0A9BE9A4-6583-484B-B55B-1A1E71457A99}">
+								<AudioFileSource Name="UI_Shop_Tab" ID="{76364298-8136-4596-A5C4-67D2F031D567}">
 									<Language>SFX</Language>
 									<AudioFile>UI_Shop_Tab.wav</AudioFile>
 									<MediaIDList>
@@ -985,7 +1138,121 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Shop_Tab" ID="{0A9BE9A4-6583-484B-B55B-1A1E71457A99}" Platform="Linked"/>
+								<ActiveSource Name="UI_Shop_Tab" ID="{76364298-8136-4596-A5C4-67D2F031D567}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="UI_Buy_Success" ID="{5D30FD81-F7BE-47F5-AC73-D0040B170EC0}" ShortID="1026077913">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{83133E1D-A5B1-4C50-A750-B49949B546F4}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Buy_Success1" ID="{3D800733-91CC-465E-8D5A-2D92EC247D16}" ShortID="235241300">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Buy_Success1" ID="{15D5C696-B4EE-422F-96E1-4F9E80D118E0}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Buy_Success1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="763097610"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Buy_Success1" ID="{15D5C696-B4EE-422F-96E1-4F9E80D118E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Buy_Success2" ID="{1151F0C5-72D0-4F76-8ACC-F894F6CD0053}" ShortID="105881677">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Buy_Success2" ID="{585C22D3-3B43-420F-8E0D-FE9D6DF2C131}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Buy_Success2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="93586238"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Buy_Success2" ID="{585C22D3-3B43-420F-8E0D-FE9D6DF2C131}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Buy_Success3" ID="{27860CC3-743B-4706-9BB5-8A2EC1FED4DD}" ShortID="899055837">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Buy_Success3" ID="{E24EE302-18BD-4D79-94C5-35D2F74CD543}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Buy_Success3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="398581521"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Buy_Success3" ID="{E24EE302-18BD-4D79-94C5-35D2F74CD543}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="UI_Shop_Open" ID="{4E15382C-E0D5-4CF6-8178-BD397053C88D}" ShortID="624257808">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Shop_Open" ID="{C0D4CAD6-3924-47F4-A0F1-90F6B63D804E}">
+									<Language>SFX</Language>
+									<AudioFile>UI_Shop_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="740019085"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Shop_Open" ID="{C0D4CAD6-3924-47F4-A0F1-90F6B63D804E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -1025,6 +1292,28 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Spring_Amb" ID="{38EB9021-35FF-449F-86FA-32F1569B76B0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}" ShortID="253331936">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}">
+									<Language>SFX</Language>
+									<AudioFile>Spring Music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="829113303"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -1,0 +1,72 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4018961658",
+    "Type": "Event",
+    "GUID": "{6D443F35-99F0-4477-8572-FC1D0D99F70A}",
+    "Language": "SFX",
+    "Hash": "{1613B53C-E8B9-1B3B-06C5-F09E0DF01802}",
+    "ObjectPath": "Play_Sell_Success",
+    "ShortName": "Play_Sell_Success",
+    "Path": "Event/Play_Sell_Success.bnk",
+    "Media": [
+     {
+      "Id": "102175372",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Sell_Success2.wav",
+      "Path": "Media/102175372.wem",
+      "CachePath": "E9/{E9A21988-5FEE-3119-F840-1D6B9AD571B1}.wem"
+     },
+     {
+      "Id": "327060917",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Sell_Success1.wav",
+      "Path": "Media/327060917.wem",
+      "CachePath": "3F/{3FD5E1DC-AB11-7A29-46F0-28182C30ED84}.wem"
+     },
+     {
+      "Id": "909477681",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Sell_Success3.wav",
+      "Path": "Media/909477681.wem",
+      "CachePath": "4D/{4D3DE07E-1878-2384-41B6-105D7268AA07}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4018961658",
+      "Name": "Play_Sell_Success",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Sell_Success",
+      "GUID": "{6D443F35-99F0-4477-8572-FC1D0D99F70A}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0495012",
+      "DurationMax": "1.1040136",
+      "MediaRefs": [
+       {
+        "Id": "102175372"
+       },
+       {
+        "Id": "327060917"
+       },
+       {
+        "Id": "909477681"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{597E294C-CC09-CE0A-7B63-DBC09222B0D4}"
+ }
+}

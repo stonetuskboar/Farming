@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{7A6D1DDD-F4D8-4D13-AA52-7ABEB9AF58AD}",
     "Language": "SFX",
-    "Hash": "{D07CC4E3-78AB-37F2-17F5-E252ED317A39}",
+    "Hash": "{16091B04-DCCC-2D03-44F1-9E4D15251D6C}",
     "ObjectPath": "Play_Tool_Upgrade",
     "ShortName": "Play_Tool_Upgrade",
     "Path": "Event/Play_Tool_Upgrade.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{B076E505-DC83-B227-4825-0A5C1AE4EDA8}"
+  "FileHash": "{C51CFA62-E15F-6DC7-4D79-5B267F291F07}"
  }
 }
