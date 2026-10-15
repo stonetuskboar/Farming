@@ -71,6 +71,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_MineRock" ID="{FF2A83C6-9F83-487F-88F9-19F311845DEE}"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">
@@ -91,7 +92,7 @@
 								<Action Name="" ID="{006B2337-0B36-4C64-BEFD-EB782E5D7D44}" ShortID="320844707">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="UI_Buy_Success" ID="{4E6F0129-ACC2-4716-8DB5-83DF9561FA53}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+											<ObjectRef Name="UI_Buy_Success" ID="{5D30FD81-F7BE-47F5-AC73-D0040B170EC0}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -174,6 +175,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Sell_Success" ID="{6D443F35-99F0-4477-8572-FC1D0D99F70A}">
+							<ChildrenList>
+								<Action Name="" ID="{9B1F890F-52F5-444A-A753-2151F29F0826}" ShortID="908253717">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Sell_Success" ID="{E13DD048-3C8B-4B3B-88AF-A5495FC11D0C}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Shop_Open" ID="{6FD55E7A-27F9-41F5-98FE-1AC16CBB7A07}">
+							<ChildrenList>
+								<Action Name="" ID="{C137E25E-BB6A-4450-BCC9-86EF74B94DC9}" ShortID="826145633">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Shop_Open" ID="{4E15382C-E0D5-4CF6-8178-BD397053C88D}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
@@ -184,6 +207,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Spring_Amb" ID="{426487A7-EBF9-4001-BB2D-C34912835740}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Spring_Music" ID="{A36960CF-8B0E-4D91-B75E-96B5975A548C}">
+							<ChildrenList>
+								<Action Name="" ID="{BB4241C0-1544-436B-8AA9-A9FA2E044B1A}" ShortID="336569635">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

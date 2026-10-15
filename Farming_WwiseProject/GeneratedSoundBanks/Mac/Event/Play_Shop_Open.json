@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "129330417",
+    "Type": "Event",
+    "GUID": "{6FD55E7A-27F9-41F5-98FE-1AC16CBB7A07}",
+    "Language": "SFX",
+    "Hash": "{0620E22C-D173-65E3-3F37-774B133CC946}",
+    "ObjectPath": "Play_Shop_Open",
+    "ShortName": "Play_Shop_Open",
+    "Path": "Event/Play_Shop_Open.bnk",
+    "Media": [
+     {
+      "Id": "740019085",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Shop_Open.wav",
+      "Path": "Media/740019085.wem",
+      "CachePath": "9E/{9E47C96C-F678-1619-7AB6-62490717BE12}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "129330417",
+      "Name": "Play_Shop_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Shop_Open",
+      "GUID": "{6FD55E7A-27F9-41F5-98FE-1AC16CBB7A07}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.37501132",
+      "DurationMax": "0.37501132",
+      "MediaRefs": [
+       {
+        "Id": "740019085"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B8E8915A-F106-CB18-7695-B8CEBC7D76F7}"
+ }
+}
