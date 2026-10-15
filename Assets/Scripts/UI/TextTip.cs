@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class BasicTip : BasicUIView
+public class TextTip : BasicUIView
 {
     public TextMeshProUGUI ReminderText;
     public State nowState;
@@ -26,6 +26,10 @@ public class BasicTip : BasicUIView
         {
             Hide(0f);
         }
+        else
+        {
+            Show(null,0f);
+        }
     }
     public override void GetRectMinMax(out Vector3 minCard, out Vector3 maxCard , bool Isoverlay = false)
     {
@@ -44,7 +48,7 @@ public class BasicTip : BasicUIView
         }
         transform.localScale = 1f * Vector3.one;
         transform.position = worldPosition;
-        LimitRectVisible(new RectOffset(0,0,120, 120));
+        LimitRectVisible(new RectOffset(20,20,20, 20));
 
         if(rectTransform.rect.height > LayoutElement.preferredWidth)
         {

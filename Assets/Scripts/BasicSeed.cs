@@ -37,7 +37,11 @@ public class BasicSeed : UsableItem
     public override bool CanUseThisCell(Vector3Int cell)
     {
         FarmLandManager farm = GameManager.FarmLandManager;
-        if (farm.CanFarmHere(cell) == false)
+        if (Amount <= 0)
+        {
+            return false;
+        }
+        else if (farm.CanFarmHere(cell) == false)
         {
             return false;
         }
@@ -49,14 +53,18 @@ public class BasicSeed : UsableItem
         {
             return false;
         }
+        else if(data.IsContainSeason(GameManager.season) == false)
+        {
+            return false;
+        }
         return true;
     }
 
     public override void Use(List<Vector3Int> cells)
     {
-        GameDataManager.Instance.Plant.Post(Camera.main.gameObject);
+        GameDataManager.Instance.PlayAudio("Plant");
         FarmLandManager farm = GameManager.FarmLandManager;
         farm.Plant(cells, data);
+        GameManager.hotbarController.DecreaseItem(data.id,1);
     }
-
 }

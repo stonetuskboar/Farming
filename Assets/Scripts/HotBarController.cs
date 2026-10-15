@@ -6,37 +6,29 @@ public class HotBarController : MonoBehaviour
 {
     public GameManager gameManager;
     public UsableItem NowTool;
-    private int NowSelectIndex = -1;
-    public List<BasicItem> ItemList = new List<BasicItem>();
+    private int NowSelectId = -1;
+    public List<UsableItem> ItemList = new List<UsableItem>();
     public List<ToolButton> ButtonList = new();
     public int NowPage = 0;
 
     public void Start()
     {
-        ItemList.Add(new Hoe());
-        ItemList.Add(new WateringCan());
-        ItemList.Add(new Sickle());
-        ItemList.Add(new Axe());
-        for(int i = 5; i <= 14; i ++)
-        {
-            ItemList.Add(new BasicSeed(i, i));
-        }
-        for (int i = 15; i <= 17; i++)
-        {
-            ItemList.Add(new BasicTreeSeed(i, i));
-        }
-        for (int i = 31; i <= 41; i++)
-        {
-            ItemList.Add(new BasicWeedSeed(i, i));
-        }
-        for (int i = 42; i <= 43; i++)
-        {
-            ItemList.Add(new BasicWeedTreeSeed(i, i));
-        }
-        for (int i = 0; i < ItemList.Count; i++)
-        {
-            ItemList[i].Init(gameManager);
-        }
+        AddItem(0, 1);
+        AddItem(1, 1);
+        AddItem(3, 1);
+        AddItem(4, 1);
+        //for (int i = 5; i <= 17; i++)
+        //{
+        //    AddItem(i, 0);
+        //}
+        //for (int i = 31; i <= 41; i++)
+        //{
+        //    AddItem(i, 0);
+        //}
+        //for (int i = 42; i <= 43; i++)
+        //{
+        //    AddItem(i, 0);
+        //}
         InitButton();
         SelectNowTool(ButtonList[0]);
     }
@@ -51,15 +43,14 @@ public class HotBarController : MonoBehaviour
     }
     public void FreshButton()
     {
+        CheckPage();
         int startIndex = NowPage * ButtonList.Count;
-        int index = NowSelectIndex - startIndex;
         for (int i = 0; (i + startIndex) < ItemList.Count && i < ButtonList.Count; i++)
         {
             ButtonList[i].gameObject.SetActive(true);
             Sprite sprite = ItemList[i + startIndex].itemData.Icon;
-            ButtonList[i].ToolIcon.sprite = sprite;
-            ButtonList[i].Set(i + startIndex);
-            if (ButtonList[i].index == NowSelectIndex)
+            ButtonList[i].Set(ItemList[i + startIndex]);
+            if (ButtonList[i].itemId == NowSelectId)
             {
                 ButtonList[i].ChangeStateToSelectedImmediately();
             }
@@ -73,50 +64,87 @@ public class HotBarController : MonoBehaviour
             ButtonList[i].gameObject.SetActive(false);
         }
     }
+    public void SelectLastTool()
+    {
 
+    }
     public void SelectNowTool(ToolButton button)
     {
-        if (ItemList[button.index] is not UsableItem)
+        SelectNowTool(button.itemId);
+    }
+    public void SelectNowTool(int itemId)
+    {
+        if (NowSelectId == itemId)
         {
             return;
         }
-        for(int i = 0; i < ButtonList.Count; i++)
+        for (int i = 0; i < ButtonList.Count; i++)
         {
-            if (ButtonList[i].index == NowSelectIndex && ButtonList[i].gameObject.activeInHierarchy == true)
+            if (ButtonList[i].itemId == NowSelectId && ButtonList[i].gameObject.activeInHierarchy == true)
             {
                 ButtonList[i].ChangeStateToIdle();
             }
+            if (ButtonList[i].itemId == itemId && ButtonList[i].gameObject.activeInHierarchy == true)
+            {
+                ButtonList[i].ChangeStateToSelected();
+            }
         }
-        button.ChangeStateToSelected();
-        NowSelectIndex = button.index;
-        NowTool = ItemList[button.index] as UsableItem;
+        NowSelectId = itemId;
+        NowTool = FindItemById(itemId);
         gameManager.GridCursorController.ChangeCursorSprite(NowTool.itemData.Icon);
     }
-    public void AddItem(int id)
+    public void AddItem(int id, int amount = 0)
     {
-        int index = FindItemIndex(id);
+        int index = FindItemIndexById(id);
         BasicItem item;
         if (index < 0)
         {
-            item = new BasicItem();
-            item.SetId(id);
+            item = GameDataManager.Instance.NewItemById(id);
+            item.SetAmount(amount);
             item.Init(gameManager);
-            ItemList.Add(item);
+            ItemList.Add(item as UsableItem);
         }
         else
         {
             item = ItemList[index];
+            item.Amount += amount;
         }
-        item.Amount++;
 
-        int startIndex = index - NowPage * ButtonList.Count;
-        if (startIndex >= 0 && startIndex <= ButtonList.Count)
+        FreshButton();
+        if(gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
         {
-            FreshButton();
+            gameManager.ShopPageController.buySeedPage.FreshButton();
         }
     }
+    public void DecreaseItem(int id, int amount)
+    {
+        int index = FindItemIndexById(id);
+        BasicItem item;
+        if (index > 0)
+        {
+            item = ItemList[index];
+            item.Amount -= amount;
+            if(item.Amount <= 0)
+            {
+                ItemList.RemoveAt(index);
+                if(ItemList.Count > index)
+                {
+                    SelectNowTool(ItemList[index].Id);
+                }
+                else
+                {
+                    SelectNowTool(ItemList[ItemList.Count -1].Id);
+                }
+            }
+        }  
 
-    public int FindItemIndex(int id)
+        FreshButton();
+        if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
+        {
+            gameManager.ShopPageController.buySeedPage.FreshButton();
+        }
+    }
+    public int FindItemIndexById(int id)
     {
         for(int i =0; i < ItemList.Count; i++)
         {
@@ -127,10 +155,21 @@ public class HotBarController : MonoBehaviour
         }
         return -1;
     }
-
+    public UsableItem FindItemById(int id)
+    {
+        for (int i = 0; i < ItemList.Count; i++)
+        {
+            if (ItemList[i].Id == id)
+            {
+                return ItemList[i];
+            }
+        }
+        return null;
+    }
     public void DownPage()
     {
-        if (NowPage * ButtonList.Count < ItemList.Count)
+        GameDataManager.Instance.PlayAudio("UI_Click");
+        if ((NowPage + 1) * ButtonList.Count < ItemList.Count)
         {
             NowPage++;
             FreshButton();
@@ -138,10 +177,23 @@ public class HotBarController : MonoBehaviour
     }
     public void UpPage()
     {
+        GameDataManager.Instance.PlayAudio("UI_Click");
         if(NowPage >0)
         {
+            
             NowPage--;
             FreshButton();
+        }
+    }
+    public void CheckPage()
+    {
+        if (NowPage * ButtonList.Count >= ItemList.Count)
+        {
+            NowPage = (ItemList.Count - 1 )/ ButtonList.Count;
+        }
+        else if (NowPage < 0)
+        {
+            NowPage = 0;
         }
     }
 }

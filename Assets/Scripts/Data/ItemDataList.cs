@@ -19,4 +19,8 @@ public class ItemData
     public string Name;
     public int Id;
     public Sprite Icon;
+
+    [TextArea]
+    public string Description;
+    public int Price = 1;
 }

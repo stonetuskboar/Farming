@@ -15,6 +15,10 @@ public class BasicItem
     {
         Id = id;
     }
+    public void SetAmount(int amount)
+    {
+        Amount = amount;
+    }
     public virtual void Init(GameManager manager)
     {
         GameManager = manager;

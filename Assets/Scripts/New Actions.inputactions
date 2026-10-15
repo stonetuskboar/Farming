@@ -12,7 +12,7 @@
                     "id": "c18cb2b6-df7b-4d37-9d55-be458c066ed7",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 }
             ],
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "name": "Click",
+            "name": "ClickDown",
             "id": "f6061084-bfe6-41db-8835-b1bd5d7313db",
             "actions": [
                 {
@@ -50,6 +50,34 @@
                     "id": "cb5068e4-4c95-411a-99a7-0aaade905a71",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "ClickUp",
+            "id": "7094df72-2c25-43e3-b65e-13c41cf36b9e",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1eb666c1-3b70-43b0-8fe0-062353dd6ae1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "69a78db7-73ae-4bac-8df8-1b626626d645",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "New action",

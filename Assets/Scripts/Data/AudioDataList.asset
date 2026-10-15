@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ecb332cdfe5ef4089f6c156b4ec66a, type: 3}
+  m_Name: AudioDataList
+  m_EditorClassIdentifier: 
+  audioEvents:
+  - Name: ChopTree
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 3ef887051d6998244a7768a9583ffab7, type: 2}
+  - Name: Harvest
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 4863d146b2205b240b0ee2493ff2c98c, type: 2}
+  - Name: PickUp
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 408646cc1655f7744b40c734f3c67537, type: 2}
+  - Name: Plant
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 7a80b031730819647bdd2a534f399ac7, type: 2}
+  - Name: Till
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 1dbd3c54a9334b645bd01eaae2248ff3, type: 2}
+  - Name: Water
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f3c235e157bb5164fbb956353d561a36, type: 2}
+  - Name: SpringAmb
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 04fd25a6fdc1cd84fa67d263922936e7, type: 2}
+  - Name: BuySucess
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 4c9b05c5b2661b743a5ecd176144b2cd, type: 2}
+  - Name: Failed
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 81439b3d0a202454d95e4670ce299bba, type: 2}
+  - Name: ItemSelect
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f75834810ea23544893fd5febfb9af3a, type: 2}
+  - Name: NextPage
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f1d33407ca58d69459104eb697e701dd, type: 2}
+  - Name: NextTurn
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 187f414566ae9dc418b912b3ba61988e, type: 2}
+  - Name: ShopClose
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 66d83eca19dfee6458072a5dc1349f59, type: 2}
+  - Name: ShopTab
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 237c209b56f6c084f8212e434c20a5eb, type: 2}
+  - Name: ToolUpgrade
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: a27159a736bfbd64ab1eddeb8b8f4af4, type: 2}
+  - Name: UI_Click
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 373a3c96a803beb47a89a8249f2adc62, type: 2}

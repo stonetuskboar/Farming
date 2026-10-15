@@ -6,16 +6,8 @@ public class GameDataManager : MonoBehaviour
 {
     public ItemDataList itemDataList;
     public CropDataList cropDataList;
-    [Header("Wwise")]
-    public AK.Wwise.Event PlayWater;
-    public AK.Wwise.Event PlayChopTree;
-    public AK.Wwise.Event PlayHarvest;
-    public AK.Wwise.Event ItemPickUp;
-    public AK.Wwise.Event Plant;
-    public AK.Wwise.Event Till;
-    public AK.Wwise.Event NextTurn;
-    public AK.Wwise.Event UIClick;
-    public AK.Wwise.Event PlaySpringAmb;
+
+    public AudioData audioData;
     public static GameDataManager Instance;
     public void Awake()
     {
@@ -28,6 +20,60 @@ public class GameDataManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+    }
+
+
+    public void PlayAudio(string name)
+    {
+        var audioEvent = audioData.GetAudioEventDataByName(name);
+        if (audioEvent != null)
+        {
+            audioEvent.audioEvent.Post(gameObject);
+        }
+    }
+
+    public BasicItem NewItemById(int id)
+    {
+        if (id == 0)
+        {
+            return new Hoe();
+        }
+        else if (id == 1)
+        {
+            return new WateringCan();
+        }
+        else if (id == 3)
+        {
+            return new Sickle();
+        }
+        else if (id == 4)
+        {
+            return new Axe();
+
+        }
+        else if (id >= 5 && id <= 14)
+        {
+            return new BasicSeed(id, id);
+
+        }
+        else if (id >= 15 && id <= 17)
+        {
+            return new BasicTreeSeed(id, id);
+        }
+        else if (id >= 31 && id <= 41)
+        {
+            return new BasicWeedSeed(id, id);
+        }
+        else if (id >= 42 && id <= 43)
+        {
+            return new BasicWeedTreeSeed(id, id);
+        }
+        else
+        {
+            BasicItem item = new BasicItem();
+            item.SetId(id);
+            return item;
         }
     }
 }

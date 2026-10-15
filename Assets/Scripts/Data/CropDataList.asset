@@ -16,6 +16,7 @@ MonoBehaviour:
   - Name: "\u5357\u74DC"
     id: 5
     matureTurns: 4
+    CanGrowSeasons: 0100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -1210504122, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -43,6 +44,7 @@ MonoBehaviour:
   - Name: "\u5411\u65E5\u8475"
     id: 6
     matureTurns: 3
+    CanGrowSeasons: 0100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -812739348, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -66,6 +68,7 @@ MonoBehaviour:
   - Name: "\u5C0F\u9EA6"
     id: 7
     matureTurns: 3
+    CanGrowSeasons: 000000000100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -435510500, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -89,6 +92,7 @@ MonoBehaviour:
   - Name: "\u767D\u83DC"
     id: 8
     matureTurns: 2
+    CanGrowSeasons: 0000000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1463865702, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -108,6 +112,7 @@ MonoBehaviour:
   - Name: "\u8349\u8393"
     id: 9
     matureTurns: 3
+    CanGrowSeasons: 0000000001000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -647678106, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -131,6 +136,7 @@ MonoBehaviour:
   - Name: "\u83E0\u83DC"
     id: 10
     matureTurns: 2
+    CanGrowSeasons: 0000000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -363620095, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -150,6 +156,7 @@ MonoBehaviour:
   - Name: "\u841D\u535C"
     id: 11
     matureTurns: 2
+    CanGrowSeasons: 00000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 586363771, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -169,6 +176,7 @@ MonoBehaviour:
   - Name: "\u84DD\u8393"
     id: 12
     matureTurns: 3
+    CanGrowSeasons: 0000000001000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1574495086, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -192,6 +200,7 @@ MonoBehaviour:
   - Name: "\u90C1\u91D1\u9999"
     id: 13
     matureTurns: 3
+    CanGrowSeasons: 02000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1830203072, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -215,6 +224,7 @@ MonoBehaviour:
   - Name: "\u9EC4\u74DC"
     id: 14
     matureTurns: 3
+    CanGrowSeasons: 01000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -1502687386, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
@@ -238,6 +248,7 @@ MonoBehaviour:
   - Name: "\u6742\u83491"
     id: 31
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -573212571, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -249,6 +260,7 @@ MonoBehaviour:
   - Name: "\u6742\u83492"
     id: 32
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 557103947, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -260,6 +272,7 @@ MonoBehaviour:
   - Name: "\u6742\u83493"
     id: 33
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 573106421, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -271,6 +284,7 @@ MonoBehaviour:
   - Name: "\u6742\u83494"
     id: 34
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 887228520, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -282,6 +296,7 @@ MonoBehaviour:
   - Name: "\u6742\u83495"
     id: 35
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -880994072, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -293,6 +308,7 @@ MonoBehaviour:
   - Name: "\u6742\u83496"
     id: 36
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 612009694, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -304,6 +320,7 @@ MonoBehaviour:
   - Name: "\u77F3\u5B50"
     id: 37
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1421803477, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -315,6 +332,7 @@ MonoBehaviour:
   - Name: "\u5927\u77F3\u5934"
     id: 38
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1705958306, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -326,6 +344,7 @@ MonoBehaviour:
   - Name: "\u704C\u6728"
     id: 39
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -1833712447, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -337,6 +356,7 @@ MonoBehaviour:
   - Name: "\u77F3\u59343"
     id: 40
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 928843167, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -348,6 +368,7 @@ MonoBehaviour:
   - Name: "\u82B1"
     id: 41
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -1483429333, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
@@ -356,10 +377,23 @@ MonoBehaviour:
     size: {x: 1, y: 1}
     DropedItemId: -1
     DropedAmount: 0
+  - Name: "\u67AF\u840E\u690D\u7269"
+    id: 44
+    matureTurns: 0
+    CanGrowSeasons: 
+    growthStages:
+    - GrowthProgress: 0
+      GrowthSprite: {fileID: 1505739549, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+      shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
+      "\u98CE\u529B": 2
+    size: {x: 1, y: 1}
+    DropedItemId: -1
+    DropedAmount: 0
   trees:
   - Name: "\u677E\u6811"
     id: 15
     matureTurns: 3
+    CanGrowSeasons: 000000000100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -586479302, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -385,6 +419,7 @@ MonoBehaviour:
   - Name: "\u677E\u6811\u6869"
     id: 115
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1863029649, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -398,6 +433,7 @@ MonoBehaviour:
   - Name: "\u67CF\u6811"
     id: 16
     matureTurns: 3
+    CanGrowSeasons: 000000000100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: -1455079532, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -423,6 +459,7 @@ MonoBehaviour:
   - Name: "\u67CF\u6811\u6869"
     id: 116
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1399660029, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -436,6 +473,7 @@ MonoBehaviour:
   - Name: "\u6A61\u6811"
     id: 17
     matureTurns: 3
+    CanGrowSeasons: 000000000100000002000000
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 190695476, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -461,6 +499,7 @@ MonoBehaviour:
   - Name: "\u6A61\u6811\u6869"
     id: 117
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 677760675, guid: 169a60065a6ca15468969d73a2858821, type: 3}
@@ -474,6 +513,7 @@ MonoBehaviour:
   - Name: "\u5C0F\u6811"
     id: 42
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1708841779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
@@ -487,6 +527,7 @@ MonoBehaviour:
   - Name: "\u5927\u6811"
     id: 43
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1873609452, guid: 169a60065a6ca15468969d73a2858821, type: 3}

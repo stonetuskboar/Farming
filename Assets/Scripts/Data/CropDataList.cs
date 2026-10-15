@@ -36,12 +36,61 @@ public class CropData
 
     // 从种下到成熟需要多少回合
     public int matureTurns;
+    public List<Season> CanGrowSeasons;
     public List<GrowthStage> growthStages = new List<GrowthStage>();
 
     public Vector2Int size = new Vector2Int(1,1);
 
     public int DropedItemId;
     public int DropedAmount;
+
+    public bool IsContainSeason(Season season)
+    {
+        if(CanGrowSeasons.Contains(season) == true)
+        {
+            return true;
+        }
+        else if(CanGrowSeasons.Count <= 0)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+    public string GetSeasonText()
+    {
+        string text = "";
+        for(int i= 0; i < CanGrowSeasons.Count; i++)
+        {
+            if (CanGrowSeasons[i] == Season.春)
+            {
+                text += "春";
+            }
+            else if (CanGrowSeasons[i] == Season.夏)
+            {
+                text += "夏";
+            }
+            else if (CanGrowSeasons[i] == Season.秋)
+            {
+                text += "秋";
+            }
+            else if (CanGrowSeasons[i] == Season.冬)
+            {
+                text += "冬";
+            }
+        }
+        if(CanGrowSeasons.Count == 0)
+        {
+            text = "无季节";
+        }
+        if(CanGrowSeasons.Contains(Season.春) && CanGrowSeasons.Contains(Season.夏) && CanGrowSeasons.Contains(Season.秋) )
+        {
+            text = "全年";
+        }
+        return text;
+    }
 }
 
 [System.Serializable]

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Axe : UsableItem
+public class Axe : ToolItem
 {
     public Axe()
     {
-        Id = 3;
+        Id = 4;
     }
     public override bool CanUse(List<Vector3Int> cells)
     {
@@ -62,7 +62,7 @@ public class Axe : UsableItem
                 farm.Plant(crop.TileCells, stumpData);
             }
         }
-        GameDataManager.Instance.PlayChopTree.Post(Camera.main.gameObject);
+        GameDataManager.Instance.PlayAudio("ChopTree");
         GameManager.ConsumeEnergy(6);
     }
 }

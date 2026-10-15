@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using static ak.wwise;
 
 public class GridCursorController : MonoBehaviour
 {
@@ -21,9 +22,10 @@ public class GridCursorController : MonoBehaviour
     [SerializeField] private Sprite invalidSprite;
     [Header("Input Actions")]
     [SerializeField] private InputActionReference pointAction;
-    [SerializeField] private InputActionReference clickAction;
-
+    [SerializeField] private InputActionReference clickDownAction;
+    [SerializeField] private InputActionReference clickUpAction;
     public Image CursorImage;
+    public BasicTweenObject ImageTween;
     // 曾经用过的格子
     private List<Vector3Int> UsedCells = new();
     // 当前范围内所有格子
@@ -42,17 +44,21 @@ public class GridCursorController : MonoBehaviour
     private void OnEnable()
     {
         pointAction.action.Enable();
-        clickAction.action.Enable();
-        clickAction.action.performed += OnClick;
+        clickDownAction.action.Enable();
+        clickUpAction.action.Enable();
+        clickDownAction.action.performed += OnClick;
+        clickUpAction.action.performed += OnClickUp;
     }
 
 
 
     private void OnDisable()
     {
-        clickAction.action.performed -= OnClick;
+        clickDownAction.action.performed -= OnClick;
+        clickUpAction.action.performed -= OnClickUp;
         pointAction.action.Disable();
-        clickAction.action.Disable();
+        clickDownAction.action.Disable();
+        clickUpAction.action.Disable();
     }
 
     public UsableItem GetNowTool()
@@ -62,8 +68,7 @@ public class GridCursorController : MonoBehaviour
     private void Update()
     {
         UpdateCursor();
-
-        if(clickAction.action.IsPressed() && IsValid && false == UsedCells.SequenceEqual(CurrentCells))
+        if(clickDownAction.action.IsPressed() && IsValid && false == UsedCells.SequenceEqual(CurrentCells))
         {
             UsedCells.Clear();
             UsedCells.AddRange(CurrentCells);
@@ -73,6 +78,8 @@ public class GridCursorController : MonoBehaviour
     public void ChangeCursorSprite(Sprite sprite)
     {
         CursorImage.sprite = sprite;
+        ImageTween.SetLocalScale(Vector3.one);
+        ImageTween.DoLocalScaleTween(Vector3.one * 1.5f, 0.4f, type: EaseType.ShakeDefault);
     }
     private void UpdateCursor()
     {
@@ -166,6 +173,11 @@ public class GridCursorController : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
-        UsedCells.Clear();
+        ImageTween.DoLocalRotationTween(new Vector3(0,0,-35), 0.4f, type: EaseType.EaseOutBack);
     }
+    private void OnClickUp(InputAction.CallbackContext context)
+    {
+        ImageTween.DoLocalRotationTween(new Vector3(0, 0, 0), 0.4f, type: EaseType.EaseOutBack);
+    }
+
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BasicUIView : BasicTweenObject
 {
@@ -159,7 +160,18 @@ public class BasicUIView : BasicTweenObject
         }
         else
         {
-            StartCoroutine(AlphaTween(targetAlpha, time, callBack, type, IsCallbackRequiredOnComplete));
+            if (gameObject.activeInHierarchy == true)
+            {
+                StartCoroutine(AlphaTween(targetAlpha, time, callBack, type, IsCallbackRequiredOnComplete));
+            }
+            else
+            {
+                if (IsToTarget(type) == true)
+                {
+                    SetCanvasGroupAlpha(targetAlpha);
+                }
+                callBack?.Invoke();
+            }
         }
     }
 
@@ -206,7 +218,19 @@ public class BasicUIView : BasicTweenObject
     }
     public void DoSizeTween(Vector2 TargetSize, float time, Action callBack = null, EaseType type = EaseType.EaseOutQuad, bool IsCallbackRequiredOnComplete = true)
     {
-            StartCoroutine(SizeTween(TargetSize, time,  type, callBack, IsCallbackRequiredOnComplete));
+        if (gameObject.activeInHierarchy == true)
+        {
+            StartCoroutine(SizeTween(TargetSize, time, type, callBack, IsCallbackRequiredOnComplete));
+        }
+        else
+        {
+            if (IsToTarget(type) == true)
+            {
+                SetSize(TargetSize);
+            }
+            callBack?.Invoke();
+        }
+
     }
     IEnumerator SizeTween(Vector2 TargetSize, float time, EaseType type, Action callback, bool IsCallbackRequiredOnComplete)
     {

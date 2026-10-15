@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sickle : UsableItem
+public class Sickle : ToolItem
 {
     public Sickle()
     {
-        Id = 4;
+        Id = 3;
     }
     public override bool CanUse(List<Vector3Int> cells)
     {
@@ -52,7 +52,7 @@ public class Sickle : UsableItem
         {
             farm.Harvest(crop);
         }
-        GameDataManager.Instance.PlayHarvest.Post(Camera.main.gameObject);
+        GameDataManager.Instance.PlayAudio("Harvest");
         GameManager.ConsumeEnergy(4);
     }
 }

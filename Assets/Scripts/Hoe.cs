@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hoe : UsableItem
+public class Hoe : ToolItem
 {
     public Hoe()
     {
@@ -46,7 +46,7 @@ public class Hoe : UsableItem
         {
             farm.Till(cell);
         }
-        GameDataManager.Instance.Till.Post(Camera.main.gameObject);
+        GameDataManager.Instance.PlayAudio("Till");
         GameManager.ConsumeEnergy(4);
     }
 

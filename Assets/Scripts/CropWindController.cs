@@ -18,6 +18,8 @@ public class CropShaderController : MonoBehaviour
 Shader.PropertyToID("_BendPower");
     private SpriteRenderer spriteRenderer;
     private MaterialPropertyBlock propertyBlock;
+    [HideInInspector]
+    public WindType windType;
 
     private Sprite lastSprite;
 
@@ -25,6 +27,7 @@ Shader.PropertyToID("_BendPower");
     {
         Initialize();
         UpdateSpriteData();
+        UpdateWindForce(windType);
     }
 
 #if UNITY_EDITOR
@@ -32,6 +35,7 @@ Shader.PropertyToID("_BendPower");
     {
         Initialize();
         UpdateSpriteData();
+        UpdateWindForce(windType);
     }
 #endif
 
@@ -122,6 +126,7 @@ Shader.PropertyToID("_BendPower");
 
     public void UpdateWindForce(WindType type) 
     {
+        windType = type;
         float strength = 0;
         float bendPower = 1;
         if(type == WindType.静止)

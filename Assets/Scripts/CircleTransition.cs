@@ -1,7 +1,8 @@
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System;
 
 public class CircleTransition : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class CircleTransition : MonoBehaviour
     private void Awake()
     {
         material = transitionImage.material;
+        InitHide();
+    }
+    public void InitHide()
+    {
+        material.SetFloat(RadiusID,0);
     }
     public void StartClose(float duration, Action callback = null)
     {

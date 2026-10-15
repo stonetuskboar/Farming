@@ -56,6 +56,7 @@ Material:
     m_Floats:
     - _BendPower: 2
     - _Bottom: 0.13
+    - _Scale: 0.2
     - _Strength: 0.5
     m_Colors:
     - _Bottom: {r: 0.058441095, g: 0.3, b: 0, a: 0}

@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class ItemDrop : MonoBehaviour
 {
     [Header("Item")]
     [SerializeField] public int itemId;
-    [SerializeField] private int amount = 1;
+    [SerializeField] public int amount = 1;
 
     [Header("Spawn")]
     [SerializeField] private float spawnDuration = 0.35f;
@@ -149,7 +150,10 @@ public class ItemDrop : MonoBehaviour
 
         if (Camera.main == null)
             return;
-
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         Vector2 screenPosition =
             Pointer.current.position.ReadValue();
 
@@ -234,7 +238,7 @@ public class ItemDrop : MonoBehaviour
         }
 
         AddToInventory();
-
+        GameDataManager.Instance.PlayAudio("PickUp");
         pickupCoroutine = null;
 
         // 不再 Destroy
@@ -246,7 +250,6 @@ public class ItemDrop : MonoBehaviour
         IsPickAble = false;
         isPickedUp = false;
 
-        GameDataManager.Instance.ItemPickUp.Post(Camera.main.gameObject);
         if (returnToPool != null)
         {
             returnToPool.Invoke(this);

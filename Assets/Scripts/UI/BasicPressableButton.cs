@@ -5,12 +5,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.U2D;
 
-public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public string ClickedSoundName;
+    public string ClickSound = "UI_Click";
     public event Action PointerEntered;
     public event Action PointerClicked;
+    public event Action PointerDown;
+    public event Action PointerUp;
     [SerializeField]
     protected UnityEvent PointerClickedEvent;
     public event Action PointerExited;
@@ -22,21 +25,20 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         disable,
         selected,
     }
+    protected bool IsPressed = false;
     public float hoverTime = 0.2f;
     public float normalTime = 0.3f;
 
     protected Vector2 OgSize;
-    public Vector2 HoverSize = new Vector2(1.2f, 1f);
+    public Vector2 HoverSize = new Vector2(1.1f, 1.1f);
+    public Vector2 PressedSize = new Vector2(1.1f, 1.1f);
 
     protected override void Awake()
     {
         base.Awake();
         OgSize = rectTransform.sizeDelta;
     }
-    public void ResetOgSize()
-    {
-        OgSize = rectTransform.sizeDelta;
-    }
+
 
     public State GetState()
     {
@@ -64,46 +66,38 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         PointerClicked?.Invoke();
         PointerClickedEvent?.Invoke();
     }
-
+    protected void OnPointerDown()
+    {
+        PointerDown?.Invoke();
+    }
+    protected void OnPointerUp()
+    {
+        PointerUp?.Invoke();
+    }
     public virtual void ChangeStateToIdle()
     {
         state = State.idle;
-        if(HoverSize != Vector2.one)
-        {
-            DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
-        }
+        DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
     }
     public virtual void ChangeStateToIdleImmediately()
     {
         state = State.idle;
-        if (HoverSize != Vector2.one)
-        {
-            SetSize(OgSize);
-        }
+        SetSize(OgSize);
     }
     public virtual void ChangeStateToHover()
     {
         state = State.hover;
-        if (HoverSize != Vector2.one)
-        {
-            DoSizeTween(HoverSize * OgSize, hoverTime + 0.1f, type: EaseType.M3Spring);
-        }
+        DoSizeTween(HoverSize * OgSize, hoverTime + 0.1f, type: EaseType.M3Spring);
     }
     public virtual void ChangeStateToSelected()
     {
         state = State.selected;
-        if (HoverSize != Vector2.one)
-        {
-            DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
-        }
+        DoSizeTween(OgSize, normalTime + 0.1f, type: EaseType.M3Spring);
     }
     public virtual void ChangeStateToSelectedImmediately()
     {
         state = State.selected;
-        if (HoverSize != Vector2.one)
-        {
-            SetSize(OgSize);
-        }
+        SetSize(OgSize);
     }
     public virtual void ChangeStateToDisable()
     {
@@ -131,7 +125,23 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         if (state != State.disable)
         {
             OnPointerClicked();
-            GameDataManager.Instance.UIClick.Post(Camera.main.gameObject);
+            GameDataManager.Instance.PlayAudio(ClickSound);
+        }
+    }
+    public virtual void OnPointerDown(PointerEventData eventData)
+    {
+        IsPressed = true;
+        OnPointerDown();
+        DoSizeTween(PressedSize * OgSize, hoverTime + 0.1f, type: EaseType.M3Spring);
+    }
+
+    public virtual void OnPointerUp(PointerEventData eventData)
+    {
+        IsPressed = false;
+        OnPointerUp();
+        if (state == State.hover)
+        {
+            DoSizeTween(HoverSize * OgSize, hoverTime, type: EaseType.M3Spring);
         }
     }
     public virtual void OnPointerEnter(PointerEventData eventData)
@@ -155,8 +165,8 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
     public void Show(float showTime = 0.2f)
     {
         SetCanvasGroupAlpha(1f);
-        transform.localRotation = Quaternion.Euler(-30, 25, 0);
-        transform.localScale = 0.8f * Vector3.one;
+        SetLocalRotation(Quaternion.Euler(-30, 25, 0));
+        SetLocalScale(0.8f * Vector3.one);
         DoLocalRotationTween(Quaternion.identity, showTime, type: EaseType.EaseOutBack);
         DoLocalScaleTween(Vector3.one, showTime, type: EaseType.EaseOutBack);
         SetCanvasGroupBlockable();
@@ -174,4 +184,6 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         SetLocalScale(Vector3.one * 0.5f);
         SetCanvasGroupUnblock();
     }
+
+
 }

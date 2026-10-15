@@ -59,7 +59,7 @@ public class BasicCrop : MonoBehaviour
             shadowSr.enabled = false;
         }
     }
-    public virtual void OnNextTurn()
+    public virtual void OnNextTurn(int year, Season season,int month)
     {
         bool IsWatered = true;
         for (int i = 0; i < TileCells.Count; i++)
@@ -74,6 +74,10 @@ public class BasicCrop : MonoBehaviour
         {
             growthProgress++;
             SetByGrowthProgress();
+        }
+        if (IsMature() == false && cropData.IsContainSeason(season) == false)
+        {
+            farmLandManager.ReplaceToWiltPlant(this);
         }
     }
 

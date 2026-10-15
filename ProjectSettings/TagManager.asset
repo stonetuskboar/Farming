@@ -77,6 +77,9 @@ TagManager:
   - name: UI
     uniqueID: 3529443923
     locked: 0
+  - name: "\u906E\u6321\u5C42"
+    uniqueID: 3791130331
+    locked: 0
   - name: Mouse
     uniqueID: 608844969
     locked: 0

@@ -1,5 +1,6 @@
 using skner.DualGrid;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -16,8 +17,8 @@ public class FarmLandManager : MonoBehaviour
     [SerializeField] private DualGridTilemapModule tilledFieldTilemap;
     [SerializeField] private DualGridTilemapModule wateredFieldTilemap;
 
-
     [Header("Crop")]
+    public int WiltPlantId;
     public GameObject cropPrefab;
     public Transform cropParent;
     public HashSet<BasicCrop> crops = new();
@@ -57,11 +58,12 @@ public class FarmLandManager : MonoBehaviour
         return canFarmTileMap.HasTile(cell);
     }
 
-    public void OnNextTurn()
+    public void OnNextTurn(int year, Season season, int month)
     {
-        foreach (BasicCrop crop in crops)
+        HashSet<BasicCrop> cropCopy = new(crops);
+        foreach (BasicCrop crop in cropCopy)
         {
-            crop.OnNextTurn();
+            crop.OnNextTurn(year, season, month);
         }
         foreach (KeyValuePair<Vector3Int, FarmTileData> pair in farmTiles)
         {
@@ -74,11 +76,20 @@ public class FarmLandManager : MonoBehaviour
                 wateredFieldTilemap.ClearDataTile(position);
                 tilledFieldTilemap.SetDataTile(position);
             }
-            else if(tileData.soilState == SoilState.Dirt && tileData.cropObject == null)
+            else if (tileData.cropObject == null)
             {
-                tileData.soilState = SoilState.Grass;
-                fieldTilemap.ClearDataTile(position);
-                grassTilemap.SetDataTile(position);
+                if (tileData.soilState == SoilState.Tilled)
+                {
+                    tileData.soilState = SoilState.Dirt;
+                    fieldTilemap.ClearDataTile(position);
+                    grassTilemap.SetDataTile(position);
+                }
+                else if (tileData.soilState == SoilState.Dirt)
+                {
+                    tileData.soilState = SoilState.Grass;
+                    fieldTilemap.ClearDataTile(position);
+                    grassTilemap.SetDataTile(position);
+                }
             }
         }
         foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
@@ -161,7 +172,18 @@ public class FarmLandManager : MonoBehaviour
         crop.Init(this, cropData, cells);
         return crop;
     }
-
+    public void ReplaceToWiltPlant(BasicCrop crop)
+    {
+        foreach (Vector3Int cell in crop.TileCells)
+        {
+            FarmTileData data = GetFarmTileData(cell);
+            data.cropObject = null;
+        }
+        crops.Remove(crop);
+        Destroy(crop.gameObject);
+        CropData WiltPlantData = GameDataManager.Instance.cropDataList.GetCropDataById(WiltPlantId);
+        Plant(crop.TileCells, WiltPlantData);
+    }
     public void Harvest(BasicCrop crop)
     {
         if (crop == null || !crop.IsMature())

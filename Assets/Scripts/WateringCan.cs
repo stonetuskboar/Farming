@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WateringCan : UsableItem
+public class WateringCan : ToolItem
 {
     public WateringCan()
     {
@@ -32,6 +32,22 @@ public class WateringCan : UsableItem
         {
             return false;
         }
+        else
+        {
+            BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
+            if(crop != null)
+            {
+                if (crop.IsMature() == true)
+                {
+                    return false;
+                }
+                else if (crop.cropData is TreeData)
+                {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 
@@ -43,7 +59,7 @@ public class WateringCan : UsableItem
             farm.Water(cell);
         }
         GameManager.ConsumeEnergy(2);
-        GameDataManager.Instance.PlayWater.Post(Camera.main.gameObject);
+        GameDataManager.Instance.PlayAudio("Water");
     }
 
 }

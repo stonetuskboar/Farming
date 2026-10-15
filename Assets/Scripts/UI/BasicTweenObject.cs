@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -85,26 +86,76 @@ public class BasicTweenObject : MonoBehaviour
         }
         else
         {
-            SetLocalPosition(position);
+            if (IsToTarget(type) == true)
+            {
+                SetLocalPosition(position);
+            }
+            callBack?.Invoke();
         }
     }
     public void DoPositionTween(Vector3 position, float time, Action callBack = null, EaseType type = EaseType.EaseOutQuad, bool IsCallbackRequiredOnComplete = true)
     {
-        StartCoroutine(WorldPositionTween(position, time, callBack, type, IsCallbackRequiredOnComplete));
+        if (gameObject.activeInHierarchy == true)
+        {
+            StartCoroutine(WorldPositionTween(position, time, callBack, type, IsCallbackRequiredOnComplete));
+        }
+        else
+        {
+            if (IsToTarget(type) == true)
+            {
+                SetWorldPosition(position);
+            }
+            callBack?.Invoke();
+        }
     }
 
     public void DoLocalScaleTween(Vector3 scale, float time, Action callBack = null, EaseType type = EaseType.EaseOutQuad, bool IsCallbackRequiredOnComplete = true)
     {
-        StartCoroutine(LocalScaleTween(scale, time, callBack , type, IsCallbackRequiredOnComplete));
+        if (gameObject.activeInHierarchy == true)
+        {
+            StartCoroutine(LocalScaleTween(scale, time, callBack, type, IsCallbackRequiredOnComplete));
+        }
+        else
+        {
+            if (IsToTarget(type) == true)
+            {
+                SetLocalScale(scale);
+            }
+            callBack?.Invoke();
+        }
+
     }
     public void DoLocalRotationTween(Quaternion quaternion, float time, Action callBack = null, EaseType type = EaseType.EaseOutQuad, bool IsCallbackRequiredOnComplete = true)
     {
-        StartCoroutine(LocalRotationTween(quaternion, time, callBack, type,IsCallbackRequiredOnComplete));
+        if (gameObject.activeInHierarchy == true)
+        {
+            StartCoroutine(LocalRotationTween(quaternion, time, callBack, type, IsCallbackRequiredOnComplete));
+        }
+        else
+        {
+            if (IsToTarget(type) == true)
+            {
+                SetLocalRotation(quaternion);
+            }
+            callBack?.Invoke();
+        }
+
     }
     public void DoLocalRotationTween(Vector3 rotation, float time, Action callBack = null, EaseType type = EaseType.EaseOutQuad, bool IsCallbackRequiredOnComplete = true)
     {
         Quaternion quaternion = Quaternion.Euler(rotation);
-        DoLocalRotationTween(quaternion, time, callBack, type, IsCallbackRequiredOnComplete);
+        if (gameObject.activeInHierarchy == true)
+        {
+            DoLocalRotationTween(quaternion, time, callBack, type, IsCallbackRequiredOnComplete);
+        }
+        else
+        {
+            if (IsToTarget(type) == true)
+            {
+                SetLocalRotation(quaternion);
+            }
+            callBack?.Invoke();
+        }
     }
 
     public void DoDelay(float time, Action callBack = null)

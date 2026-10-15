@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
-public class ToolButton : ImagePressableButton
+public class ToolButton : ImageSwapButton
 {
     public Image ToolIcon;
+    public GameObject AmountObj;
+    public TextMeshProUGUI AmountText;
     private HotBarController ToolController;
     [NonSerialized]
-    public int index;
-    public Sprite DefaultSprite;
-    public Sprite SelectedSprite;
+    public int itemId;
     protected override void Awake()
     {
         base.Awake();
@@ -23,64 +24,22 @@ public class ToolButton : ImagePressableButton
     {
         ToolController = controller;
     }
-    public void Set(int i)
+    public void Set( BasicItem item)
     {
-        index = i;
+        itemId = item.itemData.Id;
+        ToolIcon.sprite = item.itemData.Icon;
+        if(item is BasicSeed)
+        {
+            AmountText.text = item.Amount.ToString();
+            AmountObj.gameObject.SetActive(true);
+        }
+        else
+        {
+            AmountObj.gameObject.SetActive(false);
+        }
     }
-
     public void OnClick()
     {
         ToolController.SelectNowTool(this);
-    }
-    public override void ChangeStateToIdle()
-    {
-        image.sprite = DefaultSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToIdle();
-    }
-    public override void ChangeStateToIdleImmediately()
-    {
-        image.sprite = DefaultSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToIdleImmediately();
-    }
-    public override void ChangeStateToHover()
-    {
-        image.sprite = DefaultSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToHover();
-    }
-    public override void ChangeStateToSelected()
-    {
-        image.sprite = SelectedSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToSelected();
-    }
-    public override void ChangeStateToSelectedImmediately()
-    {
-        image.sprite = SelectedSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToSelectedImmediately();
-    }
-    
-    public override void ChangeStateToDisable()
-    {
-        image.sprite = DefaultSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToDisable();
-    }
-
-    public override void ChangeStateToDisableImmediately()
-    {
-        image.sprite = DefaultSprite;
-        image.image.SetNativeSize();
-        ResetOgSize();
-        base.ChangeStateToDisableImmediately();
     }
 }

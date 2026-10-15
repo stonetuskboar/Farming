@@ -82,9 +82,8 @@ public class HarvestEffectManager : MonoBehaviour
             return;
 
         drop.gameObject.SetActive(false);
-
+        gameManager.AddItem(drop.itemId, drop.amount);
         itemDropPool.Enqueue(drop);
-        gameManager.hotbarController.AddItem(drop.itemId);
     }
 
     /// <summary>
