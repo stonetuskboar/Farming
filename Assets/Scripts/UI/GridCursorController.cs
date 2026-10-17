@@ -31,12 +31,20 @@ public class GridCursorController : MonoBehaviour
     private List<Vector3Int> UsedCells = new();
     // 当前范围内所有格子
     public List<Vector3Int> CurrentCells { get; private set; } = new();
-    public bool IsValid { get; private set; }
+    public bool IsUsable { get; private set; }
+    private bool IsValid = false;
 
     private void Awake()
     {
         mainCamera = Camera.main;
         Cursor.visible = false;
+    }
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            Cursor.visible = false;
+        }
     }
     private void OnDestroy()
     {
@@ -69,7 +77,7 @@ public class GridCursorController : MonoBehaviour
     private void Update()
     {
         UpdateCursor();
-        if(clickDownAction.action.IsPressed() && IsValid && false == UsedCells.SequenceEqual(CurrentCells))
+        if(clickDownAction.action.IsPressed() && IsUsable && false == UsedCells.SequenceEqual(CurrentCells))
         {
             UsedCells.Clear();
             UsedCells.AddRange(CurrentCells);
@@ -101,9 +109,10 @@ public class GridCursorController : MonoBehaviour
     }
     private void UpdateCursor()
     {
+        IsValid = false;
         if (Pointer.current == null)
         {
-            IsValid = false;
+            IsUsable = false;
             HideCursorBoxes();
             return;
         }
@@ -116,7 +125,7 @@ public class GridCursorController : MonoBehaviour
 
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            IsValid = false;
+            IsUsable = false;
             HideCursorBoxes();
             return;
         }
@@ -125,7 +134,7 @@ public class GridCursorController : MonoBehaviour
         // 没有工具
         if (tool == null)
         {
-            IsValid = false;
+            IsUsable = false;
             HideCursorBoxes();
             return;
         }
@@ -154,14 +163,14 @@ public class GridCursorController : MonoBehaviour
         {
             cursorBoxes[i].gameObject.SetActive(false);
         }
-
+        IsValid = true;
         if (tool.CanUse(CurrentCells))
         {
-            IsValid = true;
+            IsUsable = true;
         }
         else
         {
-            IsValid = false;
+            IsUsable = false;
         }
     }
 
@@ -196,6 +205,11 @@ public class GridCursorController : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
+        if (IsValid == true && IsUsable == false)
+        {
+            GameDataManager.Instance.PlayAudio("Failed");
+        }
+        UsedCells.Clear();
         ImageTween.DoLocalRotationTween(new Vector3(0,0,-35), 0.4f, type: EaseType.EaseOutBack);
     }
     private void OnClickUp(InputAction.CallbackContext context)

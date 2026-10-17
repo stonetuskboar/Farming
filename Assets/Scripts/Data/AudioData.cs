@@ -6,6 +6,8 @@ using UnityEngine;
 public class AudioData : ScriptableObject
 {
     public List<AudioEventData> audioEvents = new List<AudioEventData>();
+    public AK.Wwise.Event PlaySeasonAudio;
+    public AK.Wwise.RTPC MusicVolume;
 
     public AudioEventData GetAudioEventDataByName(string name)
     {

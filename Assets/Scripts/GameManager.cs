@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static ak.wwise;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,8 +36,48 @@ public class GameManager : MonoBehaviour
     {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         GameDataManager.Instance.PlayAudio("SpringAmb");
-        GameDataManager.Instance.PlayAudio("SpringMusic");
+        GameDataManager.audioData.PlaySeasonAudio.Post(gameObject);
+        GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
+        SetSeasonAudio();
         UpdateMoneyText();
+    }
+
+    public void SetSeasonAudio()
+    {
+        Season newSeason = season;
+
+        string wwiseSeason;
+
+        switch (newSeason)
+        {
+            case Season.春:
+                wwiseSeason = "Spring";
+                break;
+
+            case Season.夏:
+                wwiseSeason = "Summer";
+                break;
+
+            // 程序里叫 Fall，Wwise 里叫 Autumn
+            case Season.秋:
+                wwiseSeason = "Autumn";
+                break;
+
+            case Season.冬:
+                // Wwise 目前还没有 Winter
+                Debug.LogWarning("Wwise 还没有添加 Winter 音频");
+                return;
+
+            default:
+                wwiseSeason = "Spring";
+                break;
+        }
+
+        AkUnitySoundEngine.SetSwitch(
+            "Season_Transition",
+            wwiseSeason,
+            gameObject
+        );
     }
 
     public void ConsumeEnergy(float amount)
@@ -47,11 +89,13 @@ public class GameManager : MonoBehaviour
 
     public void ReadyForNextTurn()
     {
+        GameDataManager.Instance.PlayAudio("UI_Click");
         GameDataManager.Instance.PlayAudio("NextTurn");
         transitionController.StartShow();
     }
     public void NextTurn()
     {
+        SetSeasonAudio();
         FarmLandManager.OnNextTurn(year,season,Month);
         NowEnergy = MaxEnergy;
         energyBar.SetEnergy(NowEnergy, MaxEnergy);

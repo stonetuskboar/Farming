@@ -102,21 +102,29 @@ public class FarmLandManager : MonoBehaviour
             {
                 if (tileData.soilState == SoilState.Tilled)
                 {
-                    tileData.soilState = SoilState.Dirt;
-                    tilledFieldTilemap.ClearDataTile(position);
-                    fieldTilemap.SetDataTile(position);
+                    int rand = Random.Range(0, 3);
+                    if (rand == 0)
+                    {
+                        tileData.soilState = SoilState.Dirt;
+                        tilledFieldTilemap.ClearDataTile(position);
+                        fieldTilemap.SetDataTile(position);
+                    }
                 }
                 else if (tileData.soilState == SoilState.Dirt)
                 {
-                    tileData.soilState = SoilState.Grass;
-                    fieldTilemap.ClearDataTile(position);
-                    grassTilemap.SetDataTile(position);
+                    int rand = Random.Range(0, 3);
+                    if (rand == 0)
+                    {
+                        tileData.soilState = SoilState.Grass;
+                        fieldTilemap.ClearDataTile(position);
+                        grassTilemap.SetDataTile(position);
+                    }
                 }
             }
         }
         foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
         {
-            int rand = Random.Range(0, 8);
+            int rand = Random.Range(0, 5);
             if(rand == 0)
             {
                 CropData cropData;
