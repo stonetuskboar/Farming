@@ -20,20 +20,42 @@ namespace AK
         static const AkUniqueID PLAY_ITEM_SELECT = 3114247042U;
         static const AkUniqueID PLAY_ITEMPICKUP = 4241593335U;
         static const AkUniqueID PLAY_MINEROCK = 2885539260U;
+        static const AkUniqueID PLAY_MUSIC_END = 2885083713U;
+        static const AkUniqueID PLAY_MUSIC_START = 3797325362U;
         static const AkUniqueID PLAY_NEXTPAGE = 1908185824U;
         static const AkUniqueID PLAY_NEXTTURN = 1102211584U;
         static const AkUniqueID PLAY_PLANT = 2689642121U;
+        static const AkUniqueID PLAY_SEASON_AUDIO = 3831435738U;
         static const AkUniqueID PLAY_SELL_SUCCESS = 4018961658U;
         static const AkUniqueID PLAY_SHOP_CLOSE = 2365491143U;
         static const AkUniqueID PLAY_SHOP_OPEN = 129330417U;
         static const AkUniqueID PLAY_SHOP_TAB = 143281810U;
-        static const AkUniqueID PLAY_SPRING_AMB = 378356484U;
-        static const AkUniqueID PLAY_SPRING_MUSIC = 474285493U;
         static const AkUniqueID PLAY_TILL = 3374032463U;
         static const AkUniqueID PLAY_TOOL_UPGRADE = 1463437813U;
         static const AkUniqueID PLAY_UI_CLICK = 1749424733U;
         static const AkUniqueID PLAY_WATER = 441572235U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace SEASON_TRANSITION
+        {
+            static const AkUniqueID GROUP = 3254157520U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID AUTUMN = 4010875483U;
+                static const AkUniqueID SPRING = 1296465106U;
+                static const AkUniqueID SUMMER = 3924562482U;
+            } // namespace SWITCH
+        } // namespace SEASON_TRANSITION
+
+    } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
+    } // namespace GAME_PARAMETERS
 
     namespace BUSSES
     {

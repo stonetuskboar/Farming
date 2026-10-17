@@ -1,0 +1,56 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2885083713",
+    "Type": "Event",
+    "GUID": "{2A9195AD-2A3D-4A59-9B97-AC2E20764B28}",
+    "Language": "SFX",
+    "Hash": "{B33645BC-4D9F-BBE2-C3AA-A58200533DF5}",
+    "ObjectPath": "Play_Music_End",
+    "ShortName": "Play_Music_End",
+    "Path": "Event/Play_Music_End.bnk",
+    "Media": [
+     {
+      "Id": "575399227",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "End.wav",
+      "Path": "Media/575399227.wem",
+      "CachePath": "06/{06FE3A79-71D8-0800-93AB-51ED6CDE0CD4}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2885083713",
+      "Name": "Play_Music_End",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_Music_End",
+      "GUID": "{2A9195AD-2A3D-4A59-9B97-AC2E20764B28}",
+      "DurationType": "OneShot",
+      "DurationMin": "168.18748",
+      "DurationMax": "168.18748",
+      "MediaRefs": [
+       {
+        "Id": "575399227"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C84DEB58-BF22-E82E-F0D7-A935B9C2C6B6}"
+ }
+}

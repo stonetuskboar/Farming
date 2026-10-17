@@ -71,7 +71,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_MineRock" ID="{FF2A83C6-9F83-487F-88F9-19F311845DEE}"/>
+						<Event Name="Play_MineRock" ID="{FF2A83C6-9F83-487F-88F9-19F311845DEE}">
+							<ChildrenList>
+								<Action Name="" ID="{51E79D5D-3D99-4942-9EF8-45632BDAA779}" ShortID="462370666">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MineRock" ID="{0D964390-5287-40A5-A020-2AA040341A69}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">
@@ -201,23 +211,41 @@
 				</Folder>
 				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
 					<ChildrenList>
-						<Event Name="Play_Spring_Amb" ID="{A045A6DF-D6DF-4B74-8FDC-A8290772C839}">
+						<Event Name="Play_Season_Audio" ID="{A045A6DF-D6DF-4B74-8FDC-A8290772C839}">
 							<ChildrenList>
 								<Action Name="" ID="{0B46A048-1C9B-4CCB-8012-E72A09602F76}" ShortID="286704298">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Spring_Amb" ID="{426487A7-EBF9-4001-BB2D-C34912835740}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+											<ObjectRef Name="Amb_Transition" ID="{A16DB16A-9DB6-45D6-806B-944D7B5D475C}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{46BF847E-83D1-4059-8FF2-B69BB5601DA3}" ShortID="159855209">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Transition" ID="{3C6673B1-32C2-4B25-979F-757A5B65862A}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Spring_Music" ID="{A36960CF-8B0E-4D91-B75E-96B5975A548C}">
+						<Event Name="Play_Music_Start" ID="{9515CCCB-0DA8-46BD-908B-F1A7688962F5}">
 							<ChildrenList>
-								<Action Name="" ID="{BB4241C0-1544-436B-8AA9-A9FA2E044B1A}" ShortID="336569635">
+								<Action Name="" ID="{2078CF2B-8DAD-4442-AF07-507698195E4E}" ShortID="374434000">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+											<ObjectRef Name="Start" ID="{6A200F69-9EB5-49D3-B58D-E05FFA83B950}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_End" ID="{2A9195AD-2A3D-4A59-9B97-AC2E20764B28}">
+							<ChildrenList>
+								<Action Name="" ID="{9C388E4A-4CF8-4C3C-8A3B-59D98D19285A}" ShortID="953637448">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="End" ID="{922B3C20-DF87-4FB2-8BA0-7CDCE940713C}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

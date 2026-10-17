@@ -932,7 +932,7 @@
 									<PropertyList>
 										<Property Name="VolumeOffset" Type="Real64">
 											<ValueList>
-												<Value>-2</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1107,7 +1107,7 @@
 										<MediaID ID="963684009"/>
 									</MediaIDList>
 								</AudioFileSource>
-								<AudioFileSource Name="UI_Shop_Close" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}">
+								<AudioFileSource Name="UI_Shop_Close_01" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}">
 									<Language>SFX</Language>
 									<AudioFile>UI_Shop_Close.wav</AudioFile>
 									<MediaIDList>
@@ -1116,7 +1116,7 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Shop_Close" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}" Platform="Linked"/>
+								<ActiveSource Name="UI_Shop_Close_01" ID="{1D04CDED-680F-4327-9CA1-EF741BCC7003}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Shop_Tab" ID="{8145D9E9-2462-4C1D-BB9B-007E46A60B70}" ShortID="529955235">
@@ -1259,7 +1259,487 @@
 				</Folder>
 				<Folder Name="System" ID="{7032D809-B2CF-4928-BC45-7E5B9C58ABCC}" ShortID="311593912">
 					<ChildrenList>
-						<RandomSequenceContainer Name="Brids" ID="{F5C3499B-859D-43C3-A47C-CC6F2C4AF0C2}" ShortID="1025549781">
+						<SwitchContainer Name="Music_Transition" ID="{3C6673B1-32C2-4B25-979F-757A5B65862A}" ShortID="937185478">
+							<PropertyList>
+								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Spring" ID="{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}" WorkUnitID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Season_Transition" ID="{1DFD40E2-F095-4441-9F24-8DBB9A263874}" WorkUnitID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Summer Music" ID="{0A1CD290-91F5-4700-AE47-443507DA6F26}" ShortID="600306513">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A73F4959-44E8-4007-9052-4BA2EE6CA7FF}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Summer Music" ID="{DF21EB66-73C5-4D55-9DDA-4F63CAD0C441}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Summer Music.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="77846679"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Summer Music" ID="{DF21EB66-73C5-4D55-9DDA-4F63CAD0C441}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}" ShortID="253331936">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8C1F6636-7C9E-4B50-8918-F20134A9EC15}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Spring Music.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="829113303"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Autumn Music" ID="{1BE37DCE-DDF9-409B-A806-21D801D49D66}" ShortID="870571062">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7969F45C-15F4-430E-ADEB-5FAAC08B9852}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Autumn Music" ID="{C8A28DB3-4584-4CC5-B58D-84BC89EC9F2B}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Autumn Music.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="730389584"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Autumn Music" ID="{C8A28DB3-4584-4CC5-B58D-84BC89EC9F2B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{624E38FD-CDF0-4DBE-9E9E-A763AE51F360}" ShortID="63250721">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="MusicVolume" ID="{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}" WorkUnitID="{BC6B375F-2311-4797-A89C-E0ED9FDC535C}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{2A9D1801-DFF2-4B61-A014-1752191D7B06}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Summer Music" ID="{0A1CD290-91F5-4700-AE47-443507DA6F26}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Autumn Music" ID="{1BE37DCE-DDF9-409B-A806-21D801D49D66}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Summer" ID="{6DD36715-3B3E-45D3-ACC5-869E08A16365}"/>
+										<ItemList>
+											<ItemRef Name="Summer Music" ID="{0A1CD290-91F5-4700-AE47-443507DA6F26}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Spring" ID="{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}"/>
+										<ItemList>
+											<ItemRef Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Autumn" ID="{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"/>
+										<ItemList>
+											<ItemRef Name="Autumn Music" ID="{1BE37DCE-DDF9-409B-A806-21D801D49D66}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="Amb_Transition" ID="{A16DB16A-9DB6-45D6-806B-944D7B5D475C}" ShortID="1059562511">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{560C5BAB-79B9-4C3A-9AAF-46AAEF913B14}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Spring" ID="{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}" WorkUnitID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Season_Transition" ID="{1DFD40E2-F095-4441-9F24-8DBB9A263874}" WorkUnitID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Summer Amb" ID="{F2B1BCA6-EE01-4512-AF83-29646577F0F7}" ShortID="960900791">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7E2D9A6D-6093-45C4-8807-E9D726170A6D}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Summer Amb" ID="{78772898-0237-42F2-A048-4DB8612045D4}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-16.1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Summer Amb.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="830017865"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Summer Amb" ID="{78772898-0237-42F2-A048-4DB8612045D4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Autumn Amb" ID="{BC4BFBFB-0526-497D-A66A-13A718D45B74}" ShortID="735048549">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E0BE4799-C365-4309-B8B5-CBD997689511}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Autumn Amb" ID="{18AC1F59-042D-417A-BC6E-D583EFC876C0}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Autumn Amb.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="550413806"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Autumn Amb" ID="{18AC1F59-042D-417A-BC6E-D583EFC876C0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Spring_Amb" ID="{083643B6-A1B8-4215-8C1B-4E7EB9B620A5}" ShortID="50993245">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0679A13A-B389-404D-BCD5-349B67C8DF7E}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Spring_Amb" ID="{E3484B58-38F3-4E34-B1C0-2D56F7B6A71B}">
+											<PropertyList>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>5.9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Spring_Amb.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="947754743"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Spring_Amb" ID="{E3484B58-38F3-4E34-B1C0-2D56F7B6A71B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Summer Amb" ID="{F2B1BCA6-EE01-4512-AF83-29646577F0F7}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Spring_Amb" ID="{083643B6-A1B8-4215-8C1B-4E7EB9B620A5}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Autumn Amb" ID="{BC4BFBFB-0526-497D-A66A-13A718D45B74}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Summer" ID="{6DD36715-3B3E-45D3-ACC5-869E08A16365}"/>
+										<ItemList>
+											<ItemRef Name="Summer Amb" ID="{F2B1BCA6-EE01-4512-AF83-29646577F0F7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Spring" ID="{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}"/>
+										<ItemList>
+											<ItemRef Name="Spring_Amb" ID="{083643B6-A1B8-4215-8C1B-4E7EB9B620A5}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Autumn" ID="{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"/>
+										<ItemList>
+											<ItemRef Name="Autumn Amb" ID="{BC4BFBFB-0526-497D-A66A-13A718D45B74}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<Sound Name="End" ID="{922B3C20-DF87-4FB2-8BA0-7CDCE940713C}" ShortID="884119898">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FD72CC06-8A39-410E-AAB8-5BDF893688F8}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
@@ -1268,9 +1748,70 @@
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
 								</Reference>
 							</ReferenceList>
-						</RandomSequenceContainer>
-						<Sound Name="Spring_Amb" ID="{426487A7-EBF9-4001-BB2D-C34912835740}" ShortID="600712786">
+							<ChildrenList>
+								<AudioFileSource Name="End" ID="{4841C298-992B-44E4-BFB7-A7692F82DCCA}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>End.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="575399227"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{93549D44-3D7A-4175-B327-4E95C23BB5DA}" ShortID="490699886">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="MusicVolume" ID="{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}" WorkUnitID="{BC6B375F-2311-4797-A89C-E0ED9FDC535C}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{9427399A-0E9D-4C47-949E-0C292C2250E7}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="End" ID="{4841C298-992B-44E4-BFB7-A7692F82DCCA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Start" ID="{6A200F69-9EB5-49D3-B58D-E05FFA83B950}" ShortID="747661319">
 							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8FCCF82D-13DE-4BBE-AD58-7484E0B430F1}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -1282,38 +1823,74 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Spring_Amb" ID="{38EB9021-35FF-449F-86FA-32F1569B76B0}">
+								<AudioFileSource Name="Start" ID="{7D8A08D4-F321-4E22-AFBB-C107F0244C48}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>Spring_Amb.wav</AudioFile>
+									<AudioFile>Start.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="947754743"/>
+										<MediaID ID="21548205"/>
 									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Marker Name="" ID="{A0E467B6-D05D-40FD-9DCC-F9E25CC040B0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="Tempo: 75.0"/>
+												</PropertyList>
+											</Marker>
+											<Marker Name="" ID="{97D005A2-2226-437B-961E-1736A5045202}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="标记 5"/>
+													<Property Name="Time" Type="Real64" Value="8.8"/>
+												</PropertyList>
+											</Marker>
+										</ObjectList>
+									</ObjectLists>
 								</AudioFileSource>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{966A93E6-C241-4633-BB42-FCF5EA9814B9}" ShortID="970124186">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="MusicVolume" ID="{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}" WorkUnitID="{BC6B375F-2311-4797-A89C-E0ED9FDC535C}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{5E2151B0-F325-40A3-A8DC-6651F09075A0}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
 							<ActiveSourceList>
-								<ActiveSource Name="Spring_Amb" ID="{38EB9021-35FF-449F-86FA-32F1569B76B0}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Spring_Music" ID="{9CC8BE5A-BA7B-4BE5-A81A-3A555DE64CE0}" ShortID="253331936">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}">
-									<Language>SFX</Language>
-									<AudioFile>Spring Music.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="829113303"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Spring Music" ID="{B9DF3C38-D97E-4220-8D20-A56F43311D9A}" Platform="Linked"/>
+								<ActiveSource Name="Start" ID="{7D8A08D4-F321-4E22-AFBB-C107F0244C48}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

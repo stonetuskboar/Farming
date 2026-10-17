@@ -1,0 +1,54 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3797325362",
+    "Type": "Event",
+    "GUID": "{9515CCCB-0DA8-46BD-908B-F1A7688962F5}",
+    "Language": "SFX",
+    "Hash": "{B99EFD29-6403-F066-3A5A-299E58D5A32E}",
+    "ObjectPath": "Play_Music_Start",
+    "ShortName": "Play_Music_Start",
+    "Path": "Event/Play_Music_Start.bnk",
+    "Media": [
+     {
+      "Id": "21548205",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Start.wav",
+      "Path": "Media/21548205.wem",
+      "CachePath": "B7/{B7D4D438-D334-FC8B-4230-C4C2077B490F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3797325362",
+      "Name": "Play_Music_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_Music_Start",
+      "GUID": "{9515CCCB-0DA8-46BD-908B-F1A7688962F5}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "21548205"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C34BC990-0C2D-0671-F7FE-1888CD447F1C}"
+ }
+}
