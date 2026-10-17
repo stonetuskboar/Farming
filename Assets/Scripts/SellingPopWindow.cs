@@ -28,9 +28,9 @@ public class SellingPopWindow : MonoBehaviour
     private float holdTime;
     private float repeatTimer;
     private int MaxValue = 50;
-    private int Price = 5;
+    private int Price = 0;
     public int itemId;
-    public int currentValue;
+    public int currentValue = 1;
 
 
     public void Start()
@@ -43,6 +43,7 @@ public class SellingPopWindow : MonoBehaviour
         DecreaseButton.PointerExited += StopHolding;
 
         ConfirmButton.PointerClicked += Sold;
+        SetValue(0);
     }
 
     private void Update()
@@ -81,7 +82,7 @@ public class SellingPopWindow : MonoBehaviour
         itemId = item.Id;
         this.MaxValue = item.Amount;
         this.Price = item.itemData.Price;
-        SetValue(0);
+        SetValue(1);
     }
     private void ChangeValue()
     {

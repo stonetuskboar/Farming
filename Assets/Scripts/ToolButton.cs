@@ -28,7 +28,7 @@ public class ToolButton : ImageSwapButton
     }
     public void Set( BasicItem item)
     {
-        itemId = item.itemData.Id;
+        itemId = item.Id;
         ToolIcon.sprite = item.itemData.Icon;
         if(item is BasicSeed)
         {
@@ -42,7 +42,7 @@ public class ToolButton : ImageSwapButton
     }
     public void OnClick()
     {
-        HotBarController.SelectNowTool(this);
+        HotBarController.SelectNowTool(itemId);
     }
 
     public void OnPointEnter()

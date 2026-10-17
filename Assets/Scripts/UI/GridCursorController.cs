@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -25,6 +24,7 @@ public class GridCursorController : MonoBehaviour
     [SerializeField] private InputActionReference pointAction;
     [SerializeField] private InputActionReference clickDownAction;
     [SerializeField] private InputActionReference clickUpAction;
+    public Sprite PointerSprite;
     public Image CursorImage;
     public BasicTweenObject ImageTween;
     // 曾经用过的格子
@@ -76,6 +76,14 @@ public class GridCursorController : MonoBehaviour
             GetNowTool().Use(CurrentCells);
         }
     }
+    public void ChangeCursorToPointer()
+    {
+        if(GetNowTool() == null)
+        {
+            return;
+        }
+        ChangeCursorSprite(PointerSprite);
+    }
     public void ChangeCursorSprite(Sprite sprite)
     {
         CursorImage.sprite = sprite;
@@ -85,7 +93,11 @@ public class GridCursorController : MonoBehaviour
     }
     public void BackToNormalSprite()
     {
-        ChangeCursorSprite(GetNowTool().itemData.Icon);
+        UsableItem item = GetNowTool();
+        if(item != null)
+        {
+            ChangeCursorSprite(GetNowTool().itemData.Icon);
+        }
     }
     private void UpdateCursor()
     {
@@ -117,7 +129,7 @@ public class GridCursorController : MonoBehaviour
             HideCursorBoxes();
             return;
         }
-        CurrentCells = GetNearestCells(gameManager.FarmLandManager.grid, cursorWorldPosition, GetNowTool().size.x, GetNowTool().size.y);
+        CurrentCells = GetNearestCells(gameManager.FarmLandManager.grid,cursorWorldPosition, GetNowTool().size);
 
         for(int i = 0; i < CurrentCells.Count; i++)
         {
@@ -138,6 +150,10 @@ public class GridCursorController : MonoBehaviour
                 cursorBoxes[i].sprite = invalidSprite;
             }
         }
+        for(int i = CurrentCells.Count; i < cursorBoxes.Count; i++)
+        {
+            cursorBoxes[i].gameObject.SetActive(false);
+        }
 
         if (tool.CanUse(CurrentCells))
         {
@@ -156,12 +172,13 @@ public class GridCursorController : MonoBehaviour
             box.gameObject.SetActive(false);
         }
     }
-    public static List<Vector3Int> GetNearestCells(Grid grid,Vector3 worldPos,int m,int n)
+    public static List<Vector3Int> GetNearestCells(Grid grid,Vector3 worldPos,Vector2Int size)
     {
         Vector3 localPos = grid.WorldToLocal(worldPos);
         Vector3 cellPos = grid.LocalToCellInterpolated(localPos);
-        
 
+        int m = size.x;
+        int n = size.y;
         int startX = Mathf.FloorToInt(cellPos.x - (m - 1) * 0.5f);
         int startY = Mathf.FloorToInt(cellPos.y - (n - 1) * 0.5f);
         int z = Mathf.FloorToInt(cellPos.z);

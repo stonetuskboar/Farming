@@ -45,17 +45,22 @@ public class BasicSeed : UsableItem
         {
             return false;
         }
-        else if (farm.GetFarmTileData(cell).soilState != SoilState.Tilled && farm.GetFarmTileData(cell).soilState != SoilState.Watered)
+        else 
         {
-            return false;
-        }
-        else if (farm.GetFarmTileData(cell).cropObject != null)
-        {
-            return false;
-        }
-        else if(cropData.IsContainSeason(GameManager.season) == false)
-        {
-            return false;
+            FarmTileData data = farm.GetFarmTileData(cell);
+
+            if (data.soilState != SoilState.Tilled && data.soilState != SoilState.Watered)
+            {
+                return false;
+            }
+            else if (data.cropObject != null)
+            {
+                return false;
+            }
+            else if (cropData.IsContainSeason(GameManager.season) == false)
+            {
+                return false;
+            }
         }
         return true;
     }

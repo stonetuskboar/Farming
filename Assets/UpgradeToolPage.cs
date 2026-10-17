@@ -90,7 +90,7 @@ public class UpgradeToolPage : MonoBehaviour
     public void HoverTool(ToolItem item)
     {
         PopWindowText.text = item.itemData.Description;
-        ToolDescriptionPopWindow.Show();
+        ToolDescriptionPopWindow.Show(0.2f);
         BeforeUpgradeImage.sprite = item.itemData.Icon;
         TweenShow(BeforeUpgradeImage);
     }
@@ -99,8 +99,7 @@ public class UpgradeToolPage : MonoBehaviour
         PopWindowText.text = item.itemData.Description;
         if (NowSelectedTool != null)
         {
-            ToolDescriptionPopWindow.Show();
-            ToolDescriptionPopWindow.Show();
+            ToolDescriptionPopWindow.Show(0.3f);
             TweenShow(BeforeUpgradeImage);
             FindUIById(NowSelectedTool)?.Button.ChangeStateToIdle();
         }

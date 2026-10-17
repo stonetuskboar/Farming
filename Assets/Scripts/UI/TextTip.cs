@@ -16,6 +16,7 @@ public class TextTip : BasicUIView
         Showing,
     }
     private int showId = 0;
+    public string AudioName;
     public RectTransform RectTransformByVisibleJudge;
     public LayoutElement LayoutElement;
     private float DefaultPreferWidth;
@@ -36,7 +37,7 @@ public class TextTip : BasicUIView
     {
         GetRectMinMax(RectTransformByVisibleJudge, out minCard, out maxCard, Isoverlay);
     }
-    public int Show(Vector3 worldPosition, string text = null, float ShowTweenTime = 0.2f)
+    public int Show(Vector3 localTransform, string text = null, float ShowTweenTime = 0.2f)
     {
         showId++;
         SetCanvasGroupAlpha(1f);
@@ -48,7 +49,7 @@ public class TextTip : BasicUIView
             LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
         }
         transform.localScale = 1f * Vector3.one;
-        transform.position = worldPosition;
+        transform.localPosition = localTransform;
         LimitRectVisible(new RectOffset(20,20,20, 20));
 
         if(rectTransform.rect.height > LayoutElement.preferredWidth)
@@ -67,17 +68,18 @@ public class TextTip : BasicUIView
 
     public int Show( string text = null, float ShowTweenTime = 0.2f)
     {
-        return Show(transform.position, text, ShowTweenTime);
+        return Show(transform.localPosition, text, ShowTweenTime);
     }
     public void DoDelayShow(float delayTime, Vector3 worldPosition, string text, float ShowTweenTime = 0.2f)
     {
-        StartCoroutine(DelayShow(delayTime, worldPosition, text, ShowTweenTime));
+        Vector3 localPos = transform.parent.InverseTransformPoint(worldPosition);
+        StartCoroutine(DelayShow(delayTime, localPos, text, ShowTweenTime));
     }
     public void DoDelayShow(float delayTime, string text = null, float ShowTweenTime = 0.2f)
     {
-        StartCoroutine(DelayShow(delayTime, transform.position, text, ShowTweenTime));
+        StartCoroutine(DelayShow(delayTime, transform.localPosition, text, ShowTweenTime));
     }
-    public IEnumerator DelayShow(float delayTime, Vector3 worldPosition, string text, float ShowTweenTime)
+    public IEnumerator DelayShow(float delayTime, Vector3 localPosition, string text, float ShowTweenTime)
     {
         int id = showId;
         float nowTime = 0;
@@ -89,7 +91,8 @@ public class TextTip : BasicUIView
         }
         if (id == showId)
         {
-            Show(worldPosition, text, ShowTweenTime);
+            GameDataManager.Instance.PlayAudio(AudioName);
+            Show(localPosition, text, ShowTweenTime);
         }
     }
     public void ShowThenHide(string text = null, float showTweenTime = 0.3f, float HideTime = 1.2f)
@@ -100,9 +103,9 @@ public class TextTip : BasicUIView
             Hide(id);
         });
     }
-    public void ShowThenHide(Vector3 worldPosition, string text = null, float showTweenTime = 0.3f, float HideTime = 1f)
+    public void ShowThenHide(Vector3 localPosition, string text = null, float showTweenTime = 0.3f, float HideTime = 1f)
     {
-        int id = Show(worldPosition, text, showTweenTime);
+        int id = Show(localPosition, text, showTweenTime);
         DoDelay(HideTime, () =>
         { 
             Hide(id);

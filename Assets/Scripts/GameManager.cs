@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
     public HotBarController hotbarController;
     public EnergyBar energyBar;
 
-    public CircleTransition circleTransition;
-    public TextColorTweenObj TransitionText;
+    public TransitionController transitionController;
 
     public HarvestEffectManager HarvestEffectManager;
     public ShopPageController ShopPageController;
@@ -36,7 +35,6 @@ public class GameManager : MonoBehaviour
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         GameDataManager.Instance.PlayAudio("SpringAmb");
         GameDataManager.Instance.PlayAudio("SpringMusic");
-        TransitionText.SetAlpha(0f);
         UpdateMoneyText();
     }
 
@@ -50,17 +48,11 @@ public class GameManager : MonoBehaviour
     public void ReadyForNextTurn()
     {
         GameDataManager.Instance.PlayAudio("NextTurn");
-        circleTransition.StartClose(1.2f , NextTurn);
-        TransitionText.SetAlpha(0f);
-        TransitionText.DoDelay(0.2f, () => { TransitionText.DoAlphaTween(1f, 0.4f); });
-        TimePast();
-        TransitionText.SetText($"第{year}年<br>{Month}月<br>{GetSeasonText(season)}");
+        transitionController.StartShow();
     }
     public void NextTurn()
     {
         FarmLandManager.OnNextTurn(year,season,Month);
-        circleTransition.StartOpen(0.8f);
-        TransitionText.DoDelay(0.4f, () => { TransitionText.DoAlphaTween(0f, 0.3f); });
         NowEnergy = MaxEnergy;
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
     }

@@ -55,6 +55,7 @@ public class SeedItemUI : MonoBehaviour
         }
         else
         {
+            buySeedPage.ResetBuyingAmount();
             buySeedPage.HidePlantInfo();
             Button.ChangeStateToHover();
         }

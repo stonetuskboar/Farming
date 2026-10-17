@@ -9,7 +9,6 @@ public class ShopPageController : BasicUIView
     public BuySeedPage buySeedPage;
     public ShopPageButton nowSelectedButton;
     public GameManager gameManager;
-    [SerializeField] private Sprite ShopCursor;
     protected override void Awake()
     {
         base.Awake();
@@ -46,7 +45,7 @@ public class ShopPageController : BasicUIView
     }
     public void Show() 
     {
-        gameManager.GridCursorController.ChangeCursorSprite(ShopCursor);
+        gameManager.GridCursorController.ChangeCursorToPointer();
         IsShow = true;
         gameObject.SetActive(true);
         SetCanvasGroupAlpha(1f);

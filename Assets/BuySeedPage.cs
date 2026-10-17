@@ -104,7 +104,7 @@ public class BuySeedPage : MonoBehaviour
     }
     public void HidePlantImmediately()
     {
-        buyingSeedPanel.SetAmount(0);
+        ResetBuyingAmount();
         buyingSeedPanel.ConfirmButton.Hide(0f);
         IconTween.SetAlpha(0);
         NameTextTween.SetAlpha(0);
@@ -112,11 +112,16 @@ public class BuySeedPage : MonoBehaviour
         FindUIById(SelectedItemId)?.Button.ChangeStateToIdleImmediately();
         SelectedItemId = -1;
     }
+    public void ResetBuyingAmount()
+    {
+        buyingSeedPanel.Set(0,0);
+        buyingSeedPanel.SetAmount(0);
+    }
     public void HidePlantInfo()
     {
+        buyingSeedPanel.ConfirmButton.Hide(0.3f);
         IconTween.DoAlphaTween(0f, 0.3f);
         NameTextTween.DoAlphaTween(0f, 0.3f);
-        buyingSeedPanel.ConfirmButton.Hide(0.3f);
         plantProgressController.Hide(0.3f);
         SelectedItemId = -1;
     }
@@ -134,6 +139,8 @@ public class BuySeedPage : MonoBehaviour
         TweenShow(NameTextTween);
         plantProgressController.Set(data);
         plantProgressController.Show(0.2f);
+        buyingSeedPanel.Set(item.Price, gameManager.Money / item.Price);
+        buyingSeedPanel.SetAmount(1);
     }
     public void SelectPlant(int Id)
     {

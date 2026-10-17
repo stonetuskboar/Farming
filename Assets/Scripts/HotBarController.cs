@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEditor.Progress;
 
 public class HotBarController : MonoBehaviour
 {
     public GameManager gameManager;
+    [SerializeField] private InputActionReference scrollAction;
+    [SerializeField] private InputActionReference shiftAction;
     public UsableItem NowTool;
-    private int NowSelectId = -1;
     public List<UsableItem> ItemList = new List<UsableItem>();
     public List<ToolButton> ButtonList = new();
+    public ImageSwapButton CursorSwitchButton;
     public int NowPage = 0;
     public TextTip Tip;
     public void Start()
@@ -30,7 +34,23 @@ public class HotBarController : MonoBehaviour
         //    AddItem(i, 0);
         //}
         InitButton();
-        SelectNowTool(ButtonList[0]);
+        SelectNowTool(ItemList[0].Id);
+        CursorSwitchButton.PointerClicked += OnSwitchToCursor;
+        CursorSwitchButton.PointerEntered += OnCursorPointEnter;
+        CursorSwitchButton.PointerExited += OnCursorPointerExit;
+    }
+    void OnEnable()
+    {
+        scrollAction.action.performed += OnScroll;
+        shiftAction.action.Enable();
+        scrollAction.action.Enable();
+    }
+
+    void OnDisable()
+    {
+        scrollAction.action.performed -= OnScroll;
+        scrollAction.action.Disable();
+        shiftAction.action.Disable();
     }
 
     public void InitButton()
@@ -50,7 +70,7 @@ public class HotBarController : MonoBehaviour
             ButtonList[i].gameObject.SetActive(true);
             Sprite sprite = ItemList[i + startIndex].itemData.Icon;
             ButtonList[i].Set(ItemList[i + startIndex]);
-            if (ButtonList[i].itemId == NowSelectId)
+            if (NowTool != null && ButtonList[i].itemId == NowTool.Id)
             {
                 ButtonList[i].ChangeStateToSelectedImmediately();
             }
@@ -64,23 +84,44 @@ public class HotBarController : MonoBehaviour
             ButtonList[i].gameObject.SetActive(false);
         }
     }
-    public void SelectLastTool()
+    public bool SelectToolByIndex(int index)
     {
+        if (index >= ItemList.Count)
+        {
+            SelectNowTool(ItemList[ItemList.Count - 1].Id);
+            return false;
+        }
+        else if(index < 0)
+        {
+            SelectNowTool(ItemList[0].Id);
+            return false;
+        }
+        else 
+        {
+            SelectNowTool(ItemList[index].Id);
+            return true;
+        }
+    }
 
-    }
-    public void SelectNowTool(ToolButton button)
-    {
-        SelectNowTool(button.itemId);
-    }
+
     public void SelectNowTool(int itemId)
     {
-        if (NowSelectId == itemId)
+        if (NowTool != null && NowTool.Id == itemId)
         {
             return;
         }
+        UsableItem item = FindItemById(itemId); 
+        if(item == null)
+        {
+            return;
+        }
+        if (NowTool == null)
+        {
+            CursorSwitchButton.ChangeStateToIdle();
+        }
         for (int i = 0; i < ButtonList.Count; i++)
         {
-            if (ButtonList[i].itemId == NowSelectId && ButtonList[i].gameObject.activeInHierarchy == true)
+            if (NowTool != null && ButtonList[i].itemId == NowTool.Id && ButtonList[i].gameObject.activeInHierarchy == true)
             {
                 ButtonList[i].ChangeStateToIdle();
             }
@@ -89,8 +130,8 @@ public class HotBarController : MonoBehaviour
                 ButtonList[i].ChangeStateToSelected();
             }
         }
-        NowSelectId = itemId;
-        NowTool = FindItemById(itemId);
+
+        NowTool = item;
         gameManager.GridCursorController.ChangeCursorSprite(NowTool.itemData.Icon);
     }
     public void AddItem(int id, int amount = 0)
@@ -120,7 +161,7 @@ public class HotBarController : MonoBehaviour
     {
         int index = FindItemIndexById(id);
         BasicItem item;
-        if (index > 0)
+        if (index >= 0)
         {
             item = ItemList[index];
             item.Amount -= amount;
@@ -194,5 +235,70 @@ public class HotBarController : MonoBehaviour
         {
             NowPage = 0;
         }
+    }
+    private void OnScroll(InputAction.CallbackContext context)
+    {
+        if(NowTool == null)
+        {
+            return;
+        }
+        if(shiftAction.action.IsPressed() == true)
+        {
+            return;
+        }
+        Vector2 scroll = context.ReadValue<Vector2>();
+        int index = FindItemIndexById(NowTool.Id);
+        if(scroll.y > 0)
+        {
+            bool result = SelectToolByIndex(index - 1);
+            if(result == true)
+            {
+                GameDataManager.Instance.PlayAudio("ItemSelect");
+            }
+        }
+        else if (scroll.y <0)
+        {
+            bool result = SelectToolByIndex(index + 1);
+            if (result == true)
+            {
+                GameDataManager.Instance.PlayAudio("ItemSelect");
+            }
+        }
+    }
+
+    public void OnSwitchToCursor()
+    {
+        if(NowTool == null)
+        {
+            return;
+        }
+        for (int i = 0; i < ButtonList.Count; i++)
+        {
+            if (NowTool != null && ButtonList[i].itemId == NowTool.Id && ButtonList[i].gameObject.activeInHierarchy == true)
+            {
+                ButtonList[i].ChangeStateToIdle();
+            }
+        }
+        CursorSwitchButton.ChangeStateToSelected();
+        gameManager.GridCursorController.ChangeCursorToPointer();
+        NowTool = null;
+    }
+    public void OnCursorPointEnter()
+    {
+        Vector3[] corners = new Vector3[4];
+        CursorSwitchButton.GetRectTransform().GetWorldCorners(corners);
+        Vector3 leftTop = corners[1];
+        Vector3 rightBottom = corners[2];
+
+        // 上侧侧边缘的中点（世界坐标）
+        Vector3 upCenter = (rightBottom + leftTop) / 2f;
+
+        string str = "鼠标，在点击地面时不会进行操作，以避免误触。";
+        Tip.DoDelayShow(0.4f, upCenter, str, 0.2f);
+    }
+
+    public void OnCursorPointerExit()
+    {
+        Tip.Hide();
     }
 }

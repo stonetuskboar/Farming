@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u786E\u8BA4\n"
+  m_text: "\u51FA\u552E\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7984d674d90dc843aa5d1f913999cf3, type: 2}
   m_sharedMaterial: {fileID: -9044606362490672139, guid: d7984d674d90dc843aa5d1f913999cf3, type: 2}

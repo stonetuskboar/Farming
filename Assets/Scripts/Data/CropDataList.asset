@@ -350,7 +350,7 @@ MonoBehaviour:
       GrowthSprite: {fileID: -1833712447, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: -1706615881, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
-    size: {x: 1, y: 1}
+    size: {x: 2, y: 2}
     DropedItemId: -1
     DropedAmount: 0
   - Name: "\u77F3\u59343"
@@ -362,7 +362,7 @@ MonoBehaviour:
       GrowthSprite: {fileID: 928843167, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 0
-    size: {x: 1, y: 1}
+    size: {x: 2, y: 2}
     DropedItemId: -1
     DropedAmount: 0
   - Name: "\u82B1"
@@ -510,31 +510,17 @@ MonoBehaviour:
     DropedAmount: 3
     stumpId: -1
     IsStump: 1
-  - Name: "\u5C0F\u6811"
+  - Name: "\u6811\u6869"
     id: 42
     matureTurns: 0
     CanGrowSeasons: 
     growthStages:
     - GrowthProgress: 0
-      GrowthSprite: {fileID: 1708841779, guid: ddd404f2565444240af651ccdda7b203, type: 3}
+      GrowthSprite: {fileID: -1676624834, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: 0}
-      "\u98CE\u529B": 2
+      "\u98CE\u529B": 0
     size: {x: 2, y: 2}
-    DropedItemId: 30
+    DropedItemId: 45
     DropedAmount: 3
     stumpId: -1
     IsStump: 1
-  - Name: "\u5927\u6811"
-    id: 43
-    matureTurns: 0
-    CanGrowSeasons: 
-    growthStages:
-    - GrowthProgress: 0
-      GrowthSprite: {fileID: 1873609452, guid: 169a60065a6ca15468969d73a2858821, type: 3}
-      shadow: {fileID: -1927286574, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
-      "\u98CE\u529B": 2
-    size: {x: 2, y: 2}
-    DropedItemId: 28
-    DropedAmount: 5
-    stumpId: 115
-    IsStump: 0

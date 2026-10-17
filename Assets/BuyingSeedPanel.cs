@@ -23,8 +23,8 @@ public class BuyingSeedPanel : MonoBehaviour
     private float holdTime;
     private float repeatTimer;
     private int MaxValue = 50;
-    private int Price = 5;
-    public int currentAmount;
+    private int Price = 0;
+    public int currentAmount = 0;
 
     public void Start()
     {

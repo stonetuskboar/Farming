@@ -31,7 +31,7 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
 
     protected Vector2 OgSize;
     public Vector2 HoverSize = new Vector2(1.1f, 1.1f);
-    public Vector2 PressedSize = new Vector2(1.1f, 1.1f);
+    public Vector2 PressedSize = new Vector2(1f, 1f);
 
     protected override void Awake()
     {

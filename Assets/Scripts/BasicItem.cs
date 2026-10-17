@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BasicItem
 {
+    //用Id查找itemData，和itemData里的id一致
     public int Id;
     public int Amount;
     public ItemData itemData;
