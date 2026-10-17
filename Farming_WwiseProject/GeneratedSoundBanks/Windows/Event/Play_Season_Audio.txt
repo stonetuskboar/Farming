@@ -1,0 +1,14 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3831435738	Play_Season_Audio			\Default Work Unit\System\Play_Season_Audio	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3254157520	Season_Transition			\Default Work Unit\Season_Transition	
+
+Switch	ID	Name	Switch Group			Notes
+	1296465106	Spring	Season_Transition			
+	3924562482	Summer	Season_Transition			
+	4010875483	Autumn	Season_Transition			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2346531308	MusicVolume			\Default Work Unit\MusicVolume	
+

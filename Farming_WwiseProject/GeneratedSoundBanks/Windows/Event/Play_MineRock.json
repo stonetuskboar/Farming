@@ -10,24 +10,99 @@
     "Type": "Event",
     "GUID": "{FF2A83C6-9F83-487F-88F9-19F311845DEE}",
     "Language": "SFX",
-    "Hash": "{390567EA-EA9E-F4AE-7DBE-773EC2F2E354}",
+    "Hash": "{623CE325-A6CF-73D6-3F5B-E08AE1355E05}",
     "ObjectPath": "Play_MineRock",
     "ShortName": "Play_MineRock",
     "Path": "Event/Play_MineRock.bnk",
+    "Media": [
+     {
+      "Id": "363359888",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Head2.wav",
+      "Path": "Media/363359888.wem",
+      "CachePath": "57/{57BCCAE9-4055-D406-E7A8-C70FA5C1C0A8}.wem"
+     },
+     {
+      "Id": "496607197",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Till1.wav",
+      "Path": "Media/496607197.wem",
+      "CachePath": "8B/{8B220B5F-5FEE-038C-C985-4ADBA0754E15}.wem"
+     },
+     {
+      "Id": "836922303",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Head1.wav",
+      "Path": "Media/836922303.wem",
+      "CachePath": "96/{96E00CE5-D2FE-FE5A-A1BD-02076A853D69}.wem"
+     },
+     {
+      "Id": "989531650",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Till3.wav",
+      "Path": "Media/989531650.wem",
+      "CachePath": "5E/{5E09F526-F046-7E27-CD7F-0F3271E42ABB}.wem"
+     },
+     {
+      "Id": "1000504635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Head3.wav",
+      "Path": "Media/1000504635.wem",
+      "CachePath": "AC/{AC8096EE-6033-2F5C-89C0-9445D53EE544}.wem"
+     },
+     {
+      "Id": "1054802725",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MineRock_Till2.wav",
+      "Path": "Media/1054802725.wem",
+      "CachePath": "38/{3848AEC0-C0C8-079C-C40E-6E7CF83EC35A}.wem"
+     }
+    ],
     "Events": [
      {
       "Id": "2885539260",
       "Name": "Play_MineRock",
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_MineRock",
       "GUID": "{FF2A83C6-9F83-487F-88F9-19F311845DEE}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.56249434",
+      "DurationMax": "0.68750566",
+      "MediaRefs": [
+       {
+        "Id": "363359888"
+       },
+       {
+        "Id": "496607197"
+       },
+       {
+        "Id": "836922303"
+       },
+       {
+        "Id": "989531650"
+       },
+       {
+        "Id": "1000504635"
+       },
+       {
+        "Id": "1054802725"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{B57FAFEE-00EC-7BD5-3678-43F29F11DE23}"
+  "FileHash": "{BFBAE6BE-5053-E10C-846D-21CCFC3E918A}"
  }
 }

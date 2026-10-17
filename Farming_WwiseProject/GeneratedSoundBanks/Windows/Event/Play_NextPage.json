@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{0CFA33BA-76F5-4AFA-B62B-2ADFEE61B929}",
     "Language": "SFX",
-    "Hash": "{27EA035C-E4E1-A79C-804E-338875F969D7}",
+    "Hash": "{A52444DC-2A0F-35EC-303D-3733C7410E19}",
     "ObjectPath": "Play_NextPage",
     "ShortName": "Play_NextPage",
     "Path": "Event/Play_NextPage.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{F481FDD3-67BE-3A7E-E553-4A2E15154327}"
+  "FileHash": "{271463FC-AD6D-22A1-28E8-D6B4E56853D8}"
  }
 }

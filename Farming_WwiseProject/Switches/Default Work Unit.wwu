@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}" SchemaVersion="133">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{EAC85C31-4C59-4544-AC26-17F500DAE85D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Season_Transition" ID="{1DFD40E2-F095-4441-9F24-8DBB9A263874}">
+					<ChildrenList>
+						<Switch Name="Spring" ID="{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}"/>
+						<Switch Name="Summer" ID="{6DD36715-3B3E-45D3-ACC5-869E08A16365}"/>
+						<Switch Name="Autumn" ID="{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

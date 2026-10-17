@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{FB7A72B1-E19E-80E2-E5EC-803B5EC579EC}",
+    "Hash": "{CBF8B7B4-B64F-7C29-9A36-C34F33C1EC57}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -41,9 +41,45 @@
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "3254157520",
+      "Name": "Season_Transition",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition",
+      "GUID": "{1DFD40E2-F095-4441-9F24-8DBB9A263874}",
+      "Switches": [
+       {
+        "Id": "1296465106",
+        "Name": "Spring",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Spring",
+        "GUID": "{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}"
+       },
+       {
+        "Id": "3924562482",
+        "Name": "Summer",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Summer",
+        "GUID": "{6DD36715-3B3E-45D3-ACC5-869E08A16365}"
+       },
+       {
+        "Id": "4010875483",
+        "Name": "Autumn",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Autumn",
+        "GUID": "{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{CE50CB50-6A7D-2C86-5638-7067359E75E9}"
+  "FileHash": "{73564274-681D-00A8-ABEC-8FA8D99174C3}"
  }
 }
