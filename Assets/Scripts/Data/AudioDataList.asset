@@ -48,16 +48,6 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: f3c235e157bb5164fbb956353d561a36, type: 2}
-  - Name: SpringAmb
-    audioEvent:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 04fd25a6fdc1cd84fa67d263922936e7, type: 2}
-  - Name: SpringMusic
-    audioEvent:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: e8c7fccb715f5e24398623e5a0f18da2, type: 2}
   - Name: BuySucess
     audioEvent:
       idInternal: 0

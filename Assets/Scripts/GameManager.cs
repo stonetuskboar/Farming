@@ -35,11 +35,15 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
-        GameDataManager.Instance.PlayAudio("SpringAmb");
-        GameDataManager.audioData.PlaySeasonAudio.Post(gameObject);
-        GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
-        SetSeasonAudio();
         UpdateMoneyText();
+        SetSeasonAudio();
+        GameDataManager.audioData.PlaySeasonAudio.Post(GameDataManager.gameObject);
+        GameObject audioObject = GameDataManager.Instance.gameObject;
+        AKRESULT result = AkUnitySoundEngine.SetRTPCValue(
+            "MusicVolume",
+            0,
+            audioObject
+        );
     }
 
     public void SetSeasonAudio()
@@ -76,7 +80,7 @@ public class GameManager : MonoBehaviour
         AkUnitySoundEngine.SetSwitch(
             "Season_Transition",
             wwiseSeason,
-            gameObject
+            GameDataManager.gameObject
         );
     }
 
@@ -95,7 +99,11 @@ public class GameManager : MonoBehaviour
     }
     public void NextTurn()
     {
-        SetSeasonAudio();
+        if(Month % 3 == 1)
+        {
+            SetSeasonAudio();
+        }
+
         FarmLandManager.OnNextTurn(year,season,Month);
         NowEnergy = MaxEnergy;
         energyBar.SetEnergy(NowEnergy, MaxEnergy);

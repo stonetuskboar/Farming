@@ -83,9 +83,9 @@ public class CropData
         }
         if(CanGrowSeasons.Count == 0)
         {
-            text = "无季节";
+            text = "全年";
         }
-        if(CanGrowSeasons.Contains(Season.春) && CanGrowSeasons.Contains(Season.夏) && CanGrowSeasons.Contains(Season.秋) )
+        else if(CanGrowSeasons.Contains(Season.春) && CanGrowSeasons.Contains(Season.夏) && CanGrowSeasons.Contains(Season.秋) )
         {
             text = "全年";
         }

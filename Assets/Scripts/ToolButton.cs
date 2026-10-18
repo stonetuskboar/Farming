@@ -59,7 +59,7 @@ public class ToolButton : ImageSwapButton
         if (item is BasicSeed)
         {
             BasicSeed seed = item as BasicSeed;
-            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子。<br>可以在{seed.cropData.GetSeasonText()}生长。<br>成熟时间：{seed.cropData.matureTurns}个月。";
+            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子。<br>可生长季节：{seed.cropData.GetSeasonText()}<br>成熟时间：{seed.cropData.matureTurns}个月。";
         }
         else
         {
