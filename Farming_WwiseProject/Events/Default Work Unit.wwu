@@ -265,7 +265,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Season_Change" ID="{4D9C20B1-71B0-4569-82B1-68CB56CF143C}"/>
+						<Event Name="Play_Season_Change" ID="{4D9C20B1-71B0-4569-82B1-68CB56CF143C}">
+							<ChildrenList>
+								<Action Name="" ID="{684A4C7E-F950-4591-9D23-CDEC9DBDB184}" ShortID="285787542">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Season_Change" ID="{3801E7AA-DBCF-4499-B00D-8CB13950C1C4}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
