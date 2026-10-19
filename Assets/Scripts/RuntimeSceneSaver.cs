@@ -9,37 +9,45 @@ using UnityEditor.SceneManagement;
 [InitializeOnLoad]
 public static class RuntimeSceneSaver
 {
+    public static bool IsSave = false;
     static List<SceneCrop> list = new();
     static GameDataManager gameDataManager;
     static RuntimeSceneSaver()
     {
         EditorApplication.playModeStateChanged += OnPlayModeChanged;
     }
-
+    public static void Save()
+    {
+        FarmLandManager manager = Object.FindFirstObjectByType<FarmLandManager>();
+        gameDataManager = GameDataManager.Instance;
+        if (manager != null)
+        {
+            list.Clear();
+            foreach (BasicCrop crop in manager.crops)
+            {
+                if (crop.cropData.id <= 42 && crop.cropData.id >= 31)
+                {
+                    SceneCrop cropdata = new(crop);
+                    list.Add(cropdata);
+                }
+                else if (crop.cropData.id <= 17 && crop.cropData.id >= 15)
+                {
+                    SceneCrop cropdata = new(crop);
+                    list.Add(cropdata);
+                }
+            }
+        }
+    }
     private static void OnPlayModeChanged(PlayModeStateChange state)
     {
+        if(IsSave == false)
+        {
+            return;
+        }
         // 即将退出 Play Mode
         if (state == PlayModeStateChange.ExitingPlayMode)
         {
-            FarmLandManager manager = Object.FindFirstObjectByType<FarmLandManager>();
-            gameDataManager = GameDataManager.Instance;
-            if (manager != null)
-            {
-                list.Clear();
-                foreach(BasicCrop crop in manager.crops)
-                {
-                    if(crop.cropData.id <= 42 && crop.cropData.id >= 31)
-                    {
-                        SceneCrop cropdata = new(crop);
-                        list.Add(cropdata);
-                    }
-                    else if (crop.cropData.id <= 17 && crop.cropData.id >= 15)
-                    {
-                        SceneCrop cropdata = new(crop);
-                        list.Add(cropdata);
-                    }
-                }
-            }
+
         }
 
         // 已经回到 Edit Mode

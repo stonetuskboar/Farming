@@ -59,7 +59,7 @@ public class Axe : ToolItem
             TreeData stumpData = GameDataManager.Instance.cropDataList.GetTreeDataById(data.stumpId);
             if(stumpData != null)
             {
-                farm.Plant(crop.TileCells, stumpData);
+                farm.Plant(crop.TileCells, stumpData,crop.transform.position);
             }
         }
         GameDataManager.Instance.PlayAudio("ChopTree");

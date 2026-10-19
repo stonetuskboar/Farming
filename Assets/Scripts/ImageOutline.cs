@@ -11,13 +11,13 @@ public class ImageOutline : MonoBehaviour
 
     [SerializeField, Range(0f, 10f)]
     private float outlineWidth = 1f;
-
+    public bool HideOutLine = false;
     private Image image;
 
-    private Material runtimeMaterial;
-    private Material originalMaterial;
+    private Material materialInstance;
 
     private Sprite lastSprite;
+
 
     private static readonly int SpriteUVRectID =
         Shader.PropertyToID("_SpriteUVRect");
@@ -31,20 +31,11 @@ public class ImageOutline : MonoBehaviour
     private void OnEnable()
     {
         image = GetComponent<Image>();
-
-        CreateMaterial();
-        UpdateMaterial();
+        materialInstance = image.material;
+        UpdateProperties();
+        UpdateSpriteUV();
     }
 
-    private void OnDisable()
-    {
-        CleanupMaterial();
-    }
-
-    private void OnDestroy()
-    {
-        CleanupMaterial();
-    }
 
     private void LateUpdate()
     {
@@ -56,8 +47,6 @@ public class ImageOutline : MonoBehaviour
         {
             UpdateSpriteUV();
         }
-
-        UpdateProperties();
     }
 
 #if UNITY_EDITOR
@@ -69,94 +58,42 @@ public class ImageOutline : MonoBehaviour
         if (image == null)
             image = GetComponent<Image>();
 
-        if (runtimeMaterial == null)
-            CreateMaterial();
-
-        UpdateMaterial();
+        materialInstance = image.material;
+        UpdateProperties();
+        UpdateSpriteUV();
     }
 #endif
 
-    private void CreateMaterial()
-    {
-        if (image == null)
-            return;
-
-        if (runtimeMaterial != null)
-            return;
-
-        originalMaterial = image.material;
-
-        Shader shader =
-            Shader.Find("UI/WhiteOutlineSafeAtlas");
-
-        if (shader == null)
-        {
-            Debug.LogError(
-                "找不到 Shader: UI/WhiteOutlineSafeAtlas",
-                this
-            );
-
-            return;
-        }
-
-        // 每个 Image 使用独立材质。
-        // 因为不同 Sprite 的 Atlas UV Rect 不一样。
-        runtimeMaterial = new Material(shader);
-
-        runtimeMaterial.name =
-            $"{name}_WhiteOutline_Runtime";
-
-        runtimeMaterial.hideFlags =
-            HideFlags.HideAndDontSave;
-
-        image.material = runtimeMaterial;
-    }
-
-    private void UpdateMaterial()
-    {
-        if (runtimeMaterial == null)
-            return;
-
-        UpdateSpriteUV();
-        UpdateProperties();
-
-        image.SetMaterialDirty();
-    }
-
     private void UpdateProperties()
     {
-        if (runtimeMaterial == null)
-            return;
-
-        runtimeMaterial.SetColor(
+        materialInstance.SetColor(
             OutlineColorID,
             outlineColor
         );
 
-        runtimeMaterial.SetFloat(
-            OutlineWidthID,
-            outlineWidth
-        );
+        if(HideOutLine == true)
+        {
+            materialInstance.SetFloat(
+                OutlineWidthID,
+                0f
+            );
+        }
+        else
+        {
+            materialInstance.SetFloat(
+                OutlineWidthID,
+                outlineWidth
+            );
+        }
+
     }
 
     private void UpdateSpriteUV()
     {
-        if (runtimeMaterial == null)
-            return;
 
         Sprite sprite = image.sprite;
 
         lastSprite = sprite;
-
-        if (sprite == null)
-        {
-            runtimeMaterial.SetVector(
-                SpriteUVRectID,
-                new Vector4(0, 0, 1, 1)
-            );
-
-            return;
-        }
 
         Vector4 outerUV =
             DataUtility.GetOuterUV(sprite);
@@ -168,36 +105,10 @@ public class ImageOutline : MonoBehaviour
         // z = max U
         // w = max V
 
-        runtimeMaterial.SetVector(
+        materialInstance.SetVector(
             SpriteUVRectID,
             outerUV
         );
-
-        image.SetMaterialDirty();
-    }
-
-    private void CleanupMaterial()
-    {
-        if (image != null &&
-            image.material == runtimeMaterial)
-        {
-            image.material = originalMaterial;
-        }
-
-        if (runtimeMaterial == null)
-            return;
-
-        if (Application.isPlaying)
-        {
-            Destroy(runtimeMaterial);
-        }
-        else
-        {
-            DestroyImmediate(runtimeMaterial);
-        }
-
-        runtimeMaterial = null;
-        lastSprite = null;
     }
 
     public void SetOutlineColor(Color color)
@@ -208,7 +119,18 @@ public class ImageOutline : MonoBehaviour
 
     public void SetOutlineWidth(float width)
     {
+        Debug.Log("here");
         outlineWidth = Mathf.Max(0f, width);
+        UpdateProperties();
+    }
+    public void HideOutlineWidth()
+    {
+        HideOutLine = true;
+        UpdateProperties();
+    }
+    public void ShowOutlineWidth()
+    {
+        HideOutLine = false;
         UpdateProperties();
     }
 }

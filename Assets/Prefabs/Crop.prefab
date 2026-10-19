@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596e6885044e05c4294629814597545b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windType: 0
 --- !u!1 &4034049279874623144
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 2020351313
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1862381504, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+  m_Sprite: {fileID: 1033496089, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,6 +201,7 @@ MonoBehaviour:
     Name: 
     id: 0
     matureTurns: 0
+    CanGrowSeasons: 
     growthStages: []
     size: {x: 1, y: 1}
     DropedItemId: 0
@@ -222,3 +224,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596e6885044e05c4294629814597545b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windType: 0

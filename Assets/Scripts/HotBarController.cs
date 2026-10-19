@@ -21,20 +21,20 @@ public class HotBarController : MonoBehaviour
         AddItem(1, 1);
         AddItem(3, 1);
         AddItem(4, 1);
-        //for (int i = 5; i <= 17; i++)
-        //{
-        //    AddItem(i, 0);
-        //}
-        //for (int i = 31; i <= 41; i++)
-        //{
-        //    AddItem(i, 0);
-        //}
-        //for (int i = 42; i <= 43; i++)
-        //{
-        //    AddItem(i, 0);
-        //}
+        for (int i = 5; i <= 15; i++)
+        {
+            AddItem(i, 999);
+        }
+        for (int i = 31; i <= 42; i++)
+        {
+            AddItem(i, 999);
+        }
+        for (int i = 15; i <= 17; i++)
+        {
+            BasicItem item = new BasicWeedTreeSeed(i,i);
+            AddItem(item, 999);
+        }
         InitButton();
-        SelectNowTool(ItemList[0].Id);
         CursorSwitchButton.PointerClicked += OnSwitchToCursor;
         CursorSwitchButton.PointerEntered += OnCursorPointEnter;
         CursorSwitchButton.PointerExited += OnCursorPointerExit;
@@ -53,6 +53,10 @@ public class HotBarController : MonoBehaviour
         shiftAction.action.Disable();
     }
 
+    public void OnGameStart()
+    {
+        OnSwitchToCursor();
+    }
     public void InitButton()
     {
         for(int i = 0; i < ButtonList.Count; i++)
@@ -117,6 +121,7 @@ public class HotBarController : MonoBehaviour
         }
         if (NowTool == null)
         {
+            gameManager.GridCursorController.ImageOuntline.ShowOutlineWidth();
             CursorSwitchButton.ChangeStateToIdle();
         }
         for (int i = 0; i < ButtonList.Count; i++)
@@ -153,6 +158,18 @@ public class HotBarController : MonoBehaviour
 
         FreshButton();
         if(gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
+        {
+            gameManager.ShopPageController.buySeedPage.FreshButton();
+        }
+    }
+    public void AddItem(BasicItem item, int amount = 0)
+    {
+        item.SetAmount(amount);
+        item.Init(gameManager);
+        ItemList.Add(item as UsableItem);
+
+        FreshButton();
+        if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
         {
             gameManager.ShopPageController.buySeedPage.FreshButton();
         }

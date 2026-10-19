@@ -41,6 +41,12 @@ public class BasicColorTweenObject : BasicTweenObject
             graphic.color = value;
         }
     }
+
+    public void OnValidate()
+    {
+        graphic = GetComponent<Graphic>();
+        SetToNormal();
+    }
     public virtual void SetToNormal()
     {
         SetColor(normalColor);

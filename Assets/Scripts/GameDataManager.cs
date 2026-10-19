@@ -65,7 +65,7 @@ public class GameDataManager : MonoBehaviour
         {
             return new BasicWeedSeed(id, id);
         }
-        else if (id >= 42 && id <= 43)
+        else if (id >= 42 && id <= 42)
         {
             return new BasicWeedTreeSeed(id, id);
         }

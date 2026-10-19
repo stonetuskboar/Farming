@@ -21,4 +21,11 @@ public class BasicWeedSeed : BasicSeed
         }
         return true;
     }
+    public override void Use(List<Vector3Int> cells)
+    {
+        GameDataManager.Instance.PlayAudio("Plant");
+        FarmLandManager farm = GameManager.FarmLandManager;
+        farm.Plant(cells, cropData,IsRandom: true);
+        GameManager.hotbarController.DecreaseItem(cropData.id, 1);
+    }
 }

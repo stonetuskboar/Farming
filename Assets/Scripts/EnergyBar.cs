@@ -33,8 +33,14 @@ public class EnergyBar : MonoBehaviour
         // 启动缓冲条动画
         if (bufferCoroutine != null)
             StopCoroutine(bufferCoroutine);
-
-        bufferCoroutine = StartCoroutine(UpdateBuffer());
+        if(gameObject.activeInHierarchy == true)
+        {
+            bufferCoroutine = StartCoroutine(UpdateBuffer());
+        }
+        else
+        {
+            delayedFill.fillAmount = energyPercent;
+        }
     }
     private IEnumerator UpdateBuffer()
     {

@@ -22,6 +22,10 @@ public class ImageSwapButton : BasicPressableButton
         Vector2 nativeSize = image.sprite.rect.size / image.pixelsPerUnit;
         SetOgSize(nativeSize);
     }
+    public void OnValidate()
+    {
+        image.sprite = DefaultSprite;
+    }
     public override void ChangeStateToIdle()
     {
         image.sprite = DefaultSprite;

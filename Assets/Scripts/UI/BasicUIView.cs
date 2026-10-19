@@ -334,8 +334,6 @@ public class BasicUIView : BasicTweenObject
         if (canvas.renderMode == RenderMode.ScreenSpaceOverlay)
         {
             Vector3 worldDelta = GetLimitDelta(margin, Vector3.zero, new Vector3(Screen.width, Screen.height, 0) ,IsOverlay: true);
-            //老代码，如果新的有bug，使用老代码试试
-            //rectTransform.anchoredPosition += new Vector2(worldDelta.x, worldDelta.y);
             SetWorldPosition(transform.position + new Vector3(worldDelta.x, worldDelta.y ,0));
             return worldDelta;
         }

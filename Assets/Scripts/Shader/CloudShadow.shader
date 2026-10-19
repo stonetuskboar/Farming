@@ -11,7 +11,7 @@ Shader "Custom/2D/TilemapCloudShadow"
         _ShadowStrength ("Shadow Strength", Range(0,1)) = 0.35
 
         [Header(Noise)]
-        _NoiseScale ("Cloud Scale", Range(0.1,20)) = 2
+        _NoiseScale ("Cloud Scale", Range(0.1,20)) = 0.15
         _NoiseContrast ("Cloud Contrast", Range(0.1,5)) = 1.5
         _NoiseThreshold ("Cloud Threshold", Range(0,1)) = 0.5
 

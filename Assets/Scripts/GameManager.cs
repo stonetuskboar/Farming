@@ -1,17 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using static ak.wwise;
-using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
     public GameDataManager GameDataManager;
     public GridCursorController GridCursorController;
     public FarmLandManager FarmLandManager;
+
 
     public HotBarController hotbarController;
     public EnergyBar energyBar;
@@ -34,18 +31,21 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        RuntimeSceneSaver.IsSave = false;
+
+    }
+    public void GameStart()
+    {
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         UpdateMoneyText();
         SetSeasonAudio();
-        GameDataManager.audioData.PlaySeasonAudio.Post(GameDataManager.gameObject);
-        GameObject audioObject = GameDataManager.Instance.gameObject;
-        AKRESULT result = AkUnitySoundEngine.SetRTPCValue(
-            "MusicVolume",
-            0,
-            audioObject
-        );
+        hotbarController.OnGameStart();
     }
-
+    public void SaveScene()
+    {
+        RuntimeSceneSaver.IsSave = true;
+        RuntimeSceneSaver.Save();
+    }
     public void SetSeasonAudio()
     {
         Season newSeason = season;

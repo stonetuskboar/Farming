@@ -1,7 +1,7 @@
 using skner.DualGrid;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
-using UnityEditor.ShaderGraph;
+
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -27,6 +27,7 @@ public class FarmLandManager : MonoBehaviour
     public GameObject cropPrefab;
     public Transform cropParent;
     public HashSet<BasicCrop> crops = new();
+    public float PositionRandomRange = 0.2f;
 
     [SerializeField] private Dictionary<Vector3Int, FarmTileData> farmTiles = new();
 
@@ -140,7 +141,7 @@ public class FarmLandManager : MonoBehaviour
                 List<Vector3Int> NearPos = GetNearestCells(pos,cropData.size);
                 if(CanPlantWeedTheseCell(NearPos) == true)
                 {
-                   BasicCrop crop =  Plant(NearPos, cropData);
+                   BasicCrop crop =  Plant(NearPos, cropData ,IsRandom : true);
                 }
             }
         }
@@ -175,13 +176,13 @@ public class FarmLandManager : MonoBehaviour
         tilledFieldTilemap.ClearDataTile(cell);
     }
 
-    public BasicCrop Plant(Vector3Int cell, CropData cropData)
+    public BasicCrop Plant(Vector3Int cell, CropData cropData, bool IsRandom = false)
     {
         List<Vector3Int> cells = new();
         cells.Add(cell);
-        return Plant(cells, cropData);
+        return Plant(cells, cropData,IsRandom);
     }
-    public BasicCrop Plant(List<Vector3Int> cells, CropData cropData)
+    public BasicCrop Plant(List<Vector3Int> cells, CropData cropData, bool IsRandom = false)
     {
         Vector3 sum = Vector3.zero;
 
@@ -190,9 +191,18 @@ public class FarmLandManager : MonoBehaviour
             sum += grid.GetCellCenterWorld(cell);
         }
         Vector3 center = sum / cells.Count;
+        if(IsRandom == true)
+        {
+            Vector3 randomPos = Random.insideUnitCircle * PositionRandomRange * Mathf.Sqrt(cells.Count);
+            center = center + randomPos;
+        }
+        return Plant(cells,cropData, center);
+    }
+    public BasicCrop Plant(List<Vector3Int> cells, CropData cropData, Vector3 Position)
+    {
         GameObject obj = Instantiate(
             cropPrefab,
-            center,
+            Position,
             Quaternion.identity,
             cropParent
         );

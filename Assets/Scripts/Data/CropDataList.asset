@@ -255,8 +255,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u6742\u83492"
     id: 32
     matureTurns: 0
@@ -267,8 +267,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u6742\u83493"
     id: 33
     matureTurns: 0
@@ -279,8 +279,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u6742\u83494"
     id: 34
     matureTurns: 0
@@ -290,9 +290,9 @@ MonoBehaviour:
       GrowthSprite: {fileID: 887228520, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
-    size: {x: 1, y: 2}
-    DropedItemId: -1
-    DropedAmount: 0
+    size: {x: 1, y: 1}
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u6742\u83495"
     id: 35
     matureTurns: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u6742\u83496"
     id: 36
     matureTurns: 0
@@ -315,8 +315,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u77F3\u5B50"
     id: 37
     matureTurns: 0
@@ -351,8 +351,8 @@ MonoBehaviour:
       shadow: {fileID: -1706615881, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 2, y: 2}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 4
   - Name: "\u77F3\u59343"
     id: 40
     matureTurns: 0
@@ -375,8 +375,8 @@ MonoBehaviour:
       shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 2
   - Name: "\u67AF\u840E\u690D\u7269"
     id: 44
     matureTurns: 0
@@ -387,8 +387,8 @@ MonoBehaviour:
       shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 44
+    DropedAmount: 1
   trees:
   - Name: "\u677E\u6811"
     id: 15

@@ -26,6 +26,7 @@ public class GridCursorController : MonoBehaviour
     [SerializeField] private InputActionReference clickUpAction;
     public Sprite PointerSprite;
     public Image CursorImage;
+    public ImageOutline ImageOuntline;
     public BasicTweenObject ImageTween;
     // 曾经用过的格子
     private List<Vector3Int> UsedCells = new();
@@ -91,6 +92,7 @@ public class GridCursorController : MonoBehaviour
             return;
         }
         ChangeCursorSprite(PointerSprite);
+        ImageOuntline.HideOutlineWidth();   
     }
     public void ChangeCursorSprite(Sprite sprite)
     {
@@ -104,6 +106,7 @@ public class GridCursorController : MonoBehaviour
         UsableItem item = GetNowTool();
         if(item != null)
         {
+            ImageOuntline.ShowOutlineWidth();
             ChangeCursorSprite(GetNowTool().itemData.Icon);
         }
     }
@@ -116,11 +119,12 @@ public class GridCursorController : MonoBehaviour
             HideCursorBoxes();
             return;
         }
-        Vector2 screenPosition =
+        Vector3 screenPosition =
             Pointer.current.position.ReadValue();
+        screenPosition.z = CursorImage.transform.position.z - mainCamera.transform.position.z;
         Vector3 cursorWorldPosition =
             mainCamera.ScreenToWorldPoint(screenPosition);
-        cursorWorldPosition.z = 0f;
+        
         CursorImage.transform.position = cursorWorldPosition;
 
         if (EventSystem.current.IsPointerOverGameObject())
@@ -139,7 +143,6 @@ public class GridCursorController : MonoBehaviour
             return;
         }
         CurrentCells = GetNearestCells(gameManager.FarmLandManager.grid,cursorWorldPosition, GetNowTool().size);
-
         for(int i = 0; i < CurrentCells.Count; i++)
         {
             if (i >= cursorBoxes.Count)
@@ -184,8 +187,8 @@ public class GridCursorController : MonoBehaviour
     public static List<Vector3Int> GetNearestCells(Grid grid,Vector3 worldPos,Vector2Int size)
     {
         Vector3 localPos = grid.WorldToLocal(worldPos);
+        localPos.z = 0;
         Vector3 cellPos = grid.LocalToCellInterpolated(localPos);
-
         int m = size.x;
         int n = size.y;
         int startX = Mathf.FloorToInt(cellPos.x - (m - 1) * 0.5f);

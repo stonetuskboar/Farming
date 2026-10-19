@@ -16,6 +16,7 @@ public class BasicSeed : UsableItem
     {
         base.Init(manager);
         cropData = GameManager.GameDataManager.cropDataList.GetCropDataById(seedId);
+        Debug.Log(seedId);
         size = cropData.size;
     }
     public void BaseInit(GameManager manager)
