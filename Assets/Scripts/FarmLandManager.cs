@@ -254,7 +254,8 @@ public class FarmLandManager : MonoBehaviour
         crops.Remove(crop);
         if(crop.IsMature() == true)
         {
-            gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position, crop.cropData.DropedItemId, crop.cropData.DropedAmount);
+            int amount = Random.Range(crop.cropData.DropedAmountMin, crop.cropData.DropedAmountMax +1);
+            gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position, crop.cropData.DropedItemId, amount);
         }
         else
         {

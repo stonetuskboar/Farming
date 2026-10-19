@@ -40,7 +40,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 18
-    DropedAmount: 5
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u5411\u65E5\u8475"
     id: 6
     matureTurns: 3
@@ -64,7 +65,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 19
-    DropedAmount: 4
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u5C0F\u9EA6"
     id: 7
     matureTurns: 3
@@ -88,7 +90,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 20
-    DropedAmount: 4
+    DropedAmountMin: 2
+    DropedAmountMax: 4
   - Name: "\u767D\u83DC"
     id: 8
     matureTurns: 2
@@ -108,7 +111,8 @@ MonoBehaviour:
       "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: 21
-    DropedAmount: 4
+    DropedAmountMin: 1
+    DropedAmountMax: 1
   - Name: "\u8349\u8393"
     id: 9
     matureTurns: 3
@@ -132,7 +136,8 @@ MonoBehaviour:
       "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: 22
-    DropedAmount: 4
+    DropedAmountMin: 2
+    DropedAmountMax: 4
   - Name: "\u83E0\u83DC"
     id: 10
     matureTurns: 2
@@ -152,7 +157,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 23
-    DropedAmount: 4
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u841D\u535C"
     id: 11
     matureTurns: 2
@@ -172,7 +178,8 @@ MonoBehaviour:
       "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: 24
-    DropedAmount: 5
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u84DD\u8393"
     id: 12
     matureTurns: 3
@@ -196,7 +203,8 @@ MonoBehaviour:
       "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: 25
-    DropedAmount: 5
+    DropedAmountMin: 3
+    DropedAmountMax: 5
   - Name: "\u90C1\u91D1\u9999"
     id: 13
     matureTurns: 3
@@ -220,7 +228,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 1, y: 1}
     DropedItemId: 26
-    DropedAmount: 5
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u9EC4\u74DC"
     id: 14
     matureTurns: 3
@@ -244,7 +253,8 @@ MonoBehaviour:
       "\u98CE\u529B": 1
     size: {x: 1, y: 1}
     DropedItemId: 27
-    DropedAmount: 4
+    DropedAmountMin: 2
+    DropedAmountMax: 4
   - Name: "\u6742\u83491"
     id: 31
     matureTurns: 0
@@ -256,7 +266,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u6742\u83492"
     id: 32
     matureTurns: 0
@@ -268,7 +279,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u6742\u83493"
     id: 33
     matureTurns: 0
@@ -280,7 +292,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u6742\u83494"
     id: 34
     matureTurns: 0
@@ -292,7 +305,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u6742\u83495"
     id: 35
     matureTurns: 0
@@ -304,7 +318,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u6742\u83496"
     id: 36
     matureTurns: 0
@@ -316,7 +331,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u77F3\u5B50"
     id: 37
     matureTurns: 0
@@ -328,7 +344,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 1, y: 1}
     DropedItemId: 43
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u77F3\u5934"
     id: 38
     matureTurns: 0
@@ -340,7 +357,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 1, y: 1}
     DropedItemId: 43
-    DropedAmount: 3
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   - Name: "\u704C\u6728"
     id: 39
     matureTurns: 0
@@ -352,7 +370,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 2, y: 2}
     DropedItemId: 46
-    DropedAmount: 4
+    DropedAmountMin: 3
+    DropedAmountMax: 5
   - Name: "\u77F3\u59343"
     id: 40
     matureTurns: 0
@@ -364,7 +383,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 43
-    DropedAmount: 5
+    DropedAmountMin: 3
+    DropedAmountMax: 5
   - Name: "\u82B1"
     id: 41
     matureTurns: 0
@@ -376,7 +396,8 @@ MonoBehaviour:
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
     DropedItemId: 46
-    DropedAmount: 2
+    DropedAmountMin: 1
+    DropedAmountMax: 2
   - Name: "\u67AF\u840E\u690D\u7269"
     id: 44
     matureTurns: 0
@@ -388,7 +409,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: -1
-    DropedAmount: 0
+    DropedAmountMin: 0
+    DropedAmountMax: 0
   trees:
   - Name: "\u677E\u6811"
     id: 15
@@ -413,7 +435,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 2, y: 2}
     DropedItemId: 28
-    DropedAmount: 5
+    DropedAmountMin: 4
+    DropedAmountMax: 8
     stumpId: 115
     IsStump: 0
   - Name: "\u677E\u6811\u6869"
@@ -427,7 +450,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 28
-    DropedAmount: 3
+    DropedAmountMin: 2
+    DropedAmountMax: 4
     stumpId: -1
     IsStump: 1
   - Name: "\u67CF\u6811"
@@ -453,7 +477,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
     DropedItemId: 29
-    DropedAmount: 5
+    DropedAmountMin: 2
+    DropedAmountMax: 4
     stumpId: 116
     IsStump: 0
   - Name: "\u67CF\u6811\u6869"
@@ -467,7 +492,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 29
-    DropedAmount: 3
+    DropedAmountMin: 1
+    DropedAmountMax: 2
     stumpId: -1
     IsStump: 1
   - Name: "\u6A61\u6811"
@@ -493,7 +519,8 @@ MonoBehaviour:
       "\u98CE\u529B": 2
     size: {x: 2, y: 2}
     DropedItemId: 30
-    DropedAmount: 5
+    DropedAmountMin: 3
+    DropedAmountMax: 7
     stumpId: 117
     IsStump: 0
   - Name: "\u6A61\u6811\u6869"
@@ -507,7 +534,8 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 30
-    DropedAmount: 3
+    DropedAmountMin: 2
+    DropedAmountMax: 4
     stumpId: -1
     IsStump: 1
   - Name: "\u6811\u6869"
@@ -521,6 +549,7 @@ MonoBehaviour:
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 45
-    DropedAmount: 3
+    DropedAmountMin: 3
+    DropedAmountMax: 5
     stumpId: -1
     IsStump: 1

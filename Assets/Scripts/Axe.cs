@@ -48,6 +48,7 @@ public class Axe : ToolItem
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
             cropsToHarvest.Add(crop);
         }
+        bool IsStump = true;
         foreach (BasicCrop crop in cropsToHarvest)
         {
             if(crop.cropData is not TreeData)
@@ -63,9 +64,21 @@ public class Axe : ToolItem
                 {
                     farm.Plant(crop.TileCells, stumpData, crop.transform.position);
                 }
+                if(data.IsStump == false)
+                {
+                    IsStump = false;
+                }
             }
         }
         GameDataManager.Instance.PlayAudio("ChopTree");
-        GameManager.ConsumeEnergy(6);
+        if(IsStump == true)
+        {
+            GameManager.ConsumeEnergy(4);
+        }
+        else
+        {
+            GameManager.ConsumeEnergy(8);
+        }
+
     }
 }

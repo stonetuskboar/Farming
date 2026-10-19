@@ -26,7 +26,7 @@ MonoBehaviour:
   - Name: "\u7A3F\u5B50"
     Id: 2
     Icon: {fileID: -91360255, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
-    Description: "\u7A3F\u5B50\uFF0C\u7528\u6765\u6316\u6398\u77FF\u7269\u548C\u77F3\u5934\u3002"
+    Description: "\u7A3F\u5B50\uFF0C\u7528\u6765\u6316\u6398\u77FF\u7269\u548C\u77F3\u5934\u3002\n\u6BCF\u6B21\u6D88\u80174\u70B9\u7CBE\u529B\u3002"
     Price: 1
   - Name: "\u9570\u5200"
     Id: 3
@@ -36,7 +36,7 @@ MonoBehaviour:
   - Name: "\u65A7\u5934"
     Id: 4
     Icon: {fileID: 1326724588, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
-    Description: "\u65A7\u5934\uFF0C\u7528\u6765\u780D\u4F10\u6811\u6728\u548C\u6811\u6869\u3002\n\u6BCF\u6B21\u6D88\u80176\u70B9\u7CBE\u529B\u3002"
+    Description: "\u65A7\u5934\uFF0C\u7528\u6765\u780D\u4F10\u6811\u6728\u548C\u6811\u6869\u3002\n\u780D\u4F10\u6811\u6728\u65F6\u6D88\u80178\u70B9\u7CBE\u529B\u3002\n\u780D\u4F10\u6811\u6869\u65F6\u6D88\u80174\u70B9\u7CBE\u529B\u3002"
     Price: 1
   - Name: "\u5357\u74DC\u5B50"
     Id: 5

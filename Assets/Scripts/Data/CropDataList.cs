@@ -42,7 +42,8 @@ public class CropData
     public Vector2Int size = new Vector2Int(1,1);
 
     public int DropedItemId;
-    public int DropedAmount;
+    public int DropedAmountMin = 1;
+    public int DropedAmountMax = 3;
 
     public bool IsContainSeason(Season season)
     {

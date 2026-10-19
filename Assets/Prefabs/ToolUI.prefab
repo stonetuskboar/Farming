@@ -188,11 +188,11 @@ MonoBehaviour:
       m_Calls: []
   hoverTime: 0.2
   normalTime: 0.3
-  HoverSize: {x: 1.1, y: 1.1}
+  HoverSize: {x: 1, y: 1}
   PressedSize: {x: 1, y: 1}
   image: {fileID: 3125654747501517895}
   DefaultSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
-  HoverSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
+  HoverSprite: {fileID: -695021880, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
   SelectedSprite: {fileID: -695021880, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
   PressedSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
   ToolIcon: {fileID: 1030552606931234134}
