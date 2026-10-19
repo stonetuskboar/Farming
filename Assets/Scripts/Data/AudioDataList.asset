@@ -103,16 +103,36 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 373a3c96a803beb47a89a8249f2adc62, type: 2}
-  - Name: Start
+  - Name: StartMusic
     audioEvent:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 05fe271044e48104f86100fb59136f46, type: 2}
-  - Name: End
+  - Name: EndingMusic
     audioEvent:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 20caf9e413be0e74e8b662db8de4da6a, type: 2}
+  - Name: StopStartMusic
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 1614a8f5c0e59e64594fd406680cddac, type: 2}
+  - Name: StopEndingMusic
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 1332cfb77b0fafe4d90ffdea68e727bd, type: 2}
+  - Name: SeasonAudio
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 04fd25a6fdc1cd84fa67d263922936e7, type: 2}
+  - Name: StopSeasonAudio
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f23c960a39de1f34fb00b1078e80f945, type: 2}
   PlaySeasonAudio:
     idInternal: 0
     valueGuidInternal: 

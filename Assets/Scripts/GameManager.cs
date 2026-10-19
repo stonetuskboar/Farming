@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,14 +33,16 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         RuntimeSceneSaver.IsSave = false;
-
+        AkUnitySoundEngine.SetRTPCValue("MusicVolume", 30);
     }
     public void GameStart()
     {
+        GameDataManager.Instance.PlayAudio("SeasonAudio");
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         UpdateMoneyText();
         SetSeasonAudio();
         hotbarController.OnGameStart();
+
     }
     public void SaveScene()
     {

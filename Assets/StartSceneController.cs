@@ -13,7 +13,7 @@ public class StartSceneController : MonoBehaviour
     public void Start()
     {
         OgAnchorPosition = UIView.GetAnchoredPosition();
-        GameDataManager.Instance.PlayAudio("Start");
+        GameDataManager.Instance.PlayAudio("StartMusic");
         UI.SetActive(false);
     }
 
@@ -47,6 +47,7 @@ public class StartSceneController : MonoBehaviour
 
     public void StartGame()
     {
+        GameDataManager.Instance.PlayAudio("StopStartMusic");
         UI.SetActive(true);
         UIView.gameObject.SetActive(false);
         cutScene.gameObject.SetActive(false);
