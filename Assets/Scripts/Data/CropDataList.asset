@@ -255,7 +255,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u6742\u83492"
     id: 32
@@ -267,7 +267,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u6742\u83493"
     id: 33
@@ -279,7 +279,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u6742\u83494"
     id: 34
@@ -291,7 +291,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u6742\u83495"
     id: 35
@@ -303,7 +303,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u6742\u83496"
     id: 36
@@ -315,7 +315,7 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u77F3\u5B50"
     id: 37
@@ -327,9 +327,9 @@ MonoBehaviour:
       shadow: {fileID: 0}
       "\u98CE\u529B": 0
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
-  - Name: "\u5927\u77F3\u5934"
+    DropedItemId: 43
+    DropedAmount: 2
+  - Name: "\u77F3\u5934"
     id: 38
     matureTurns: 0
     CanGrowSeasons: 
@@ -339,8 +339,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 0
     size: {x: 1, y: 1}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 43
+    DropedAmount: 3
   - Name: "\u704C\u6728"
     id: 39
     matureTurns: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
       shadow: {fileID: -1706615881, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 2, y: 2}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 4
   - Name: "\u77F3\u59343"
     id: 40
@@ -363,8 +363,8 @@ MonoBehaviour:
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
-    DropedItemId: -1
-    DropedAmount: 0
+    DropedItemId: 43
+    DropedAmount: 5
   - Name: "\u82B1"
     id: 41
     matureTurns: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
       shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
     size: {x: 1, y: 1}
-    DropedItemId: 44
+    DropedItemId: 46
     DropedAmount: 2
   - Name: "\u67AF\u840E\u690D\u7269"
     id: 44
@@ -387,8 +387,8 @@ MonoBehaviour:
       shadow: {fileID: 1227742159, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
     size: {x: 1, y: 1}
-    DropedItemId: 44
-    DropedAmount: 1
+    DropedItemId: -1
+    DropedAmount: 0
   trees:
   - Name: "\u677E\u6811"
     id: 15
@@ -423,7 +423,7 @@ MonoBehaviour:
     growthStages:
     - GrowthProgress: 0
       GrowthSprite: {fileID: 1863029649, guid: 169a60065a6ca15468969d73a2858821, type: 3}
-      shadow: {fileID: -1706615881, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
+      shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 0
     size: {x: 2, y: 2}
     DropedItemId: 28
@@ -451,7 +451,7 @@ MonoBehaviour:
       GrowthSprite: {fileID: -880877478, guid: 169a60065a6ca15468969d73a2858821, type: 3}
       shadow: {fileID: -916010611, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 2
-    size: {x: 2, y: 2}
+    size: {x: 1, y: 1}
     DropedItemId: 29
     DropedAmount: 5
     stumpId: 116

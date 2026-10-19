@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9d5ba04ac624df1b50935f5f70cee5, type: 3}
+  m_Name: AAEC6AD2-5746-440A-8717-D9C13B119650
+  m_EditorClassIdentifier: 
+  objectName: Play_Popup_Open
+  id: 1709142235
+  guid: AAEC6AD2-5746-440A-8717-D9C13B119650
+  IsInUserDefinedSoundBank: 0

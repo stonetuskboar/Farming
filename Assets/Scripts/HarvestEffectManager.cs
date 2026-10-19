@@ -106,7 +106,7 @@ public class HarvestEffectManager : MonoBehaviour
     /// <summary>
     /// 播放收割粒子
     /// </summary>
-    private void PlayParticle(Vector3 position)
+    public void PlayParticle(Vector3 position)
     {
         if (harvestParticlePrefab == null)
             return;

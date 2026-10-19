@@ -896,7 +896,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 638
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -954,6 +954,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "\u77F3\u5B50"
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c197b7054db6c0846b94d2973a4309c7
+      internalID: 162625205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -982,6 +1003,7 @@ TextureImporter:
       "\u6A61\u6811\u79CD\u5B50": 654402321
       "\u767D\u83DC": -571778375
       "\u767D\u83DC\u5B50": -183140331
+      "\u77F3\u5B50": 162625205
       "\u79CD\u5B50\u888B\u5B50": 792032369
       "\u7A3F\u5B50": -91360255
       "\u7EA4\u7EF4\u675F": 663963665

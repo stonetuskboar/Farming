@@ -50,7 +50,7 @@ public class StartSceneController : MonoBehaviour
         GameDataManager.Instance.PlayAudio("StopStartMusic");
         UI.SetActive(true);
         UIView.gameObject.SetActive(false);
-        cutScene.gameObject.SetActive(false);
+        //cutScene.gameObject.SetActive(false);
         gameManager.GameStart();
     }
 }

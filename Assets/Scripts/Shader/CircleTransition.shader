@@ -67,8 +67,8 @@ Shader "UI/CircleTransition"
                 float distance = length(pos);
 
                 float alpha = 1 - smoothstep(
+                    _Radius - _Softness,
                     _Radius,
-                    _Radius + _Softness,
                     distance
                 );
 

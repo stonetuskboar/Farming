@@ -55,11 +55,10 @@ public class CircleTransition : MonoBehaviour
                 RadiusID,
                 Mathf.Lerp(start, end, t)
             );
-
             yield return null;
         }
-        callback?.Invoke();
         material.SetFloat(RadiusID, end);
+        callback?.Invoke();
     }
 
     protected IEnumerator Open(float duration, Action callback = null)
@@ -85,16 +84,16 @@ public class CircleTransition : MonoBehaviour
 
             yield return null;
         }
+        material.SetFloat(RadiusID, end);
         callback?.Invoke();
-        material.SetFloat(RadiusID, 0);
     }
 
     private float GetMaxRadius()
     {
         float aspect = (float)Screen.width / Screen.height;
-
+        float radius = material.GetFloat("_Radius");
         return Mathf.Sqrt(
             aspect * aspect + 1
-        ) * 0.5f;
+        ) * 0.5f + radius;
     }
 }

@@ -114,7 +114,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 77.34375, y: 77.34375}
+  m_SizeDelta: {x: 77.34375, y: 76.5625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1607750822285020654
 CanvasRenderer:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
+  m_Sprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -191,10 +191,10 @@ MonoBehaviour:
   HoverSize: {x: 1.1, y: 1.1}
   PressedSize: {x: 1, y: 1}
   image: {fileID: 3125654747501517895}
-  DefaultSprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
-  HoverSprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
-  SelectedSprite: {fileID: 240737238, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
-  PressedSprite: {fileID: 1686229120, guid: d611d7d3dc3082c4f836d6303c34a45a, type: 3}
+  DefaultSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
+  HoverSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
+  SelectedSprite: {fileID: -695021880, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
+  PressedSprite: {fileID: 853784034, guid: 9ef6f55a1236cd942a458e6610a9c304, type: 3}
   ToolIcon: {fileID: 1030552606931234134}
   AmountObj: {fileID: 4118880523138878441}
   AmountText: {fileID: 667660810642549841}

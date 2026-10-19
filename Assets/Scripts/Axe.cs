@@ -30,7 +30,7 @@ public class Axe : ToolItem
         else
         {
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
-            if (crop == null || crop.cropData is not TreeData || crop.IsMature() == false)
+            if (crop == null || crop.cropData is not TreeData)
             {
                 return false;
             }
@@ -55,11 +55,14 @@ public class Axe : ToolItem
                 continue;
             }
             farm.Harvest(crop);
-            TreeData data = crop.cropData as TreeData;
-            TreeData stumpData = GameDataManager.Instance.cropDataList.GetTreeDataById(data.stumpId);
-            if(stumpData != null)
+            if(crop.IsMature() == true)
             {
-                farm.Plant(crop.TileCells, stumpData,crop.transform.position);
+                TreeData data = crop.cropData as TreeData;
+                TreeData stumpData = GameDataManager.Instance.cropDataList.GetTreeDataById(data.stumpId);
+                if (stumpData != null)
+                {
+                    farm.Plant(crop.TileCells, stumpData, crop.transform.position);
+                }
             }
         }
         GameDataManager.Instance.PlayAudio("ChopTree");

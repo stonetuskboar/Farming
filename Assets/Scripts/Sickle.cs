@@ -30,7 +30,7 @@ public class Sickle : ToolItem
         else
         {
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
-            if (crop == null || crop.cropData is TreeData || crop.IsMature() == false)
+            if (crop == null || crop.cropData is TreeData)
             {
                 return false;
             }

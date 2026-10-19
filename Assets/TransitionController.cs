@@ -60,7 +60,7 @@ public class TransitionController : MonoBehaviour
 
     public void OnSeasonPass()
     {
-        GameDataManager.Instance.PlayAudio("ItemSelect");
+        GameDataManager.Instance.PlayAudio("SeasonChange");
         calendarView.DoLocalPositionTween(calendarView.transform.localPosition + new Vector3(0,-200,0),0.4f,type:EaseType.EaseInBack,callBack: AfterShake);
 
     }

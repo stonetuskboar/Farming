@@ -133,6 +133,36 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: f23c960a39de1f34fb00b1078e80f945, type: 2}
+  - Name: TransitionClick
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f47ce8e4eb580e54b970a1719a714d07, type: 2}
+  - Name: TransitionLoop
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 42754c8df0ee16f47af3290f8abd5c4f, type: 2}
+  - Name: Popup
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: cd9aa4a85f5bdde4daab2415fe166d00, type: 2}
+  - Name: SeasonChange
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: b92d712f3d419314d9f9313355b737b8, type: 2}
+  - Name: StopTransitionLoop
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 0c75e4ff19a9c81429237c3c966fc106, type: 2}
+  - Name: GameOver
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 4b5eca97a36e9dd43904a1c7acb27247, type: 2}
   MusicVolume:
     idInternal: 0
     valueGuidInternal: 

@@ -21,7 +21,7 @@ public class HotBarController : MonoBehaviour
         AddItem(1, 1);
         AddItem(3, 1);
         AddItem(4, 1);
-        for (int i = 5; i <= 15; i++)
+        for (int i = 5; i <= 14; i++)
         {
             AddItem(i, 999);
         }
@@ -226,7 +226,6 @@ public class HotBarController : MonoBehaviour
     }
     public void DownPage()
     {
-        GameDataManager.Instance.PlayAudio("NextPage");
         if ((NowPage + 1) * ButtonList.Count < ItemList.Count)
         {
             NowPage++;
@@ -235,7 +234,6 @@ public class HotBarController : MonoBehaviour
     }
     public void UpPage()
     {
-        GameDataManager.Instance.PlayAudio("NextPage");
         if(NowPage >0)
         {
             NowPage--;

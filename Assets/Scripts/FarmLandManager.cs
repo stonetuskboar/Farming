@@ -14,7 +14,7 @@ public class FarmLandManager : MonoBehaviour
     [SerializeField] private Tilemap canFarmTileMap;
     //前景那个绿色的地，初始没有，玩家耕种了才有
     [SerializeField] private DualGridTilemapModule grassTilemap;
-    [SerializeField] private DualGridTilemapModule fieldTilemap;
+    [SerializeField] private DualGridTilemapModule dirtTilemap;
     [SerializeField] private DualGridTilemapModule tilledFieldTilemap;
     [SerializeField] private DualGridTilemapModule wateredFieldTilemap;
     [Header("Tile")]
@@ -71,23 +71,48 @@ public class FarmLandManager : MonoBehaviour
         {
             crop.OnNextTurn(year, season, month);
         }
-        if(season == Season.春)
+        if(month % 3 == 1)
         {
-            grassTilemap.RenderTile = springTile;
+            if (season == Season.春)
+            {
+                grassTilemap.RenderTile = springTile;
+            }
+            else if (season == Season.夏)
+            {
+                grassTilemap.RenderTile = summerTile;
+            }
+            else if (season == Season.秋)
+            {
+                grassTilemap.RenderTile = fallTile;
+            }
+            else if (season == Season.冬)
+            {
+                grassTilemap.RenderTile = winterTile;
+            }
+            grassTilemap.RefreshRenderTilemap();
+            foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
+            {
+                int rand = Random.Range(0, 3);
+                if (rand == 0)
+                {
+                    CropData cropData;
+                    int i = Random.Range(0, 10);
+                    if (i < 8)
+                    {
+                        cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 42));
+                    }
+                    else
+                    {
+                        cropData = gameManager.GameDataManager.cropDataList.GetTreeDataById(Random.Range(15, 18));
+                    }
+                    List<Vector3Int> NearPos = GetNearestCells(pos, cropData.size);
+                    if (CanPlantWeedTheseCell(NearPos) == true)
+                    {
+                        BasicCrop crop = Plant(NearPos, cropData, IsRandom: true);
+                    }
+                }
+            }
         }
-        else if(season == Season.夏)
-        {
-            grassTilemap.RenderTile = summerTile;
-        }
-        else if (season == Season.秋)
-        {
-            grassTilemap.RenderTile = fallTile;
-        }
-        else if (season == Season.冬)
-        {
-            grassTilemap.RenderTile = winterTile;
-        }
-        grassTilemap.RefreshRenderTilemap();
         foreach (KeyValuePair<Vector3Int, FarmTileData> pair in farmTiles)
         {
             Vector3Int position = pair.Key;
@@ -108,7 +133,7 @@ public class FarmLandManager : MonoBehaviour
                     {
                         tileData.soilState = SoilState.Dirt;
                         tilledFieldTilemap.ClearDataTile(position);
-                        fieldTilemap.SetDataTile(position);
+                        dirtTilemap.SetDataTile(position);
                     }
                 }
                 else if (tileData.soilState == SoilState.Dirt)
@@ -117,31 +142,9 @@ public class FarmLandManager : MonoBehaviour
                     if (rand == 0)
                     {
                         tileData.soilState = SoilState.Grass;
-                        fieldTilemap.ClearDataTile(position);
+                        dirtTilemap.ClearDataTile(position);
                         grassTilemap.SetDataTile(position);
                     }
-                }
-            }
-        }
-        foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
-        {
-            int rand = Random.Range(0, 5);
-            if(rand == 0)
-            {
-                CropData cropData;
-                int i = Random.Range(0, 10);
-                if(i < 8)
-                {
-                    cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 42));
-                }
-                else
-                {
-                    cropData = gameManager.GameDataManager.cropDataList.GetTreeDataById(Random.Range(15, 18));
-                }
-                List<Vector3Int> NearPos = GetNearestCells(pos,cropData.size);
-                if(CanPlantWeedTheseCell(NearPos) == true)
-                {
-                   BasicCrop crop =  Plant(NearPos, cropData ,IsRandom : true);
                 }
             }
         }
@@ -164,7 +167,7 @@ public class FarmLandManager : MonoBehaviour
 
         tilledFieldTilemap.SetDataTile(cell);
         grassTilemap.ClearDataTile(cell);
-        fieldTilemap.ClearDataTile(cell);
+        dirtTilemap.ClearDataTile(cell);
     }
 
     public void Water(Vector3Int cell)
@@ -230,7 +233,7 @@ public class FarmLandManager : MonoBehaviour
     }
     public void Harvest(BasicCrop crop)
     {
-        if (crop == null || !crop.IsMature())
+        if (crop == null)
             return;
         // 收获作物
         // 移除作物对象
@@ -244,13 +247,20 @@ public class FarmLandManager : MonoBehaviour
             if(data.soilState != SoilState.Grass)
             {
                 grassTilemap.ClearDataTile(cell);
-                fieldTilemap.SetDataTile(cell);
+                dirtTilemap.SetDataTile(cell);
+                data.soilState = SoilState.Dirt;
             }
-
-            data.soilState = SoilState.Dirt;
         }
         crops.Remove(crop);
-        gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position,crop.cropData.DropedItemId,crop.cropData.DropedAmount);
+        if(crop.IsMature() == true)
+        {
+            gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position, crop.cropData.DropedItemId, crop.cropData.DropedAmount);
+        }
+        else
+        {
+            gameManager.HarvestEffectManager.PlayParticle(crop.transform.position);
+        }
+
         Destroy(crop.gameObject);
     }
     public bool CanPlantWeedTheseCell(List<Vector3Int> cells)

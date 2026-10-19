@@ -25,13 +25,15 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
     {
         NowIndex = 0;
         IsClickable = false;
-        transition.StartClose(1.2f,InitShowSprite);
+        transition.StartClose(1.2f);
         UIView.SetCanvasGroupAlpha(0f);
+        UIView.DoDelay(1.5f, InitShowSprite);
+        GameDataManager.Instance.PlayAudio("TransitionLoop");
     }
 
     public void InitShowSprite()
     {
-        GameDataManager.Instance.PlayAudio("ShopOpen");
+        GameDataManager.Instance.PlayAudio("TransitionClick");
         IsClickable = false;
         Image.sprite = SpriteList[NowIndex];
         Image.SetNativeSize();
@@ -41,7 +43,7 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
     }
     public void ShowSprite()
     {
-        GameDataManager.Instance.PlayAudio("ShopOpen");
+        GameDataManager.Instance.PlayAudio("TransitionClick");
         IsClickable = false;
         Image.sprite = SpriteList[NowIndex];
         Image.SetNativeSize();
@@ -61,12 +63,17 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
             }
             else
             {
-                UIView.DoAlphaTween(0f, 0.4f);
-                transition.StartOpen(0.8f);
+                GameDataManager.Instance.PlayAudio("StopTransitionLoop");
+                UIView.DoAlphaTween(0f, 0.5f);
+                transition.StartOpen(1f, DisableObject);
                 EndAction?.Invoke();
             }
         }
 
+    }
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
     }
 
     public void SetClickable()

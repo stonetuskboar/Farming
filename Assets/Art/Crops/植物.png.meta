@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u690D\u7269_8"
+      name: "\u5C0F\u77F3\u5934"
       rect:
         serializedVersion: 2
         x: 0
@@ -325,7 +325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u77F3\u59343"
+      name: "\u5927\u77F3\u5934"
       rect:
         serializedVersion: 2
         x: 128
@@ -346,7 +346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u690D\u7269_10"
+      name: "\u77F3\u5934"
       rect:
         serializedVersion: 2
         x: 0
@@ -504,6 +504,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       "\u5927\u6811\u6869": -1676624834
+      "\u5927\u77F3\u5934": 928843167
+      "\u5C0F\u77F3\u5934": 1421803477
       "\u6728\u68CD": -891733791
       "\u6742\u8349": -573212571
       "\u6742\u83492": 557103947
@@ -511,7 +513,6 @@ TextureImporter:
       "\u6742\u83494": 887228520
       "\u6742\u83495": -880994072
       "\u6742\u83496": 612009694
-      "\u690D\u7269_10": 1705958306
       "\u690D\u7269_11": -1037615379
       "\u690D\u7269_13": -2103615224
       "\u690D\u7269_14": 1946069951
@@ -524,9 +525,8 @@ TextureImporter:
       "\u690D\u7269_21": 1243529269
       "\u690D\u7269_22": 1722204941
       "\u690D\u7269_23": 468560039
-      "\u690D\u7269_8": 1421803477
       "\u704C\u6728": -1833712447
-      "\u77F3\u59343": 928843167
+      "\u77F3\u5934": 1705958306
       "\u82B11": -1483429333
       "\u8349\u5730\u88C5\u99701": -351007062
       "\u8349\u5730\u88C5\u99702": 1538716394

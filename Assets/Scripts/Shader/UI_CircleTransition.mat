@@ -26,7 +26,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Radius: 0
-    - _Softness: 0.005
+    - _Softness: 0.002
     m_Colors:
     - _Center: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
