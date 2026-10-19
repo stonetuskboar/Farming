@@ -251,6 +251,58 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Stop_Music_End" ID="{D32FFA84-C184-4133-981C-4066AAFAC8B3}">
+							<ChildrenList>
+								<Action Name="" ID="{A0C9B794-DE9A-40DF-9096-48236138A96C}" ShortID="810421499">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="End" ID="{922B3C20-DF87-4FB2-8BA0-7CDCE940713C}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Music_Start" ID="{7B68A434-6664-4BBF-B034-2B886E61E46F}">
+							<ChildrenList>
+								<Action Name="" ID="{A97390FE-1A57-4EA1-ADF4-976076FC8B37}" ShortID="1024672570">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Start" ID="{6A200F69-9EB5-49D3-B58D-E05FFA83B950}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Season_Audio" ID="{500C882E-93A0-41DA-B853-90EA304EFA9E}">
+							<ChildrenList>
+								<Action Name="" ID="{8881A85D-2009-446F-89E2-8C8F0D08C98F}" ShortID="640468466">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Transition" ID="{A16DB16A-9DB6-45D6-806B-944D7B5D475C}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{478D035C-1679-4E22-B700-94C0043B2D82}" ShortID="1008023131">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Transition" ID="{3C6673B1-32C2-4B25-979F-757A5B65862A}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
