@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{4D9C20B1-71B0-4569-82B1-68CB56CF143C}",
     "Language": "SFX",
-    "Hash": "{8D3035C0-38FB-FAC0-8096-8E942AB55B74}",
+    "Hash": "{E553AB24-9F1A-9560-8352-D26ABFE0F62D}",
     "ObjectPath": "Play_Season_Change",
     "ShortName": "Play_Season_Change",
     "Path": "Event/Play_Season_Change.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Season_Change.wav",
       "Path": "Media/24462040.wem",
-      "CachePath": "24/{240762EE-FB72-FADB-A458-1E125190C480}.wem"
+      "CachePath": "86/{86CEFB74-2369-408D-6D5D-FADCA279ABAD}.wem"
      }
     ],
     "Events": [
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Season_Change",
       "GUID": "{4D9C20B1-71B0-4569-82B1-68CB56CF143C}",
       "DurationType": "OneShot",
-      "DurationMin": "0.8437415",
-      "DurationMax": "0.8437415",
+      "DurationMin": "2.75",
+      "DurationMax": "2.75",
       "MediaRefs": [
        {
         "Id": "24462040"
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{497D45DC-7851-8E5D-6EA0-7A69416A01C4}"
+  "FileHash": "{2D1116BA-7AC4-7F1D-B0F0-1F7DD3E9F5AB}"
  }
 }
