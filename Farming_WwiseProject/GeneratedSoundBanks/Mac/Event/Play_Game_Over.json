@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{19783454-B866-4182-B744-33D2FE2C9423}",
     "Language": "SFX",
-    "Hash": "{E7CBDACE-0AEF-3AE8-9F65-0531B1C366F8}",
+    "Hash": "{191272C3-88FB-B9EA-B6C7-C112A72BB1D3}",
     "ObjectPath": "Play_Game_Over",
     "ShortName": "Play_Game_Over",
     "Path": "Event/Play_Game_Over.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Game_Over.wav",
       "Path": "Media/331121987.wem",
-      "CachePath": "97/{97382535-D762-5BE8-58F6-87F2EB4BA7F6}.wem"
+      "CachePath": "05/{056AAB2B-989D-01D0-B765-BD4597F0E266}.wem"
      }
     ],
     "Events": [
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\GamePlay\\Play_Game_Over",
       "GUID": "{19783454-B866-4182-B744-33D2FE2C9423}",
       "DurationType": "OneShot",
-      "DurationMin": "4.897279",
-      "DurationMax": "4.897279",
+      "DurationMin": "2.7929704",
+      "DurationMax": "2.7929704",
       "MediaRefs": [
        {
         "Id": "331121987"
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{4CC56D58-B4A7-D856-778B-110F8E728D6F}"
+  "FileHash": "{ACC8955A-0DBF-EE13-92F7-47F64101D426}"
  }
 }

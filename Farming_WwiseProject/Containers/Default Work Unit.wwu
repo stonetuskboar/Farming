@@ -851,7 +851,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Game_Over" ID="{B05EE496-69DA-4205-8943-B652B5D48D59}">
+								<AudioFileSource Name="Game_Over" ID="{FAD2862F-EFED-4A9A-A2D2-41DA978F437F}">
 									<Language>SFX</Language>
 									<AudioFile>Game_Over.wav</AudioFile>
 									<MediaIDList>
@@ -860,7 +860,7 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Game_Over" ID="{B05EE496-69DA-4205-8943-B652B5D48D59}" Platform="Linked"/>
+								<ActiveSource Name="Game_Over" ID="{FAD2862F-EFED-4A9A-A2D2-41DA978F437F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
