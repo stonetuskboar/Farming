@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         RuntimeSceneSaver.IsSave = false;
-        AkUnitySoundEngine.SetRTPCValue("MusicVolume", 30);
+        GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
     }
     public void GameStart()
     {
