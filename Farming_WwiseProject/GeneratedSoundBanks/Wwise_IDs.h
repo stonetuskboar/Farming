@@ -34,6 +34,9 @@ namespace AK
         static const AkUniqueID PLAY_TOOL_UPGRADE = 1463437813U;
         static const AkUniqueID PLAY_UI_CLICK = 1749424733U;
         static const AkUniqueID PLAY_WATER = 441572235U;
+        static const AkUniqueID STOP_MUSIC_END = 797890747U;
+        static const AkUniqueID STOP_MUSIC_START = 617272800U;
+        static const AkUniqueID STOP_SEASON_AUDIO = 3508233432U;
     } // namespace EVENTS
 
     namespace SWITCHES
