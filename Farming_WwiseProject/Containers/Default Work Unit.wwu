@@ -841,6 +841,28 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</BlendContainer>
+						<Sound Name="Game_Over" ID="{A0563E2D-088C-4BA5-BE54-970254E6BAD5}" ShortID="652982539">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Game_Over" ID="{FAD2862F-EFED-4A9A-A2D2-41DA978F437F}">
+									<Language>SFX</Language>
+									<AudioFile>Game_Over.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="331121987"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Game_Over" ID="{FAD2862F-EFED-4A9A-A2D2-41DA978F437F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{BBB400F9-D0E6-4144-B216-E8C3CF78FBBD}" ShortID="557264735">
@@ -1253,6 +1275,175 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="UI_Shop_Open" ID="{C0D4CAD6-3924-47F4-A0F1-90F6B63D804E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="UI_Transition_Click" ID="{414B0278-374A-4418-B6A9-CD69A0A96B92}" ShortID="235338613">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Scene_Transition_Click1" ID="{53C0F13B-F8D7-4F76-9112-60032722444A}" ShortID="944651786">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Scene_Transition_Click1" ID="{16EDE111-4124-4782-84AC-89EE738FA0D7}">
+											<Language>SFX</Language>
+											<AudioFile>Scene_Transition_Click1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="999859703"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Scene_Transition_Click1" ID="{16EDE111-4124-4782-84AC-89EE738FA0D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Scene_Transition_Click2" ID="{9C50308E-1D8B-462C-9B0B-85DDBE6EA56D}" ShortID="874686312">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Scene_Transition_Click2" ID="{46710437-23AB-4800-846B-41A308D385C9}">
+											<Language>SFX</Language>
+											<AudioFile>Scene_Transition_Click2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="287938249"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Scene_Transition_Click2" ID="{46710437-23AB-4800-846B-41A308D385C9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Scene_Transition_Click3" ID="{9AA49DCD-EA0F-4DF0-8A91-7C195C107301}" ShortID="651955708">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Scene_Transition_Click3" ID="{F44A8CAF-F67F-4B20-A8B8-522436CD0E03}">
+											<Language>SFX</Language>
+											<AudioFile>Scene_Transition_Click3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="794126843"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Scene_Transition_Click3" ID="{F44A8CAF-F67F-4B20-A8B8-522436CD0E03}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Scene_Transition_Click4" ID="{DEF44173-397A-4A2F-B876-C149BA3D1F12}" ShortID="867213281">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Scene_Transition_Click4" ID="{F4D2C320-77A5-4CAC-BFC8-8D876C5A342B}">
+											<Language>SFX</Language>
+											<AudioFile>Scene_Transition_Click4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1019301870"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Scene_Transition_Click4" ID="{F4D2C320-77A5-4CAC-BFC8-8D876C5A342B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="Scene_Transition_Loop" ID="{6AD50864-76E3-4D20-B86B-5FC2F73AEE03}" ShortID="737299866">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Scene_Transition_Loop" ID="{1FB54338-6636-4039-8238-99F8FCA2031D}">
+									<Language>SFX</Language>
+									<AudioFile>Scene_Transition_Loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="913649399"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Scene_Transition_Loop" ID="{1FB54338-6636-4039-8238-99F8FCA2031D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Season_Change" ID="{3801E7AA-DBCF-4499-B00D-8CB13950C1C4}" ShortID="949474023">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Season_Change" ID="{D8BF57DF-57BE-4017-AF83-7D275A6A6C89}">
+									<Language>SFX</Language>
+									<AudioFile>Season_Change.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="24462040"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Season_Change" ID="{D8BF57DF-57BE-4017-AF83-7D275A6A6C89}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Popup_Open" ID="{51575246-2272-4371-8D3C-2BA9F1830DB9}" ShortID="216158222">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A484E65A-6157-4497-8837-B73560ADD46E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Popup_Open" ID="{E3BF642B-2590-492D-8D93-E53416D96FD9}">
+									<Language>SFX</Language>
+									<AudioFile>Popup_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="887708959"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Popup_Open" ID="{E3BF642B-2590-492D-8D93-E53416D96FD9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1631027029",
+    "Type": "Event",
+    "GUID": "{33A49902-047C-449B-9FE3-ADC34511915F}",
+    "Language": "SFX",
+    "Hash": "{77F2383A-3E6E-DD14-5335-11182B567EC3}",
+    "ObjectPath": "Play_Scene_Transition_Loop",
+    "ShortName": "Play_Scene_Transition_Loop",
+    "Path": "Event/Play_Scene_Transition_Loop.bnk",
+    "Media": [
+     {
+      "Id": "913649399",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Scene_Transition_Loop.wav",
+      "Path": "Media/913649399.wem",
+      "CachePath": "CB/{CB10706B-37FC-B7DD-B017-5623305A23A3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1631027029",
+      "Name": "Play_Scene_Transition_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Scene_Transition_Loop",
+      "GUID": "{33A49902-047C-449B-9FE3-ADC34511915F}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "913649399"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F14156B3-0B97-DEDE-B107-AFE390098B49}"
+ }
+}

@@ -82,6 +82,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Game_Over" ID="{19783454-B866-4182-B744-33D2FE2C9423}">
+							<ChildrenList>
+								<Action Name="" ID="{A06A4CB9-059F-41B1-9F8F-81F8D75BDEF8}" ShortID="167430291">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Game_Over" ID="{A0563E2D-088C-4BA5-BE54-970254E6BAD5}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{6BF189E7-612A-4E9B-92DD-8674F90436B8}" ShortID="286275669">
@@ -207,6 +218,54 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Scene_Transition_Loop" ID="{33A49902-047C-449B-9FE3-ADC34511915F}">
+							<ChildrenList>
+								<Action Name="" ID="{24965732-DE39-41AF-B5A0-E651B5556375}" ShortID="922245812">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scene_Transition_Loop" ID="{6AD50864-76E3-4D20-B86B-5FC2F73AEE03}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Scene_Transition_Loop" ID="{605D9D73-0E1C-4B8D-9A06-9FD79CD61335}">
+							<ChildrenList>
+								<Action Name="" ID="{124AB2EC-9F37-42AD-B4AB-99A6FFEF61DF}" ShortID="548889270">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scene_Transition_Loop" ID="{6AD50864-76E3-4D20-B86B-5FC2F73AEE03}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Scene_Transition_Click" ID="{B87D3622-250C-4F74-9C5B-2D29B54C29F7}">
+							<ChildrenList>
+								<Action Name="" ID="{5D4C37D7-10AD-4339-BB34-31F78CD97C0E}" ShortID="416187317">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Transition_Click" ID="{414B0278-374A-4418-B6A9-CD69A0A96B92}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Popup_Open" ID="{AAEC6AD2-5746-440A-8717-D9C13B119650}">
+							<ChildrenList>
+								<Action Name="" ID="{669ECAC2-43BD-4827-93F4-14F89B120AE2}" ShortID="586444743">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Popup_Open" ID="{51575246-2272-4371-8D3C-2BA9F1830DB9}" WorkUnitID="{65462F39-7161-4745-9D02-467407A94D9E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Season_Change" ID="{4D9C20B1-71B0-4569-82B1-68CB56CF143C}"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="System" ID="{54CA127A-D99F-4D85-A356-E959639A1BB1}" ShortID="264041933">
