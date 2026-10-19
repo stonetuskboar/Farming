@@ -31,6 +31,7 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
 
     public void InitShowSprite()
     {
+        GameDataManager.Instance.PlayAudio("ShopOpen");
         IsClickable = false;
         Image.sprite = SpriteList[NowIndex];
         Image.SetNativeSize();
@@ -40,6 +41,7 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
     }
     public void ShowSprite()
     {
+        GameDataManager.Instance.PlayAudio("ShopOpen");
         IsClickable = false;
         Image.sprite = SpriteList[NowIndex];
         Image.SetNativeSize();

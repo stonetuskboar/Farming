@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
         RuntimeSceneSaver.IsSave = false;
         GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
     }
+    public void ChangeVolume(float value)
+    {
+        GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(value);
+    }
     public void GameStart()
     {
         GameDataManager.Instance.PlayAudio("SeasonAudio");

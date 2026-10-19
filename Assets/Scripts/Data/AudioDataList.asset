@@ -133,10 +133,6 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: f23c960a39de1f34fb00b1078e80f945, type: 2}
-  PlaySeasonAudio:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 04fd25a6fdc1cd84fa67d263922936e7, type: 2}
   MusicVolume:
     idInternal: 0
     valueGuidInternal: 
