@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "617272800",
+    "Type": "Event",
+    "GUID": "{7B68A434-6664-4BBF-B034-2B886E61E46F}",
+    "Language": "SFX",
+    "Hash": "{0960F445-DFD8-5CA8-5785-CEB5B561360D}",
+    "ObjectPath": "Stop_Music_Start",
+    "ShortName": "Stop_Music_Start",
+    "Path": "Event/Stop_Music_Start.bnk",
+    "Events": [
+     {
+      "Id": "617272800",
+      "Name": "Stop_Music_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Stop_Music_Start",
+      "GUID": "{7B68A434-6664-4BBF-B034-2B886E61E46F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B79ECDD2-42C2-65D3-702D-86A774A50439}"
+ }
+}
