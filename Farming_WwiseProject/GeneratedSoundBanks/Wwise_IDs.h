@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID PLAY_BUY_SUCCESS = 2874015218U;
         static const AkUniqueID PLAY_CHOPTREE = 3715757634U;
         static const AkUniqueID PLAY_FAILED = 916053581U;
+        static const AkUniqueID PLAY_GAME_OVER = 725000905U;
         static const AkUniqueID PLAY_HARVEST = 659688389U;
         static const AkUniqueID PLAY_ITEM_SELECT = 3114247042U;
         static const AkUniqueID PLAY_ITEMPICKUP = 4241593335U;
@@ -25,7 +26,11 @@ namespace AK
         static const AkUniqueID PLAY_NEXTPAGE = 1908185824U;
         static const AkUniqueID PLAY_NEXTTURN = 1102211584U;
         static const AkUniqueID PLAY_PLANT = 2689642121U;
+        static const AkUniqueID PLAY_POPUP_OPEN = 1709142235U;
+        static const AkUniqueID PLAY_SCENE_TRANSITION_CLICK = 1126356937U;
+        static const AkUniqueID PLAY_SCENE_TRANSITION_LOOP = 1631027029U;
         static const AkUniqueID PLAY_SEASON_AUDIO = 3831435738U;
+        static const AkUniqueID PLAY_SEASON_CHANGE = 1707735884U;
         static const AkUniqueID PLAY_SELL_SUCCESS = 4018961658U;
         static const AkUniqueID PLAY_SHOP_CLOSE = 2365491143U;
         static const AkUniqueID PLAY_SHOP_OPEN = 129330417U;
@@ -36,6 +41,7 @@ namespace AK
         static const AkUniqueID PLAY_WATER = 441572235U;
         static const AkUniqueID STOP_MUSIC_END = 797890747U;
         static const AkUniqueID STOP_MUSIC_START = 617272800U;
+        static const AkUniqueID STOP_SCENE_TRANSITION_LOOP = 2713337703U;
         static const AkUniqueID STOP_SEASON_AUDIO = 3508233432U;
     } // namespace EVENTS
 
@@ -63,6 +69,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID MUSIC = 3991942870U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

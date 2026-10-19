@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1707735884",
+    "Type": "Event",
+    "GUID": "{4D9C20B1-71B0-4569-82B1-68CB56CF143C}",
+    "Language": "SFX",
+    "Hash": "{79B1364E-BC52-198C-1092-471C1463ED14}",
+    "ObjectPath": "Play_Season_Change",
+    "ShortName": "Play_Season_Change",
+    "Path": "Event/Play_Season_Change.bnk",
+    "Events": [
+     {
+      "Id": "1707735884",
+      "Name": "Play_Season_Change",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Season_Change",
+      "GUID": "{4D9C20B1-71B0-4569-82B1-68CB56CF143C}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{8A4E7A24-810D-A9D0-4BEE-19532A683D76}"
+ }
+}
