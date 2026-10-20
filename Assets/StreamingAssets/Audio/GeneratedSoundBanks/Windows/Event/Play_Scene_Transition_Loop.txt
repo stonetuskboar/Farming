@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	1631027029	Play_Scene_Transition_Loop			\Default Work Unit\UI\Play_Scene_Transition_Loop	
-

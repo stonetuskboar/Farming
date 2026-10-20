@@ -54,7 +54,10 @@ Shader.PropertyToID("_BendPower");
             spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (propertyBlock == null)
+        {
             propertyBlock = new MaterialPropertyBlock();
+        }
+
     }
 
     private void UpdateSpriteData()

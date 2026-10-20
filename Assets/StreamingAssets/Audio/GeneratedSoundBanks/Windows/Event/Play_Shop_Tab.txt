@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	143281810	Play_Shop_Tab			\Default Work Unit\UI\Play_Shop_Tab	
-

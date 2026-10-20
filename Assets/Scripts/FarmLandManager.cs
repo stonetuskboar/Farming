@@ -36,7 +36,7 @@ public class FarmLandManager : MonoBehaviour
     public Dictionary<int, int> WiltDic = new();
     [SerializeField] private Dictionary<Vector3Int, FarmTileData> farmTiles = new();
 
-    public void Awake()
+    public void Start()
     {
         foreach (Transform child in cropParent)
         {
@@ -45,7 +45,7 @@ public class FarmLandManager : MonoBehaviour
             {
                 continue;
             }
-            TreeData data = gameManager.GameDataManager.cropDataList.GetTreeDataById(crop.cropData.id);
+            CropData data = gameManager.GameDataManager.cropDataList.GetTreeDataById(crop.cropData.id);
             if (data != null)
             {
                 crop.cropData = data;
