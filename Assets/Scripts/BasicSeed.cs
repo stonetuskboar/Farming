@@ -70,6 +70,10 @@ public class BasicSeed : UsableItem
         GameDataManager.Instance.PlayAudio("Plant");
         FarmLandManager farm = GameManager.FarmLandManager;
         farm.Plant(cells, cropData);
+        if (farm.PlantDic.TryAdd(cropData.id, 1) == false)
+        {
+            farm.PlantDic[cropData.id] += 1;
+        }
         GameManager.hotbarController.DecreaseItem(cropData.id,1);
     }
 }

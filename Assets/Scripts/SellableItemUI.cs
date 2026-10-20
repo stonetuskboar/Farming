@@ -32,15 +32,24 @@ public class SellableItemUI : MonoBehaviour
     }
     public void SelectThis()
     {
-        Vector3[] corners = new Vector3[4];
-        SellButton.GetRectTransform().GetWorldCorners(corners);
-        Vector3 leftBottom = corners[0];
-        Vector3 leftTop = corners[1];
+        if(itemSellPage.sellingPopWindow.itemId == sellAbleItem.Id)
+        {
+            itemSellPage.sellingPopWindow.itemId = -1;
+            itemSellPage.sellingPopWindow.popWindow.Hide();
+        }
+        else
+        {
+            Vector3[] corners = new Vector3[4];
+            SellButton.GetRectTransform().GetWorldCorners(corners);
+            Vector3 leftBottom = corners[0];
+            Vector3 leftTop = corners[1];
 
-        // 左侧边缘的中点（世界坐标）
-        Vector3 leftCenter = (leftBottom + leftTop) / 2f;
+            // 左侧边缘的中点（世界坐标）
+            Vector3 leftCenter = (leftBottom + leftTop) / 2f;
 
-        itemSellPage.sellingPopWindow.Set(sellAbleItem);
-        itemSellPage.sellingPopWindow.popWindow.Show(leftCenter, 0.3f);
+            itemSellPage.sellingPopWindow.Set(sellAbleItem);
+            itemSellPage.sellingPopWindow.popWindow.Show(leftCenter, 0.3f);
+        }
+
     }
 }

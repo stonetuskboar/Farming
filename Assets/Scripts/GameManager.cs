@@ -25,14 +25,17 @@ public class GameManager : MonoBehaviour
     public int year = 1;
     public Season season = Season.春;
     public int Month = 1;
-
+    public List<int> Debts;
+    [NonSerialized]
+    public int EarnThisYear = 0;
+    [NonSerialized]
+    public int PaidThisYear = 0;
     public TextColorTweenObj MoneyText;
 
     public List<BasicItem> SellItemList = new List<BasicItem>();
 
     public void Start()
     {
-        RuntimeSceneSaver.IsSave = false;
         GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
     }
     public void ChangeVolume(float value)
@@ -41,17 +44,27 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-        GameDataManager.Instance.PlayAudio("SeasonAudio");
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         UpdateMoneyText();
         SetSeasonAudio();
         hotbarController.OnGameStart();
 
     }
-    public void SaveScene()
+    public bool CouldPaidTheBill()
     {
-        RuntimeSceneSaver.IsSave = true;
-        RuntimeSceneSaver.Save();
+        if(Money < GetDebt())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    public void PaidTheBill()
+    {
+        Money -= GetDebt();
+        UpdateMoneyText();
     }
     public void SetSeasonAudio()
     {
@@ -76,7 +89,7 @@ public class GameManager : MonoBehaviour
 
             case Season.冬:
                 // Wwise 目前还没有 Winter
-                Debug.LogWarning("Wwise 还没有添加 Winter 音频");
+                //Debug.LogWarning("Wwise 还没有添加 Winter 音频");
                 return;
 
             default:
@@ -97,23 +110,37 @@ public class GameManager : MonoBehaviour
         NowEnergy = Mathf.Clamp(NowEnergy, 0, MaxEnergy);
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
     }
-
     public void ReadyForNextTurn()
     {
-        GameDataManager.Instance.PlayAudio("UI_Click");
-        GameDataManager.Instance.PlayAudio("NextTurn");
-        transitionController.StartShow();
+        TimePast();
+        if (Month % 3 == 1)
+        {
+            transitionController.StartShow(IsSeasonChange: true);
+        }
+        else
+        {
+            transitionController.StartShow(IsSeasonChange: false);
+
+        }
+
     }
     public void NextTurn()
     {
+        if(season == Season.冬)
+        {
+            return;
+        }
         if(Month % 3 == 1)
         {
             SetSeasonAudio();
         }
-
         FarmLandManager.OnNextTurn(year,season,Month);
         NowEnergy = MaxEnergy;
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
+    }
+    public int GetDebt()
+    {
+        return Debts[year - 1];
     }
     public void DoDelay(float time, Action callBack = null)
     {
@@ -127,6 +154,14 @@ public class GameManager : MonoBehaviour
     public void ChangeMoney(int value)
     {
         Money += value;
+        if(value > 0)
+        {
+            EarnThisYear += value;
+        }
+        else
+        {
+            PaidThisYear += Mathf.Abs(value);
+        }
         UpdateMoneyText();
 
         MoneyText.SetLocalRotation(Quaternion.identity);
@@ -192,30 +227,31 @@ public class GameManager : MonoBehaviour
     {
         int beforeMonth = Month;
         Month++;
-        if (beforeMonth == 9)
+        if(season == Season.冬)
         {
+            Month = 1;
             season = Season.春;
             year++;
-            Month = 1;
         }
-        else
+        if (beforeMonth % 3 == 0)
         {
-            if (beforeMonth % 3 == 0)
+            if (season == Season.冬)
             {
-                if (season == Season.秋)
-                {
-                    Month = 1;
-                    season = Season.春;
-                    year++;
-                }
-                else if (season == Season.春)
-                {
-                    season = Season.夏;
-                }
-                else if (season == Season.夏)
-                {
-                    season = Season.秋;
-                }
+                Month = 1;
+                season = Season.春;
+                year++;
+            }
+            else if (season == Season.春)
+            {
+                season = Season.夏;
+            }
+            else if (season == Season.夏)
+            {
+                season = Season.秋;
+            }
+            else if (season == Season.秋)
+            {
+                season = Season.冬;
             }
         }
     }

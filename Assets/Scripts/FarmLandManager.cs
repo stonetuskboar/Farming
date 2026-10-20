@@ -1,10 +1,9 @@
 using skner.DualGrid;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 //管理农田的数据以及相关操作
 public class FarmLandManager : MonoBehaviour
 {
@@ -29,6 +28,12 @@ public class FarmLandManager : MonoBehaviour
     public HashSet<BasicCrop> crops = new();
     public float PositionRandomRange = 0.2f;
 
+    [System.NonSerialized]
+    public Dictionary<int, int> PlantDic = new();
+    [System.NonSerialized]
+    public Dictionary<int, int> HarvestDic = new();
+    [System.NonSerialized]
+    public Dictionary<int, int> WiltDic = new();
     [SerializeField] private Dictionary<Vector3Int, FarmTileData> farmTiles = new();
 
     public void Awake()
@@ -108,7 +113,7 @@ public class FarmLandManager : MonoBehaviour
                     List<Vector3Int> NearPos = GetNearestCells(pos, cropData.size);
                     if (CanPlantWeedTheseCell(NearPos) == true)
                     {
-                        BasicCrop crop = Plant(NearPos, cropData, IsRandom: true);
+                        Plant(NearPos, cropData, IsRandom: true);
                     }
                 }
             }
@@ -230,6 +235,11 @@ public class FarmLandManager : MonoBehaviour
         Destroy(crop.gameObject);
         CropData WiltPlantData = GameDataManager.Instance.cropDataList.GetCropDataById(WiltPlantId);
         Plant(crop.TileCells, WiltPlantData);
+        Debug.Log(crop.cropData.Name);
+        if (WiltDic.TryAdd(crop.cropData.id, 1) == false)
+        {
+            WiltDic[crop.cropData.id] += 1;
+        }
     }
     public void Harvest(BasicCrop crop)
     {
@@ -241,21 +251,16 @@ public class FarmLandManager : MonoBehaviour
         {
             FarmTileData data = GetFarmTileData(cell);
             data.cropObject = null;
-
-            wateredFieldTilemap.ClearDataTile(cell);
-            tilledFieldTilemap.ClearDataTile(cell);
-            if(data.soilState != SoilState.Grass)
-            {
-                grassTilemap.ClearDataTile(cell);
-                dirtTilemap.SetDataTile(cell);
-                data.soilState = SoilState.Dirt;
-            }
         }
         crops.Remove(crop);
         if(crop.IsMature() == true)
         {
             int amount = Random.Range(crop.cropData.DropedAmountMin, crop.cropData.DropedAmountMax +1);
             gameManager.HarvestEffectManager.PlayHarvestEffect(crop.transform.position, crop.cropData.DropedItemId, amount);
+            if (HarvestDic.TryAdd(crop.cropData.id, 1) == false)
+            {
+                HarvestDic[crop.cropData.id] += 1;
+            }
         }
         else
         {
@@ -275,6 +280,7 @@ public class FarmLandManager : MonoBehaviour
         }
         return true;
     }
+
 
     public bool CanPlantWeedThisCell(Vector3Int cell)
     {

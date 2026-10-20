@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ShopPageController : BasicUIView
+public class ShopPageController : MonoBehaviour
 {
     private bool IsShow = false;
+    public Image CoverImage;
+    public BasicUIView uiView;
     public ItemSellPage itemSellPage;
     public BuySeedPage buySeedPage;
     public ShopPageButton nowSelectedButton;
     public GameManager gameManager;
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         if(gameObject.activeInHierarchy == true)
         {
             IsShow = true;
@@ -48,21 +50,21 @@ public class ShopPageController : BasicUIView
         gameManager.GridCursorController.ChangeCursorToPointer();
         IsShow = true;
         gameObject.SetActive(true);
-        SetCanvasGroupAlpha(1f);
-        SetCanvasGroupBlockable();
-        transform.localRotation = Quaternion.Euler(30, -25, 0);
-        transform.localScale = 0.8f * Vector3.one;
-        DoLocalRotationTween(Quaternion.identity, 0.3f, type: EaseType.EaseOutBack);
-        DoLocalScaleTween(Vector3.one, 0.3f, type: EaseType.EaseOutBack);
-        DoAlphaTween(1f, 0.3f);
+        uiView.SetCanvasGroupAlpha(1f);
+        uiView.SetCanvasGroupBlockable();
+        uiView.SetLocalRotation( Quaternion.Euler(30, -25, 0));
+        uiView.SetLocalScale(0.8f * Vector3.one);
+        uiView.DoLocalRotationTween(Quaternion.identity, 0.3f, type: EaseType.EaseOutBack);
+        uiView.DoLocalScaleTween(Vector3.one, 0.3f, type: EaseType.EaseOutBack);
+        uiView.DoAlphaTween(1f, 0.3f);
     }
     public void Hide()
     {
         gameManager.GridCursorController.BackToNormalSprite();
         IsShow = false;
-        DoLocalScaleTween(Vector3.one * 0.6f, 0.2f, type: EaseType.EaseInOutBack);
-        SetCanvasGroupUnblock();
-        DoAlphaTween(0f, 0.2f, Unactive);
+        uiView.DoLocalScaleTween(Vector3.one * 0.6f, 0.2f, type: EaseType.EaseInOutBack);
+        uiView.SetCanvasGroupUnblock();
+        uiView.DoAlphaTween(0f, 0.2f, Unactive);
 
     }
     public void Unactive()

@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2713337703",
+    "Type": "Event",
+    "GUID": "{605D9D73-0E1C-4B8D-9A06-9FD79CD61335}",
+    "Language": "SFX",
+    "Hash": "{0139DD48-8DEC-5DBB-C49A-D465E9CEBEA3}",
+    "ObjectPath": "Stop_Scene_Transition_Loop",
+    "ShortName": "Stop_Scene_Transition_Loop",
+    "Path": "Event/Stop_Scene_Transition_Loop.bnk",
+    "Events": [
+     {
+      "Id": "2713337703",
+      "Name": "Stop_Scene_Transition_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Stop_Scene_Transition_Loop",
+      "GUID": "{605D9D73-0E1C-4B8D-9A06-9FD79CD61335}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D1FB9636-39E0-3A4E-E167-EA5326C3ED35}"
+ }
+}

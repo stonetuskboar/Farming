@@ -1,0 +1,204 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3831435738",
+    "Type": "Event",
+    "GUID": "{A045A6DF-D6DF-4B74-8FDC-A8290772C839}",
+    "Language": "SFX",
+    "Hash": "{DBCD1E68-ED75-A602-374D-7502587F9E06}",
+    "ObjectPath": "Play_Season_Audio",
+    "ShortName": "Play_Season_Audio",
+    "Path": "Event/Play_Season_Audio.bnk",
+    "Media": [
+     {
+      "Id": "77846679",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Summer Music.wav",
+      "Path": "Media/77846679.wem",
+      "CachePath": "32/{3276F942-1468-9531-11D4-5A5EA7C42BA2}.wem"
+     },
+     {
+      "Id": "550413806",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Autumn Amb.wav",
+      "Path": "Media/550413806.wem",
+      "CachePath": "BA/{BAEEB4A3-024D-D820-1E8D-D90F1B1BCA1C}.wem"
+     },
+     {
+      "Id": "730389584",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Autumn Music.wav",
+      "Path": "Media/730389584.wem",
+      "CachePath": "0F/{0FF1E322-F7BF-C826-F4F2-60BD46985AD2}.wem"
+     },
+     {
+      "Id": "829113303",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Spring Music.wav",
+      "Path": "Media/829113303.wem",
+      "CachePath": "92/{92CCC8E0-80B5-1F95-947C-687E98B32A10}.wem"
+     },
+     {
+      "Id": "830017865",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Summer Amb.wav",
+      "Path": "Media/830017865.wem",
+      "CachePath": "41/{41BCF2C1-9B40-8E49-DAD9-528E3E9A1B32}.wem"
+     },
+     {
+      "Id": "947754743",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Spring_Amb.wav",
+      "Path": "Media/947754743.wem",
+      "CachePath": "4F/{4F9E2662-4882-3F94-0BCD-2858E612F0ED}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3831435738",
+      "Name": "Play_Season_Audio",
+      "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_Season_Audio",
+      "GUID": "{A045A6DF-D6DF-4B74-8FDC-A8290772C839}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "3924562482",
+         "GUID": "{6DD36715-3B3E-45D3-ACC5-869E08A16365}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "830017865"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "1296465106",
+         "GUID": "{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "947754743"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "4010875483",
+         "GUID": "{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "550413806"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "3924562482",
+         "GUID": "{6DD36715-3B3E-45D3-ACC5-869E08A16365}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "77846679"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "1296465106",
+         "GUID": "{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "829113303"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3254157520",
+         "Id": "4010875483",
+         "GUID": "{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "730389584"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{C6CFE7B8-627F-4C53-B0CA-C87ABAAB8588}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "3254157520",
+      "Name": "Season_Transition",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition",
+      "GUID": "{1DFD40E2-F095-4441-9F24-8DBB9A263874}",
+      "Switches": [
+       {
+        "Id": "1296465106",
+        "Name": "Spring",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Spring",
+        "GUID": "{5D300F88-9D9B-4479-AFB6-BCAB254CCB80}"
+       },
+       {
+        "Id": "3924562482",
+        "Name": "Summer",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Summer",
+        "GUID": "{6DD36715-3B3E-45D3-ACC5-869E08A16365}"
+       },
+       {
+        "Id": "4010875483",
+        "Name": "Autumn",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Season_Transition\\Autumn",
+        "GUID": "{E4ECC4AE-672B-404A-8DBA-A7D1AA19BD3F}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{89D1B2EB-77E8-E781-E28D-561DF5CE211C}"
+ }
+}

@@ -7,21 +7,15 @@ public class Axe : ToolItem
     public Axe()
     {
         Id = 4;
-    }
-    public override bool CanUse(List<Vector3Int> cells)
-    {
-        foreach (Vector3Int cell in cells)
-        {
-            if (CanUseThisCell(cell) == false)
-            {
-                return false;
-            }
-        }
-        return true;
+        EnergyValue = 6;
     }
 
     public override bool CanUseThisCell(Vector3Int cell)
     {
+        if (GameManager.NowEnergy < EnergyValue)
+        {
+            return false;
+        }
         FarmLandManager farm = GameManager.FarmLandManager;
         if (farm.CanFarmHere(cell) == false)
         {
@@ -48,7 +42,6 @@ public class Axe : ToolItem
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
             cropsToHarvest.Add(crop);
         }
-        bool IsStump = true;
         foreach (BasicCrop crop in cropsToHarvest)
         {
             if(crop.cropData is not TreeData)
@@ -64,21 +57,9 @@ public class Axe : ToolItem
                 {
                     farm.Plant(crop.TileCells, stumpData, crop.transform.position);
                 }
-                if(data.IsStump == false)
-                {
-                    IsStump = false;
-                }
             }
         }
         GameDataManager.Instance.PlayAudio("ChopTree");
-        if(IsStump == true)
-        {
-            GameManager.ConsumeEnergy(4);
-        }
-        else
-        {
-            GameManager.ConsumeEnergy(8);
-        }
-
+        GameManager.ConsumeEnergy(EnergyValue);
     }
 }

@@ -7,21 +7,15 @@ public class Sickle : ToolItem
     public Sickle()
     {
         Id = 3;
-    }
-    public override bool CanUse(List<Vector3Int> cells)
-    {
-        foreach (Vector3Int cell in cells)
-        {
-            if (CanUseThisCell(cell) == false)
-            {
-                return false;
-            }
-        }
-        return true;
+        EnergyValue = 4;
     }
 
     public override bool CanUseThisCell(Vector3Int cell)
     {
+        if (GameManager.NowEnergy < EnergyValue)
+        {
+            return false;
+        }
         FarmLandManager farm = GameManager.FarmLandManager;
         if (farm.CanFarmHere(cell) == false)
         {
@@ -67,6 +61,6 @@ public class Sickle : ToolItem
             GameDataManager.Instance.PlayAudio("Harvest");
         }
 
-        GameManager.ConsumeEnergy(4);
+        GameManager.ConsumeEnergy(EnergyValue);
     }
 }

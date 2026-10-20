@@ -7,22 +7,16 @@ public class Hoe : ToolItem
     public Hoe()
     {
         Id = 0;
+        EnergyValue = 6;
     }
 
-    public override bool CanUse(List<Vector3Int> cells)
-    {
-        foreach (Vector3Int cell in cells)
-        {
-            if (CanUseThisCell(cell) == false)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public override bool CanUseThisCell(Vector3Int cell)
     {
+        if (GameManager.NowEnergy < EnergyValue)
+        {
+            return false;
+        }
         FarmLandManager farm = GameManager.FarmLandManager;
         if (farm.CanFarmHere(cell) == false)
         {
@@ -47,7 +41,7 @@ public class Hoe : ToolItem
             farm.Till(cell);
         }
         GameDataManager.Instance.PlayAudio("Till");
-        GameManager.ConsumeEnergy(4);
+        GameManager.ConsumeEnergy(EnergyValue);
     }
 
 }

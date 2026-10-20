@@ -21,19 +21,21 @@ public class HotBarController : MonoBehaviour
         AddItem(1, 1);
         AddItem(3, 1);
         AddItem(4, 1);
-        for (int i = 5; i <= 14; i++)
-        {
-            AddItem(i, 999);
-        }
-        for (int i = 31; i <= 42; i++)
-        {
-            AddItem(i, 999);
-        }
-        for (int i = 15; i <= 17; i++)
-        {
-            BasicItem item = new BasicWeedTreeSeed(i,i);
-            AddItem(item, 999);
-        }
+        AddItem(8, 10);
+        AddItem(9, 5);
+        //for (int i = 5; i <= 14; i++)
+        //{
+        //    AddItem(i, 999);
+        //}
+        //for (int i = 31; i <= 42; i++)
+        //{
+        //    AddItem(i, 999);
+        //}
+        //for (int i = 15; i <= 17; i++)
+        //{
+        //    BasicItem item = new BasicWeedTreeSeed(i,i);
+        //    AddItem(item, 999);
+        //}
         InitButton();
         CursorSwitchButton.PointerClicked += OnSwitchToCursor;
         CursorSwitchButton.PointerEntered += OnCursorPointEnter;

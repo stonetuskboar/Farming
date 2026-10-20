@@ -140,7 +140,7 @@ public class BasicColorTweenObject : BasicTweenObject
         }
 
         float nowTime = 0;
-		nowTime += GetTimeDelta();
+
         Func<float, float> EaseFunc = GetEaseFuncByType(type, time);
         while (nowTime < time && id == ColorId)
         {

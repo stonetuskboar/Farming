@@ -6,10 +6,14 @@ using UnityEngine;
 public class ItemDataList : ScriptableObject
 {
     public List<ItemData> dataList = new List<ItemData>();
-
+    public List<ToolData> toolDataList = new List<ToolData>();
     public ItemData GetItemDataById(int id)
     {
         return dataList.Find(item => item.Id == id);
+    }
+    public ToolData GetToolDataById(int id)
+    {
+        return toolDataList.Find(item => item.Id == id);
     }
 }
 
@@ -23,4 +27,27 @@ public class ItemData
     [TextArea]
     public string Description;
     public int Price = 1;
+}
+[System.Serializable]
+public class ToolData
+{
+    public int Id;
+    public string Description;
+    public string UpgradeDescription;
+    public int CosEnergy;
+    public Vector2Int Size;
+    public int UpgradeId = -1;
+
+    public bool CanUpgrade()
+    {
+        if(UpgradeId == - 1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
 }

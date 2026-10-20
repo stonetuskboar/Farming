@@ -92,6 +92,10 @@ public class CropData
         }
         return text;
     }
+    public Sprite GetGrownSprite()
+    {
+        return growthStages[growthStages.Count - 1].GrowthSprite;
+    }
 }
 
 [System.Serializable]

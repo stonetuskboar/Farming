@@ -205,7 +205,8 @@ MonoBehaviour:
     growthStages: []
     size: {x: 1, y: 1}
     DropedItemId: 0
-    DropedAmount: 0
+    DropedAmountMin: 1
+    DropedAmountMax: 3
   cropSr: {fileID: 394116460287358324}
   shadowSr: {fileID: 1617207065096840535}
   TileCells: []

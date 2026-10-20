@@ -7,22 +7,15 @@ public class WateringCan : ToolItem
     public WateringCan()
     {
         Id = 1;
-    }
-
-    public override bool CanUse(List<Vector3Int> cells)
-    {
-        foreach (Vector3Int cell in cells)
-        {
-            if (CanUseThisCell(cell) == false)
-            {
-                return false;
-            }
-        }
-        return true;
+        EnergyValue = 2;
     }
 
     public override bool CanUseThisCell(Vector3Int cell)
     {
+        if (GameManager.NowEnergy < EnergyValue)
+        {
+            return false;
+        }
         FarmLandManager farm = GameManager.FarmLandManager;
         if (farm.CanFarmHere(cell) == false)
         {
@@ -58,7 +51,7 @@ public class WateringCan : ToolItem
         {
             farm.Water(cell);
         }
-        GameManager.ConsumeEnergy(2);
+        GameManager.ConsumeEnergy(EnergyValue);
         GameDataManager.Instance.PlayAudio("Water");
     }
 

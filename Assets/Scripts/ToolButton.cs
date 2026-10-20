@@ -59,7 +59,14 @@ public class ToolButton : ImageSwapButton
         if (item is BasicSeed)
         {
             BasicSeed seed = item as BasicSeed;
-            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子。<br>可生长季节：{seed.cropData.GetSeasonText()}<br>成熟时间：{seed.cropData.matureTurns}个月。";
+            ItemData data = GameDataManager.Instance.itemDataList.GetItemDataById(seed.cropData.DropedItemId);
+            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子。<br>可生长季节：{seed.cropData.GetSeasonText()}<br>生长时间：{seed.cropData.matureTurns}个月。";
+                
+            if(seed is BasicTreeSeed)
+            {
+                str += $"<br>不需要浇水也可生长。";
+            }
+            str += $"<br>可收获{seed.cropData.DropedAmountMin}-{seed.cropData.DropedAmountMax}个{data.Name}。售价：{data.Price}。";
         }
         else
         {

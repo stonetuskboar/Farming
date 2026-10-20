@@ -1,0 +1,72 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2874015218",
+    "Type": "Event",
+    "GUID": "{E50F10A7-D1C1-4C10-B3C2-613741BBFBBF}",
+    "Language": "SFX",
+    "Hash": "{569B5651-22D2-0257-3BF5-672171989B46}",
+    "ObjectPath": "Play_Buy_Success",
+    "ShortName": "Play_Buy_Success",
+    "Path": "Event/Play_Buy_Success.bnk",
+    "Media": [
+     {
+      "Id": "93586238",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Buy_Success2.wav",
+      "Path": "Media/93586238.wem",
+      "CachePath": "B0/{B094A694-98B9-49D3-80B8-30D9BB715861}.wem"
+     },
+     {
+      "Id": "398581521",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Buy_Success3.wav",
+      "Path": "Media/398581521.wem",
+      "CachePath": "50/{50C9D9BA-046D-A01F-C2E8-4472EB510CCE}.wem"
+     },
+     {
+      "Id": "763097610",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Buy_Success1.wav",
+      "Path": "Media/763097610.wem",
+      "CachePath": "D7/{D7B9D14F-F51F-3B15-4391-E0EC1F09F982}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2874015218",
+      "Name": "Play_Buy_Success",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Buy_Success",
+      "GUID": "{E50F10A7-D1C1-4C10-B3C2-613741BBFBBF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7573243",
+      "DurationMax": "0.76267576",
+      "MediaRefs": [
+       {
+        "Id": "93586238"
+       },
+       {
+        "Id": "398581521"
+       },
+       {
+        "Id": "763097610"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F198CE56-1F6B-748B-2907-168E22BEF943}"
+ }
+}

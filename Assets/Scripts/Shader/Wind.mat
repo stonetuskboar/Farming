@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -54,14 +54,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BendPower: 2
-    - _Bottom: 0.13
+    - _BendPower: 1.5
+    - _Bottom: 0.09593868
     - _Scale: 0.2
-    - _Strength: 0.5
+    - _Strength: 0.8
     m_Colors:
     - _Bottom: {r: 0.058441095, g: 0.3, b: 0, a: 0}
-    - _Position: {r: 0, g: 0, b: 0, a: 0}
+    - _Position: {r: 9.605078, g: 11.397645, b: 0.5, a: 0}
     - _Scale: {r: 20, g: 20, b: 0, a: 0}
     - _Speed: {r: 1, g: 0.2, b: 0, a: 0}
-    - _UVRect: {r: 0, g: 0, b: 1, a: 1}
+    - _UVRect: {r: 0.4039191, g: 0.829674, b: 0.5657396, a: 1}
   m_BuildTextureStacks: []

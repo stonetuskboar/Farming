@@ -160,7 +160,7 @@ TextureImporter:
       name: "\u6A61\u6811\u5F71\u5B50\u5C0F"
       rect:
         serializedVersion: 2
-        x: 384
+        x: 386
         y: 1024
         width: 256
         height: 256
@@ -303,6 +303,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "\u67CF\u6811\u5F71\u5B50\u5C0F"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 642
+        width: 135
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1a8097f685cab4495fa87b70818048
+      internalID: -193460836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -321,6 +342,7 @@ TextureImporter:
       "\u677E\u6811\u5F71\u5B50\u5927": -1927286574
       "\u677E\u6811\u5F71\u5B50\u5C0F": 1222508896
       "\u67CF\u6811\u5F71\u5B50\u5927": -916010611
+      "\u67CF\u6811\u5F71\u5B50\u5C0F": -193460836
       "\u6A61\u6811\u5F71\u5B50\u5927": -663115259
       "\u6A61\u6811\u5F71\u5B50\u5C0F": -1859279885
   mipmapLimitGroupName: 

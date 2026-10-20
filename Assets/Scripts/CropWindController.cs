@@ -124,23 +124,26 @@ Shader.PropertyToID("_BendPower");
         lastSprite = sprite;
     }
 
-    public void UpdateWindForce(WindType type) 
+    public void UpdateWindForce(WindType type)
     {
         windType = type;
         float strength = 0;
         float bendPower = 1;
-        if(type == WindType.静止)
+        if (type == WindType.静止)
         {
             strength = 0;
-        }else if(type == WindType.微动)
+        }
+        else if (type == WindType.微动)
         {
             bendPower = 2.5f;
             strength = 0.2f;
-        }else if(type == WindType.正常)
+        }
+        else if (type == WindType.正常)
         {
             strength = 0.5f;
             bendPower = 2f;
-        }else if(type == WindType.剧烈)
+        }
+        else if (type == WindType.剧烈)
         {
             strength = 0.8f;
             bendPower = 1.5f;

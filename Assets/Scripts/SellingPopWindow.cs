@@ -29,7 +29,7 @@ public class SellingPopWindow : MonoBehaviour
     private float repeatTimer;
     private int MaxValue = 50;
     private int Price = 0;
-    public int itemId;
+    public int itemId = -1;
     public int currentValue = 1;
 
 
