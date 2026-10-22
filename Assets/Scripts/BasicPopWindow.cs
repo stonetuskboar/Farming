@@ -13,6 +13,7 @@ public class BasicPopWindow : BasicUIView
         Showing,
     }
     private int showId = 0;
+    public RectOffset offSet;
     public RectTransform RectTransformByVisibleJudge;
     protected override void Awake()
     {
@@ -39,7 +40,7 @@ public class BasicPopWindow : BasicUIView
         StopEveryTween();
         transform.localScale = 1f * Vector3.one;
         transform.position = worldPosition;
-        LimitRectVisible(new RectOffset(20,20, 20, 20));
+        LimitRectVisible(offSet);
         transform.localRotation = Quaternion.Euler(60, -45, 0);
         transform.localScale = 0.8f * Vector3.one;
         DoLocalRotationTween(Quaternion.identity, ShowTweenTime, type: EaseType.EaseOutBack);

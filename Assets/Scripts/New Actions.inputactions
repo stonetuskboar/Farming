@@ -7,12 +7,12 @@
             "id": "0c60c3d3-b54b-4c2d-9615-6dc1536bbc8e",
             "actions": [
                 {
-                    "name": "Point",
+                    "name": "PointerDelta",
                     "type": "Value",
                     "id": "c18cb2b6-df7b-4d37-9d55-be458c066ed7",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": true
                 },
                 {
@@ -59,24 +59,44 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "0f09df1e-9aa4-4c01-ab96-5d72000cb4ec",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "4b2ed0e8-601a-4d09-9b42-eeb05a54a2b9",
-                    "path": "<Pointer>/position",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "PointerDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e0ddfb37-e305-4045-8a2d-755e684507af",
-                    "path": "<Mouse>/leftButton",
+                    "id": "89c63ee4-1ec6-4c90-9519-38054d3a50ab",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "715b6a89-75bc-45da-bb03-6102c51e5330",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -87,7 +107,7 @@
                 {
                     "name": "",
                     "id": "8971bd47-adc3-434d-95a1-ec0379ba71e2",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Pointer>/press",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
@@ -149,6 +169,61 @@
                     "action": "Shift",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "6d960ddc-076f-43ff-9aed-5cdfe01ea0be",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "6616a300-6659-4266-bdfb-e1175ac3cacd",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "53bee637-66da-4099-9e17-e7a8ce73f471",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "db6bd786-8e63-4663-add6-b882d12779f9",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "885f44fc-c55e-4893-8308-1c59a71a8d60",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

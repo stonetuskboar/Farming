@@ -58,7 +58,7 @@ public class EndController : MonoBehaviour,IPointerClickHandler
     }
     public void ShowResulView()
     {
-        gameMnager.hotbarController.OnSwitchToCursor();
+        gameMnager.hotbarController.SwitchToCursor();
         GameDataManager.Instance.PlayAudio("StopSeasonAudio");
         GameDataManager.Instance.PlayAudio("EndingMusic");
         state = State.ResultView;

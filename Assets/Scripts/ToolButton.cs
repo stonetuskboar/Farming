@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class ToolButton : ImageSwapButton
 {
+    public bool IsPointer = false;
     public Image ToolIcon;
     public GameObject AmountObj;
     public TextMeshProUGUI AmountText;
     private HotBarController HotBarController;
     [NonSerialized]
-    public int itemId;
+    public UsableItem item;
     protected override void Awake()
     {
         base.Awake();
@@ -26,9 +27,13 @@ public class ToolButton : ImageSwapButton
     {
         HotBarController = controller;
     }
-    public void Set( BasicItem item)
+    public void Set(UsableItem item)
     {
-        itemId = item.Id;
+        this.item = item;
+        if(IsPointer == true)
+        {
+            return;
+        }
         ToolIcon.sprite = item.itemData.Icon;
         if(item is BasicSeed)
         {
@@ -42,7 +47,14 @@ public class ToolButton : ImageSwapButton
     }
     public void OnClick()
     {
-        HotBarController.SelectNowTool(itemId);
+        if(IsPointer == true)
+        {
+            HotBarController.SwitchToCursor();
+        }
+        else
+        {
+            HotBarController.SelectNowTool(item);
+        }
     }
 
     public void OnPointEnter()
@@ -54,19 +66,18 @@ public class ToolButton : ImageSwapButton
 
         // 上侧侧边缘的中点（世界坐标）
         Vector3 upCenter = (rightBottom + leftTop) / 2f;
-        UsableItem item = HotBarController.FindItemById(itemId);
         string str = "";
         if (item is BasicSeed)
         {
             BasicSeed seed = item as BasicSeed;
             ItemData data = GameDataManager.Instance.itemDataList.GetItemDataById(seed.cropData.DropedItemId);
-            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子。<br>可生长季节：{seed.cropData.GetSeasonText()}<br>生长时间：{seed.cropData.matureTurns}个月。";
+            str = $"{seed.itemData.Name},{seed.cropData.Name}的种子<br>可生长季节：{seed.cropData.GetSeasonText()}<br>生长时间：{seed.cropData.matureTurns}个月";
                 
             if(seed is BasicTreeSeed)
             {
-                str += $"<br>不需要浇水也可生长。";
+                str += $"<br>不需要浇水也可生长";
             }
-            str += $"<br>可收获{seed.cropData.DropedAmountMin}-{seed.cropData.DropedAmountMax}个{data.Name}。售价：{data.Price}。";
+            str += $"<br>可收获{seed.cropData.DropedAmountMin}-{seed.cropData.DropedAmountMax}个{data.Name}<br>一个{data.Name}价值${data.Price}";
         }
         else
         {

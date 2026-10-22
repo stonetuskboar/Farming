@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,16 @@ public class HotBarController : MonoBehaviour
     public UsableItem NowTool;
     public List<UsableItem> ItemList = new List<UsableItem>();
     public List<ToolButton> ButtonList = new();
-    public ImageSwapButton CursorSwitchButton;
+    public ToolButton CursorSwitchButton;
     public int NowPage = 0;
     public TextTip Tip;
     public void Start()
     {
+        UsableItem item = new PointerTool();
+        item.Init(gameManager);
+        item.SetAmount(1);
+        CursorSwitchButton.Set(item);
+        CursorSwitchButton.Init(this);
         AddItem(0, 1);
         AddItem(1, 1);
         AddItem(3, 1);
@@ -35,9 +41,7 @@ public class HotBarController : MonoBehaviour
         //    AddItem(item, 999);
         //}
         InitButton();
-        CursorSwitchButton.PointerClicked += OnSwitchToCursor;
-        CursorSwitchButton.PointerEntered += OnCursorPointEnter;
-        CursorSwitchButton.PointerExited += OnCursorPointerExit;
+        SwitchToCursor();
     }
     void OnEnable()
     {
@@ -53,10 +57,6 @@ public class HotBarController : MonoBehaviour
         shiftAction.action.Disable();
     }
 
-    public void OnGameStart()
-    {
-        OnSwitchToCursor();
-    }
     public void InitButton()
     {
         for(int i = 0; i < ButtonList.Count; i++)
@@ -72,9 +72,8 @@ public class HotBarController : MonoBehaviour
         for (int i = 0; (i + startIndex) < ItemList.Count && i < ButtonList.Count; i++)
         {
             ButtonList[i].gameObject.SetActive(true);
-            Sprite sprite = ItemList[i + startIndex].itemData.Icon;
             ButtonList[i].Set(ItemList[i + startIndex]);
-            if (NowTool != null && ButtonList[i].itemId == NowTool.Id)
+            if (ButtonList[i].item == NowTool)
             {
                 ButtonList[i].ChangeStateToSelectedImmediately();
             }
@@ -92,50 +91,49 @@ public class HotBarController : MonoBehaviour
     {
         if (index >= ItemList.Count)
         {
-            SelectNowTool(ItemList[ItemList.Count - 1].Id);
+            SelectNowTool(ItemList[ItemList.Count - 1]);
             return false;
         }
         else if(index < 0)
         {
-            SelectNowTool(ItemList[0].Id);
+            SelectNowTool(ItemList[0]);
             return false;
         }
         else 
         {
-            SelectNowTool(ItemList[index].Id);
+            SelectNowTool(ItemList[index]);
             return true;
         }
     }
 
 
-    public void SelectNowTool(int itemId)
+    public void SelectNowTool(UsableItem item)
     {
-        if (NowTool != null && NowTool.Id == itemId)
+        if (item == null)
         {
             return;
         }
-        UsableItem item = FindItemById(itemId); 
-        if(item == null)
+        if (NowTool == item)
         {
             return;
-        }
-        if (NowTool == null)
-        {
-            gameManager.GridCursorController.ImageOuntline.ShowOutlineWidth();
-            CursorSwitchButton.ChangeStateToIdle();
         }
         for (int i = 0; i < ButtonList.Count; i++)
         {
-            if (NowTool != null && ButtonList[i].itemId == NowTool.Id && ButtonList[i].gameObject.activeInHierarchy == true)
+            if (ButtonList[i].gameObject.activeInHierarchy == true && ButtonList[i].item == NowTool)
             {
                 ButtonList[i].ChangeStateToIdle();
             }
-            if (ButtonList[i].itemId == itemId && ButtonList[i].gameObject.activeInHierarchy == true)
+            if (ButtonList[i].gameObject.activeInHierarchy == true && ButtonList[i].item == item)
             {
                 ButtonList[i].ChangeStateToSelected();
             }
         }
 
+        if (IsPointer() == true)
+        {
+            CursorSwitchButton.ChangeStateToIdle();
+            gameManager.GridCursorController.ImageOuntline.ShowOutlineWidth();
+        }
         NowTool = item;
         gameManager.GridCursorController.ChangeCursorSprite(NowTool.itemData.Icon);
     }
@@ -162,11 +160,24 @@ public class HotBarController : MonoBehaviour
             gameManager.ShopPageController.buySeedPage.FreshButton();
         }
     }
-    public void AddItem(BasicItem item, int amount = 0)
+    public void AddItem(UsableItem item, int amount = 0)
     {
         item.SetAmount(amount);
         item.Init(gameManager);
-        ItemList.Add(item as UsableItem);
+        ItemList.Add(item);
+
+        FreshButton();
+        if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
+        {
+            gameManager.ShopPageController.buySeedPage.FreshButton();
+        }
+    }
+    public void OnUpgradeItem(UsableItem item)
+    {
+        if(NowTool == item)
+        {
+            gameManager.GridCursorController.ChangeCursorSprite(NowTool.itemData.Icon);
+        }
 
         FreshButton();
         if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
@@ -176,26 +187,31 @@ public class HotBarController : MonoBehaviour
     }
     public void DecreaseItem(int id, int amount)
     {
-        int index = FindItemIndexById(id);
-        BasicItem item;
-        if (index >= 0)
+        UsableItem item = FindItemById(id);
+        if (item == null)
         {
-            item = ItemList[index];
-            item.Amount -= amount;
-            if(item.Amount <= 0)
-            {
-                ItemList.RemoveAt(index);
-                if(ItemList.Count > index)
-                {
-                    SelectNowTool(ItemList[index].Id);
-                }
-                else
-                {
-                    SelectNowTool(ItemList[ItemList.Count -1].Id);
-                }
-            }
-        }  
+            return;
+        }
+        item.Amount -= amount;
+        FreshButton();
+        if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
+        {
+            gameManager.ShopPageController.buySeedPage.FreshButton();
+        }
+    }
 
+    public void RemoveItemById(int id)
+    {
+        int index = FindItemIndexById(id);
+        ItemList.RemoveAt(index);
+        if (ItemList.Count > index)
+        {
+            SelectNowTool(ItemList[index]);
+        }
+        else
+        {
+            SelectNowTool(ItemList[ItemList.Count - 1]);
+        }
         FreshButton();
         if (gameManager.ShopPageController.buySeedPage.gameObject.activeInHierarchy == true)
         {
@@ -253,7 +269,7 @@ public class HotBarController : MonoBehaviour
     }
     private void OnScroll(InputAction.CallbackContext context)
     {
-        if(NowTool == null)
+        if(IsPointer() == true)
         {
             return;
         }
@@ -281,39 +297,32 @@ public class HotBarController : MonoBehaviour
         }
     }
 
-    public void OnSwitchToCursor()
+    public void SwitchToCursor()
     {
-        if(NowTool == null)
+        if (IsPointer() == true)
         {
             return;
         }
         for (int i = 0; i < ButtonList.Count; i++)
         {
-            if (NowTool != null && ButtonList[i].itemId == NowTool.Id && ButtonList[i].gameObject.activeInHierarchy == true)
+            if (ButtonList[i].gameObject.activeInHierarchy == true && ButtonList[i].item == NowTool)
             {
                 ButtonList[i].ChangeStateToIdle();
             }
         }
         CursorSwitchButton.ChangeStateToSelected();
         gameManager.GridCursorController.ChangeCursorToPointer();
-        NowTool = null;
+        NowTool = CursorSwitchButton.item;
     }
-    public void OnCursorPointEnter()
+    public bool IsPointer()
     {
-        Vector3[] corners = new Vector3[4];
-        CursorSwitchButton.GetRectTransform().GetWorldCorners(corners);
-        Vector3 leftTop = corners[1];
-        Vector3 rightBottom = corners[2];
-
-        // 上侧侧边缘的中点（世界坐标）
-        Vector3 upCenter = (rightBottom + leftTop) / 2f;
-
-        string str = "鼠标，在点击地面时不会进行操作，以避免误触。";
-        Tip.DoDelayShow(0.4f, upCenter, str, 0.2f);
-    }
-
-    public void OnCursorPointerExit()
-    {
-        Tip.Hide();
+        if(NowTool != null && NowTool == CursorSwitchButton.item)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

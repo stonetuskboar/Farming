@@ -34,6 +34,13 @@ public class BuyingSeedPanel : MonoBehaviour
         DecreaseButton.PointerDown += HoldDecrease;
         DecreaseButton.PointerUp += StopHolding;
         DecreaseButton.PointerExited += StopHolding;
+        if(Application.isMobilePlatform)
+        {
+            IncreaseButton.Scale = 2;
+            DecreaseButton.Scale = 2;
+            IncreaseButton.ChangeStateToIdleImmediately();
+            DecreaseButton.ChangeStateToIdleImmediately();
+        }
     }
 
     private void Update()

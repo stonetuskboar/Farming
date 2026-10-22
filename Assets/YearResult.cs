@@ -118,20 +118,18 @@ public class YearResult : MonoBehaviour
     public void Show()
     {
         GameDataManager.Instance.PlayAudio("ShopOpen");
-        gameManager.GridCursorController.ChangeCursorToPointer();
         gameObject.SetActive(true);
         uiView.SetCanvasGroupAlpha(1f);
         uiView.SetCanvasGroupBlockable();
         uiView.SetLocalRotation(Quaternion.Euler(30, -25, 0));
         uiView.SetLocalScale(0.8f * Vector3.one);
-        uiView.DoLocalRotationTween(Quaternion.identity, 0.5f, type: EaseType.EaseOutBack);
-        uiView.DoLocalScaleTween(Vector3.one, 0.6f, type: EaseType.EaseOutBack);
+        uiView.DoLocalRotationTween(Quaternion.identity, 0.4f, type: EaseType.EaseOutBack);
+        uiView.DoLocalScaleTween(Vector3.one, 0.5f, type: EaseType.EaseOutBack);
         uiView.DoAlphaTween(1f, 0.4f);
     }
     public void Hide(Action callBack = null)
     {
         GameDataManager.Instance.PlayAudio("ShopClose");
-        gameManager.GridCursorController.BackToNormalSprite();
         uiView.DoLocalScaleTween(Vector3.one * 0.6f, 0.3f, type: EaseType.EaseInOutBack,callBack: callBack);
         uiView.SetCanvasGroupUnblock();
         uiView.DoAlphaTween(0f, 0.3f, Unactive);
@@ -148,13 +146,16 @@ public class YearResult : MonoBehaviour
     public void ShowResult()
     {
         if (gameManager.CouldPaidTheBill() == true && gameManager.year < 3)
-        {
+        { 
+            gameManager.ClearStatData();
+            gameManager.FarmLandManager.ClearStatData();
             gameManager.PaidTheBill();
             gameManager.TimePast();
             gameManager.transitionController.ShowBill(IsSeasonChange: true);
         }
         else
         {
+            gameManager.hotbarController.SwitchToCursor();
             gameManager.transitionController.endController.ShowResulView();
         }
     }

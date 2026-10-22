@@ -115,7 +115,7 @@ public class BuySeedPage : MonoBehaviour
     public void ResetBuyingAmount()
     {
         buyingSeedPanel.Set(0,0);
-        buyingSeedPanel.SetAmount(0);
+        buyingSeedPanel.SetAmount(1);
     }
     public void HidePlantInfo()
     {
@@ -151,6 +151,10 @@ public class BuySeedPage : MonoBehaviour
         }
         ItemData item = GameDataManager.Instance.itemDataList.GetItemDataById(data.id);
         buyingSeedPanel.Set(item.Price, gameManager.Money / item.Price);
+        if(buyingSeedPanel.currentAmount == 0)
+        {
+            buyingSeedPanel.SetAmount(1);
+        }
         Icon.sprite = item.Icon;
         PlantName.text = data.Name;
         plantProgressController.Set(data);

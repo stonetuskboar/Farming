@@ -72,7 +72,15 @@ public class TransitionController : MonoBehaviour
     public void Hide()
     {
         uiView.SetCanvasGroupUnblock();
-        uiView.DoAlphaTween(0f, 0.8f, type: EaseType.EaseInQuad);
+        if (gameManager.catTip.HasStartBeginnerTip == false)
+        {
+            gameManager.catTip.HasStartBeginnerTip = true;
+            uiView.DoAlphaTween(0f, 0.8f, type: EaseType.EaseInQuad, callBack: gameManager.catTip.StartShowBeginnerTips);
+        }
+        else
+        {
+            uiView.DoAlphaTween(0f, 0.8f, type: EaseType.EaseInQuad);
+        }
         calendarView.DoDelay(0.3f, HideCalendar);
     }
     public void HideCalendar()
@@ -92,8 +100,8 @@ public class TransitionController : MonoBehaviour
     }
     public void ShowBill(bool IsSeasonChange = true)
     {
-        screenBill.Set(gameManager.GetDebt());
-        bill.Set(gameManager.GetDebt());
+        screenBill.Set(gameManager.GetDebt(),gameManager.year);
+        bill.Set(gameManager.GetDebt(),gameManager.year);
         bill.SetCanvasGroupAlpha(0f);
         bill.DoAlphaTween(1f,0.3f);
         bill.SetAnchoredPosition(bill.OgAnchorPosition + new Vector2(-180,0));

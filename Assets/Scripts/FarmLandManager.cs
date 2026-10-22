@@ -28,6 +28,7 @@ public class FarmLandManager : MonoBehaviour
     public HashSet<BasicCrop> crops = new();
     public float PositionRandomRange = 0.2f;
 
+    public Material CloudMaterial;
     [System.NonSerialized]
     public Dictionary<int, int> PlantDic = new();
     [System.NonSerialized]
@@ -62,6 +63,7 @@ public class FarmLandManager : MonoBehaviour
                 GetFarmTileData(crop.TileCells[i]).cropObject = crop;
             }
         }
+        SetWindRandom(gameManager.season);
     }
 
     public bool CanFarmHere(Vector3Int cell)
@@ -69,8 +71,15 @@ public class FarmLandManager : MonoBehaviour
         return canFarmTileMap.HasTile(cell);
     }
 
+    public void ClearStatData()
+    {
+        PlantDic.Clear();
+        HarvestDic.Clear();
+        WiltDic.Clear();
+    }
     public void OnNextTurn(int year, Season season, int month)
     {
+        SetWindRandom(season);
         HashSet<BasicCrop> cropCopy = new(crops);
         foreach (BasicCrop crop in cropCopy)
         {
@@ -323,5 +332,58 @@ public class FarmLandManager : MonoBehaviour
         }
 
         return cells;
+    }
+
+    public void SetWindRandom(Season season)
+    {
+        float angle;
+
+        if (Random.value < 0.5f)
+        {
+            angle = Random.Range(-30f, 30f);
+        }
+        else
+        {
+            angle = Random.Range(150f, 210f);
+        }
+        float rad = angle * Mathf.Deg2Rad;
+
+        Vector2 direction = new Vector2(
+            Mathf.Cos(rad),
+            Mathf.Sin(rad)
+        );
+
+        Shader.SetGlobalVector("_WindDirection", direction);
+        CloudMaterial.SetVector("_CloudDirection", Random.insideUnitCircle.normalized);
+        Shader.SetGlobalFloat("_SeasonStrength", Random.Range(0.7f,1.3f));
+        if (season == Season.春)
+        {
+            CloudMaterial.SetFloat("_ShadowStrength", Random.Range(0.4f, 0.8f));
+            CloudMaterial.SetFloat("_CloudScale", Random.Range(0.12f, 0.2f));
+            CloudMaterial.SetFloat("_CloudContrast", Random.Range(0.3f, 1.5f));
+            CloudMaterial.SetFloat("_CloudThreshold", 0.5f);
+            CloudMaterial.SetFloat("_Speed", Random.Range(0.05f, 0.2f));
+            CloudMaterial.SetFloat("_CloudSoftness", 0.05f);
+
+        }
+        else if(season == Season.夏)
+        {
+            CloudMaterial.SetFloat("_ShadowStrength", Random.Range(0.3f, 0.6f));
+            CloudMaterial.SetFloat("_CloudScale", Random.Range(0.2f, 0.3f));
+            CloudMaterial.SetFloat("_CloudContrast", Random.Range(0.1f, 0.4f));
+            CloudMaterial.SetFloat("_CloudThreshold", 0.5f);
+            CloudMaterial.SetFloat("_Speed", Random.Range(0.1f, 0.3f));
+            CloudMaterial.SetFloat("_CloudSoftness", 0.05f);
+        }
+        else if (season == Season.秋)
+        {
+            CloudMaterial.SetFloat("_ShadowStrength", Random.Range(0.5f, 0.7f));
+            CloudMaterial.SetFloat("_CloudScale", Random.Range(0.2f, 0.4f));
+            CloudMaterial.SetFloat("_CloudContrast", Random.Range(0.2f, 0.5f));
+            CloudMaterial.SetFloat("_CloudThreshold", 0.5f);
+            CloudMaterial.SetFloat("_Speed", Random.Range(0.05f, 0.15f));
+            CloudMaterial.SetFloat("_CloudSoftness", 0.05f);
+        }
+
     }
 }

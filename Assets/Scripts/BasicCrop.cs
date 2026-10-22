@@ -59,6 +59,10 @@ public class BasicCrop : MonoBehaviour
             shadowSr.enabled = false;
         }
     }
+    public void SetSeason()
+    {
+
+    }
     public virtual void OnNextTurn(int year, Season season,int month)
     {
         bool IsWatered = true;

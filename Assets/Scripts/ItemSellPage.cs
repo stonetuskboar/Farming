@@ -19,6 +19,7 @@ public class ItemSellPage : MonoBehaviour
     {
         FreshButton();
         sellingPopWindow.popWindow.Hide(0f);
+        sellingPopWindow.itemId = -1;
     }
     public void FreshButton()
     {

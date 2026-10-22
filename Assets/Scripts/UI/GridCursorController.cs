@@ -5,14 +5,12 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-using static ak.wwise;
 
 public class GridCursorController : MonoBehaviour
 {
-    private Camera mainCamera;
     [SerializeField] private GameManager gameManager;
+    public CameraController cameraController;
     [Header("Cursor")]
     [SerializeField] private Transform cursorBoxParent;
     [SerializeField] private SpriteRenderer cursorBoxPrefab;
@@ -21,13 +19,16 @@ public class GridCursorController : MonoBehaviour
     [SerializeField] private Sprite validSprite;
     [SerializeField] private Sprite invalidSprite;
     [Header("Input Actions")]
-    [SerializeField] private InputActionReference pointAction;
     [SerializeField] private InputActionReference clickDownAction;
     [SerializeField] private InputActionReference clickUpAction;
     public Sprite PointerSprite;
     public Image CursorImage;
     public ImageOutline ImageOuntline;
     public BasicTweenObject ImageTween;
+
+    private bool IsPointerOverUI = true;
+    private Vector2 LastPointerPosition;
+    private bool IsDragging = false;
     // 曾经用过的格子
     private List<Vector3Int> UsedCells = new();
     // 当前范围内所有格子
@@ -37,7 +38,6 @@ public class GridCursorController : MonoBehaviour
 
     private void Awake()
     {
-        mainCamera = Camera.main;
         Cursor.visible = false;
     }
     void OnApplicationFocus(bool hasFocus)
@@ -47,17 +47,21 @@ public class GridCursorController : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
     private void OnDestroy()
     {
         Cursor.visible = true;
     }
     private void OnEnable()
     {
-        pointAction.action.Enable();
         clickDownAction.action.Enable();
         clickUpAction.action.Enable();
         clickDownAction.action.performed += OnClick;
         clickUpAction.action.performed += OnClickUp;
+        if (Application.isMobilePlatform)
+        {
+            CursorImage.gameObject.SetActive(false);
+        }
     }
 
 
@@ -66,15 +70,11 @@ public class GridCursorController : MonoBehaviour
     {
         clickDownAction.action.performed -= OnClick;
         clickUpAction.action.performed -= OnClickUp;
-        pointAction.action.Disable();
         clickDownAction.action.Disable();
         clickUpAction.action.Disable();
     }
 
-    public UsableItem GetNowTool()
-    {
-        return gameManager.hotbarController.NowTool;
-    }
+
     private void Update()
     {
         UpdateCursor();
@@ -84,31 +84,28 @@ public class GridCursorController : MonoBehaviour
             UsedCells.AddRange(CurrentCells);
             GetNowTool().Use(CurrentCells);
         }
+        DragToMoveCam();
+    }
+    public UsableItem GetNowTool()
+    {
+        return gameManager.hotbarController.NowTool;
     }
     public void ChangeCursorToPointer()
     {
-        if(GetNowTool() == null)
-        {
-            return;
-        }
         ChangeCursorSprite(PointerSprite);
         ImageOuntline.HideOutlineWidth();   
     }
+
     public void ChangeCursorSprite(Sprite sprite)
     {
+        if(Application.isMobilePlatform)
+        {
+            return;
+        }
         CursorImage.sprite = sprite;
         SetPivot();
         ImageTween.SetLocalScale(Vector3.one * 1.5f);
         ImageTween.DoLocalScaleTween(Vector3.one, 0.4f, type:EaseType.EaseOutBack);
-    }
-    public void BackToNormalSprite()
-    {
-        UsableItem item = GetNowTool();
-        if(item != null)
-        {
-            ImageOuntline.ShowOutlineWidth();
-            ChangeCursorSprite(GetNowTool().itemData.Icon);
-        }
     }
     private void UpdateCursor()
     {
@@ -121,9 +118,9 @@ public class GridCursorController : MonoBehaviour
         }
         Vector3 screenPosition =
             Pointer.current.position.ReadValue();
-        screenPosition.z = CursorImage.transform.position.z - mainCamera.transform.position.z;
+        screenPosition.z = CursorImage.transform.position.z - cameraController.cam.transform.position.z;
         Vector3 cursorWorldPosition =
-            mainCamera.ScreenToWorldPoint(screenPosition);
+            cameraController.cam.ScreenToWorldPoint(screenPosition);
         
         CursorImage.transform.position = cursorWorldPosition;
 
@@ -176,7 +173,23 @@ public class GridCursorController : MonoBehaviour
             IsUsable = false;
         }
     }
+    public bool CheckIfPointerOverUI()
+    {
+        if (EventSystem.current == null ||
+            Pointer.current == null)
+            return false;
 
+        var pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Pointer.current.position.ReadValue()
+        };
+        List<RaycastResult> results = new();
+        results.Clear();
+
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        return results.Count > 0;
+    }
     private void HideCursorBoxes()
     {
         foreach (SpriteRenderer box in cursorBoxes)
@@ -208,16 +221,33 @@ public class GridCursorController : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
+        IsPointerOverUI = CheckIfPointerOverUI();
         if (IsValid == true && IsUsable == false)
         {
             GameDataManager.Instance.PlayAudio("Failed");
         }
         UsedCells.Clear();
-        ImageTween.DoLocalRotationTween(new Vector3(0,0,-35), 0.4f, type: EaseType.EaseOutBack);
+        if (Application.isMobilePlatform == false)
+        {
+            ImageTween.DoLocalRotationTween(new Vector3(0, 0, -35), 0.4f, type: EaseType.EaseOutBack);
+        }
     }
     private void OnClickUp(InputAction.CallbackContext context)
     {
-        ImageTween.DoLocalRotationTween(new Vector3(0, 0, 0), 0.4f, type: EaseType.EaseOutBack);
+        UsableItem tool = GetNowTool();
+        // 没有工具
+        if (tool != null)
+        {
+            if(tool.Amount <= 0)
+            {
+                gameManager.hotbarController.RemoveItemById(tool.Id);
+            }
+        }
+        if (Application.isMobilePlatform == false)
+        {
+            ImageTween.DoLocalRotationTween(new Vector3(0, 0, 0), 0.4f, type: EaseType.EaseOutBack);
+        }
+
     }
 
     public void SetPivot()
@@ -233,5 +263,32 @@ public class GridCursorController : MonoBehaviour
             spritePivot.y / spriteSize.y
         );
     }
+    public void DragToMoveCam()
+    {
+        if (Pointer.current == null 
+            || IsPointerOverUI == true 
+            || clickDownAction.action.IsPressed()  ==false
+            || gameManager.hotbarController.IsPointer() == false)
+        {
+            IsDragging = false;
+            return;
+        }
+        Vector2 currentPosition =
+                Pointer.current.position.ReadValue();
+        if (IsDragging == false)
+        {
+            IsDragging = true;
+            LastPointerPosition = currentPosition;
+            return;
+        }
+        Vector2 delta = currentPosition - LastPointerPosition;
+        LastPointerPosition = currentPosition;
 
+        float scale = cameraController.cam.orthographicSize * 2f
+                      / cameraController.cam.pixelHeight;
+
+        Vector3 movement =
+            new Vector3(-delta.x, -delta.y, 0f) * scale;
+        cameraController.MoveCam(movement);
+    }
 }

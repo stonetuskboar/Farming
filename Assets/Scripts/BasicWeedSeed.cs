@@ -26,6 +26,5 @@ public class BasicWeedSeed : BasicSeed
         GameDataManager.Instance.PlayAudio("Plant");
         FarmLandManager farm = GameManager.FarmLandManager;
         farm.Plant(cells, cropData,IsRandom: true);
-        GameManager.hotbarController.DecreaseItem(cropData.id, 1);
     }
 }

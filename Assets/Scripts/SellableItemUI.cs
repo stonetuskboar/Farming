@@ -48,7 +48,12 @@ public class SellableItemUI : MonoBehaviour
             Vector3 leftCenter = (leftBottom + leftTop) / 2f;
 
             itemSellPage.sellingPopWindow.Set(sellAbleItem);
+
             itemSellPage.sellingPopWindow.popWindow.Show(leftCenter, 0.3f);
+            if(Application.isMobilePlatform)
+            {
+                itemSellPage.sellingPopWindow.popWindow.DoLocalScaleTween(Vector3.one * 1.5f, 0.3f, type: EaseType.EaseOutBack);
+            }
         }
 
     }

@@ -162,7 +162,7 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
     }
 
 
-    public void Show(float showTime = 0.2f)
+    public void Show(float showTime = 0.3f)
     {
         SetCanvasGroupAlpha(1f);
         SetLocalRotation(Quaternion.Euler(-30, 25, 0));
@@ -171,7 +171,7 @@ public class BasicPressableButton : BasicUIView, IPointerEnterHandler, IPointerE
         DoLocalScaleTween(Vector3.one, showTime, type: EaseType.EaseOutBack);
         SetCanvasGroupBlockable();
     }
-    public void Hide(float hideTime = 0.15f)
+    public void Hide(float hideTime = 0.2f)
     {
         DoLocalScaleTween(Vector3.one * 0.5f, hideTime, type: EaseType.EaseInOutBack);
         DoAlphaTween(0f, hideTime);

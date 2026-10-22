@@ -18,9 +18,8 @@ public class CropShaderController : MonoBehaviour
 Shader.PropertyToID("_BendPower");
     private SpriteRenderer spriteRenderer;
     private MaterialPropertyBlock propertyBlock;
-    [HideInInspector]
-    public WindType windType;
-
+    [SerializeField]
+    private WindType windType = WindType.静止;
     private Sprite lastSprite;
 
     private void OnEnable()
@@ -127,31 +126,31 @@ Shader.PropertyToID("_BendPower");
         lastSprite = sprite;
     }
 
+
     public void UpdateWindForce(WindType type)
     {
         windType = type;
         float strength = 0;
         float bendPower = 1;
-        if (type == WindType.静止)
+        if (windType == WindType.静止)
         {
             strength = 0;
         }
-        else if (type == WindType.微动)
+        else if (windType == WindType.微动)
         {
-            bendPower = 2.5f;
             strength = 0.2f;
+            bendPower = 2.5f;
         }
-        else if (type == WindType.正常)
+        else if (windType == WindType.正常)
         {
             strength = 0.5f;
             bendPower = 2f;
         }
-        else if (type == WindType.剧烈)
+        else if (windType == WindType.剧烈)
         {
             strength = 0.8f;
             bendPower = 1.5f;
         }
-
         spriteRenderer.GetPropertyBlock(propertyBlock);
         propertyBlock.SetFloat(
             BendPowerID,
@@ -162,6 +161,5 @@ Shader.PropertyToID("_BendPower");
             strength
         );
         spriteRenderer.SetPropertyBlock(propertyBlock);
-
     }
 }

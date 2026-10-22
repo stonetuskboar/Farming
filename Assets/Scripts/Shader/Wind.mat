@@ -57,11 +57,15 @@ Material:
     - _BendPower: 1.5
     - _Bottom: 0.09593868
     - _Scale: 0.2
-    - _Strength: 0.8
+    - _SeasonStrength: 1.3
+    - _Speed: 1
+    - _Strength: 0.804
     m_Colors:
     - _Bottom: {r: 0.058441095, g: 0.3, b: 0, a: 0}
+    - _Direction: {r: 1, g: -0.1, b: 0, a: 0}
     - _Position: {r: 9.605078, g: 11.397645, b: 0.5, a: 0}
     - _Scale: {r: 20, g: 20, b: 0, a: 0}
     - _Speed: {r: 1, g: 0.2, b: 0, a: 0}
     - _UVRect: {r: 0.4039191, g: 0.829674, b: 0.5657396, a: 1}
+    - _WindDirection: {r: 1, g: -0.2, b: 0, a: 0}
   m_BuildTextureStacks: []

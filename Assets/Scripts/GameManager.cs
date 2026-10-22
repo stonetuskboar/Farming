@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public HarvestEffectManager HarvestEffectManager;
     public ShopPageController ShopPageController;
+    public CatTip catTip;
     public float NowEnergy = 200;
     public float MaxEnergy = 200;
 
@@ -36,6 +37,10 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
+#endif
         GameDataManager.Instance.audioData.MusicVolume.SetGlobalValue(30);
     }
     public void ChangeVolume(float value)
@@ -47,8 +52,6 @@ public class GameManager : MonoBehaviour
         energyBar.SetEnergy(NowEnergy, MaxEnergy);
         UpdateMoneyText();
         SetSeasonAudio();
-        hotbarController.OnGameStart();
-
     }
     public bool CouldPaidTheBill()
     {
@@ -65,6 +68,12 @@ public class GameManager : MonoBehaviour
     {
         Money -= GetDebt();
         UpdateMoneyText();
+    }
+
+    public void ClearStatData()
+    {
+        EarnThisYear = 0;
+        PaidThisYear = 0;
     }
     public void SetSeasonAudio()
     {
@@ -120,7 +129,6 @@ public class GameManager : MonoBehaviour
         else
         {
             transitionController.StartShow(IsSeasonChange: false);
-
         }
 
     }
@@ -205,10 +213,10 @@ public class GameManager : MonoBehaviour
             {
                 SellItemList.Remove(item);
             }
-        }
-        if (ShopPageController.itemSellPage.gameObject.activeInHierarchy == true)
-        {
-            ShopPageController.itemSellPage.FreshButton();
+            if (ShopPageController.itemSellPage.gameObject.activeInHierarchy == true)
+            {
+                ShopPageController.itemSellPage.FreshButton();
+            }
         }
     }
     public BasicItem FindItem(int id)

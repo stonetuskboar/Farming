@@ -1,6 +1,9 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 /// <summary>
 /// 运行时镜头控制（挂到 Main Camera 上）
@@ -13,16 +16,21 @@ public class CameraController : MonoBehaviour
     public float moveSpeed = 10f;
 
     [Header("缩放速度")]
-    public float zoomSpeed = 3f;
+    public float scrollSpeed = 3f;
+    public float zoomSpeed = 300;
 
     [Header("镜头大小下限")]
     public float minSize = 1f;
 
     [Header("镜头大小上限")]
     public float maxSize = 20f;
+    [Header("边缘检测")]
+    public float edgeSize = 30f; // 距离屏幕边缘多少像素开始移动
     [SerializeField] private InputActionReference scrollAction;
+    [SerializeField] private InputActionReference moveAction;
     public BoxCollider2D mapBounds;
-    private Camera cam;
+    public Camera cam;
+    private float lastPinchDistance;
 
     void Awake()
     {
@@ -34,31 +42,45 @@ public class CameraController : MonoBehaviour
     }
     void OnEnable()
     {
+        EnhancedTouchSupport.Enable();
         scrollAction.action.performed += OnScroll;
         scrollAction.action.Enable();
+        moveAction.action.Enable();
     }
 
     void OnDisable()
     {
+        EnhancedTouchSupport.Disable();
         scrollAction.action.performed -= OnScroll;
         scrollAction.action.Disable();
+        moveAction.action.Disable();
     }
     void Update()
     {
-        float h = 0f;
-        float v = 0f;
+        #if !UNITY_ANDROID && !UNITY_IOS
+        #else
+                MobileControll();
+        #endif
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) h -= 1f;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) h += 1f;
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) v -= 1f;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) v += 1f;
 
-        if (h != 0f || v != 0f)
+
+        if (moveAction.action.IsPressed() == true )
         {
-            Vector3 dir = new Vector3(h, v, 0f).normalized;
-            cam.transform.position += dir * cam.orthographicSize * moveSpeed * Time.unscaledDeltaTime;
-            ClampCamera();
+            Vector2 input = moveAction.action.ReadValue<Vector2>();
+
+            if (input.sqrMagnitude > 0f)
+            {
+                Vector3 dir = new Vector3(input.x, input.y, 0f).normalized;
+
+                cam.transform.position += dir
+                    * cam.orthographicSize
+                    * moveSpeed
+                    * Time.unscaledDeltaTime;
+
+                ClampCamera();
+            }
         }
+
     }
     private void ClampCamera()
     {
@@ -86,6 +108,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = pos;
     }
+
     private void OnScroll(InputAction.CallbackContext context)
     {
         float scroll = context.ReadValue<Vector2>().y;
@@ -93,8 +116,59 @@ public class CameraController : MonoBehaviour
         if (Mathf.Abs(scroll) > 0.0001f)
         {
             cam.orthographicSize = Mathf.Clamp(
-                cam.orthographicSize - scroll * zoomSpeed, minSize, maxSize);
+                cam.orthographicSize - scroll * scrollSpeed, minSize, maxSize);
             ClampCamera();
         }
+    }
+
+    private void MobileControll()
+    {
+        var touches = Touch.activeTouches;
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+            // 双指缩放
+         if (touches.Count >= 2)
+        {
+            Vector2 p1 = touches[0].screenPosition;
+            Vector2 p2 = touches[1].screenPosition;
+
+            float currentDistance = Vector2.Distance(p1, p2);
+
+            if (lastPinchDistance > 0f)
+            {
+                float delta = currentDistance - lastPinchDistance;
+
+                if (cam != null && cam.orthographic)
+                {
+                    // 正交相机：调整视野大小
+                    cam.orthographicSize -= delta * scrollSpeed /zoomSpeed;
+                    cam.orthographicSize = Mathf.Clamp(
+                        cam.orthographicSize,
+                        minSize,
+                        maxSize
+                    );
+                }
+                else
+                {
+                    // 透视相机：沿观察方向前后移动
+                    transform.position += transform.forward
+                        * delta * scrollSpeed;
+                }
+            }
+
+            lastPinchDistance = currentDistance;
+            return;
+        }
+
+        // 单指拖动
+        lastPinchDistance = 0f;
+        ClampCamera();
+    }
+    public void MoveCam(Vector3 delta)
+    {
+        transform.position += delta;
+        ClampCamera();
     }
 }

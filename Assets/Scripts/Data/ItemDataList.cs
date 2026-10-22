@@ -32,10 +32,11 @@ public class ItemData
 public class ToolData
 {
     public int Id;
-    public string Description;
-    public string UpgradeDescription;
     public int CosEnergy;
-    public Vector2Int Size;
+    public Vector2Int Size = new Vector2Int(1,1);
+    public bool CouldUpgrade = true;
+    public string UpgradeDescription;
+    public int UpgradeCost = 200;
     public int UpgradeId = -1;
 
     public bool CanUpgrade()

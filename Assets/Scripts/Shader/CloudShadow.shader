@@ -7,20 +7,19 @@ Shader "Custom/2D/TilemapCloudShadow"
         _Color ("Tilemap Color", Color) = (1,1,1,1)
 
         [Header(Cloud Shadow)]
-        _ShadowColor ("Shadow Color", Color) = (0.35,0.38,0.42,1)
-        _ShadowStrength ("Shadow Strength", Range(0,1)) = 0.35
+        _ShadowColor ("ShadowColor", Color) = (0.35,0.38,0.42,1)
+        _ShadowStrength ("ShadowStrength", Range(0,1)) = 0.6
 
         [Header(Noise)]
-        _NoiseScale ("Cloud Scale", Range(0.1,20)) = 0.15
-        _NoiseContrast ("Cloud Contrast", Range(0.1,5)) = 1.5
-        _NoiseThreshold ("Cloud Threshold", Range(0,1)) = 0.5
+        _CloudScale ("CloudScale", Range(0.01,1)) = 0.15
+        _CloudContrast ("CloudContrast", Range(0.1,2)) = 0.5
+        _CloudThreshold ("CloudThreshold", Range(0,1)) = 0.5
 
         [Header(Movement)]
-        _MoveX ("Cloud Speed X", Float) = 0.01
-        _MoveY ("Cloud Speed Y", Float) = 0.005
-
+        _CloudDirection ("CloudDirection", Vector) = (1,-0.2,0,0)
+        _Speed ("Speed", Float) = 1
         [Header(Softness)]
-        _CloudSoftness ("Cloud Softness", Range(0.01,1)) = 0.25
+        _CloudSoftness ("Cloud Softness", Range(0.01,1)) = 0.05
     }
 
     SubShader
@@ -61,12 +60,12 @@ Shader "Custom/2D/TilemapCloudShadow"
             float4 _ShadowColor;
             float _ShadowStrength;
 
-            float _NoiseScale;
-            float _NoiseContrast;
-            float _NoiseThreshold;
+            float _CloudScale;
+            float _CloudContrast;
+            float _CloudThreshold;
 
-            float _MoveX;
-            float _MoveY;
+            float2 _CloudDirection;
+            float _Speed;
 
             float _CloudSoftness;
 
@@ -93,10 +92,12 @@ Shader "Custom/2D/TilemapCloudShadow"
 
             float hash21(float2 p)
             {
-                p = frac(p * float2(123.34, 456.21));
-                p += dot(p, p + 45.32);
+                p = p - floor(p / 289.0) * 289.0;
 
-                return frac(p.x * p.y);
+                p = frac(p * float2(0.1031, 0.1030));
+                p += dot(p, p.yx + 33.33);
+
+                return frac((p.x + p.y) * p.x);
             }
 
             // --------------------------------------------------
@@ -192,27 +193,27 @@ Shader "Custom/2D/TilemapCloudShadow"
 
                 float2 cloudUV = input.worldPos.xy;
 
-                cloudUV *= _NoiseScale;
+                cloudUV *= _CloudScale;
 
                 // --------------------------------------------------
                 // 云移动
                 // --------------------------------------------------
 
                 float2 movement =
-                    _Time.y *
-                    float2(_MoveX, _MoveY);
+                    _Time.y * _Speed *
+                    _CloudDirection;
 
                 cloudUV += movement;
 
                 // --------------------------------------------------
                 // 生成云噪声
-                // --------------------------------------------------
+                // -------------------------------------------------
 
                 float cloud = fbm(cloudUV);
 
                 cloud = saturate(
                     (cloud - 0.5) *
-                    _NoiseContrast +
+                    _CloudContrast +
                     0.5
                 );
 
@@ -221,11 +222,11 @@ Shader "Custom/2D/TilemapCloudShadow"
                 // --------------------------------------------------
 
                 float minValue =
-                    _NoiseThreshold -
+                    _CloudThreshold -
                     _CloudSoftness;
 
                 float maxValue =
-                    _NoiseThreshold +
+                    _CloudThreshold +
                     _CloudSoftness;
 
                 cloud = smoothstep(
@@ -259,20 +260,9 @@ Shader "Custom/2D/TilemapCloudShadow"
                 // 云影颜色
                 // --------------------------------------------------
 
-                float3 shadowColor =
-                    baseColor.rgb * _ShadowColor.rgb;
-
-                // --------------------------------------------------
-                // Alpha 合成后的 RGB
-                //
-                // base
-                //     +
-                // shadow
-                // --------------------------------------------------
-
                 float3 finalRGB =
                     baseColor.rgb * baseAlpha +
-                    shadowColor * shadowAlpha * (1.0 - baseAlpha);
+                    _ShadowColor.rgb * shadowAlpha * (1.0 - baseAlpha);
 
                 // 防止除以 0
                 finalRGB =

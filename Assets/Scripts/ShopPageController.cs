@@ -12,6 +12,7 @@ public class ShopPageController : MonoBehaviour
     public BuySeedPage buySeedPage;
     public ShopPageButton nowSelectedButton;
     public GameManager gameManager;
+    private UsableItem toolItem = null;
     protected void Awake()
     {
         if(gameObject.activeInHierarchy == true)
@@ -47,7 +48,16 @@ public class ShopPageController : MonoBehaviour
     }
     public void Show() 
     {
-        gameManager.GridCursorController.ChangeCursorToPointer();
+        if(gameManager.hotbarController.IsPointer() == false)
+        {
+            toolItem = gameManager.hotbarController.NowTool;
+            gameManager.hotbarController.SwitchToCursor();
+        }
+        else
+        {
+            toolItem = null;
+        }
+
         IsShow = true;
         gameObject.SetActive(true);
         uiView.SetCanvasGroupAlpha(1f);
@@ -60,7 +70,10 @@ public class ShopPageController : MonoBehaviour
     }
     public void Hide()
     {
-        gameManager.GridCursorController.BackToNormalSprite();
+        if(toolItem != null)
+        {
+            gameManager.hotbarController.SelectNowTool(toolItem);
+        }
         IsShow = false;
         uiView.DoLocalScaleTween(Vector3.one * 0.6f, 0.2f, type: EaseType.EaseInOutBack);
         uiView.SetCanvasGroupUnblock();

@@ -16,6 +16,7 @@ PluginImporter:
     second:
       enabled: 0
       settings:
+        CPU: x86
         Is16KbAligned: false
   - first:
       Any: 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +13,8 @@ public class ImageSwapButton : BasicPressableButton
     public Sprite HoverSprite;
     public Sprite SelectedSprite;
     public Sprite PressedSprite;
+    [NonSerialized]
+    public float Scale = 1;
     protected override void Awake()
     {
         base.Awake();
@@ -19,7 +22,7 @@ public class ImageSwapButton : BasicPressableButton
     }
     public virtual void ResetOgSize()
     {
-        Vector2 nativeSize = image.sprite.rect.size / image.pixelsPerUnit;
+        Vector2 nativeSize = Scale * image.sprite.rect.size / image.pixelsPerUnit;
         SetOgSize(nativeSize);
     }
     public void OnValidate()

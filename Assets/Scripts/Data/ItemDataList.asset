@@ -21,7 +21,7 @@ MonoBehaviour:
   - Name: "\u6728\u6876"
     Id: 1
     Icon: {fileID: -1963565487, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
-    Description: "\u6728\u6876\uFF0C\u5728\u8015\u5730\u4E0A\u6D47\u6C34\uFF0C\u4F7F\u690D\u7269\u751F\u957F\u3002\n\u6811\u6728\u4E0D\u9700\u8981\u6D47\u6C34\u3002\n\u6BCF\u6B21\u6D88\u80172\u70B9\u7CBE\u529B\u3002"
+    Description: "\u6728\u6876\uFF0C\u5728\u8015\u5730\u4E0A\u6D47\u6C34\uFF0C\u4F7F\u690D\u7269\u751F\u957F\u3002\n\u6BCF\u6B21\u6D88\u80172\u70B9\u7CBE\u529B\u3002\n\u6811\u6728\u4E0D\u9700\u8981\u6D47\u6C34\u3002"
     Price: 1
   - Name: "\u7A3F\u5B50"
     Id: 2
@@ -47,7 +47,7 @@ MonoBehaviour:
     Id: 6
     Icon: {fileID: 387873220, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
     Description: 
-    Price: 16
+    Price: 17
   - Name: "\u5C0F\u9EA6\u5B50"
     Id: 7
     Icon: {fileID: -1043596681, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
@@ -142,12 +142,12 @@ MonoBehaviour:
     Id: 25
     Icon: {fileID: -1895892096, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
     Description: 
-    Price: 20
+    Price: 22
   - Name: "\u90C1\u91D1\u9999"
     Id: 26
     Icon: {fileID: 1588275823, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
     Description: 
-    Price: 80
+    Price: 90
   - Name: "\u9EC4\u74DC"
     Id: 27
     Icon: {fileID: -1278884463, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
@@ -238,9 +238,95 @@ MonoBehaviour:
     Icon: {fileID: -891733791, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
     Description: 
     Price: 1
+  - Name: "\u67AF\u840E\u690D\u7269"
+    Id: 44
+    Icon: {fileID: 1505739549, guid: 4c7e9ff7ff3fd85488f294423cab1070, type: 3}
+    Description: 
+    Price: 1
   - Name: "\u7EA4\u7EF4\u675F"
     Id: 46
     Icon: {fileID: 663963665, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
     Description: 
     Price: 1
-  toolDataList: []
+  - Name: "\u94C1\u65A7"
+    Id: 47
+    Icon: {fileID: -1241677160, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
+    Description: "\u94C1\u65A7\uFF0C\u7528\u6765\u780D\u4F10\u6811\u6728\u548C\u6811\u6869\u3002\n\u5DF2\u5347\u7EA7\uFF0C\u6BCF\u6B21\u6D88\u80172\u70B9\u7CBE\u529B\u3002\n\u780D\u6811\u4F1A\u7559\u4E0B\u6811\u6869\u3002"
+    Price: 1
+  - Name: "\u94C1\u6876"
+    Id: 48
+    Icon: {fileID: -279277287, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
+    Description: "\u94C1\u6876\uFF0C\u5728\u8015\u5730\u4E0A\u6D47\u6C34\uFF0C\u4F7F\u690D\u7269\u751F\u957F\u3002\n\u6811\u6728\u4E0D\u9700\u8981\u6D47\u6C34\u3002\n\u5DF2\u5347\u7EA7\uFF0C\u6BCF\u6B21\u6D88\u80171\u70B9\u7CBE\u529B\u3002"
+    Price: 1
+  - Name: "\u94C1\u9504\u5934"
+    Id: 49
+    Icon: {fileID: -918142672, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
+    Description: "\u94C1\u9504\u5934\uFF0C\u7528\u6765\u5728\u8349\u5730\u4E0A\u5F00\u57A6\uFF0C\u5C06\u8349\u5730\u53D8\u4E3A\u8015\u5730\u3002\n\u5DF2\u5347\u7EA7\uFF0C\u6BCF\u6B21\u6D88\u80174\u70B9\u7CBE\u529B\u3002"
+    Price: 1
+  - Name: "\u94C1\u9570\u5200"
+    Id: 50
+    Icon: {fileID: 317608574, guid: 1b00e9d71021e3941becb156aa19b163, type: 3}
+    Description: "\u94C1\u9570\u5200\uFF0C\u7528\u6765\u6536\u5272\u91CE\u8349\u548C\u6210\u719F\u4F5C\u7269\u3002\n\u5DF2\u5347\u7EA7\uFF0C\u6BCF\u6B21\u6D88\u80172\u70B9\u7CBE\u529B\u3002"
+    Price: 1
+  - Name: "\u9F20\u6807"
+    Id: 51
+    Icon: {fileID: 21300000, guid: f10c3f1bfab3eca449b054482e3a9c70, type: 3}
+    Description: "\u6307\u9488\uFF0C\u4E0D\u4F1A\u5BF9\u4F5C\u7269\u6267\u884C\u64CD\u4F5C\uFF0C\u53EF\u4EE5\u907F\u514D\u8BEF\u89E6\u3002"
+    Price: 1
+  toolDataList:
+  - Id: 0
+    CosEnergy: 6
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 1
+    UpgradeDescription: "\u5347\u7EA7\u4E3A\u94C1\u9504\u5934\uFF0C\u6D88\u8017\u7684\u7CBE\u529B\u4ECE6\u70B9\u964D\u4E3A4\u70B9\u3002"
+    UpgradeCost: 200
+    UpgradeId: 49
+  - Id: 49
+    CosEnergy: 4
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 0
+    UpgradeDescription: "\u65E0\u6CD5\u518D\u5347\u7EA7\u3002"
+    UpgradeCost: 200
+    UpgradeId: -1
+  - Id: 1
+    CosEnergy: 2
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 1
+    UpgradeDescription: "\u5347\u7EA7\u4E3A\u94C1\u6876\uFF0C\u6D88\u8017\u7684\u7CBE\u529B\u4ECE2\u70B9\u964D\u4E3A1\u70B9\u3002"
+    UpgradeCost: 400
+    UpgradeId: 48
+  - Id: 48
+    CosEnergy: 1
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 0
+    UpgradeDescription: "\u65E0\u6CD5\u518D\u5347\u7EA7\u3002"
+    UpgradeCost: 200
+    UpgradeId: -1
+  - Id: 3
+    CosEnergy: 4
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 1
+    UpgradeDescription: "\u5347\u7EA7\u4E3A\u94C1\u9570\u5200\uFF0C\u6D88\u8017\u7684\u7CBE\u529B\u4ECE4\u70B9\u964D\u4E3A2\u70B9\u3002"
+    UpgradeCost: 400
+    UpgradeId: 50
+  - Id: 50
+    CosEnergy: 2
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 0
+    UpgradeDescription: "\u65E0\u6CD5\u518D\u5347\u7EA7\u3002"
+    UpgradeCost: 200
+    UpgradeId: -1
+  - Id: 4
+    CosEnergy: 6
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 1
+    UpgradeDescription: "\u5347\u7EA7\u4E3A\u94C1\u65A7\uFF0C\u6D88\u8017\u7684\u7CBE\u529B\u4ECE6\u70B9\u964D\u4E3A2\u70B9\u3002"
+    UpgradeCost: 500
+    UpgradeId: 47
+  - Id: 47
+    CosEnergy: 2
+    Size: {x: 1, y: 1}
+    CouldUpgrade: 0
+    UpgradeDescription: "\u65E0\u6CD5\u518D\u5347\u7EA7\u3002"
+    UpgradeCost: 200
+    UpgradeId: -1

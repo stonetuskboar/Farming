@@ -14,7 +14,7 @@ public static class RuntimeSceneSaver
     static GameDataManager gameDataManager;
     static RuntimeSceneSaver()
     {
-        EditorApplication.playModeStateChanged += OnPlayModeChanged;
+        //EditorApplication.playModeStateChanged += OnPlayModeChanged;
     }
     public static void Save()
     {

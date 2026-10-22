@@ -1,0 +1,26 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="**APPLICATIONID**">
+	<application
+		android:allowBackup="false"
+		android:hardwareAccelerated="true"
+		tools:replace="android:allowBackup">
+		<!-- 隐私协议页 -->
+		<activity
+			android:name="com.unity3d.player.PrivacyActivity"
+			android:exported="true"
+			android:screenOrientation="landscape" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<!-- Unity主Activity -->
+		<activity
+			android:name="com.unity3d.player.UnityPlayerActivity"
+			android:exported="true"
+			android:theme="@style/UnityThemeSelector">
+		</activity>
+	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>

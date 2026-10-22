@@ -63,6 +63,7 @@ public class CutsceneController : MonoBehaviour,  IPointerClickHandler
             }
             else
             {
+                IsClickable = false;
                 GameDataManager.Instance.PlayAudio("StopTransitionLoop");
                 UIView.DoAlphaTween(0f, 0.5f, EndAction);
             }

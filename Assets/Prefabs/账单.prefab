@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 4638674972232535847}
+  YearText: {fileID: 1755611649276808535}
   MoneyText: {fileID: 5088234134006356293}
   OgAnchorPosition: {x: 0, y: 0}
 --- !u!225 &4638674972232535847
