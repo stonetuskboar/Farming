@@ -24,7 +24,7 @@ public class Axe : ToolItem
         else
         {
             BasicCrop crop = farm.GetFarmTileData(cell).cropObject;
-            if (crop == null || crop.cropData is not TreeData)
+            if (crop == null || crop.IsMature() == false || crop.cropData is not TreeData)
             {
                 return false;
             }

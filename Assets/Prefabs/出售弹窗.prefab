@@ -178,6 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 287255510244174011}
   nowState: 0
+  offSet:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
   RectTransformByVisibleJudge: {fileID: 4059447351665603702}
 --- !u!1 &2174695539728530618
 GameObject:

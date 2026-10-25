@@ -29,8 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudContrast: 0.4188565
-    - _CloudScale: 0.12455393
+    - _CloudContrast: 1.3962973
+    - _CloudScale: 0.1299418
     - _CloudSoftness: 0.05
     - _CloudThreshold: 0.5
     - _MoveX: 1
@@ -38,10 +38,10 @@ Material:
     - _NoiseContrast: 0.5
     - _NoiseScale: 0.114
     - _NoiseThreshold: 0.5
-    - _ShadowStrength: 0.4228667
-    - _Speed: 0.13017897
+    - _ShadowStrength: 0.5362911
+    - _Speed: 0.09404596
     m_Colors:
-    - _CloudDirection: {r: -0.93616, g: 0.35157424, b: 0, a: 0}
+    - _CloudDirection: {r: 0.46121702, g: -0.8872874, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   m_BuildTextureStacks: []

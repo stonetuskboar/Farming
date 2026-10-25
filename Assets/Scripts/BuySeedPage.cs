@@ -42,7 +42,7 @@ public class BuySeedPage : MonoBehaviour
         for (int i = 0; (i + startIndex) < SeedIdList.Count && i < SeedItemUIList.Count; i++)
         {
             SeedItemUIList[i].gameObject.SetActive(true);
-            ItemData data = gameManager.GameDataManager.itemDataList.GetItemDataById(SeedIdList[i + startIndex]);
+            ItemData data = GameDataManager.Instance.itemDataList.GetItemDataById(SeedIdList[i + startIndex]);
             int amount = 0;
             BasicItem item = gameManager.hotbarController.FindItemById(SeedIdList[i + startIndex]);
             if (item != null)

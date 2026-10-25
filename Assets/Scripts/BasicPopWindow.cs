@@ -51,6 +51,10 @@ public class BasicPopWindow : BasicUIView
     {
         return Show(transform.position, ShowTweenTime);
     }
+    public void ShowWithTime(float ShowTweenTime = 0.2f)
+    {
+        Show(transform.position, ShowTweenTime);
+    }
     public void DoDelayShow(float delayTime, Vector3 worldPosition, float ShowTweenTime = 0.2f)
     {
         StartCoroutine(DelayShow(delayTime, worldPosition, ShowTweenTime));

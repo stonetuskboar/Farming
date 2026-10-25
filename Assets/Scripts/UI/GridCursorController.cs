@@ -26,7 +26,9 @@ public class GridCursorController : MonoBehaviour
     public ImageOutline ImageOuntline;
     public BasicTweenObject ImageTween;
 
-    private bool IsPointerOverUI = true;
+    //这三个是为了移动端适配增加的。cickdownAction先于update触发，所以IsPointerClickUI更准确
+    //如果玩家按下位置不是UI，即使之后遇到了UI，也不影响，操作更顺滑一些
+    private bool IsPointerClickUI = true;
     private Vector2 LastPointerPosition;
     private bool IsDragging = false;
     // 曾经用过的格子
@@ -78,7 +80,7 @@ public class GridCursorController : MonoBehaviour
     private void Update()
     {
         UpdateCursor();
-        if(clickDownAction.action.IsPressed() && IsUsable && false == UsedCells.SequenceEqual(CurrentCells))
+        if (clickDownAction.action.IsPressed() && IsUsable && false == UsedCells.SequenceEqual(CurrentCells))
         {
             UsedCells.Clear();
             UsedCells.AddRange(CurrentCells);
@@ -107,7 +109,7 @@ public class GridCursorController : MonoBehaviour
         ImageTween.SetLocalScale(Vector3.one * 1.5f);
         ImageTween.DoLocalScaleTween(Vector3.one, 0.4f, type:EaseType.EaseOutBack);
     }
-    private void UpdateCursor()
+    private void UpdateCursor(bool IsCheckUI = true)
     {
         IsValid = false;
         if (Pointer.current == null)
@@ -124,7 +126,7 @@ public class GridCursorController : MonoBehaviour
         
         CursorImage.transform.position = cursorWorldPosition;
 
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (IsCheckUI == true && EventSystem.current.IsPointerOverGameObject())
         {
             IsUsable = false;
             HideCursorBoxes();
@@ -221,8 +223,9 @@ public class GridCursorController : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
-        IsPointerOverUI = CheckIfPointerOverUI();
-        if (IsValid == true && IsUsable == false)
+        IsPointerClickUI = CheckIfPointerOverUI();
+        UpdateCursor(IsCheckUI: false);
+        if (IsPointerClickUI == false && IsValid == true && IsUsable == false)
         {
             GameDataManager.Instance.PlayAudio("Failed");
         }
@@ -266,7 +269,7 @@ public class GridCursorController : MonoBehaviour
     public void DragToMoveCam()
     {
         if (Pointer.current == null 
-            || IsPointerOverUI == true 
+            || IsPointerClickUI == true 
             || clickDownAction.action.IsPressed()  ==false
             || gameManager.hotbarController.IsPointer() == false)
         {

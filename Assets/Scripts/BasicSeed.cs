@@ -15,7 +15,7 @@ public class BasicSeed : UsableItem
     public override void Init(GameManager manager)
     {
         base.Init(manager);
-        cropData = GameManager.GameDataManager.cropDataList.GetCropDataById(seedId);
+        cropData = GameDataManager.Instance.cropDataList.GetCropDataById(seedId);
         size = cropData.size;
     }
     public void BaseInit(GameManager manager)

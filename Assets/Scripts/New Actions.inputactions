@@ -95,17 +95,6 @@
                 },
                 {
                     "name": "",
-                    "id": "715b6a89-75bc-45da-bb03-6102c51e5330",
-                    "path": "<Touchscreen>/Press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ClickDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8971bd47-adc3-434d-95a1-ec0379ba71e2",
                     "path": "<Pointer>/press",
                     "interactions": "Press(behavior=1)",

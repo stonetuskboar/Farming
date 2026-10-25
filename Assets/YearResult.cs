@@ -145,18 +145,18 @@ public class YearResult : MonoBehaviour
     }
     public void ShowResult()
     {
-        if (gameManager.CouldPaidTheBill() == true && gameManager.year < 3)
-        { 
-            gameManager.ClearStatData();
-            gameManager.FarmLandManager.ClearStatData();
-            gameManager.PaidTheBill();
-            gameManager.TimePast();
-            gameManager.transitionController.ShowBill(IsSeasonChange: true);
-        }
-        else
+        if (gameManager.year == 3)
         {
             gameManager.hotbarController.SwitchToCursor();
             gameManager.transitionController.endController.ShowResulView();
+        }
+        else
+        {
+            gameManager.PaidTheBill();
+            gameManager.FarmLandManager.ClearStatData();
+            gameManager.ClearStatData();
+            gameManager.TimePast();
+            gameManager.transitionController.ShowBill(IsSeasonChange: true);
         }
     }
 }

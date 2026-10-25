@@ -23,6 +23,6 @@ public class BasicItem
     public virtual void Init(GameManager manager)
     {
         GameManager = manager;
-        itemData = GameManager.GameDataManager.itemDataList.GetItemDataById(Id);
+        itemData = GameDataManager.Instance.itemDataList.GetItemDataById(Id);
     }
 }

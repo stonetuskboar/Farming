@@ -130,7 +130,7 @@ public class SellingPopWindow : MonoBehaviour
         Page.gameManager.DecreaseItem(itemId, currentValue);
         GameDataManager.Instance.PlayAudio("SellSucess");
         SellableItemUI ui = Page.FindUIById(itemId);
-        if(ui != null)
+        if(ui != null && ui.gameObject.activeInHierarchy == true)
         {
             ui.SellButton.SetLocalRotation(Quaternion.identity);
             ui.SellButton.SetLocalScale(Vector3.one);

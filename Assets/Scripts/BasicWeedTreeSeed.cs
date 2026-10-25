@@ -10,7 +10,7 @@ public class BasicWeedTreeSeed : BasicWeedSeed
     public override void Init(GameManager manager)
     {
         BaseInit(manager);
-        cropData = GameManager.GameDataManager.cropDataList.GetTreeDataById(seedId);
+        cropData = GameDataManager.Instance.cropDataList.GetTreeDataById(seedId);
         size = cropData.size;
     }
 }

@@ -31,6 +31,7 @@ public class ItemSellPage : MonoBehaviour
         }
         for (int i = gameManager.SellItemList.Count; i < SellItemUIList.Count; i++)
         {
+            SellItemUIList[i].sellAbleItem = null;
             SellItemUIList[i].gameObject.SetActive(false);
         }
     }
@@ -39,7 +40,8 @@ public class ItemSellPage : MonoBehaviour
     {
         for(int i = 0; i < SellItemUIList.Count; i ++)
         {
-            if (SellItemUIList[i].sellAbleItem.Id == id)
+            BasicItem item = SellItemUIList[i].sellAbleItem;
+            if (item != null && item.Id == id)
             {
                 return SellItemUIList[i];
             }
@@ -52,5 +54,21 @@ public class ItemSellPage : MonoBehaviour
         {
             sellingPopWindow.popWindow.Hide(0f);
         }
+    }
+    public void SellAll()
+    {
+        sellingPopWindow.popWindow.Hide();
+        int price = gameManager.GetAllItemPrice();
+        gameManager.ChangeMoney(price);
+        gameManager.DeleteAllItem();
+        if(price > 0 )
+        {
+            GameDataManager.Instance.PlayAudio("SellSucess");
+        }
+        else
+        {
+            GameDataManager.Instance.PlayAudio("Failed");
+        }
+
     }
 }

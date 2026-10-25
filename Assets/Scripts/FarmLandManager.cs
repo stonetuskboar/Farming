@@ -46,14 +46,14 @@ public class FarmLandManager : MonoBehaviour
             {
                 continue;
             }
-            CropData data = gameManager.GameDataManager.cropDataList.GetTreeDataById(crop.cropData.id);
+            CropData data = GameDataManager.Instance.cropDataList.GetTreeDataById(crop.cropData.id);
             if (data != null)
             {
                 crop.cropData = data;
             }
             else
             {
-                crop.cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(crop.cropData.id);
+                crop.cropData = GameDataManager.Instance.cropDataList.GetCropDataById(crop.cropData.id);
             }
             crop.SetFarmLand(this);
             crop.SetByGrowthProgress();
@@ -113,11 +113,11 @@ public class FarmLandManager : MonoBehaviour
                     int i = Random.Range(0, 10);
                     if (i < 8)
                     {
-                        cropData = gameManager.GameDataManager.cropDataList.GetCropDataById(Random.Range(31, 42));
+                        cropData = GameDataManager.Instance.cropDataList.GetCropDataById(Random.Range(31, 42));
                     }
                     else
                     {
-                        cropData = gameManager.GameDataManager.cropDataList.GetTreeDataById(Random.Range(15, 18));
+                        cropData = GameDataManager.Instance.cropDataList.GetTreeDataById(Random.Range(15, 18));
                     }
                     List<Vector3Int> NearPos = GetNearestCells(pos, cropData.size);
                     if (CanPlantWeedTheseCell(NearPos) == true)

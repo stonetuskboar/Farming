@@ -150,6 +150,10 @@ public class ItemDrop : MonoBehaviour
 
         if (Camera.main == null)
             return;
+        if(Application.isMobilePlatform && Pointer.current.press.IsPressed() == false)
+        {
+            return;
+        }
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;

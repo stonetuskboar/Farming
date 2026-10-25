@@ -6,7 +6,6 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameDataManager GameDataManager;
     public GridCursorController GridCursorController;
     public FarmLandManager FarmLandManager;
 
@@ -26,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int year = 1;
     public Season season = Season.春;
     public int Month = 1;
+    private int DebtSum = 0;
     public List<int> Debts;
     [NonSerialized]
     public int EarnThisYear = 0;
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public TextColorTweenObj MoneyText;
 
     public List<BasicItem> SellItemList = new List<BasicItem>();
+
 
     public void Start()
     {
@@ -66,13 +67,21 @@ public class GameManager : MonoBehaviour
     }
     public void PaidTheBill()
     {
-        Money -= GetDebt();
+        if(Money >= GetDebt())
+        {
+            Money -= GetDebt();
+        }
+        else
+        {
+            DebtSum = GetDebt() - Money;
+            Money = 0;
+        }
         UpdateMoneyText();
     }
 
     public void ClearStatData()
     {
-        EarnThisYear = 0;
+        EarnThisYear = Money;
         PaidThisYear = 0;
     }
     public void SetSeasonAudio()
@@ -109,7 +118,7 @@ public class GameManager : MonoBehaviour
         AkUnitySoundEngine.SetSwitch(
             "Season_Transition",
             wwiseSeason,
-            GameDataManager.gameObject
+            GameDataManager.Instance.gameObject
         );
     }
 
@@ -148,7 +157,7 @@ public class GameManager : MonoBehaviour
     }
     public int GetDebt()
     {
-        return Debts[year - 1];
+        return DebtSum + Debts[year - 1];
     }
     public void DoDelay(float time, Action callBack = null)
     {
@@ -217,6 +226,24 @@ public class GameManager : MonoBehaviour
             {
                 ShopPageController.itemSellPage.FreshButton();
             }
+        }
+    }
+    public int GetAllItemPrice()
+    {
+        int price = 0;
+        for(int i = 0; i < SellItemList.Count; i++)
+        {
+            BasicItem item = SellItemList[i];
+            price += item.Amount * item.itemData.Price;
+        }
+        return price;
+    }
+    public void DeleteAllItem()
+    {
+        SellItemList.Clear();
+        if (ShopPageController.itemSellPage.gameObject.activeInHierarchy == true)
+        {
+            ShopPageController.itemSellPage.FreshButton();
         }
     }
     public BasicItem FindItem(int id)
