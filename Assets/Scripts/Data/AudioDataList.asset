@@ -143,6 +143,11 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 42754c8df0ee16f47af3290f8abd5c4f, type: 2}
+  - Name: StopTransitionLoop
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 0c75e4ff19a9c81429237c3c966fc106, type: 2}
   - Name: Popup
     audioEvent:
       idInternal: 0
@@ -153,16 +158,31 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: b92d712f3d419314d9f9313355b737b8, type: 2}
-  - Name: StopTransitionLoop
-    audioEvent:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 0c75e4ff19a9c81429237c3c966fc106, type: 2}
   - Name: GameOver
     audioEvent:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 4b5eca97a36e9dd43904a1c7acb27247, type: 2}
+  - Name: Hold
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 62d64ff1c361e6642a0158ec72ca8709, type: 2}
+  - Name: StopHold
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f057a8e411078cf429d5dbae57fdf539, type: 2}
+  - Name: StartButton
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: aef7e1cd5f9fd2543acfa9b894a88d84, type: 2}
+  - Name: UI_Press
+    audioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: b095ffaeb424f6646b786d1cc8e48e9c, type: 2}
   MusicVolume:
     idInternal: 0
     valueGuidInternal: 

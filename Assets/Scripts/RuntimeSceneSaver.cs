@@ -6,7 +6,7 @@ using System.Collections;
 
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
-//[InitializeOnLoad]
+[InitializeOnLoad]
 public static class RuntimeSceneSaver
 {
     public static bool IsSave = false;
@@ -14,10 +14,11 @@ public static class RuntimeSceneSaver
     static GameDataManager gameDataManager;
     static RuntimeSceneSaver()
     {
-        //EditorApplication.playModeStateChanged += OnPlayModeChanged;
+        EditorApplication.playModeStateChanged += OnPlayModeChanged;
     }
     public static void Save()
     {
+        IsSave = true;
         FarmLandManager manager = Object.FindFirstObjectByType<FarmLandManager>();
         gameDataManager = GameDataManager.Instance;
         if (manager != null)

@@ -54,6 +54,12 @@ public class GameManager : MonoBehaviour
         UpdateMoneyText();
         SetSeasonAudio();
     }
+    public void SaveGameScene()
+    {
+        #if UNITY_EDITOR
+        RuntimeSceneSaver.Save();
+        #endif
+    }
     public bool CouldPaidTheBill()
     {
         if(Money < GetDebt())

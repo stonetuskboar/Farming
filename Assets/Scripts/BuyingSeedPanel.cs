@@ -30,10 +30,8 @@ public class BuyingSeedPanel : MonoBehaviour
     {
         IncreaseButton.PointerDown += HoldIncrease;
         IncreaseButton.PointerUp += StopHolding;
-        IncreaseButton.PointerExited += StopHolding;
         DecreaseButton.PointerDown += HoldDecrease;
         DecreaseButton.PointerUp += StopHolding;
-        DecreaseButton.PointerExited += StopHolding;
         if(Application.isMobilePlatform)
         {
             IncreaseButton.Scale = 2;
@@ -48,6 +46,10 @@ public class BuyingSeedPanel : MonoBehaviour
         if (!isHeld)
             return;
 
+        if(holdTime < minInterval && holdTime +Time.unscaledDeltaTime >= minInterval)
+        {
+            GameDataManager.Instance.PlayAudio("Hold");
+        }
         holdTime += Time.unscaledDeltaTime;
         repeatTimer -= Time.unscaledDeltaTime;
 
@@ -99,6 +101,7 @@ public class BuyingSeedPanel : MonoBehaviour
 
     public void HoldIncrease()
     {
+        //GameDataManager.Instance.PlayAudio("UI_Click");
         isHeld = true;
         isIncrease = true;
         holdTime = 0f;
@@ -109,6 +112,7 @@ public class BuyingSeedPanel : MonoBehaviour
     }
     public void HoldDecrease()
     {
+        //GameDataManager.Instance.PlayAudio("UI_Click");
         isHeld = true;
         isIncrease = false;
         holdTime = 0f;
@@ -119,6 +123,8 @@ public class BuyingSeedPanel : MonoBehaviour
     }
     private void StopHolding()
     {
+        Debug.Log("StopHold");
+        GameDataManager.Instance.PlayAudio("StopHold");
         isHeld = false;
     }
 

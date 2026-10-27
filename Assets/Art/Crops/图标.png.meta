@@ -871,7 +871,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u94C1\u9504\u5934"
+      name: "\u94C1\u9570\u5200"
       rect:
         serializedVersion: 2
         x: 128
@@ -892,7 +892,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u94C1\u9570\u5200"
+      name: "\u94C1\u9504\u5934"
       rect:
         serializedVersion: 2
         x: 256
@@ -1019,8 +1019,8 @@ TextureImporter:
       "\u90C1\u91D1\u9999\u5B50": -1675405450
       "\u94C1\u65A7": -1241677160
       "\u94C1\u6876": -279277287
-      "\u94C1\u9504\u5934": -918142672
-      "\u94C1\u9570\u5200": 317608574
+      "\u94C1\u9504\u5934": 317608574
+      "\u94C1\u9570\u5200": -918142672
       "\u9504\u5934": 328402063
       "\u9524\u5B50": -1744736532
       "\u9570\u5200": 2132200136

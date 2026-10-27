@@ -27,19 +27,7 @@ public class HotBarController : MonoBehaviour
         AddItem(4, 1);
         AddItem(8, 10);
         AddItem(9, 5);
-        //for (int i = 5; i <= 14; i++)
-        //{
-        //    AddItem(i, 999);
-        //}
-        //for (int i = 31; i <= 42; i++)
-        //{
-        //    AddItem(i, 999);
-        //}
-        //for (int i = 15; i <= 17; i++)
-        //{
-        //    BasicItem item = new BasicWeedTreeSeed(i,i);
-        //    AddItem(item, 999);
-        //}
+
         InitButton();
         SwitchToCursor();
     }
@@ -50,13 +38,30 @@ public class HotBarController : MonoBehaviour
         scrollAction.action.Enable();
     }
 
+
     void OnDisable()
     {
         scrollAction.action.performed -= OnScroll;
         scrollAction.action.Disable();
         shiftAction.action.Disable();
     }
-
+    public void GiveCheatSeed()
+    {
+        gameManager.ChangeMoney(3000);
+        for (int i = 5; i <= 14; i++)
+        {
+            AddItem(i, 999);
+        }
+        for (int i = 31; i <= 42; i++)
+        {
+            AddItem(i, 999);
+        }
+        for (int i = 15; i <= 17; i++)
+        {
+            UsableItem item = new BasicWeedTreeSeed(i, i);
+            AddItem(item, 999);
+        }
+    }
     public void InitButton()
     {
         for(int i = 0; i < ButtonList.Count; i++)
