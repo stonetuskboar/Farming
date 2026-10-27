@@ -580,8 +580,8 @@ TextureImporter:
       name: "\u83E0\u83DC"
       rect:
         serializedVersion: 2
-        x: 127
-        y: 897
+        x: 128
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -812,7 +812,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 769
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -1001,7 +1001,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 640
+        y: 639
         width: 128
         height: 128
       alignment: 0
@@ -1097,6 +1097,27 @@ TextureImporter:
       bones: []
       spriteID: 1bf9e0ee53a63534585027e2feeeebff
       internalID: -80265690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u65A7\u5B50_1\u7EA7"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245297f1da2219840bcf18ad97e99e29
+      internalID: 552281671
       vertices: []
       indices: 
       edges: []
