@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2425398770",
+    "Type": "Event",
+    "GUID": "{483F18ED-716B-47A4-A145-0ED9DE3177A8}",
+    "Language": "SFX",
+    "Hash": "{D8A13380-4A4F-5FF3-EC35-FB1BF41BFA4F}",
+    "ObjectPath": "Play_StartButton",
+    "ShortName": "Play_StartButton",
+    "Path": "Event/Play_StartButton.bnk",
+    "Media": [
+     {
+      "Id": "913649399",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Scene_Transition_Loop.wav",
+      "Path": "Media/913649399.wem",
+      "CachePath": "07/{076BB5D5-0B6E-085B-5DE8-0B51E27A6937}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2425398770",
+      "Name": "Play_StartButton",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_StartButton",
+      "GUID": "{483F18ED-716B-47A4-A145-0ED9DE3177A8}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "913649399"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{7AD588E2-406C-81AD-C932-6237D6645A08}"
+ }
+}

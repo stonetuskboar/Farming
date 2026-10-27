@@ -35,14 +35,18 @@ namespace AK
         static const AkUniqueID PLAY_SHOP_CLOSE = 2365491143U;
         static const AkUniqueID PLAY_SHOP_OPEN = 129330417U;
         static const AkUniqueID PLAY_SHOP_TAB = 143281810U;
+        static const AkUniqueID PLAY_STARTBUTTON = 2425398770U;
         static const AkUniqueID PLAY_TILL = 3374032463U;
         static const AkUniqueID PLAY_TOOL_UPGRADE = 1463437813U;
         static const AkUniqueID PLAY_UI_CLICK = 1749424733U;
+        static const AkUniqueID PLAY_UI_PRESS = 2883220852U;
+        static const AkUniqueID PLAY_VALUE_HOLD = 1819243607U;
         static const AkUniqueID PLAY_WATER = 441572235U;
         static const AkUniqueID STOP_MUSIC_END = 797890747U;
         static const AkUniqueID STOP_MUSIC_START = 617272800U;
         static const AkUniqueID STOP_SCENE_TRANSITION_LOOP = 2713337703U;
         static const AkUniqueID STOP_SEASON_AUDIO = 3508233432U;
+        static const AkUniqueID STOP_VALUE_HOLD = 2972940873U;
     } // namespace EVENTS
 
     namespace SWITCHES

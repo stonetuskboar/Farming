@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2A9195AD-2A3D-4A59-9B97-AC2E20764B28}",
     "Language": "SFX",
-    "Hash": "{B33645BC-4D9F-BBE2-C3AA-A58200533DF5}",
+    "Hash": "{19F017B8-5F9E-E11F-EDAF-F448DF85CCB2}",
     "ObjectPath": "Play_Music_End",
     "ShortName": "Play_Music_End",
     "Path": "Event/Play_Music_End.bnk",
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\System\\Play_Music_End",
       "GUID": "{2A9195AD-2A3D-4A59-9B97-AC2E20764B28}",
       "DurationType": "OneShot",
-      "DurationMin": "168.18748",
-      "DurationMax": "168.18748",
+      "DurationMin": "168.68748",
+      "DurationMax": "168.68748",
       "MediaRefs": [
        {
         "Id": "575399227"
@@ -51,6 +51,6 @@
     ]
    }
   ],
-  "FileHash": "{09CE6AE2-31B9-55A4-1D41-69DCC5B8844F}"
+  "FileHash": "{1A24D547-EB51-96A8-5BE4-78C669623BB2}"
  }
 }

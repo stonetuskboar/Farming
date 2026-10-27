@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1819243607	Play_Value_Hold			\Default Work Unit\UI\Play_Value_Hold	
+

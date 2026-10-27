@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1819243607",
+    "Type": "Event",
+    "GUID": "{AA446D05-BF01-48A0-B988-F0A44AAC0574}",
+    "Language": "SFX",
+    "Hash": "{9FF8D65D-9DC8-4D23-BC5A-00D57470A6B8}",
+    "ObjectPath": "Play_Value_Hold",
+    "ShortName": "Play_Value_Hold",
+    "Path": "Event/Play_Value_Hold.bnk",
+    "Media": [
+     {
+      "Id": "242759675",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Click.wav",
+      "Path": "Media/242759675.wem",
+      "CachePath": "73/{7387DC34-FBF5-CA3D-849C-226CAFE637CB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1819243607",
+      "Name": "Play_Value_Hold",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_Value_Hold",
+      "GUID": "{AA446D05-BF01-48A0-B988-F0A44AAC0574}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "242759675"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{9A4FCD5E-5619-ACCE-51BD-8BF09AD2DCE8}"
+ }
+}

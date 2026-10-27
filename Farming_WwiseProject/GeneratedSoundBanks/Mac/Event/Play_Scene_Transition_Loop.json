@@ -10,19 +10,19 @@
     "Type": "Event",
     "GUID": "{33A49902-047C-449B-9FE3-ADC34511915F}",
     "Language": "SFX",
-    "Hash": "{77F2383A-3E6E-DD14-5335-11182B567EC3}",
+    "Hash": "{18F01B90-80C6-2B67-7DC2-67BFD51D2FC9}",
     "ObjectPath": "Play_Scene_Transition_Loop",
     "ShortName": "Play_Scene_Transition_Loop",
     "Path": "Event/Play_Scene_Transition_Loop.bnk",
     "Media": [
      {
-      "Id": "913649399",
+      "Id": "4379333",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
       "ShortName": "Scene_Transition_Loop.wav",
-      "Path": "Media/913649399.wem",
-      "CachePath": "CB/{CB10706B-37FC-B7DD-B017-5623305A23A3}.wem"
+      "Path": "Media/4379333.wem",
+      "CachePath": "DC/{DC23FE12-0CBD-4683-3C16-58E0701B2859}.wem"
      }
     ],
     "Events": [
@@ -34,13 +34,13 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "913649399"
+        "Id": "4379333"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{F14156B3-0B97-DEDE-B107-AFE390098B49}"
+  "FileHash": "{4D8F8DA6-8F78-B0C3-B8AC-1627A73DB628}"
  }
 }
