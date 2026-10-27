@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2972940873",
+    "Type": "Event",
+    "GUID": "{176F4ED6-D06A-4487-A13C-587E41B90F82}",
+    "Language": "SFX",
+    "Hash": "{7E928FA8-BB66-7864-EBC1-3DDB5221217E}",
+    "ObjectPath": "Stop_Value_Hold",
+    "ShortName": "Stop_Value_Hold",
+    "Path": "Event/Stop_Value_Hold.bnk",
+    "Events": [
+     {
+      "Id": "2972940873",
+      "Name": "Stop_Value_Hold",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Stop_Value_Hold",
+      "GUID": "{176F4ED6-D06A-4487-A13C-587E41B90F82}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A36AE842-36D9-9308-6887-39D906237E57}"
+ }
+}

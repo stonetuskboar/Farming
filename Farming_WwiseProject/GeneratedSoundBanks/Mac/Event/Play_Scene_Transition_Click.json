@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{B87D3622-250C-4F74-9C5B-2D29B54C29F7}",
     "Language": "SFX",
-    "Hash": "{A7077895-8A68-6AAB-A835-C9ECAC3ACAB5}",
+    "Hash": "{348D55B0-6249-F522-F5A0-43DBA6FC1E18}",
     "ObjectPath": "Play_Scene_Transition_Click",
     "ShortName": "Play_Scene_Transition_Click",
     "Path": "Event/Play_Scene_Transition_Click.bnk",
@@ -79,6 +79,6 @@
     ]
    }
   ],
-  "FileHash": "{6B3034F0-6279-6D85-437C-02A21199480F}"
+  "FileHash": "{8C206760-6C95-18A2-1193-712CC9CA7798}"
  }
 }

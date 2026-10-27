@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2883220852",
+    "Type": "Event",
+    "GUID": "{38DD24D8-B044-40D3-BB64-C57CF9B204C4}",
+    "Language": "SFX",
+    "Hash": "{B70B1C81-7C40-8843-3AB2-2DCDCE4BF5FA}",
+    "ObjectPath": "Play_UI_Press",
+    "ShortName": "Play_UI_Press",
+    "Path": "Event/Play_UI_Press.bnk",
+    "Media": [
+     {
+      "Id": "834369020",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Click_Press.wav",
+      "Path": "Media/834369020.wem",
+      "CachePath": "E6/{E6A87132-AEA5-B051-3A38-557824035DBE}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2883220852",
+      "Name": "Play_UI_Press",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_UI_Press",
+      "GUID": "{38DD24D8-B044-40D3-BB64-C57CF9B204C4}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1472789",
+      "DurationMax": "1.1472789",
+      "MediaRefs": [
+       {
+        "Id": "834369020"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D14E0C24-82AD-D0EA-F44A-BD6355672AFF}"
+ }
+}
