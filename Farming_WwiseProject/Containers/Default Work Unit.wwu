@@ -1606,9 +1606,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="StartButton" ID="{3EFB4DF8-0C2E-41ED-8555-648287383FC2}" ShortID="561569187">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F07D5897-1546-4FBE-B5DA-41B2F8EB5DD7}"/>
