@@ -264,6 +264,11 @@ MonoBehaviour:
       GrowthSprite: {fileID: -573212571, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
+    seasonSprites:
+    - {fileID: 271963728, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: -1012001329, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: -91391665, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: -1581786842, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
     size: {x: 1, y: 1}
     DropedItemId: 46
     DropedAmountMin: 1
@@ -277,6 +282,11 @@ MonoBehaviour:
       GrowthSprite: {fileID: 557103947, guid: 613e04c669b497144aac8c0a5df98540, type: 3}
       shadow: {fileID: 669860741, guid: 99c04d1add66d9b46b7b064c6781ed7c, type: 3}
       "\u98CE\u529B": 3
+    seasonSprites:
+    - {fileID: -85322706, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: -853801414, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: -600587274, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
+    - {fileID: 185391197, guid: 0cf2cce034c9df547a325f95945d166e, type: 3}
     size: {x: 1, y: 1}
     DropedItemId: 46
     DropedAmountMin: 1

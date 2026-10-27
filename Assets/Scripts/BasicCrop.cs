@@ -46,7 +46,7 @@ public class BasicCrop : MonoBehaviour
                 }
             }
         }
-        cropSr.sprite = currentStage.GrowthSprite;
+        cropSr.sprite = GetSeasonSprite(currentStage);
         cropShaderController.UpdateWindForce(currentStage.风力);
         shadowShaderController.UpdateWindForce(currentStage.风力);
         if (currentStage.shadow != null)
@@ -90,5 +90,19 @@ public class BasicCrop : MonoBehaviour
         return growthProgress >= cropData.matureTurns;
     }
 
+    // 按当前季节取四季贴图；没有配四季图就用成长阶段图
+    Sprite GetSeasonSprite(GrowthStage stage)
+    {
+        if (cropData.seasonSprites != null && cropData.seasonSprites.Count >= 4 && farmLandManager != null && farmLandManager.gameManager != null)
+        {
+            int idx = (int)farmLandManager.gameManager.season;   // 春0 夏1 秋2 冬3
+            if (idx >= 0 && idx < cropData.seasonSprites.Count)
+            {
+                Sprite s = cropData.seasonSprites[idx];
+                if (s != null) return s;
+            }
+        }
+        return stage.GrowthSprite;
+    }
 
 }

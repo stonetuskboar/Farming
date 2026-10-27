@@ -46,13 +46,17 @@ public class HotBarController : MonoBehaviour
         shiftAction.action.Disable();
     }
     public void GiveCheatSeed()
-    {
-        gameManager.ChangeMoney(3000);
+    {        gameManager.ChangeMoney(3000);
         for (int i = 5; i <= 14; i++)
         {
             AddItem(i, 999);
         }
-        for (int i = 31; i <= 42; i++)
+        // 野草只有 31、32 两种；37~42 是石头/花/树桩等装饰
+        for (int i = 31; i <= 32; i++)
+        {
+            AddItem(i, 999);
+        }
+        for (int i = 37; i <= 42; i++)
         {
             AddItem(i, 999);
         }
@@ -60,6 +64,11 @@ public class HotBarController : MonoBehaviour
         {
             UsableItem item = new BasicWeedTreeSeed(i, i);
             AddItem(item, 999);
+        }
+        // 成年树作弊物品：60 松 / 61 柏 / 62 橡
+        for (int i = 60; i <= 62; i++)
+        {
+            AddItem(i, 999);
         }
     }
     public void InitButton()

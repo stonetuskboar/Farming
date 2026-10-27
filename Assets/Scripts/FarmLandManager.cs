@@ -104,6 +104,12 @@ public class FarmLandManager : MonoBehaviour
                 grassTilemap.RenderTile = winterTile;
             }
             grassTilemap.RefreshRenderTilemap();
+
+            // 换季：让所有作物/杂草按季节换图
+            foreach (BasicCrop c in crops)
+            {
+                if (c != null) c.SetByGrowthProgress();
+            }
             foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
             {
                 int rand = Random.Range(0, 3);
@@ -113,7 +119,9 @@ public class FarmLandManager : MonoBehaviour
                     int i = Random.Range(0, 10);
                     if (i < 8)
                     {
-                        cropData = GameDataManager.Instance.cropDataList.GetCropDataById(Random.Range(31, 42));
+                        // 杂草只剩 31、32 两种；以后加杂草在这里补 id
+                        int[] weedIds = { 31, 32 };
+                        cropData = GameDataManager.Instance.cropDataList.GetCropDataById(weedIds[Random.Range(0, weedIds.Length)]);
                     }
                     else
                     {

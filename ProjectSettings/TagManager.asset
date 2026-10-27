@@ -56,8 +56,14 @@ TagManager:
   - name: "\u5730\u677F"
     uniqueID: 3328067817
     locked: 0
+  - name: "\u60AC\u5D16\u5E95\u90E8"
+    uniqueID: 611560995
+    locked: 0
   - name: "\u60AC\u5D16"
     uniqueID: 3411780481
+    locked: 0
+  - name: "\u7011\u5E03"
+    uniqueID: 1965405971
     locked: 0
   - name: "\u5F71\u5B50"
     uniqueID: 2018288969
