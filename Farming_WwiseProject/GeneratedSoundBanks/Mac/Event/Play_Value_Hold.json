@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{AA446D05-BF01-48A0-B988-F0A44AAC0574}",
     "Language": "SFX",
-    "Hash": "{9FF8D65D-9DC8-4D23-BC5A-00D57470A6B8}",
+    "Hash": "{036E2568-C00A-3053-1661-AB8DD4D36739}",
     "ObjectPath": "Play_Value_Hold",
     "ShortName": "Play_Value_Hold",
     "Path": "Event/Play_Value_Hold.bnk",
@@ -41,6 +41,6 @@
     ]
    }
   ],
-  "FileHash": "{EEF9B78A-6B25-EB20-B41C-8EA9882A2EBE}"
+  "FileHash": "{5F57797D-A305-AD0F-2C78-04D10D3934B6}"
  }
 }

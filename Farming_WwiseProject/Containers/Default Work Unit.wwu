@@ -1465,7 +1465,6 @@
 										<ModifierInfo>
 											<Modifier Name="" ID="{CCABB641-18DD-4AC3-8BEA-909A2104B3BE}">
 												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
 													<Property Name="Max" Type="Real64" Value="0.15"/>
 													<Property Name="Min" Type="Real64" Value="-0.08"/>
 												</PropertyList>
