@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{483F18ED-716B-47A4-A145-0ED9DE3177A8}",
     "Language": "SFX",
-    "Hash": "{D8A13380-4A4F-5FF3-EC35-FB1BF41BFA4F}",
+    "Hash": "{E3B20275-6E66-D5EC-038A-F7F41BEFCB4A}",
     "ObjectPath": "Play_StartButton",
     "ShortName": "Play_StartButton",
     "Path": "Event/Play_StartButton.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Scene_Transition_Loop.wav",
       "Path": "Media/913649399.wem",
-      "CachePath": "07/{076BB5D5-0B6E-085B-5DE8-0B51E27A6937}.wem"
+      "CachePath": "10/{10AF3C70-340B-472D-C253-F62C0AFB4C4A}.wem"
      }
     ],
     "Events": [
@@ -31,7 +31,9 @@
       "Name": "Play_StartButton",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_StartButton",
       "GUID": "{483F18ED-716B-47A4-A145-0ED9DE3177A8}",
-      "DurationType": "Infinite",
+      "DurationType": "OneShot",
+      "DurationMin": "0.39329",
+      "DurationMax": "0.39329",
       "MediaRefs": [
        {
         "Id": "913649399"
@@ -41,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{A8685594-F16E-0290-6316-463D622166D3}"
+  "FileHash": "{BA04998E-EAD0-DB43-D2D8-54D062678756}"
  }
 }
