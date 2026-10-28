@@ -1,3 +1,10 @@
+// ===== AI TEMP-001 成年树作弊物品（不入正式版）=====
+// 作用：种下即为成年树，可正常砍伐
+// 对应物品 id：60 松树 / 61 柏树 / 62 橡树
+// 依赖：GameDataManager.NewItemById() 的 60~62 分支
+//       HotBarController.GiveCheatSeed() 的发放循环
+//       ItemDataList.asset 中 id 60/61/62 三条
+// 移除方式：删除本文件 + 删除上述三处 ===== AI TEMP-001 ===== 标记块
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -39,8 +39,10 @@ public class CropData
     public List<Season> CanGrowSeasons;
     public List<GrowthStage> growthStages = new List<GrowthStage>();
 
-    // 四季贴图：春、夏、秋、冬（留空则用 growthStages 的图）
+    // ===== AI FEAT-001 BEGIN 四季贴图（杂草四季换图）=====
+    // 春、夏、秋、冬 4 张，留空则回退 growthStages 的图
     public List<Sprite> seasonSprites = new List<Sprite>();
+    // ===== AI FEAT-001 END =====
 
     public Vector2Int size = new Vector2Int(1,1);
 

@@ -46,7 +46,9 @@ public class BasicCrop : MonoBehaviour
                 }
             }
         }
+        // ===== AI FEAT-001 BEGIN 四季取图（原为 currentStage.GrowthSprite）=====
         cropSr.sprite = GetSeasonSprite(currentStage);
+        // ===== AI FEAT-001 END =====
         cropShaderController.UpdateWindForce(currentStage.风力);
         shadowShaderController.UpdateWindForce(currentStage.风力);
         if (currentStage.shadow != null)
@@ -90,6 +92,7 @@ public class BasicCrop : MonoBehaviour
         return growthProgress >= cropData.matureTurns;
     }
 
+    // ===== AI FEAT-001 BEGIN 按季节取图 =====
     // 按当前季节取四季贴图；没有配四季图就用成长阶段图
     Sprite GetSeasonSprite(GrowthStage stage)
     {
@@ -104,5 +107,6 @@ public class BasicCrop : MonoBehaviour
         }
         return stage.GrowthSprite;
     }
+    // ===== AI FEAT-001 END =====
 
 }

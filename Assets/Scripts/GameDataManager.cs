@@ -69,11 +69,13 @@ public class GameDataManager : MonoBehaviour
         {
             return new BasicWeedTreeSeed(id, id);
         }
+        // ===== AI TEMP-001 BEGIN 成年树作弊物品 =====
         else if (id >= 60 && id <= 62)
         {
             // 60 -> 松树15，61 -> 柏树16，62 -> 橡树17
             return new AdultTreeSeed(id, id - 45);
         }
+        // ===== AI TEMP-001 END =====
         else
         {
             BasicItem item = new BasicItem();

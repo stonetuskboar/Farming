@@ -65,11 +65,12 @@ public class HotBarController : MonoBehaviour
             UsableItem item = new BasicWeedTreeSeed(i, i);
             AddItem(item, 999);
         }
-        // 成年树作弊物品：60 松 / 61 柏 / 62 橡
+        // ===== AI TEMP-001 BEGIN 发放成年树物品（60 松 / 61 柏 / 62 橡）=====
         for (int i = 60; i <= 62; i++)
         {
             AddItem(i, 999);
         }
+        // ===== AI TEMP-001 END =====
     }
     public void InitButton()
     {

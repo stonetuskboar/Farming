@@ -105,11 +105,13 @@ public class FarmLandManager : MonoBehaviour
             }
             grassTilemap.RefreshRenderTilemap();
 
+            // ===== AI FEAT-001 BEGIN 换季刷新作物贴图 =====
             // 换季：让所有作物/杂草按季节换图
             foreach (BasicCrop c in crops)
             {
                 if (c != null) c.SetByGrowthProgress();
             }
+            // ===== AI FEAT-001 END =====
             foreach (Vector3Int pos in canFarmTileMap.cellBounds.allPositionsWithin)
             {
                 int rand = Random.Range(0, 3);
@@ -119,9 +121,11 @@ public class FarmLandManager : MonoBehaviour
                     int i = Random.Range(0, 10);
                     if (i < 8)
                     {
+                        // ===== AI FEAT-001 BEGIN 杂草生成限定 31/32 =====
                         // 杂草只剩 31、32 两种；以后加杂草在这里补 id
                         int[] weedIds = { 31, 32 };
                         cropData = GameDataManager.Instance.cropDataList.GetCropDataById(weedIds[Random.Range(0, weedIds.Length)]);
+                        // ===== AI FEAT-001 END =====
                     }
                     else
                     {
