@@ -104,8 +104,8 @@ TextureImporter:
         y: 0
         width: 256
         height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.51906586, y: 0.042421434}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,15 +118,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u67CF\u6811_\u590F_\u79CB_\u51AC"
+      name: "\u67CF\u6811_\u590F"
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 256
         height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5063553, y: 0.048776697}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,8 +146,8 @@ TextureImporter:
         y: 0
         width: 256
         height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5063553, y: 0.046658278}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: "\u67CF\u5B50_\u8986\u96EA"
       rect:
         serializedVersion: 2
-        x: 768
+        x: 770
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3983159}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,8 +188,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5254216, y: 0.3856058}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,8 +209,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5381317, y: 0.22036886}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,8 +230,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48728943, y: 0.30934238}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,8 +251,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5127106, y: 0.42373705}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,8 +272,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.47457886, y: 0.41102648}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,8 +293,8 @@ TextureImporter:
         y: 0
         width: 256
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5127106, y: 0.07419762}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,8 +314,8 @@ TextureImporter:
         y: 0
         width: 256
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.07737525}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,8 +335,8 @@ TextureImporter:
         y: 0
         width: 256
         height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48093462, y: 0.06784236}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -359,18 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u67CF\u6811_\u6625": -1471534492
-      "\u67CF\u6811_\u590F_\u79CB_\u51AC": 1739836970
-      "2\u9636\u6BB5\u67CF\u6811_\u590F_\u79CB_\u51AC": -1188449573
-      "2\u9636\u6BB5\u67CF\u6811_\u51AC_\u8986\u96EA": 1201287589
-      "\u67CF\u6811_\u51AC_\u8986\u96EA": -2090284745
-      "\u67CF\u5B50_\u8986\u96EA": 715525687
-      "\u67CF\u5B50": -1638699719
-      "1\u9636\u6BB5\u67CF\u6811_\u8986\u96EA": -728649467
       "1\u9636\u6BB5\u67CF\u6811": 225333122
-      "\u67CF\u6811\u6869_\u8986\u96EA": -1143603106
-      "\u67CF\u6811\u6869": -212704343
+      "1\u9636\u6BB5\u67CF\u6811_\u8986\u96EA": -728649467
+      "2\u9636\u6BB5\u67CF\u6811_\u51AC_\u8986\u96EA": 1201287589
+      "2\u9636\u6BB5\u67CF\u6811_\u590F_\u79CB_\u51AC": -1188449573
       "2\u9636\u6BB5\u67CF\u6811_\u6625": -1956862972
+      "\u67CF\u5B50": -1638699719
+      "\u67CF\u5B50_\u8986\u96EA": 715525687
+      "\u67CF\u6811_\u51AC_\u8986\u96EA": -2090284745
+      "\u67CF\u6811_\u590F": 1739836970
+      "\u67CF\u6811_\u6625": -1471534492
+      "\u67CF\u6811\u6869": -212704343
+      "\u67CF\u6811\u6869_\u8986\u96EA": -1143603106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

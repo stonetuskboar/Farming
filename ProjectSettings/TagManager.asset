@@ -38,8 +38,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: "\u6CB3\u6D41"
-    uniqueID: 1293018415
+  - name: "\u53EF\u79CD\u690D\u533A\u57DF"
+    uniqueID: 2049603379
+    locked: 0
+  - name: "\u6700\u5E95\u5C42\u6CE5\u571F"
+    uniqueID: 711657283
     locked: 0
   - name: "\u571F\u5730"
     uniqueID: 1519349363
@@ -52,6 +55,9 @@ TagManager:
     locked: 0
   - name: "\u8349\u5730"
     uniqueID: 4016426145
+    locked: 0
+  - name: "\u6CB3\u6D41"
+    uniqueID: 1293018415
     locked: 0
   - name: "\u5730\u677F"
     uniqueID: 3328067817
